@@ -9,12 +9,11 @@
 
                   A central place for my various config files                 
 
+## Scripts :
 
-| **Scripts**                                                                                                 | **Dot FIles**                                                                                               |
-|:-----------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|
-| [Official Apps](https://raw.githubusercontent.com/aliglelo/configs/master/scripts/official_apps.sh) | [Zshrc](https://raw.githubusercontent.com/aliglelo/configs/master/dotfiles/remove_this_text.zshrc) |
-| [AUR Apps](https://raw.githubusercontent.com/aliglelo/configs/master/scripts/AUR_apps.sh)           |                                                                                                             |
-
+- [Official Apps](https://raw.githubusercontent.com/aliglelo/configs/master/scripts/official_apps.sh)
+- [AUR Apps](https://raw.githubusercontent.com/aliglelo/configs/master/scripts/AUR_apps.sh)
+- [Zshrc](https://raw.githubusercontent.com/aliglelo/configs/master/dotfiles/remove_this_text.zshrc)
 
 --------------------------
 
