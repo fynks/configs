@@ -45,6 +45,10 @@ echo "Installing NodeJS.."
 pacman -S nodejs
 
 echo ""
+echo "Installing Caffeine-ng..."
+pacman -S caffeine-ng
+
+echo ""
 echo "Installing Stacer ..."
 pacman -S stacer
 
@@ -55,7 +59,6 @@ pacman -S kodi
 echo ""
 echo "Installing GIMP..."
 pacman -S gimp
-
 
 
 
