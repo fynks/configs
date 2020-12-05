@@ -15,6 +15,7 @@
 - [Official Apps](https://raw.githubusercontent.com/aliglelo/configs/master/scripts/official_apps.sh)
 - [AUR Apps](https://raw.githubusercontent.com/aliglelo/configs/master/scripts/AUR_apps.sh)
 - [Zshrc](https://raw.githubusercontent.com/aliglelo/configs/master/dotfiles/remove_this_text.zshrc)
+- [Hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
 
 --------------------------
 
