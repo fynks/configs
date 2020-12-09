@@ -57,8 +57,8 @@ echo "Installing KODI ..."
 pacman -S kodi
 
 echo ""
-echo "Installing GIMP..."
-pacman -S gimp
+echo "Installing App Image Launcher..."
+pacman -S appimagelauncher
 
 
 
