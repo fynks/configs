@@ -26,10 +26,6 @@ echo "Installing Sublime ..."
 yay -S sublime-text-3
 
 echo ""
-echo "Installing XAMPP ..."
-yay -S xampp
-
-echo ""
 echo "Installing ZOOM ..."
 yay -S zoom
 
