@@ -17,6 +17,10 @@ echo ""
 [ "$(whoami)" != "root" ] && exec sudo -- "$0" "$@"
 
 echo ""
+echo "Installing yay..."
+pacman -S yay
+
+echo ""
 echo "Installing VLC MEDIA PLAYER..."
 pacman -S nautilus
 
