@@ -1,17 +1,6 @@
 #!/bin/bash
 
 echo ""
-echo " 
-                                _      ______ ___  _      ______ _      ____
-                          /\   | |    |_   _/ ____| |    |  ____| |    / __ \ 
-                         /  \  | |      | || |  __| |    | |__  | |   | |  | |
-                        / /\ \ | |      | || | |_ | |    |  __| | |   | |  | |
-                       / ____ \| |____ _| || |__| | |____| |____| |___| |__| |
-                      /_/    \_\______|_____\_____|______|______|______\____/ 
-                                                                                
-                                     Apps Instaling Script                         "
-
-
 echo ""
 echo "Updating mirrors with fastest mirrors"
 sudo pacman-mirrors --fasttrack
