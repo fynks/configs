@@ -35,5 +35,5 @@
 | Privacy Badger | Ublock Origin   | Clearurls |
 | Decentraleyes  | Json Lite       |           |
 
-### Misc :
+### Others :
 [Resources](https://github.com/aliglelo/Resources)
