@@ -1,14 +1,14 @@
-### Scripts :
+### ⚙️ Scripts :
 - #### [Apps installer](https://raw.githubusercontent.com/aliglelo/configs/master/scripts/apps_installer.sh)
 
-### Dotfiles :
+### 📝 Dotfiles :
 - ####  [Zshrc](https://raw.githubusercontent.com/aliglelo/configs/master/dotfiles/remove_this_text.zshrc)
 - ####  [Shortcuts](https://raw.githubusercontent.com/aliglelo/configs/master/dotfiles/custom_shortcuts)
 
-### Hosts File :
+### 📝 Hosts File :
 - ####  [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
 
-### Bookmarks :
+### 🕮 Bookmarks :
 - ####  [Bookmarks](https://github.com/aliglelo/data/blob/master/bookmarks.html)
 
 ### APPS :
@@ -36,4 +36,4 @@
 | Decentraleyes  | Json Lite       |           |
 
 ### Others :
-- #### [Resources](https://github.com/aliglelo/Resources)
+- #### 📝 [Resources](https://github.com/aliglelo/Resources)
