@@ -1,15 +1,15 @@
-### ⚙️ Scripts :
-- #### [Apps installer](https://raw.githubusercontent.com/fynks/configs/master/scripts/apps_installer.sh)
+### Scripts :
+- [Apps installer](https://raw.githubusercontent.com/fynks/configs/master/scripts/apps_installer.sh)
 
-### 📝 Dotfiles :
-- ####  [Zshrc](https://raw.githubusercontent.com/fynks/configs/master/dotfiles/remove_this_text.zshrc)
-- ####  [Shortcuts](https://raw.githubusercontent.com/fynks/configs/master/dotfiles/custom_shortcuts)
+### Dotfiles :
+-  [Zshrc](https://raw.githubusercontent.com/fynks/configs/master/dotfiles/remove_this_text.zshrc)
+-  [Shortcuts](https://raw.githubusercontent.com/fynks/configs/master/dotfiles/custom_shortcuts)
 
-### 📝 Hosts File :
-- ####  [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
+### Hosts File :
+-  [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
 
-### 📝 Bookmarks :
-- ####  [Bookmarks](https://github.com/fynks/data/blob/master/bookmarks.html)
+### Bookmarks :
+-  [Bookmarks](https://github.com/fynks/data/blob/master/bookmarks.html)
 
 ### APPS :
 
@@ -36,4 +36,4 @@
 | Decentraleyes  | Json Lite       |           |
 
 ### Others :
-- #### 📝 [Resources](https://github.com/fynks/Resources)
+- [Resources](https://github.com/fynks/Resources)
