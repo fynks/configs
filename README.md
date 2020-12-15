@@ -4,6 +4,8 @@
 #### Dotfiles :
 -  [Zshrc](https://raw.githubusercontent.com/fynks/configs/master/dotfiles/remove_this_text.zshrc)
 -  [Shortcuts](https://raw.githubusercontent.com/fynks/configs/master/dotfiles/custom_shortcuts)
+- [Cookie AutoDelete Settings](https://github.com/fynks/configs/blob/master/dotfiles/CAD_settings.json)
+- [Cookie AutoDelete Whitelist](https://github.com/fynks/configs/blob/master/dotfiles/CAD_white_list.json)
 
 #### Hosts File :
 -  [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
@@ -33,7 +35,7 @@
 |:--------------:| --------------- | --------- |
 | Refined Github | Improve Youtube | TempMail  |
 | Privacy Badger | Ublock Origin   | Clearurls |
-| Decentraleyes  | Json Lite       |           |
+| Decentraleyes  | Json Lite       |Cookie AutoDelete|
 
 #### Others :
 - [Resources](https://github.com/fynks/Resources)
