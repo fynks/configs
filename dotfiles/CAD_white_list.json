@@ -1,0 +1,156 @@
+{
+  "default": [
+    {
+      "expression": "*.faceboook.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Jwg0C5Gxd"
+    },
+    {
+      "expression": "*.forum.manjaro.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "5OhmDuUsp"
+    },
+    {
+      "expression": "*.github.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "id": "8ga-iYhhrk",
+      "cookieNames": [],
+      "cleanSiteData": []
+    },
+    {
+      "expression": "*.gitlab.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Er3zfLx-k"
+    },
+    {
+      "expression": "*.google.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "id": "fwrmIi9d0Y",
+      "cookieNames": [],
+      "cleanSiteData": []
+    },
+    {
+      "expression": "*.heroku.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "cDfj6F3tn"
+    },
+    {
+      "expression": "*.instagram.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "tfLp_qUCQ"
+    },
+    {
+      "expression": "*.lastpass.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "ywM7ezkns"
+    },
+    {
+      "expression": "*.mail.google.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "id": "m4zKqWz1ZB",
+      "cookieNames": [],
+      "cleanSiteData": []
+    },
+    {
+      "expression": "*.netlify.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "5AjTRJAxz"
+    },
+    {
+      "expression": "*.reddit.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "id": "smDiTnOWe0",
+      "cookieNames": [],
+      "cleanSiteData": []
+    },
+    {
+      "expression": "*.twitter.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "oxyGrEGnK"
+    },
+    {
+      "expression": "*.vercel.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "d99C17g5Z"
+    },
+    {
+      "expression": "*.youtube.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "um1li64jj"
+    },
+    {
+      "expression": "github.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "id": "pTVuHKcuTM",
+      "cookieNames": [],
+      "cleanSiteData": []
+    },
+    {
+      "expression": "hdokiejnpimakedhajhdlcegeplioahd",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "CBF8GgfRO"
+    },
+    {
+      "expression": "https://forum.xda-developers.com/",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "TdCTJBNZD"
+    },
+    {
+      "expression": "mail.google.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "id": "zWoEphh53Np",
+      "cookieNames": [],
+      "cleanSiteData": []
+    },
+    {
+      "expression": "reddit.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "id": "jHl2yttZ7v1",
+      "cookieNames": [],
+      "cleanSiteData": []
+    }
+  ]
+}
