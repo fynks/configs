@@ -59,8 +59,11 @@ echo ""
 echo "Installing KODI ..."
 sudo pacman -S kodi
 echo ""
-echo "Installing SImple Screen Recorder ..."
+echo "Installing Simple Screen Recorder ..."
 sudo pacman -S simplescreenrecorder
+echo ""
+echo "Installing Stretchly ..."
+yay -S stretchly
 echo ""
 echo "------------------------------------------------------------"
 echo ""
