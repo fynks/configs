@@ -23,7 +23,10 @@ echo ""
 echo "Installing Sublime ..."
 yay -S sublime-text-3
 echo ""
-echo "Installing CMAKE ..."
+echo "Installing Qimgv (Image viewer) ..."
+yay -S qimgv
+echo ""
+echo "Installing Nautilus ..."
 sudo pacman -S nautilus
 echo ""
 echo "Installing VLC MEDIA PLAYER..."
