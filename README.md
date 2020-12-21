@@ -21,7 +21,8 @@
 | Nautilus     | Evince    | Caffeine-ng |
 | Telegram     | Alacritty | SS REcorder |
 | A.I Launcher | XDM       | Kodi        |
-| VLC          | Zoom      | stretchly   |
+|  Stretchly   | Zoom      | VLC         |
+| Qimgv        |           |             |
 
 #### APP Images :
 
