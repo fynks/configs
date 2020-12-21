@@ -1,12 +1,26 @@
 {
   "default": [
     {
-      "expression": "*.faceboook.com",
+      "expression": "*.dev.to",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [
+        "Cache",
+        "IndexedDB",
+        "PluginData",
+        "ServiceWorkers"
+      ],
+      "cookieNames": [],
+      "id": "gJomIzEsi",
+      "cleanAllCookies": true
+    },
+    {
+      "expression": "*.facebook.com",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "Jwg0C5Gxd"
+      "id": "8p9XGxPpb"
     },
     {
       "expression": "*.forum.manjaro.org",
@@ -105,20 +119,31 @@
       "id": "d99C17g5Z"
     },
     {
-      "expression": "*.youtube.com",
+      "expression": "*.whatsapp.com",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "um1li64jj"
+      "id": "K3XniCU7w"
     },
     {
-      "expression": "github.com",
+      "expression": "*.youtube.com",
       "listType": "WHITE",
       "storeId": "default",
-      "id": "pTVuHKcuTM",
+      "cleanSiteData": [
+        "Cache"
+      ],
       "cookieNames": [],
-      "cleanSiteData": []
+      "id": "_EUtnt5Vs",
+      "cleanAllCookies": true
+    },
+    {
+      "expression": "127.0.0.1",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "sZO_46kga"
     },
     {
       "expression": "hdokiejnpimakedhajhdlcegeplioahd",
@@ -135,22 +160,6 @@
       "cleanSiteData": [],
       "cookieNames": [],
       "id": "TdCTJBNZD"
-    },
-    {
-      "expression": "mail.google.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "id": "zWoEphh53Np",
-      "cookieNames": [],
-      "cleanSiteData": []
-    },
-    {
-      "expression": "reddit.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "id": "jHl2yttZ7v1",
-      "cookieNames": [],
-      "cleanSiteData": []
     }
   ]
 }
