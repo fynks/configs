@@ -11,7 +11,11 @@
 -  [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
 
 #### Bookmarks :
--  [Bookmarks](https://github.com/fynks/data/blob/master/bookmarks.html)
+-  [Bookmarks](https://github.com/fynks/bookmarks/blob/master/bookmarks.html)
+-  [Bookmarks](https://github.com/fynks/bookmarklets)
+
+#### Userscripts :
+-[userscripts](https://github.com/fynks/userscripts)
 
 #### APPS :
 
