@@ -41,6 +41,7 @@
 | Refined Github | Improve Youtube | TempMail  |
 | Privacy Badger | Ublock Origin   | Clearurls |
 | Decentraleyes  | Json Lite       |Cookie AutoDelete|
+| Tampermonkey   |                 |                 |
 
 #### Others :
 - [Resources](https://github.com/fynks/Resources)
