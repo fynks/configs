@@ -12,7 +12,7 @@
 
 #### Bookmarks :
 -  [Bookmarks](https://github.com/fynks/bookmarks/blob/master/bookmarks.html)
--  [Bookmarks](https://github.com/fynks/bookmarklets)
+-  [Bookmarklets](https://github.com/fynks/bookmarklets)
 
 #### Userscripts :
 -[userscripts](https://github.com/fynks/userscripts)
