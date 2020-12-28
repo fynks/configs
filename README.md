@@ -1,23 +1,23 @@
-#### Scripts :
+### Scripts :
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/master/scripts/apps_installer.sh)
 
-#### Dotfiles :
+### Dotfiles :
 -  [Zshrc](https://raw.githubusercontent.com/fynks/configs/master/dotfiles/remove_this_text.zshrc)
 -  [Shortcuts](https://raw.githubusercontent.com/fynks/configs/master/dotfiles/custom_shortcuts)
 - [Cookie AutoDelete Settings](https://github.com/fynks/configs/blob/master/dotfiles/CAD_settings.json)
 - [Cookie AutoDelete Whitelist](https://github.com/fynks/configs/blob/master/dotfiles/CAD_white_list.json)
 
-#### Hosts File :
+### Hosts File :
 -  [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
 
-#### Bookmarks :
+### Bookmarks :
 -  [Bookmarks](https://github.com/fynks/bookmarks/blob/master/bookmarks.html)
 -  [Bookmarklets](https://github.com/fynks/bookmarklets)
 
-#### Userscripts :
+### Userscripts :
 - [Userscripts](https://github.com/fynks/userscripts)
 
-#### APPS :
+### APPS :
 
 | Firefox      | Chrome    | Brave       |
 |:------------ | --------- | ----------- |
@@ -28,13 +28,13 @@
 |  Stretchly   | Zoom      | VLC         |
 | Qimgv        |           |             |
 
-#### APP Images :
+### APP Images :
 
 | [Xampp](https://www.apachefriends.org/index.html) | [GIMP](https://www.appimagehub.com/p/1231847/) | [qBittorrent](https://www.appimagehub.com/p/1346648/) |
 |:-------------------------------------------------:|:----------------------------------------------:|:-----------------------------------------------------:|
 |                                                   |                                                |                                                       |
 
-#### Addons :
+### Addons :
 
 | Dark Reader    | Last Pass       | XDM       |
 |:--------------:| --------------- | --------- |
@@ -43,5 +43,5 @@
 | Decentraleyes  | Json Lite       |Cookie AutoDelete|
 | Tampermonkey   |                 |                 |
 
-#### Others :
+### Others :
 - [Resources](https://github.com/fynks/Resources)
