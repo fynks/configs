@@ -44,4 +44,5 @@
 | Tampermonkey   |                 |                 |
 
 ### Others :
-- [Resources](https://github.com/fynks/Resources)
+- [Resources](https://github.com/fynks/Resources) 
+- [Github](https://github.com/fynks/configs)
