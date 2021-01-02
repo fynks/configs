@@ -17,6 +17,9 @@
 ### Userscripts :
 - [Userscripts](https://github.com/fynks/userscripts)
 
+### RSS-Feeds
+- [Feeds](https://github.com/fynks/bookmarks/blob/main/rss-feeds.opml)
+
 ### APPS :
 
 | Firefox      | Chrome    | Brave       |
@@ -43,8 +46,6 @@
 | Decentraleyes  | Json Lite       |Cookie AutoDelete|
 | Tampermonkey   |                 |                 |
 
-### RSS-Feeds
-- [Feeds](https://github.com/fynks/bookmarks/blob/main/rss-feeds.opml)
 ### Others :
 - [Resources](https://github.com/fynks/Resources) 
 - [Github](https://github.com/fynks/configs)
