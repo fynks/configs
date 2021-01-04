@@ -73,9 +73,10 @@ echo ""
 echo "Installing Fish"
 pacman -S fish
 echo ""
-echo "Installing oh-my-fish"
-curl -L https://get.oh-my.fish > install
-fish install --path=~/.local/share/omf --config=~/.config/omf
+echo "Installing fisher"
+ccurl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+echo""
+echo"Now you can install IlanCosman/tide by going here https://github.com/IlanCosman/tide"
 
 
 
