@@ -11,16 +11,22 @@
         "ServiceWorkers"
       ],
       "cookieNames": [],
-      "id": "gJomIzEsi",
+      "id": "AvGM7apAs",
       "cleanAllCookies": true
     },
     {
       "expression": "*.facebook.com",
       "listType": "WHITE",
       "storeId": "default",
-      "cleanSiteData": [],
+      "cleanSiteData": [
+        "Cache",
+        "IndexedDB",
+        "LocalStorage",
+        "PluginData",
+        "ServiceWorkers"
+      ],
       "cookieNames": [],
-      "id": "8p9XGxPpb"
+      "id": "2jL9ONMk9N"
     },
     {
       "expression": "*.forum.manjaro.org",
@@ -79,28 +85,12 @@
       "id": "ywM7ezkns"
     },
     {
-      "expression": "*.mail.google.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "id": "m4zKqWz1ZB",
-      "cookieNames": [],
-      "cleanSiteData": []
-    },
-    {
       "expression": "*.netlify.com",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
       "id": "5AjTRJAxz"
-    },
-    {
-      "expression": "*.reddit.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "id": "smDiTnOWe0",
-      "cookieNames": [],
-      "cleanSiteData": []
     },
     {
       "expression": "*.twitter.com",
@@ -119,47 +109,12 @@
       "id": "d99C17g5Z"
     },
     {
-      "expression": "*.whatsapp.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "K3XniCU7w"
-    },
-    {
-      "expression": "*.youtube.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [
-        "Cache"
-      ],
-      "cookieNames": [],
-      "id": "_EUtnt5Vs",
-      "cleanAllCookies": true
-    },
-    {
-      "expression": "127.0.0.1",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "sZO_46kga"
-    },
-    {
       "expression": "hdokiejnpimakedhajhdlcegeplioahd",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
       "id": "CBF8GgfRO"
-    },
-    {
-      "expression": "https://forum.xda-developers.com/",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "TdCTJBNZD"
     }
   ]
 }
