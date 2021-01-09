@@ -15,20 +15,6 @@
       "cleanAllCookies": true
     },
     {
-      "expression": "*.facebook.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [
-        "Cache",
-        "IndexedDB",
-        "LocalStorage",
-        "PluginData",
-        "ServiceWorkers"
-      ],
-      "cookieNames": [],
-      "id": "2jL9ONMk9N"
-    },
-    {
       "expression": "*.forum.manjaro.org",
       "listType": "WHITE",
       "storeId": "default",
@@ -40,7 +26,7 @@
       "expression": "*.github.com",
       "listType": "WHITE",
       "storeId": "default",
-      "id": "8ga-iYhhrk",
+      "id": "2ayXZolBa",
       "cookieNames": [],
       "cleanSiteData": []
     },
@@ -56,9 +42,11 @@
       "expression": "*.google.com",
       "listType": "WHITE",
       "storeId": "default",
-      "id": "fwrmIi9d0Y",
+      "id": "9W_o8xrGq",
       "cookieNames": [],
-      "cleanSiteData": []
+      "cleanSiteData": [
+        "Cache"
+      ]
     },
     {
       "expression": "*.heroku.com",
@@ -69,12 +57,12 @@
       "id": "cDfj6F3tn"
     },
     {
-      "expression": "*.instagram.com",
+      "expression": "*.invidious.site",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "tfLp_qUCQ"
+      "id": "4u-PLiN-R"
     },
     {
       "expression": "*.lastpass.com",
@@ -93,12 +81,20 @@
       "id": "5AjTRJAxz"
     },
     {
-      "expression": "*.twitter.com",
+      "expression": "*.seedr.cc",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "oxyGrEGnK"
+      "id": "dwPxPh_hP"
+    },
+    {
+      "expression": "*.teddit.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "JOR_bn4rI"
     },
     {
       "expression": "*.vercel.com",
