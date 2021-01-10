@@ -1,20 +1,6 @@
 {
   "default": [
     {
-      "expression": "*.dev.to",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [
-        "Cache",
-        "IndexedDB",
-        "PluginData",
-        "ServiceWorkers"
-      ],
-      "cookieNames": [],
-      "id": "AvGM7apAs",
-      "cleanAllCookies": true
-    },
-    {
       "expression": "*.forum.manjaro.org",
       "listType": "WHITE",
       "storeId": "default",
@@ -31,14 +17,6 @@
       "cleanSiteData": []
     },
     {
-      "expression": "*.gitlab.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "Er3zfLx-k"
-    },
-    {
       "expression": "*.google.com",
       "listType": "WHITE",
       "storeId": "default",
@@ -47,14 +25,6 @@
       "cleanSiteData": [
         "Cache"
       ]
-    },
-    {
-      "expression": "*.heroku.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "cDfj6F3tn"
     },
     {
       "expression": "*.invidious.site",
@@ -73,14 +43,6 @@
       "id": "ywM7ezkns"
     },
     {
-      "expression": "*.netlify.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "5AjTRJAxz"
-    },
-    {
       "expression": "*.seedr.cc",
       "listType": "WHITE",
       "storeId": "default",
@@ -95,14 +57,6 @@
       "cleanSiteData": [],
       "cookieNames": [],
       "id": "JOR_bn4rI"
-    },
-    {
-      "expression": "*.vercel.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "d99C17g5Z"
     },
     {
       "expression": "hdokiejnpimakedhajhdlcegeplioahd",
