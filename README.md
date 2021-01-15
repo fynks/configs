@@ -8,7 +8,7 @@
 - [Cookie AutoDelete Whitelist](https://github.com/fynks/configs/blob/main/dotfiles/CAD_white_list.json)
 
 ### Hosts File :
-- [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/main/hosts)
+- [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
 
 ### Bookmarks :
 - [Bookmarks](https://github.com/fynks/bookmarks/blob/main/bookmarks.html)
