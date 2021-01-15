@@ -21,6 +21,7 @@
 - [Feeds](https://github.com/fynks/bookmarks/blob/main/rss-feeds.opml)
 
 ### APPS :
+
 | Firefox      | Chrome    | Brave       |
 |:------------ | --------- | ----------- |
 | Sublime      | VS Code   | NodeJS      |
@@ -31,11 +32,13 @@
 | Qimgv        |           |             |
 
 ### APP Images :
+
 | [Xampp](https://www.apachefriends.org/index.html) | [GIMP](https://www.appimagehub.com/p/1231847/) | [qBittorrent](https://www.appimagehub.com/p/1346648/) |
 |:-------------------------------------------------:|:----------------------------------------------:|:-----------------------------------------------------:|
 |                                                   |                                                |                                                       |
 
 ### Addons :
+
 | Dark Reader    | Last Pass        | XDM               |
 |:--------------:| ---------------- | ----------------- |
 | Refined Github | Improve Youtube  | TempMail          |
