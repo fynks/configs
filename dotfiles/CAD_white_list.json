@@ -59,6 +59,14 @@
       "id": "JOR_bn4rI"
     },
     {
+      "expression": "*.yewtu.be",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "G8TaNAbUY"
+    },
+    {
       "expression": "hdokiejnpimakedhajhdlcegeplioahd",
       "listType": "WHITE",
       "storeId": "default",
