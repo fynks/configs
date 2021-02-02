@@ -1,38 +1,28 @@
 {
   "default": [
     {
-      "expression": "*.forum.manjaro.org",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "5OhmDuUsp"
-    },
-    {
       "expression": "*.github.com",
       "listType": "WHITE",
       "storeId": "default",
-      "id": "2ayXZolBa",
+      "cleanSiteData": [],
       "cookieNames": [],
-      "cleanSiteData": []
+      "id": "yRL8zAQXG"
     },
     {
-      "expression": "*.google.com",
-      "listType": "WHITE",
-      "storeId": "default",
-      "id": "9W_o8xrGq",
-      "cookieNames": [],
-      "cleanSiteData": [
-        "Cache"
-      ]
-    },
-    {
-      "expression": "*.invidious.site",
+      "expression": "*.hdokiejnpimakedhajhdlcegeplioahd",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "4u-PLiN-R"
+      "id": "JDorhX7ho"
+    },
+    {
+      "expression": "*.inoreader.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "A8JDmOPrH"
     },
     {
       "expression": "*.lastpass.com",
@@ -40,7 +30,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "ywM7ezkns"
+      "id": "YhnCxU45Z"
     },
     {
       "expression": "*.seedr.cc",
@@ -48,15 +38,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "dwPxPh_hP"
-    },
-    {
-      "expression": "*.teddit.net",
-      "listType": "WHITE",
-      "storeId": "default",
-      "cleanSiteData": [],
-      "cookieNames": [],
-      "id": "JOR_bn4rI"
+      "id": "MTanji9tVR"
     },
     {
       "expression": "*.yewtu.be",
@@ -64,15 +46,15 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "G8TaNAbUY"
+      "id": "obka14JXu"
     },
     {
-      "expression": "hdokiejnpimakedhajhdlcegeplioahd",
+      "expression": "teddit.net",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "CBF8GgfRO"
+      "id": "66_nC5ipO"
     }
   ]
 }
