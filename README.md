@@ -24,6 +24,7 @@
 ### APPS :
 
 | Firefox      | Chrome    | Brave       |
+|:------------ | --------- | ----------- |
 | Sublime      | VS Code   | NodeJS      |
 | Nautilus     | Evince    | Caffeine-ng |
 | Telegram     | Alacritty | SS REcorder |
@@ -33,13 +34,13 @@
 
 ### APP Images :
 
-| [Xampp](https://www.apachefriends.org/index.html) | [GIMP](https://www.appimagehub.com/p/1231847/) | [qBittorrent](https://www.appimagehub.com/p/1346648/) |
+| [Xampp](https://www.apachefriends.org/download.html) | [GIMP](https://github.com/aferrero2707/gimp-appimage) | [qBittorrent](https://www.appimagehub.com/p/1346648/) |
 |:-------------------------------------------------:|:----------------------------------------------:|:-----------------------------------------------------:|
-|                                                   |                                                |                                                       |
 
 ### Addons :
 
 | Dark Reader    | Last Pass        | XDM               |
+|:-------------- | ---------------- | ----------------- |
 | Refined Github | Improve Youtube  | TempMail          |
 | Privacy Badger | Ublock Origin    | Clearurls         |
 | LocalCDN       | Json Lite        | Cookie AutoDelete |
