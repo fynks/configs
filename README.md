@@ -39,7 +39,7 @@
 
 ### Addons :
 
-| Dark Reader    | Last Pass        | XDM               |
+| Dark Reader    | BitWarden        | XDM               |
 |:-------------- | ---------------- | ----------------- |
 | Refined Github | Improve Youtube  | TempMail          |
 | Privacy Badger | Ublock Origin    | Clearurls         |
