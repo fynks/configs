@@ -5,14 +5,16 @@
 - [Zshrc](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/remove_this_text.zshrc)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/custom_shortcuts)
 - [Cookie AutoDelete Settings](https://github.com/fynks/configs/blob/main/dotfiles/CAD_settings.json)
-- [Cookie AutoDelete Whitelist](https://github.com/fynks/configs/blob/main/dotfiles/CAD_white_list.json)
+- [Cookie AutoDelete Whitelist Browsing](https://github.com/fynks/configs/blob/main/dotfiles/CAD_white_list_browsing.json)
+- [Cookie AutoDelete Whitelist Logged in](https://github.com/fynks/configs/blob/main/dotfiles/CAD_white_list_logged_in.json)
 
 ### Hosts File :
 - [hblock](https://github.com/hectorm/hblock)
 - [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
 
 ### Bookmarks :
-- [Bookmarks](https://github.com/fynks/bookmarks/blob/main/bookmarks.html)
+- [Bookmarks Browsing](https://github.com/fynks/bookmarks/blob/main/bookmarks_browsing.html)
+- [Bookmarks Logged in](https://github.com/fynks/bookmarks/blob/main/bookmarks_logged_in.html)
 - [Bookmarklets](https://github.com/fynks/bookmarklets)
 
 ### Userscripts :
