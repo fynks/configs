@@ -6,7 +6,7 @@
     },
     {
       "name": "cacheCleanup",
-      "value": true
+      "value": false
     },
     {
       "name": "cleanCookiesFromOpenTabsOnStartup",
@@ -14,11 +14,11 @@
     },
     {
       "name": "cleanExpiredCookies",
-      "value": true
+      "value": false
     },
     {
       "name": "contextMenus",
-      "value": false
+      "value": true
     },
     {
       "name": "contextualIdentities",
@@ -34,7 +34,7 @@
     },
     {
       "name": "delayBeforeClean",
-      "value": 15
+      "value": 30
     },
     {
       "name": "discardedCleanup",
@@ -50,7 +50,7 @@
     },
     {
       "name": "enableNewVersionPopup",
-      "value": true
+      "value": false
     },
     {
       "id": "DEPRECATED - use default expressions",
@@ -59,7 +59,7 @@
     },
     {
       "name": "indexedDBCleanup",
-      "value": true
+      "value": false
     },
     {
       "name": "keepDefaultIcon",
@@ -68,11 +68,11 @@
     {
       "id": "DEPRECATED - use localStorageCleanup",
       "name": "localstorageCleanup",
-      "value": true
+      "value": false
     },
     {
       "name": "localStorageCleanup",
-      "value": true
+      "value": false
     },
     {
       "name": "manualNotifications",
@@ -84,11 +84,11 @@
     },
     {
       "name": "pluginDataCleanup",
-      "value": true
+      "value": false
     },
     {
       "name": "serviceWorkersCleanup",
-      "value": true
+      "value": false
     },
     {
       "name": "showNotificationAfterCleanup",
