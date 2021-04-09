@@ -17,6 +17,9 @@
 - [Bookmarks Logged in](https://github.com/fynks/bookmarks/blob/main/bookmarks_logged_in.html)
 - [Bookmarklets](https://github.com/fynks/bookmarklets)
 
+### Teddit Settings
+- [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/teddit_prefs.json)
+
 ### Userscripts :
 - [Userscripts](https://github.com/fynks/userscripts)
 
