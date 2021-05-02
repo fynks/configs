@@ -26,7 +26,7 @@
 
 ### Prefs :
 - [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/prefs/teddit_prefs.json)
-- [Xampp](Link to be added)
+- [Xampp](https://github.com/fynks/configs/blob/main/prefs/xampp-htdocs.zip)
 ---
 
 ### Userscripts :
