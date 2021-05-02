@@ -1,9 +1,12 @@
-jobs:
-  Job:
-    runs-on: windows-latest
-    steps:
-      - name: Convert Markdown to HTML
-        uses: natescherer/markdown-to-html-with-github-style-action@v1
-        with:
-          path: README.md
-          outputpath: docs
+- name: Markdown-HTML
+  # You may pin to the exact commit or the version.
+  # uses: ZacJW/markdown-html-action@3865edcff67a98f3984bd6312111f0d4deec57d4
+  uses: ZacJW/markdown-html-action@1.1.1
+  with:
+    # A JSON list of a list of paths to markdown files to render in to HTML files
+    input_files: 
+   '[["README.md"]]'
+    output_files: 
+    '["ndex.htmll"]'
+    builtin_stylesheet: 'style.css'
+   
