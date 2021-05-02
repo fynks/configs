@@ -4,6 +4,8 @@
 ### Dotfiles :
 - [Zshrc](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/remove_this_text.zshrc)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/custom_shortcuts)
+
+### Extension configs :
 - [Cookie AutoDelete Settings](https://github.com/fynks/configs/blob/main/dotfiles/CAD_settings.json)
 - [Cookie AutoDelete Whitelist Browsing](https://github.com/fynks/configs/blob/main/dotfiles/CAD_white_list_browsing.json)
 - [Cookie AutoDelete Whitelist Logged in](https://github.com/fynks/configs/blob/main/dotfiles/CAD_white_list_logged_in.json)
@@ -17,8 +19,9 @@
 - [Bookmarks Logged in](https://github.com/fynks/bookmarks/blob/main/bookmarks_logged_in.html)
 - [Bookmarklets](https://github.com/fynks/bookmarklets)
 
-### Teddit Settings
-- [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/teddit_prefs.json)
+### Prefs :
+- [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/prefs/teddit_prefs.json)
+- [Xampp](Link to be added)
 
 ### Userscripts :
 - [Userscripts](https://github.com/fynks/userscripts)
@@ -28,28 +31,56 @@
 
 ### APPS :
 
-| Firefox      | Chrome    | Brave       |
-|:------------ | --------- | ----------- |
-| Sublime      | VS Code   | NodeJS      |
-| Nautilus     | Evince    | Caffeine-ng |
-| Telegram     | Alacritty | SS REcorder |
-| A.I Launcher | XDM       | Kodi        |
-| Stretchly    | Zoom      | VLC         |
-| Qimgv        |Thunderbird|             |
+#### Browsers :
+- Firefox
+- Librewolf
+- Brave
+  
+ #### Coding :
+ - VS Code
+ - Sublime
+ - Xampp
+    
+  #### Multimedia :
+  - VLC
+  - Kodi
+  - Simple Screen Recorder
+      
+  #### Utilities :
+   - Alacritty
+   - Nautilus
+   - Evince
+   - Qimgv
+   - Caffeine-nGg
+   - XDM
+   - App Image Launcher       
+   - Zoom  
+   
+  ####  NodeJS
+   - PNPM
+   - Workbox-cli
+   - firebase-tools
+   - vercel
+   - clean-css-cli
+   - purgecss
 
 ### APP Images :
-
-| [Xampp](https://www.apachefriends.org/download.html) | [GIMP](https://github.com/aferrero2707/gimp-appimage) | [qBittorrent](https://www.appimagehub.com/p/1346648/) |
-|:-------------------------------------------------:|:----------------------------------------------:|:-----------------------------------------------------:|
+- [GIMP](https://github.com/aferrero2707/gimp-appimage)
+- [qBittorrent](https://www.appimagehub.com/p/1346648/) 
 
 ### Addons :
+- Ublock Origin
+- Clearurls
+- Cookie AutoDelete
+- Privacy Badger
+- Bitwarden
+- XDM
+- Dark Reader
+- Improve Youtube
+- AnonAddy
+- Tampermonkey
+- Refined Github
 
-| Dark Reader    | BitWarden        | XDM               |
-|:-------------- | ---------------- | ----------------- |
-| Refined Github | Improve Youtube  | TempMail          |
-| Privacy Badger | Ublock Origin    | Clearurls         |
-| LocalCDN       | Json Lite        | Cookie AutoDelete |
-| Tampermonkey   | Privacy Redirect | AnonAddy          |
 
 ### Others :
 - [Resources](https://github.com/fynks/Resources) 
