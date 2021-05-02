@@ -62,7 +62,7 @@
    - XDM
    - App Image Launcher       
    - Zoom  
-   -Nodejs
+   - Nodejs
    
   ####  NPM Modules
    - PNPM
