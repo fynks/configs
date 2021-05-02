@@ -1,0 +1,28 @@
+{
+  "default": [
+    {
+      "expression": "*.inoreader.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "J1SaN9s43"
+    },
+    {
+      "expression": "*.teddit.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "-w-DVGTSC"
+    },
+    {
+      "expression": "*.youtube.com",
+      "listType": "GREY",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "e2fBUobuu"
+    }
+  ]
+}

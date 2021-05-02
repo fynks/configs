@@ -14,11 +14,17 @@ echo ""
 echo "Installing ALACRITTY..."
 sudo pacman -S alacritty
 echo ""
+echo "Installing Firefox..."
+sudo pacman -S firefox
+echo ""
+echo "Installing Librewolf..."
+yay -S librewolf-bin
+echo ""
 echo "Installing CMAKE ..."
 sudo pacman -S cmake
 echo ""
-echo "Installing Brave-DEV-BIN ..."
-yay -S brave-dev-bin
+echo "Installing Brave-Bin ..."
+yay -S brave-bin
 echo ""
 echo "Installing Sublime ..."
 yay -S sublime-text-3
@@ -38,9 +44,6 @@ echo ""
 echo "Installing Bleachbit ..."
 sudo pacman -S bleachbit
 echo ""
-echo "Installing Thunderbird ..."
-sudo pacman -S thunderbird
-echo ""
 echo "Installing Caffeine-ng..."
 sudo pacman -S caffeine-ng
 echo ""
@@ -56,9 +59,6 @@ echo ""
 echo "Installing App Image Launcher..."
 sudo pacman -S appimagelauncher
 echo ""
-echo "Installing GOOGLE-CHROME ..."
-yay -S google-chrome
-echo ""
 echo "Installing Telegram..."
 sudo pacman -S telegram-desktop
 echo ""
@@ -67,9 +67,6 @@ sudo pacman -S kodi
 echo ""
 echo "Installing Simple Screen Recorder ..."
 sudo pacman -S simplescreenrecorder
-echo ""
-echo "Installing Stretchly ..."
-yay -S stretchly
 echo ""
 echo "------------------------------------------------------------"
 echo ""

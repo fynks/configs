@@ -1,0 +1,76 @@
+{
+  "default": [
+    {
+      "expression": "*.bitwarden.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "l9pP655Ii"
+    },
+    {
+      "expression": "*.cloudflare.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "1TLEv9CLo"
+    },
+    {
+      "expression": "*.dash.cloudflare.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "FdUZPiLLU"
+    },
+    {
+      "expression": "*.firefox.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "YavK6DHwCh"
+    },
+    {
+      "expression": "*.github.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "XP2RS4rGH3"
+    },
+    {
+      "expression": "*.google.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "2hv5SglDZh"
+    },
+    {
+      "expression": "*.heroku.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "3lHDmGUBa"
+    },
+    {
+      "expression": "*.mega.nz",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "YsaLuhCz77"
+    },
+    {
+      "expression": "*.netlify.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "9-6Bw_Ri6k"
+    }
+  ]
+}

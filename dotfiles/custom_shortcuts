@@ -3,7 +3,7 @@ DataCount=1
 
 [Data_1]
 Comment=should never see
-DataCount=9
+DataCount=15
 Enabled=true
 Name=should never see
 SystemGroup=2
@@ -20,6 +20,162 @@ Enabled=true
 Name=KMenuEdit
 SystemGroup=1
 Type=ACTION_DATA_GROUP
+
+[Data_1_10]
+Comment=Launches the Alacritty terminal
+Enabled=true
+Name=Alacritty
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_10Actions]
+ActionsCount=1
+
+[Data_1_10Actions0]
+CommandURL=alacritty
+Type=COMMAND_URL
+
+[Data_1_10Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_10Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_10Triggers0]
+Key=Meta+A
+Type=SHORTCUT
+Uuid={1a972169-a954-49bf-bfb5-6d269603a6f3}
+
+[Data_1_11]
+Comment=Launches the Lectures folder
+Enabled=true
+Name=Lectures
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_11Actions]
+ActionsCount=1
+
+[Data_1_11Actions0]
+CommandURL=dolphin /home/ali/Downloads/Documents/Lectures
+Type=COMMAND_URL
+
+[Data_1_11Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_11Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_11Triggers0]
+Key=Meta+Ctrl+L
+Type=SHORTCUT
+Uuid={b23b2128-5fa5-43d5-9517-0746b3746951}
+
+[Data_1_12]
+Comment=Comment
+Enabled=true
+Name=Biochem
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_12Actions]
+ActionsCount=1
+
+[Data_1_12Actions0]
+CommandURL=dolphin /home/ali/Downloads/Documents/Lectures/Biochem
+Type=COMMAND_URL
+
+[Data_1_12Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_12Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_12Triggers0]
+Key=Meta+Ctrl+B
+Type=SHORTCUT
+Uuid={53e9289e-eb80-4931-b241-07a5e2e4d44c}
+
+[Data_1_13]
+Comment=Comment
+Enabled=true
+Name=Physio
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_13Actions]
+ActionsCount=1
+
+[Data_1_13Actions0]
+CommandURL=dolphin /home/ali/Downloads/Documents/Lectures/Physio
+Type=COMMAND_URL
+
+[Data_1_13Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_13Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_13Triggers0]
+Key=Meta+Ctrl+P
+Type=SHORTCUT
+Uuid={6c5b1b42-0e88-4a18-93e0-a07fe24c35e3}
+
+[Data_1_14]
+Comment=Comment
+Enabled=true
+Name=Anatomy
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_14Actions]
+ActionsCount=1
+
+[Data_1_14Actions0]
+CommandURL=dolphin /home/ali/Downloads/Documents/Lectures/Anatomy
+Type=COMMAND_URL
+
+[Data_1_14Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_14Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_14Triggers0]
+Key=Meta+Ctrl+A
+Type=SHORTCUT
+Uuid={0eb738ee-fcd2-41a7-9ec7-47f500a04093}
+
+[Data_1_15]
+Comment=Comment
+Enabled=true
+Name=Books
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_15Actions]
+ActionsCount=1
+
+[Data_1_15Actions0]
+CommandURL=dolphin /home/ali/Downloads/Documents/Books
+Type=COMMAND_URL
+
+[Data_1_15Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_15Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_15Triggers0]
+Key=Meta+Ctrl+K
+Type=SHORTCUT
+Uuid={c1b68be3-1730-4982-93b2-c9e2c50b9b15}
 
 [Data_1_1Conditions]
 Comment=
@@ -480,16 +636,16 @@ GesturePointData=0,0.0625,-0.5,0.5,1,0.0625,0.0625,-0.5,0.5,0.875,0.125,0.0625,-
 Type=GESTURE
 
 [Data_1_3]
-Comment=Launches the Lectures folder
+Comment=Comment
 Enabled=true
-Name=Lectures
+Name=Librewolf
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_3Actions]
 ActionsCount=1
 
 [Data_1_3Actions0]
-CommandURL=dolphin /home/ali/Downloads/Documents/Lectures
+CommandURL=librewolf
 Type=COMMAND_URL
 
 [Data_1_3Conditions]
@@ -503,19 +659,19 @@ TriggersCount=1
 [Data_1_3Triggers0]
 Key=Meta+L
 Type=SHORTCUT
-Uuid={b23b2128-5fa5-43d5-9517-0746b3746951}
+Uuid={a00420d9-b57d-4040-9d61-6c5adee7aa32}
 
 [Data_1_4]
-Comment=Launches the Videos folder
+Comment=Comment
 Enabled=true
-Name=Videos
+Name=Firefox
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_4Actions]
 ActionsCount=1
 
 [Data_1_4Actions0]
-CommandURL=dolphin /home/ali/Downloads/Video
+CommandURL=firefox
 Type=COMMAND_URL
 
 [Data_1_4Conditions]
@@ -527,21 +683,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_4Triggers0]
-Key=Meta+V
+Key=Meta+F
 Type=SHORTCUT
-Uuid={660fdbc2-16b2-429a-8b21-bcddd5b3a6d2}
+Uuid={eea41ab8-8f70-4657-92dc-81885cc290aa}
 
 [Data_1_5]
-Comment=Launches the Compressed folder of downloads
+Comment=Launches the Brave browser
 Enabled=true
-Name=Compressed
+Name=Brave
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_5Actions]
 ActionsCount=1
 
 [Data_1_5Actions0]
-CommandURL=dolphin /home/ali/Downloads/Compressed
+CommandURL=brave
 Type=COMMAND_URL
 
 [Data_1_5Conditions]
@@ -553,21 +709,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_5Triggers0]
-Key=Meta+C
+Key=Meta+B
 Type=SHORTCUT
-Uuid={0cd0adab-b275-4ecd-8bb1-e7fcd843ce03}
+Uuid={85e1e245-976d-4ab8-befd-b6958a56d1d6}
 
 [Data_1_6]
-Comment=Launches the Brave browser
+Comment=Launches the Compressed folder of downloads
 Enabled=true
-Name=Brave
+Name=Compressed
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_6Actions]
 ActionsCount=1
 
 [Data_1_6Actions0]
-CommandURL=brave-browser-dev
+CommandURL=dolphin /home/ali/Downloads/Compressed
 Type=COMMAND_URL
 
 [Data_1_6Conditions]
@@ -579,21 +735,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_6Triggers0]
-Key=Meta+B
+Key=Meta+C
 Type=SHORTCUT
-Uuid={85e1e245-976d-4ab8-befd-b6958a56d1d6}
+Uuid={0cd0adab-b275-4ecd-8bb1-e7fcd843ce03}
 
 [Data_1_7]
-Comment=Opens a new document in libre-office wrier
+Comment=Launches the Videos folder
 Enabled=true
-Name=Writer
+Name=Videos
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_7Actions]
 ActionsCount=1
 
 [Data_1_7Actions0]
-CommandURL=libreoffice --writer
+CommandURL=dolphin /home/ali/Downloads/Video
 Type=COMMAND_URL
 
 [Data_1_7Conditions]
@@ -605,21 +761,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_7Triggers0]
-Key=Meta+W
+Key=Meta+V
 Type=SHORTCUT
-Uuid={c23a3518-32db-431f-9613-379b95693801}
+Uuid={660fdbc2-16b2-429a-8b21-bcddd5b3a6d2}
 
 [Data_1_8]
-Comment=Launches the Pictures folder
+Comment=Opens a new document in libre-office wrier
 Enabled=true
-Name=Pictures
+Name=Writer
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_8Actions]
 ActionsCount=1
 
 [Data_1_8Actions0]
-CommandURL=dolphin /home/ali/Pictures
+CommandURL=libreoffice --writer
 Type=COMMAND_URL
 
 [Data_1_8Conditions]
@@ -631,21 +787,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_8Triggers0]
-Key=Meta+P
+Key=Meta+W
 Type=SHORTCUT
-Uuid={05cdaa36-bc46-4d7a-bf08-b9f9ba42ac3e}
+Uuid={c23a3518-32db-431f-9613-379b95693801}
 
 [Data_1_9]
-Comment=Launches the Alacritty terminal
+Comment=Launches the Pictures folder
 Enabled=true
-Name=Alacritty
+Name=Pictures
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_9Actions]
 ActionsCount=1
 
 [Data_1_9Actions0]
-CommandURL=alacritty
+CommandURL=dolphin /home/ali/Pictures
 Type=COMMAND_URL
 
 [Data_1_9Conditions]
@@ -657,9 +813,9 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_9Triggers0]
-Key=Meta+A
+Key=Meta+P
 Type=SHORTCUT
-Uuid={1a972169-a954-49bf-bfb5-6d269603a6f3}
+Uuid={05cdaa36-bc46-4d7a-bf08-b9f9ba42ac3e}
 
 [Main]
 AllowMerge=false
