@@ -8,9 +8,9 @@
 ---
 
 ### Extension configs :
-- [Cookie AutoDelete Settings](https://github.com/fynks/configs/blob/main/dotfiles/CAD_settings.json)
-- [Cookie AutoDelete Whitelist Browsing](https://github.com/fynks/configs/blob/main/dotfiles/CAD_white_list_browsing.json)
-- [Cookie AutoDelete Whitelist Logged in](https://github.com/fynks/configs/blob/main/dotfiles/CAD_white_list_logged_in.json)
+- [Cookie AutoDelete Settings](https://github.com/fynks/configs/blob/main/extensions/CAD_settings.json)
+- [Cookie AutoDelete Whitelist Browsing](https://github.com/fynks/configs/blob/main/extensions/CAD_white_list_browsing.json)
+- [Cookie AutoDelete Whitelist Logged in](https://github.com/fynks/configs/blob/main/extensions/CAD_white_list_logged_in.json)
 ----
 
 ### Hosts File :
