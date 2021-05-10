@@ -1,1 +1,0 @@
-- Xmapp_auto_start : Enable auto starting the Xampp on booting device everytime
