@@ -19,4 +19,4 @@ echo /usr/local/bin/fish | sudo tee -a /etc/shells
 ```sh
 chsh
 ```
-Now logout and login again and your deafult shell will bw fish.
+Now logout and login again and your deafult shell will be fish.
