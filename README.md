@@ -2,6 +2,10 @@
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/apps_installer.sh)
 ---
 
+### Guides :
+- [Guides](https://github.com/fynks/configs/blob/main/guides/index.md)
+---
+
 ### Dotfiles :
 - [Zshrc](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/remove_this_text.zshrc)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/custom_shortcuts)
@@ -19,8 +23,7 @@
 --- 
 
 ### Bookmarks :
-- [Bookmarks Browsing](https://github.com/fynks/bookmarks/blob/main/bookmarks_browsing.html)
-- [Bookmarks Logged in](https://github.com/fynks/bookmarks/blob/main/bookmarks_logged_in.html)
+- [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
 - [Bookmarklets](https://github.com/fynks/bookmarklets)
 ----
 
@@ -34,7 +37,7 @@
 ---
 
 ### RSS-Feeds
-- [Feeds](https://github.com/fynks/bookmarks/blob/main/rss-feeds.opml)
+- [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
 ---
 
 ### APPS :
@@ -43,28 +46,28 @@
 - Librewolf
 - Brave
   
- #### Coding :
- - VS Code
- - Sublime
- - Xampp
+#### Coding :
+- VS Code
+- Sublime
+- Xampp
     
-  #### Multimedia :
-  - VLC
-  - Kodi
-  - Simple Screen Recorder
+#### Multimedia :
+- VLC
+- Kodi
+- Simple Screen Recorder
       
-  #### Utilities :
-   - Alacritty
-   - Nautilus
-   - Evince
-   - Qimgv
-   - Caffeine-nGg
-   - XDM
-   - App Image Launcher       
-   - Zoom  
-   - Nodejs
+#### Utilities :
+- Alacritty
+- Nautilus
+- Evince
+- Qimgv
+- Caffeine-nGg
+- XDM
+- App Image Launcher       
+- Zoom  
+- Nodejs
    
-  ####  NPM Modules
+####  NPM Modules
    - PNPM
    - Workbox-cli
    - firebase-tools
@@ -75,6 +78,7 @@
 
 ### APP Images :
 - [GIMP](https://github.com/aferrero2707/gimp-appimage)
+- [Balena Etcher](https://www.balena.io/etcher/)
 - [qBittorrent](https://www.appimagehub.com/p/1346648/) 
 ---
 
@@ -93,5 +97,6 @@
 ---
 
 ### Others :
+- [Links](https://github.com/fynks/links)
 - [Resources](https://github.com/fynks/Resources) 
 - [Github](https://github.com/fynks/configs)
