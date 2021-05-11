@@ -48,12 +48,11 @@
   
 #### Coding :
 - VS Code
-- Sublime
+- Sublime Text Editor 3
 - Xampp
     
 #### Multimedia :
 - VLC
-- Kodi
 - Simple Screen Recorder
       
 #### Utilities :
@@ -61,7 +60,6 @@
 - Nautilus
 - Evince
 - Qimgv
-- Caffeine-nGg
 - XDM
 - App Image Launcher       
 - Zoom  
