@@ -28,6 +28,7 @@ Under History > Settings > Active logins+Cookies : Disable
 ####  Hardening Guides
 > Harden firefox manually thus having a granular control
 - [https://chrisx.xyz/blog/yet-another-firefox-hardening-guide/](https://chrisx.xyz/blog/yet-another-firefox-hardening-guide/)
+- [https://12bytes.org/articles/tech/firefox/firefoxgecko-configuration-guide-for-privacy-and-performance-buffs/](https://12bytes.org/articles/tech/firefox/firefoxgecko-configuration-guide-for-privacy-and-performance-buffs/)
 - [https://teddit.net/r/privacytoolsIO/comments/mqy5u1/firefox_privacy_tweaks/](https://teddit.net/r/privacytoolsIO/comments/mqy5u1/firefox_privacy_tweaks/)
 
 > Note : Enabling ```firstpartyisolate``` may render some of the extensions unusable
