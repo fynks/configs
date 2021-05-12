@@ -4,6 +4,7 @@
 > A user.js is a configuration file that can control hundreds of Firefox settings.
 - [arkenfox](https://github.com/arkenfox/user.js)
 - [pyllyukko](https://github.com/pyllyukko/user.js/)
+- [Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
 
 ###  Hardening Guides
 > Harden firefox manually thus having a granular control
