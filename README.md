@@ -84,7 +84,7 @@
 - Ublock Origin
 - Clearurls
 - Cookie AutoDelete
-- Privacy Badger
+- Firefox Containers
 - Bitwarden
 - XDM
 - Dark Reader
