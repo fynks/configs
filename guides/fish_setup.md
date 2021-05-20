@@ -43,12 +43,14 @@ fisher install ilancosman/tide
 fish_config
 ```
 
-- In abbrevations tab enter following :
+- In abbreviations tab enter following :
 
-| Abbrevation  | Command                        |
-| ------------ | ------------------------------ |
-| cl           | clear                          |
-| nat          | sudo nautilus                  |
-| pfetch       | ./fm6000                       |
-| update       | sudo pacman -Syyuu && yay -Syu |
-| clean-orphan | sudo pacman -Rs (pacman -Qqdt) |
+| Abbrevation  | Command                           |
+| ------------ | --------------------------------- |
+| cl           | clear                             |
+| nat          | sudo nautilus                     |
+| pfetch       | ./fm6000                          |
+| update       | sudo pacman -Syyuu && yay -Syu    |
+| clean-orphan | sudo pacman -Rs (pacman -Qqdt)    |
+| apache       | sudo /opt/lampp/lampp startapache |
+| xampp        | sudo /opt/lampp/lampp start       |
