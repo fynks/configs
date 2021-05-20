@@ -1,3 +1,5 @@
+#### ⚠️ This will increase the boot time with addition of upto 15 more seconds therefore try to use fish abbreviations using apache and xampp shortcuts.
+
 First creat and open a service file by :
 ```sh
 sudo nano /etc/systemd/system/xampp.service
