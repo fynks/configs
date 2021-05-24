@@ -33,7 +33,7 @@ echo "Installing Brave-Bin ..."
 yay -S brave-bin
 echo ""
 echo "Installing Sublime ..."
-yay -S sublime-text-3
+yay -S sublime-text-4
 echo ""
 echo "Installing Qimgv (Image viewer) ..."
 yay -S qimgv
