@@ -64,6 +64,7 @@
 - App Image Launcher       
 - Zoom  
 - Nodejs
+- [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
    
 ####  NPM Modules
    - PNPM
