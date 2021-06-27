@@ -17,14 +17,14 @@ echo ""
 echo "Installing yay..."
 sudo pacman -S yay
 echo ""
-echo "Installing ALACRITTY..."
+echo "Installing ALACRITTY ..."
 sudo pacman -S alacritty
 echo ""
-echo "Installing Fish Shell..."
+echo "Installing Fish Shell ..."
 sudo pacman -S fish
 echo ""
-echo "Installing Firefox..."
-sudo pacman -S firefox
+echo "Installing Firefox ..."
+yay -S firefox-bin
 echo ""
 echo "Installing Librewolf..."
 yay -S librewolf-bin
