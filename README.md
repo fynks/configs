@@ -1,3 +1,4 @@
+## Configs and prefs
 ### Scripts :
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/apps_installer.sh)
 
