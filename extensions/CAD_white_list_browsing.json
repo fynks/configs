@@ -6,7 +6,23 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "J1SaN9s43"
+      "id": "Wbk_zjgBz"
+    },
+    {
+      "expression": "*.kavin.rocks",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "5xwRWp66c"
+    },
+    {
+      "expression": "*.seedr.cc",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "gztWEXjPh"
     },
     {
       "expression": "*.teddit.net",
@@ -14,7 +30,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "-w-DVGTSC"
+      "id": "qvIhFPW7yu"
     },
     {
       "expression": "*.youtube.com",
@@ -22,7 +38,8 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "e2fBUobuu"
+      "id": "EeNvWC4uk",
+      "cleanAllCookies": true
     }
   ]
 }

@@ -18,7 +18,7 @@
     },
     {
       "name": "contextMenus",
-      "value": true
+      "value": false
     },
     {
       "name": "contextualIdentities",
