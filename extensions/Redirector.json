@@ -1,7 +1,41 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-07-30T08:08:51.900Z",
+    "createdAt": "2021-08-01T15:09:36.700Z",
     "redirects": [
+        {
+            "description": "[reddit] use teddit frontend",
+            "exampleUrl": "https://reddit.com/r/monero",
+            "exampleResult": "https://teddit.net/r/monero",
+            "error": null,
+            "includePattern": "^https?://(?:www\\.)?reddit\\.com/?(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://teddit.net/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "[Reddit] redirect to libreddit",
+            "exampleUrl": "https://www.reddit.com/r/technology",
+            "exampleResult": "https://libredd.it/r/technology",
+            "error": null,
+            "includePattern": "https://www.reddit.com/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://libredd.it/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
         {
             "description": "[YouTube] use Piped frontend",
             "exampleUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -13,7 +47,7 @@
             "redirectUrl": "https://piped.kavin.rocks/$1",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame",
@@ -56,23 +90,6 @@
             ]
         },
         {
-            "description": "[reddit] use teddit frontend",
-            "exampleUrl": "https://reddit.com/r/monero",
-            "exampleResult": "https://teddit.net/r/monero",
-            "error": null,
-            "includePattern": "^https?://(?:www\\.)?reddit\\.com/?(.*)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://teddit.net/$1",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
             "description": "[Pinterest] direct images",
             "exampleUrl": "https://i.pinimg.com/236x/37/b8/00/37b800e24f97f7e7a2a1505a367ac6e8--linux-badges.jpg",
             "exampleResult": "https://i.pinimg.com/originals/37/b8/00/37b800e24f97f7e7a2a1505a367ac6e8--linux-badges.jpg",
@@ -89,23 +106,6 @@
                 "main_frame",
                 "image",
                 "imageset"
-            ]
-        },
-        {
-            "description": "[Wikipedia] mobile to normal",
-            "exampleUrl": "https://en.m.wikipedia.org/wiki/Tiling_window_manager",
-            "exampleResult": "https://en.wikipedia.org/wiki/Tiling_window_manager",
-            "error": null,
-            "includePattern": "https?://(\\w*\\.)m.wikipedia.org/?(.*)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://$1wikipedia.org/$2",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
             ]
         },
         {
@@ -162,6 +162,40 @@
             "appliesTo": [
                 "main_frame",
                 "xmlhttprequest"
+            ]
+        },
+        {
+            "description": "[Github] remove search tracking",
+            "exampleUrl": "https://github.com/search?q=teddit&ref=opensearch",
+            "exampleResult": "https://github.com/search?q=",
+            "error": null,
+            "includePattern": "https://github.com/search?q=teddit&ref=opensearch*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://github.com/search?q=$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "[Wikipedia] redirects to wikiless",
+            "exampleUrl": "https://en.wikipedia.org/w/index.php?search=github&title=Special%3ASearch&fulltext=Search&ns0=1",
+            "exampleResult": "https://wikiless.org/w/index.php?search=github&title=Special%3ASearch&fulltext=Search&ns0=1",
+            "error": null,
+            "includePattern": "https://en.wikipedia.org/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://wikiless.org/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
             ]
         }
     ]
