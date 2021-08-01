@@ -6,7 +6,6 @@
 - [Guides](https://github.com/fynks/configs/blob/main/guides/index.md)
 
 ### Dotfiles :
-- [Zshrc](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/remove_this_text.zshrc)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/custom_shortcuts)
 
 ### Extension configs :
@@ -18,7 +17,7 @@
 
 ### Hosts File :
 - [hblock](https://github.com/hectorm/hblock)
-- [hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)
+- [Raw hosts by hblock](https://hblock.molinero.dev/hosts)
  
 ### Bookmarks :
 - [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
@@ -42,7 +41,7 @@
 
 #### Coding :
 - VS Code
-- Sublime Text Editor 3
+- Sublime Text Editor 4
 - Xampp
     
 #### Multimedia :
@@ -53,7 +52,6 @@
 - Alacritty
 - Nautilus
 - Evince
-- Qimgv
 - XDM
 - App Image Launcher       
 - Zoom  
