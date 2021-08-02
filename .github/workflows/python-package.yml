@@ -1,13 +1,27 @@
+# .github/workflows/convert-to-pdf.yml
+
+name: Docs to PDF
+# This workflow is triggered on pushes to the repository.
 on:
   push:
     branches:
-    - main
+      - master
+    # Paths can be used to only trigger actions when you have edited certain files, such as a file within the /docs directory
+ 
 jobs:
-  Job:
-    runs-on: windows-latest
+  converttopdf:
+    name: Build PDF
+    runs-on: ubuntu-latest
     steps:
-      - name: Convert Markdown to HTML
-        uses: natescherer/markdown-to-html-with-github-style-action@v1
+      - uses: actions/checkout@v2
+      - uses: baileyjm02/markdown-to-pdf@v1
         with:
-          path: README.md
-          outputpath:
+          input_dir: /
+          output_dir: /
+          build_html: true
+          extend_default_theme: true
+      - uses: actions/upload-artifact@v1
+        with:
+          name: docs
+          path: pdfs
+
