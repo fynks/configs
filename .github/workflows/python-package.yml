@@ -1,28 +1,13 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
-name: Python package
-
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    branches:
+    - main
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: [3.9]
-
+  Job:
+    runs-on: windows-latest
     steps:
-        - uses: ZacJW/markdown-html-action@1.1.0
+      - name: Convert Markdown to HTML
+        uses: natescherer/markdown-to-html-with-github-style-action@v1
         with:
-          input_files: '[["README.md"]]'
-          output_files: '["index.html"]'
-          builtin_stylesheet: 'style.css'
-          packages: 'pymdown-extensions'
-          extensions: '["pymdownx.extra"]'
+          path: README.md
+          outputpath:
