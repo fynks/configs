@@ -1,24 +1,7 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-08-01T15:09:36.700Z",
+    "createdAt": "2021-08-06T03:12:23.700Z",
     "redirects": [
-        {
-            "description": "[reddit] use teddit frontend",
-            "exampleUrl": "https://reddit.com/r/monero",
-            "exampleResult": "https://teddit.net/r/monero",
-            "error": null,
-            "includePattern": "^https?://(?:www\\.)?reddit\\.com/?(.*)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://teddit.net/$1",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
         {
             "description": "[Reddit] redirect to libreddit",
             "exampleUrl": "https://www.reddit.com/r/technology",
@@ -30,28 +13,10 @@
             "redirectUrl": "https://libredd.it/$1",
             "patternType": "W",
             "processMatches": "noProcessing",
-            "disabled": true,
+            "disabled": false,
             "grouped": false,
             "appliesTo": [
                 "main_frame"
-            ]
-        },
-        {
-            "description": "[YouTube] use Piped frontend",
-            "exampleUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "exampleResult": "https://piped.kavin.rocks/watch?v=dQw4w9WgXcQ",
-            "error": null,
-            "includePattern": "^https?://(?:www\\.)?youtube\\.com/?(.*)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://piped.kavin.rocks/$1",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame",
-                "sub_frame"
             ]
         },
         {
@@ -59,13 +24,47 @@
             "exampleUrl": "https://twitter.com/cyb3rops/status/1393330628708417538",
             "exampleResult": "https://nitter.net/cyb3rops/status/1393330628708417538",
             "error": null,
-            "includePattern": "^https?://(?:www\\.)?twitter\\.com/?(.*)",
+            "includePattern": "^https?://(?:mobile\\.)?twitter\\.com/?(.*)",
             "excludePattern": "",
             "patternDesc": "",
             "redirectUrl": "https://nitter.net/$1",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "[Instagram] redirects to bibliogram",
+            "exampleUrl": "https://www.instagram.com/hareemrashidd/",
+            "exampleResult": "https://bibliogram.art/u/hareemrashidd/",
+            "error": null,
+            "includePattern": "https://www.instagram.com/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://bibliogram.art/u/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "[reddit] use teddit frontend",
+            "exampleUrl": "https://reddit.com/r/monero",
+            "exampleResult": "https://teddit.net/r/monero",
+            "error": null,
+            "includePattern": "^https?://(?:www\\.)?reddit\\.com/?(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://teddit.net/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame"
@@ -87,6 +86,23 @@
             "appliesTo": [
                 "main_frame",
                 "image"
+            ]
+        },
+        {
+            "description": "[Wikipedia] redirects to wikiless",
+            "exampleUrl": "https://en.wikipedia.org/w/index.php?search=github&title=Special%3ASearch&fulltext=Search&ns0=1",
+            "exampleResult": "https://wikiless.org/w/index.php?search=github&title=Special%3ASearch&fulltext=Search&ns0=1",
+            "error": null,
+            "includePattern": "https://*.wikipedia.org/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://wikiless.org/$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
             ]
         },
         {
@@ -182,20 +198,21 @@
             ]
         },
         {
-            "description": "[Wikipedia] redirects to wikiless",
-            "exampleUrl": "https://en.wikipedia.org/w/index.php?search=github&title=Special%3ASearch&fulltext=Search&ns0=1",
-            "exampleResult": "https://wikiless.org/w/index.php?search=github&title=Special%3ASearch&fulltext=Search&ns0=1",
+            "description": "[YouTube] use Piped frontend",
+            "exampleUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "exampleResult": "https://piped.kavin.rocks/watch?v=dQw4w9WgXcQ",
             "error": null,
-            "includePattern": "https://en.wikipedia.org/*",
+            "includePattern": "^https?://(?:www\\.)?youtube\\.com/?(.*)",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://wikiless.org/$1",
-            "patternType": "W",
+            "redirectUrl": "https://piped.kavin.rocks/$1",
+            "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
-                "main_frame"
+                "main_frame",
+                "sub_frame"
             ]
         }
     ]
