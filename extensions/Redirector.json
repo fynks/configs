@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-08-06T03:12:23.700Z",
+    "createdAt": "2021-08-12T14:50:14.200Z",
     "redirects": [
         {
             "description": "[Reddit] redirect to libreddit",
@@ -213,6 +213,23 @@
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
+            ]
+        },
+        {
+            "description": "[AMO] removes app version tracking",
+            "exampleUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=ublock&appver=90.0.2",
+            "exampleResult": "https://addons.mozilla.org/en-US/firefox/search/?q=ublock",
+            "error": null,
+            "includePattern": "https://addons.mozilla.org/en-US/firefox/search/?q=*&appver=90.0.2*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
             ]
         }
     ]
