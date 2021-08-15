@@ -3,7 +3,10 @@
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/apps_installer.sh)
 
 ### Guides :
-- [Guides](https://github.com/fynks/configs/blob/main/guides/index.md)
+- [Home](https://github.com/fynks/configs/blob/main/guides/index.md)
+- [Firfefox](https://github.com/fynks/configs/blob/main/guides/firefox_setup.md)
+- [Fish Shell](https://github.com/fynks/configs/blob/main/guides/fish_setup.md)
+- [Xampp](https://github.com/fynks/configs/blob/main/guides/xampp_auto_start.md)
 
 ### Dotfiles :
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/custom_shortcuts)
@@ -17,7 +20,8 @@
 
 ### Hosts File :
 - [hblock](https://github.com/hectorm/hblock)
-- [Raw hosts by hblock](https://hblock.molinero.dev/hosts)
+- [hblock custom sources](https://raw.githubusercontent.com/fynks/configs/main/prefs/hblock-sources/sources.list)
+
  
 ### Bookmarks :
 - [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
@@ -74,6 +78,7 @@
 ### Addons :
 - Ublock Origin
 - Clearurls
+- Redirector
 - Cookie AutoDelete
 - Firefox Containers
 - Bitwarden
@@ -82,9 +87,7 @@
 - Improve Youtube
 - AnonAddy
 - Tampermonkey
-- Redirector
 
 ### Others :
 - [Links](https://github.com/fynks/links)
-- [Resources](https://github.com/fynks/Resources) 
 - [Github](https://github.com/fynks/configs)
