@@ -21,6 +21,7 @@
 ### Hosts File :
 - [hblock](https://github.com/hectorm/hblock)
 - [hblock custom sources](https://raw.githubusercontent.com/fynks/configs/main/prefs/hblock-sources/sources.list)
+> This custom sources file should be put as: *etc/hblock/sources.list*
 
  
 ### Bookmarks :
