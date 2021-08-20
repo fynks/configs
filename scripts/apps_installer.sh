@@ -56,9 +56,6 @@ echo ""
 echo "Installing visual-studio-code-bin..."
 yay -S visual-studio-code-bin
 echo ""
-echo "Installing ZOOM ..."
-yay -S zoom
-echo ""
 echo "Installing App Image Launcher..."
 sudo pacman -S appimagelauncher
 echo ""
