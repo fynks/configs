@@ -23,7 +23,6 @@
 - [hblock custom sources](https://raw.githubusercontent.com/fynks/configs/main/prefs/hblock-sources/sources.list)
 > This custom sources file should be put as: *etc/hblock/sources.list*
 
- 
 ### Bookmarks :
 - [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
 - [Bookmarklets](https://github.com/fynks/bookmarklets)
@@ -90,5 +89,5 @@
 - Tampermonkey
 
 ### Others :
-- [Links](https://github.com/fynks/links)
+- [Links](https://fynks.github.io/links/)
 - [Github](https://github.com/fynks/configs)
