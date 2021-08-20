@@ -57,8 +57,7 @@
 - Nautilus
 - Evince
 - XDM
-- App Image Launcher       
-- Zoom  
+- App Image Launcher
 - Nodejs
 - [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
    
@@ -74,6 +73,8 @@
 ### APP Images :
 - [GIMP](https://github.com/aferrero2707/gimp-appimage)
 - [Balena Etcher](https://www.balena.io/etcher/)
+- [Zoom](https://github.com/probonopd/Zoom.AppImage/releases)
+- [Zettlr](https://github.com/Zettlr/Zettlr/releases)
 
 ### Addons :
 - Ublock Origin
