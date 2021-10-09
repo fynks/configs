@@ -1,15 +1,16 @@
 {
-  "timeStamp": 1627831034000,
-  "version": "1.37.0",
+  "timeStamp": 1633761667900,
+  "version": "1.38.2",
   "userSettings": {
     "advancedUserEnabled": true,
-    "externalLists": "https://raw.githubusercontent.com/RedDragonWebDesign/block-everything/master/block-everything.txt",
+    "externalLists": "https://raw.githubusercontent.com/RedDragonWebDesign/block-everything/master/block-everything.txt\nhttps://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt",
     "firewallPaneMinimized": false,
     "importedLists": [
       "https://raw.githubusercontent.com/RedDragonWebDesign/block-everything/master/block-everything.txt",
       "https://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt"
     ],
-    "popupPanelSections": 31
+    "popupPanelSections": 31,
+    "prefetchingDisabled": false
   },
   "selectedFilterLists": [
     "user-filters",
@@ -19,8 +20,11 @@
     "ublock-abuse",
     "ublock-unbreak",
     "easylist",
+    "adguard-spyware",
+    "adguard-spyware-url",
     "easyprivacy",
     "urlhaus-1",
+    "adguard-annoyance",
     "fanboy-annoyance",
     "ublock-annoyances",
     "plowe-0",
@@ -39,8 +43,8 @@
     "vivaldi-scheme",
     "wyciwyg-scheme"
   ],
-  "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop\n* google-analytics.com * block",
+  "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop\n* google-analytics.com * block\n* doubleclick.net * block",
   "urlFilteringString": "",
-  "hostnameSwitchesString": "no-large-media: behind-the-scene false\nno-remote-fonts: * true\nno-csp-reports: * true\nno-scripting: * true",
-  "userFilters": ""
+  "hostnameSwitchesString": "no-large-media: behind-the-scene false\nno-csp-reports: * true\nno-remote-fonts: www.youtube.com false\nno-scripting: www.youtube.com false\nno-remote-fonts: www.inoreader.com false\nno-scripting: www.inoreader.com false\nno-remote-fonts: siqo-dash.netlify.app false\nno-scripting: siqo-dash.netlify.app false\nno-remote-fonts: search.brave.com false\nno-scripting: search.brave.com false\nno-remote-fonts: www.google.com false\nno-scripting: www.google.com false\nno-scripting: www.reddit.com false\nno-remote-fonts: github.com false\nno-scripting: github.com false\nno-remote-fonts: localhost false\nno-scripting: localhost false\nno-remote-fonts: devmarks.github.io false\nno-scripting: devmarks.github.io false\nno-remote-fonts: siqo.netlify.app false\nno-scripting: siqo.netlify.app false\nno-remote-fonts: 127.0.0.1 false\nno-scripting: 127.0.0.1 false\nno-scripting: teddit.net false\nno-remote-fonts: fynks.github.io false\nno-scripting: fynks.github.io false\nno-remote-fonts: piped.kavin.rocks false\nno-scripting: piped.kavin.rocks false\nno-remote-fonts: www.seedr.cc false\nno-scripting: www.seedr.cc false\nno-remote-fonts: nitter.net false\nno-scripting: nitter.net false\nno-remote-fonts: manjaro.org false\nno-scripting: manjaro.org false\nno-remote-fonts: libredd.it false\nno-scripting: libredd.it false\nno-scripting: translate.google.co.in false\nno-remote-fonts: htmlcompressor.com false\nno-scripting: htmlcompressor.com false\nno-remote-fonts: addons.mozilla.org false\nno-scripting: addons.mozilla.org false\nno-remote-fonts: duckduckgo.com false\nno-scripting: duckduckgo.com false\nno-remote-fonts: bibliogram.art false\nno-scripting: bibliogram.art false\nno-remote-fonts: www.openstreetmap.org false\nno-scripting: www.openstreetmap.org false\nno-remote-fonts: gitlab.com false\nno-scripting: gitlab.com false\nno-remote-fonts: fast.com false\nno-scripting: fast.com false\nno-remote-fonts: tablericons.com false\nno-scripting: tablericons.com false\nno-remote-fonts: codepen.io false\nno-scripting: codepen.io false\nno-remote-fonts: www.w3schools.com false\nno-scripting: www.w3schools.com false",
+  "userFilters": "! 2021-08-02 https://www.youtube.com\nwww.youtube.com###button > .ytd-button-renderer.style-scope\n\n! 2021-08-02 https://translate.google.co.in\ntranslate.google.co.in##.gb_Ef.gb_lg.gb_h.gb_mg.gb_Sa\n\n! 2021-08-02 https://www.inoreader.com\nwww.inoreader.com##.tree_link_folder.normal_dim.tree_link.tree_node\nwww.inoreader.com###sd_29585235120\nwww.inoreader.com##.inno_toolbar_button_upgrade.inno_toolbar_button\n\n! 2021-08-03 https://teddit.kavin.rocks\nteddit.kavin.rocks###intro\nteddit.kavin.rocks##div:nth-of-type(2) > label\n\n! 2021-08-03 https://www.youtube.com\nwww.youtube.com###guide\n\n! 2021-08-04 https://npm.runkit.com\nnpm.runkit.com###register-banner\n\n! 2021-08-06 https://siqo-bin.000webhostapp.com\n||cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png$image\n\n! 2021-08-17 https://www.youtube.com\nwww.youtube.com###voice-search-button > .size-default.style-default.ytd-masthead.style-scope > .ytd-button-renderer.style-scope.yt-simple-endpoint > .size-default.style-default.ytd-button-renderer.style-scope\nwww.youtube.com###voice-search-button\n\n! 2021-09-10 https://css-tricks.com\ncss-tricks.com###all-modules\ncss-tricks.com##.site-footer\n\n! 2021-09-19 https://www.actcorp.in\nwww.actcorp.in##.blogDetailstiky\n||www.actcorp.in/themes/actcorp/img/chat.png$image\nwww.actcorp.in##.blogRewampInnerRight\n||www.actcorp.in/themes/actcorp/img/chat.png$image\n"
 }

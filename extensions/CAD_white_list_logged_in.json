@@ -9,6 +9,14 @@
       "id": "Ha5kGpt-O"
     },
     {
+      "expression": "*.codepen.io",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "yqyGNgrue"
+    },
+    {
       "expression": "*.firefox.com",
       "listType": "WHITE",
       "storeId": "default",
@@ -55,6 +63,14 @@
       "cleanSiteData": [],
       "cookieNames": [],
       "id": "pzZdaa7bnu"
+    },
+    {
+      "expression": "127.0.0.1",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "IuASxitDb"
     }
   ]
 }

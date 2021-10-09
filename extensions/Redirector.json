@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-08-12T14:50:14.200Z",
+    "createdAt": "2021-10-09T06:40:24.000Z",
     "redirects": [
         {
             "description": "[Reddit] redirect to libreddit",
@@ -54,20 +54,21 @@
             ]
         },
         {
-            "description": "[reddit] use teddit frontend",
-            "exampleUrl": "https://reddit.com/r/monero",
-            "exampleResult": "https://teddit.net/r/monero",
+            "description": "[YouTube] use Piped frontend",
+            "exampleUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "exampleResult": "https://piped.kavin.rocks/watch?v=dQw4w9WgXcQ",
             "error": null,
-            "includePattern": "^https?://(?:www\\.)?reddit\\.com/?(.*)",
+            "includePattern": "^https?://(?:www\\.)?youtube\\.com/?(.*)",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://teddit.net/$1",
+            "redirectUrl": "https://piped.kavin.rocks/$1",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
             "grouped": false,
             "appliesTo": [
-                "main_frame"
+                "main_frame",
+                "sub_frame"
             ]
         },
         {
@@ -86,6 +87,23 @@
             "appliesTo": [
                 "main_frame",
                 "image"
+            ]
+        },
+        {
+            "description": "[reddit] use teddit frontend",
+            "exampleUrl": "https://reddit.com/r/monero",
+            "exampleResult": "https://teddit.net/r/monero",
+            "error": null,
+            "includePattern": "^https?://(?:www\\.)?reddit\\.com/?(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://teddit.net/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
             ]
         },
         {
@@ -198,29 +216,11 @@
             ]
         },
         {
-            "description": "[YouTube] use Piped frontend",
-            "exampleUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "exampleResult": "https://piped.kavin.rocks/watch?v=dQw4w9WgXcQ",
-            "error": null,
-            "includePattern": "^https?://(?:www\\.)?youtube\\.com/?(.*)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://piped.kavin.rocks/$1",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame",
-                "sub_frame"
-            ]
-        },
-        {
             "description": "[AMO] removes app version tracking",
             "exampleUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=ublock&appver=90.0.2",
             "exampleResult": "https://addons.mozilla.org/en-US/firefox/search/?q=ublock",
             "error": null,
-            "includePattern": "https://addons.mozilla.org/en-US/firefox/search/?q=*&appver=90.0.2*",
+            "includePattern": "https://addons.mozilla.org/en-US/firefox/search/?q=*&appver=*",
             "excludePattern": "",
             "patternDesc": "",
             "redirectUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=$1",
