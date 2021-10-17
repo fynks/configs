@@ -18,7 +18,7 @@ sudo pacman-mirrors --fasttrack 20
 echo "\nSyncing databases \n"
 sudo pacman -Syyuu
 
-# Stat of installing packges
+# Start of installing packges
 echo -e "\n############################################\n######### Starting installing packages #########\n############################################\n"
 
 # List of packages to be installed from pacman
@@ -39,7 +39,7 @@ PACMANPKGS=(
 'hblock'                  # Hosts file manager
 )
 
-# Install and names the package being installed one by one
+# Installs and names the package being installed by pacman one by one
 for PACMAN in "${PACMANPKGS[@]}"; do
  echo -e "\n############################################\n######### Program : $PACMAN #########\n############################################\n"
    sudo yay -S $PACMAN
@@ -52,10 +52,11 @@ AURPKGS=(
 'brave-bin'               # Chromium based Browser
 'sublime-text-4'          # Lightweight Code Editor
 'visual-studio-code-bin'  # Code Editor
+'zettlr'                  # Markdown Editor
 'zoom'                    # Video conferencing tool
 )
 
-# Install and names the package being installed one by one
+# Installs and names the package being installed by yay one by one
 for AUR in "${AURPKGS[@]}"; do
  echo -e "\n############################################\n######### Program : $AUR #########\n############################################\n"
    sudo yay -S $AUR
