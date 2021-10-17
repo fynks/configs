@@ -59,6 +59,8 @@
 - XDM
 - App Image Launcher
 - Nodejs
+- Zettlr
+- Zoom
 - [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
    
 ####  NPM Modules
@@ -73,8 +75,6 @@
 ### APP Images :
 - [GIMP](https://github.com/aferrero2707/gimp-appimage)
 - [Balena Etcher](https://www.balena.io/etcher/)
-- [Zoom](https://github.com/probonopd/Zoom.AppImage/releases)
-- [Zettlr](https://github.com/Zettlr/Zettlr/releases)
 
 ### Addons :
 - Ublock Origin
@@ -84,6 +84,8 @@
 - Firefox Containers
 - Bitwarden
 - XDM
+- Skip Redirect
+- Dark Background and Light Text 
 - Dark Reader
 - Improve Youtube
 - AnonAddy
