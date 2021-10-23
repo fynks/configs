@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-10-09T06:40:24.000Z",
+    "createdAt": "2021-10-23T06:05:02.600Z",
     "redirects": [
         {
             "description": "[Reddit] redirect to libreddit",
@@ -225,6 +225,23 @@
             "patternDesc": "",
             "redirectUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=$1",
             "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Medium to Scribe",
+            "exampleUrl": "https://medium.com/@user/post-123456abcdef",
+            "exampleResult": "https://scribe.rip/@user/post-123456abcdef",
+            "error": null,
+            "includePattern": "^https?://(?:.*\\.)*(?<!link\\.)medium\\.com(/.*)?$",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://scribe.rip$1",
+            "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
             "grouped": false,
