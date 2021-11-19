@@ -54,7 +54,7 @@
       
 #### Utilities :
 - Alacritty
-- Nautilus
+- Nemo
 - Evince
 - XDM
 - App Image Launcher
