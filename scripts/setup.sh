@@ -28,7 +28,7 @@ PACMANPKGS=(
 'yay'                     # AUR Helper
 'alacritty'               # GPU accelerated terminal
 'fish'                    # Fish shell
-'nautilus'                # File manager
+'nemo'                    # File manager
 'vlc'                     # Media Player
 'evince'                  # pdf Viewer
 'bleachbit'               # Cleaner utility
