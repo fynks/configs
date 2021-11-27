@@ -1,13 +1,11 @@
 ### Firefox Setup 
 ---
-After installing firefox,get latest _better-fox User.js_ from :
-- [Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
+- After installing firefox,get latest _better-fox User.js_ from :
+[Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
 
-Since this User.js don't enable the ```resistfingerprinting``` and ```webgl.diseable```,do enable them manually in _about:config_ by setting :
-```sh
-privacy.resistFingerprinting : true
-webgl.disabled : true
-```
+- Fix firefox proton design by adding: 
+[Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix)
+
 Now change the preferences as :
 ```sh
 Search Engine : DuckDuckGo
@@ -15,6 +13,16 @@ Enhanced Tracking Protection > Tracking content : Enable
 Under Custom > Tracking : Change blocklist to level 2
 Clear History on exit : true
 Under History > Settings > Active logins+Cookies : Disable
+```
+Add following to show close button only will hovering a background tab
+```css
+  /*=== Only show close buttons on background tabs when hovering with the mouse ===*/
+.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
+  display: none !important;
+}
+.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
+  display: -moz-box !important;
+}
 ```
 
 ---
