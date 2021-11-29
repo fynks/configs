@@ -17,11 +17,26 @@ Under History > Settings > Active logins+Cookies : Disable
 Add following to show close button only will hovering a background tab
 ```css
   /*=== Only show close buttons on background tabs when hovering with the mouse ===*/
-.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
-  display: none !important;
+.tabbrowser-tab:not([visuallyselected]) .tab-close-button {
+  visibility: collapse !important;
+  opacity: 0;
 }
-.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
-  display: -moz-box !important;
+.tabbrowser-tab:hover .tab-close-button {
+  visibility: visible !important;
+  opacity: 1;
+}
+
+/* Animate */
+@media (prefers-reduced-motion: no-preference) {
+  /* Fade out */
+  .tabbrowser-tab:not([visuallyselected]) .tab-close-button {
+    transition: opacity 0.1s var(--animation-easing-function) !important;
+  }
+
+  /* Fade in */
+  .tabbrowser-tab:hover .tab-close-button {
+    transition: opacity 0.25s var(--animation-easing-function) !important;
+  }
 }
 ```
 
