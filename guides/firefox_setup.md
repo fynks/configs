@@ -44,7 +44,6 @@ Add following to show close button only will hovering a background tab
 > A user.js is a configuration file that can control hundreds of Firefox settings.
 - [arkenfox](https://github.com/arkenfox/user.js)
 - [pyllyukko](https://github.com/pyllyukko/user.js/)
-- [Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
 
 ####  Hardening Guides
 > Harden firefox manually thus having a granular control
@@ -52,4 +51,3 @@ Add following to show close button only will hovering a background tab
 - [https://12bytes.org/articles/tech/firefox/firefoxgecko-configuration-guide-for-privacy-and-performance-buffs/](https://12bytes.org/articles/tech/firefox/firefoxgecko-configuration-guide-for-privacy-and-performance-buffs/)
 - [https://teddit.net/r/privacytoolsIO/comments/mqy5u1/firefox_privacy_tweaks/](https://teddit.net/r/privacytoolsIO/comments/mqy5u1/firefox_privacy_tweaks/)
 
-> Note : Enabling ```firstpartyisolate``` may render some of the extensions unusable
