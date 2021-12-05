@@ -75,20 +75,22 @@
 - [GIMP](https://github.com/aferrero2707/gimp-appimage)
 - [Balena Etcher](https://www.balena.io/etcher/)
 
-### Addons :
-- Ublock Origin
-- Clearurls
-- Redirector
-- Cookie AutoDelete
-- Firefox Containers
-- Bitwarden
-- XDM
-- Skip Redirect
-- Dark Background and Light Text 
-- Dark Reader
-- Improve Youtube
-- AnonAddy
-- Tampermonkey
+| **Extensions**                  | **Firefox**                                                                    | **Chrome**                                                                                                        |
+|---------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Ublock Origin                   |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/cjpalhdlnbpafiamejdnhcphjbkeiagm?style=flat-Square) |
+| Clearurls                       |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/lckanjgmijmafbedllaakclkaicjfmnk?style=flat-Square) |
+| Redirector                      |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/ocgpenflpmgnfapjedencafcfakcekcd?style=flat-Square) |
+| Cookie Autodelete               |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/lckanjgmijmafbedllaakclkaicjfmnk?style=flat-Square) |
+| Firefox Containers              |                                                                                | ---                                                                                                               |
+| Bitwarden                       |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/nngceckbapebfimnlniiiahkandclblb?style=flat-Square) |
+| Xdm                             |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/dkckaoghoiffdbomfbbodbbgmhjblecj?style=flat-Square) |
+| Skip Redirect                   |                                                                                |                                                                                                                   |
+| Dark Background And Light Text  |                                                                                |                                                                                                                   |
+| Dark Reader                     |                                                                                |                                                                                                                   |
+| Improve Youtube                 |                                                                                | ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/bnomihfieiccainjcjblhegjgglakjdd?style=flat-square) |
+| Anonaddy                        | ![mozilla Add-On](https://img.shields.io/amo/v/anonaddy?style=flat-Square)     | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/iadbdpnoknmbdeolbapdackdcogdmjpe?style=flat-Square) |
+| Tampermonkey                    | ![mozilla Add-On](https://img.shields.io/amo/v/tampermonkey?style=flat-Square) | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/dhdgffkkebhmkfjojejmpbldmpobfkfo?style=flat-Square) |
+
 
 ### Others :
 - [Links](https://fynks.github.io/links/)
