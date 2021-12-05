@@ -9,8 +9,6 @@
 Now change the preferences as :
 ```sh
 Search Engine : DuckDuckGo
-Enhanced Tracking Protection > Tracking content : Enable
-Under Custom > Tracking : Change blocklist to level 2
 Clear History on exit : true
 Under History > Settings > Active logins+Cookies : Disable
 ```
