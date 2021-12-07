@@ -37,59 +37,45 @@
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
 
 ### APPS :
-#### Browsers :
-- Firefox
-- Librewolf
-- Brave
 
-#### Coding :
-- VS Code
-- Sublime Text Editor 4
-- Xampp
-    
-#### Multimedia :
-- VLC
-- Simple Screen Recorder
-      
-#### Utilities :
-- Alacritty
-- Nemo
-- Evince
-- XDM
-- App Image Launcher
-- Nodejs
-- Zettlr
-- Zoom
-- [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
-   
-####  NPM Modules
-   - PNPM
-   - Workbox-cli
-   - firebase-tools
-   - pagecrypt
-   - @josee9988/minifyall
-   - clean-css-cli
-   - purgecss
+| **Browsers** |  | |
+|:----------|:---|:---|
+| Firefox |LibreWolf |Brave|
+|Chrome|Edge|
+| **Coding** |  | |
+|VS Code |Xampp|
+| Sublime Text Editor 4|
+|**Utilities**| | |
+|Alacritty|Nemo|Evince|
+|XDM|Nodejs |Nodejs|Zoom|
+|App Image Launcher|||
+|[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)||
+|**NPM Modules**|||
+|PNPM|Workbox-cli||
+|firebase-tools|pagecrypt||
+|clean-css-cli|purgecss||
+|@josee9988/minifyall|||
+|**APP Images**|||
+|[GIMP](https://github.com/aferrero2707/gimp-appimage)|[Balena Etcher](https://www.balena.io/etcher/)||
 
-### APP Images :
-- [GIMP](https://github.com/aferrero2707/gimp-appimage)
-- [Balena Etcher](https://www.balena.io/etcher/)
+### Extension
 
-| **Extensions**                  | **Firefox**                                                                    | **Chrome**                                                                                                        |
-|---------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| Ublock Origin                   |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/cjpalhdlnbpafiamejdnhcphjbkeiagm?style=flat-Square) |
-| Clearurls                       |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/lckanjgmijmafbedllaakclkaicjfmnk?style=flat-Square) |
-| Redirector                      |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/ocgpenflpmgnfapjedencafcfakcekcd?style=flat-Square) |
-| Cookie Autodelete               |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/lckanjgmijmafbedllaakclkaicjfmnk?style=flat-Square) |
-| Firefox Containers              |                                                                                | ---                                                                                                               |
-| Bitwarden                       |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/nngceckbapebfimnlniiiahkandclblb?style=flat-Square) |
-| Xdm                             |                                                                                | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/dkckaoghoiffdbomfbbodbbgmhjblecj?style=flat-Square) |
-| Skip Redirect                   |                                                                                |                                                                                                                   |
-| Dark Background And Light Text  |                                                                                |                                                                                                                   |
-| Dark Reader                     |                                                                                |                                                                                                                   |
-| Improve Youtube                 |                                                                                | ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/bnomihfieiccainjcjblhegjgglakjdd?style=flat-square) |
-| Anonaddy                        | ![mozilla Add-On](https://img.shields.io/amo/v/anonaddy?style=flat-Square)     | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/iadbdpnoknmbdeolbapdackdcogdmjpe?style=flat-Square) |
-| Tampermonkey                    | ![mozilla Add-On](https://img.shields.io/amo/v/tampermonkey?style=flat-Square) | ![chrome Web Store](https://img.shields.io/chrome-Web-Store/v/dhdgffkkebhmkfjojejmpbldmpobfkfo?style=flat-Square) |
+
+|**Extensions**                |**Firefox**                                                                      |**Chrome**                                                                                                 |
+|:------------------------------|:---------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
+|Ublock Origin                 |[Get](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)             |[Get](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)            |
+|Clearurls                     |[Get](https://addons.mozilla.org/en-US/firefox/addon/clearurls/)                 |[Get](https://chrome.google.com/webstore/detail/clearurls/lckanjgmijmafbedllaakclkaicjfmnk/)               |
+|Redirector                    |[Get](https://addons.mozilla.org/en-US/firefox/addon/redirector/)                |[Get](https://chrome.google.com/webstore/detail/redirector/ocgpenflpmgnfapjedencafcfakcekcd)               |
+|Cookie Autodelete             |[Get](https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/)         |[Get](https://chrome.google.com/webstore/detail/cookie-autodelete/fhcgjolkccmbidfldomjliifgaodjagh/)       |
+|Firefox Containers            |[Get](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  |---                                                                                                        |
+|Bitwarden                     |[Get](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/)|[Get](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb)|
+|Xdm                           |[Get](https://addons.mozilla.org/en-US/firefox/addon/xdm-browser-monitor/)       |[Get](https://chrome.google.com/webstore/detail/xtreme-download-manager/dkckaoghoiffdbomfbbodbbgmhjblecj)  |
+|Skip Redirect                 |[Get](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)             |[Get](https://chrome.google.com/webstore/detail/skip-redirect/jaoafjdoijdconemdmodhbfpianehlon)            |
+|Dark Background And Light Text|[Get](https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/)|---                                                                                                        |
+|Dark Reader                   |[Get](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)                |[Get](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)              |
+|Improve Youtube               |[Get](https://addons.mozilla.org/en-US/firefox/addon/youtube-addon/)             |[Get](https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd)|
+|Anonaddy                      |[Get](https://addons.mozilla.org/en-GB/firefox/addon/anonaddy/)                  |[Get](https://chrome.google.com/webstore/detail/anonaddy-anonymous-email/iadbdpnoknmbdeolbapdackdcogdmjpe) |
+|Tampermonkey                  |[Get](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)              |[Get](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)             |
 
 
 ### Others :
