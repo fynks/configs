@@ -37,26 +37,43 @@
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
 
 ### APPS :
+#### Browsers :
+- Firefox
+- Librewolf
+- Brave
 
-| **Browsers** |  | |
-|:----------|:---|:---|
-| Firefox |LibreWolf |Brave|
-|Chrome|Edge|
-| **Coding** |  | |
-|VS Code |Xampp|
-| Sublime Text Editor 4|
-|**Utilities**| | |
-|Alacritty|Nemo|Evince|
-|XDM|Nodejs |Nodejs|Zoom|
-|App Image Launcher|||
-|[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)||
-|**NPM Modules**|||
-|PNPM|Workbox-cli||
-|firebase-tools|pagecrypt||
-|clean-css-cli|purgecss||
-|@josee9988/minifyall|||
-|**APP Images**|||
-|[GIMP](https://github.com/aferrero2707/gimp-appimage)|[Balena Etcher](https://www.balena.io/etcher/)||
+#### Coding :
+- VS Code
+- Sublime Text Editor 4
+- Xampp
+    
+#### Multimedia :
+- VLC
+- Simple Screen Recorder
+      
+#### Utilities :
+- Alacritty
+- Nemo
+- Evince
+- XDM
+- App Image Launcher
+- Nodejs
+- Zettlr
+- Zoom
+- [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
+   
+####  NPM Modules
+   - PNPM
+   - Workbox-cli
+   - firebase-tools
+   - pagecrypt
+   - @josee9988/minifyall
+   - clean-css-cli
+   - purgecss
+
+### APP Images :
+- [GIMP](https://github.com/aferrero2707/gimp-appimage)
+- [Balena Etcher](https://www.balena.io/etcher/)
 
 ### Extension
 
