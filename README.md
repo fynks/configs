@@ -85,7 +85,9 @@
 ### APP Images :
 - [GIMP](https://github.com/aferrero2707/gimp-appimage)
 - [Balena Etcher](https://www.balena.io/etcher/)
+  
 ---
+
 ## App configs
 - [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/prefs/teddit_prefs.json)
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
