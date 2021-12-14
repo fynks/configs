@@ -1,8 +1,8 @@
-## Configs and prefs
-- [OS and Setup](https://github.com/fynks/configs#os-and-setup)
-- [Browsers](https://github.com/fynks/configs#browsers)
-- [Applications](https://github.com/fynks/configs#apps-)
-- [App Configs](https://github.com/fynks/configs#app-configs)
+## Menu :
+- [OS and Setup](#os-and-setup)
+- [Browsers](#browsers)
+- [Applications](#apps-)
+- [App Configs](s#app-configs)
   
 ## OS and Setup 
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/setup.sh)
