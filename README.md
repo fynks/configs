@@ -3,9 +3,7 @@
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/setup.sh)
 
 ### Guides :
-- [Firfefox](https://github.com/fynks/configs/blob/main/guides/firefox_setup.md)
-- [Fish Shell](https://github.com/fynks/configs/blob/main/guides/fish_setup.md)
-- [Xampp](https://github.com/fynks/configs/blob/main/guides/xampp_auto_start.md)
+- [Linux Setup](https://github.com/fynks/configs/blob/main/guides/linux_setup.md)
 
 ### Dotfiles :
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/custom_shortcuts)
