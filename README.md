@@ -3,7 +3,8 @@
 - [Browsers](#browsers)
 - [Applications](#apps-)
 - [App Configs](#app-configs)
-  
+
+  ---
 ## OS and Setup 
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/setup.sh)
 - [Linux Setup Guide](https://github.com/fynks/configs/blob/main/guides/linux_setup.md)
@@ -12,7 +13,7 @@
 - [hblock custom sources](https://raw.githubusercontent.com/fynks/configs/main/prefs/hblock-sources/sources.list)
 > This custom sources file should be put as: *etc/hblock/sources.list*
 - [Xampp](https://github.com/fynks/configs/blob/main/prefs/xampp-htdocs.zip)
-
+---
 ## Browsers
 - [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
 - [Bookmarklets](https://github.com/fynks/bookmarklets)
@@ -40,7 +41,7 @@
 - [Cookie AutoDelete Whitelist Logged in](https://github.com/fynks/configs/blob/main/extensions/CAD_white_list_logged_in.json)
 - [Redirector](https://raw.githubusercontent.com/fynks/configs/main/extensions/Redirector.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/extensions/u_block_origin_configs.txt)
-
+---
 ## APPS :
 #### Browsers :
 - Firefox
@@ -79,7 +80,7 @@
 ### APP Images :
 - [GIMP](https://github.com/aferrero2707/gimp-appimage)
 - [Balena Etcher](https://www.balena.io/etcher/)
-
+---
 ## App configs
 - [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/prefs/teddit_prefs.json)
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
