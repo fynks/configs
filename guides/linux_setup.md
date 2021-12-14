@@ -1,10 +1,10 @@
 # Linux Setup Guide
-* [Fish Shell]()
-* [FIrefox Setup]()
-* [Xampp Setup]()
+* [Fish Shell](https://github.com/fynks/configs/blob/main/guides/linux_setup.md#fish-shell)
+* [FIrefox Setup](https://github.com/fynks/configs/blob/main/guides/linux_setup.md#firefox-setup)
+* [Xampp Setup](https://github.com/fynks/configs/blob/main/guides/linux_setup.md#xampp-auto-start)
   
 ---
-> ## Fish Shell
+## Fish Shell
 1. First of all install fish using :
 
 ```sh
@@ -63,7 +63,7 @@ fish_config
 | xampp        | sudo /opt/lampp/lampp start       |
 
 ----
-> ## Firefox Setup
+## Firefox Setup
 
 1. After installing firefox,get latest _better-fox User.js_ from :
 [Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
@@ -110,7 +110,7 @@ Under History > Settings > Active logins+Cookies : Disable
 
 ----
 
-> ## Xampp Auto Start
+## Xampp Auto Start
 ⚠️ This will increase the boot time with addition of upto 15 more seconds therefore try to use fish abbreviations using apache and xampp shortcuts.
 
 1.First creat and open a service file by :
