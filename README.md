@@ -2,7 +2,7 @@
 - [OS and Setup](#os-and-setup)
 - [Browsers](#browsers)
 - [Applications](#apps-)
-- [App Configs](s#app-configs)
+- [App Configs](#app-configs)
   
 ## OS and Setup 
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/setup.sh)
