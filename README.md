@@ -3,6 +3,7 @@
 - [Browsers](#browsers)
 - [Applications](#apps-)
 - [App Configs](#app-configs)
+- [Tools](#tools)
 
   ---
 
@@ -93,6 +94,9 @@
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
 
 ---
+
+## Tools :
+- [Ventoy](https://github.com/ventoy/Ventoy/releases)
 
 ### Others :
 - [Links](https://fynks.github.io/links/)
