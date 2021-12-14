@@ -6,7 +6,7 @@
   
 ## OS and Setup 
 - [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/setup.sh)
-- [Linux Setup](https://github.com/fynks/configs/blob/main/guides/linux_setup.md)
+- [Linux Setup Guide](https://github.com/fynks/configs/blob/main/guides/linux_setup.md)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/custom_shortcuts)
 - [hblock](https://github.com/hectorm/hblock)
 - [hblock custom sources](https://raw.githubusercontent.com/fynks/configs/main/prefs/hblock-sources/sources.list)
