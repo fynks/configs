@@ -98,6 +98,8 @@
 ## Tools :
 - [Ventoy](https://github.com/ventoy/Ventoy/releases)
 
+---
+
 ### Others :
 - [Links](https://fynks.github.io/links/)
 - [Github](https://github.com/fynks/configs)
