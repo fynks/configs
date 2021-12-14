@@ -1,6 +1,6 @@
 ## Configs and prefs
 ### Scripts :
-- [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/setup.sh)
+[Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/setup.sh)
 
 ### Guides :
 - [Linux Setup](https://github.com/fynks/configs/blob/main/guides/linux_setup.md)
