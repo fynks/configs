@@ -49,7 +49,7 @@ fish_config
 | ------------ | --------------------------------- |
 | cl           | clear                             |
 | nat          | sudo nautilus                     |
-| pfetch       | ./fm6000                          |
+| fm6000       | fm6000 -m 4 -l 20 -g 6            |
 | update       | sudo pacman -Syyuu && yay -Syu    |
 | clean-orphan | sudo pacman -Rs (pacman -Qqdt)    |
 | apache       | sudo /opt/lampp/lampp startapache |
