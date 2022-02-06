@@ -1,0 +1,164 @@
+{
+    "autoSkipOnMusicVideosUpdate": true,
+    "invidiousInstances": [
+        "yewtu.be",
+        "invidious.snopyta.org",
+        "vid.puffyan.us",
+        "invidious.kavin.rocks",
+        "invidio.xamh.de",
+        "invidious-us.kavin.rocks",
+        "inv.riverside.rocks",
+        "vid.mint.lgbt",
+        "youtube.076.ne.jp",
+        "invidious.namazso.eu"
+    ],
+    "userID": "GZh0a2Q6McuZKDHbTtuUc0wMXomIJ7ZNxO34",
+    "categoryPillUpdate": true,
+    "lastIsVipUpdate": 1644069623100,
+    "isVip": false,
+    "categorySelections": [
+        {
+            "name": "sponsor",
+            "option": 2
+        },
+        {
+            "name": "poi_highlight",
+            "option": 1
+        },
+        {
+            "name": "exclusive_access",
+            "option": 0
+        },
+        {
+            "name": "selfpromo",
+            "option": 2
+        }
+    ],
+    "testingServer": false,
+    "serverAddress": "https://sponsor.ajay.app",
+    "skipNoticeDuration": "1",
+    "hideVideoPlayerControls": true,
+    "minutesSaved": 5.492049999999999,
+    "dontShowNotice": true,
+    "skipCount": 5,
+    "segmentTimes": [],
+    "defaultCategory": "chooseACategory",
+    "whitelistedChannels": [],
+    "forceChannelCheck": false,
+    "skipKeybind": "Enter",
+    "startSponsorKeybind": ";",
+    "submitKeybind": "'",
+    "sponsorTimesContributed": 0,
+    "submissionCountSinceCategories": 0,
+    "showTimeWithSkips": true,
+    "disableSkipping": false,
+    "muteSegments": true,
+    "fullVideoSegments": true,
+    "trackViewCount": true,
+    "trackViewCountInPrivate": true,
+    "noticeVisibilityMode": 3,
+    "hideInfoButtonPlayerControls": false,
+    "hideDeleteButtonPlayerControls": false,
+    "hideUploadButtonPlayerControls": false,
+    "hideSkipButtonPlayerControls": false,
+    "hideDiscordLaunches": 0,
+    "hideDiscordLink": false,
+    "supportInvidious": false,
+    "minDuration": 0,
+    "audioNotificationOnSkip": false,
+    "checkForUnlistedVideos": false,
+    "refetchWhenNotFound": true,
+    "ytInfoPermissionGranted": false,
+    "allowExpirements": true,
+    "showDonationLink": true,
+    "autoHideInfoButton": true,
+    "autoSkipOnMusicVideos": false,
+    "scrollToEditTimeUpdate": false,
+    "colorPalette": {
+        "red": "#780303",
+        "white": "#ffffff",
+        "locked": "#ffc83d"
+    },
+    "barTypes": {
+        "preview-chooseACategory": {
+            "color": "#ffffff",
+            "opacity": "0.7"
+        },
+        "sponsor": {
+            "color": "#00d400",
+            "opacity": "0.7"
+        },
+        "preview-sponsor": {
+            "color": "#007800",
+            "opacity": "0.7"
+        },
+        "selfpromo": {
+            "color": "#ffff00",
+            "opacity": "0.7"
+        },
+        "preview-selfpromo": {
+            "color": "#bfbf35",
+            "opacity": "0.7"
+        },
+        "exclusive_access": {
+            "color": "#008a5c",
+            "opacity": "0.7"
+        },
+        "interaction": {
+            "color": "#cc00ff",
+            "opacity": "0.7"
+        },
+        "preview-interaction": {
+            "color": "#6c0087",
+            "opacity": "0.7"
+        },
+        "intro": {
+            "color": "#00ffff",
+            "opacity": "0.7"
+        },
+        "preview-intro": {
+            "color": "#008080",
+            "opacity": "0.7"
+        },
+        "outro": {
+            "color": "#0202ed",
+            "opacity": "0.7"
+        },
+        "preview-outro": {
+            "color": "#000070",
+            "opacity": "0.7"
+        },
+        "preview": {
+            "color": "#008fd6",
+            "opacity": "0.7"
+        },
+        "preview-preview": {
+            "color": "#005799",
+            "opacity": "0.7"
+        },
+        "music_offtopic": {
+            "color": "#ff9900",
+            "opacity": "0.7"
+        },
+        "preview-music_offtopic": {
+            "color": "#a6634a",
+            "opacity": "0.7"
+        },
+        "poi_highlight": {
+            "color": "#ff1684",
+            "opacity": "0.7"
+        },
+        "preview-poi_highlight": {
+            "color": "#9b044c",
+            "opacity": "0.7"
+        },
+        "filler": {
+            "color": "#7300FF",
+            "opacity": "0.9"
+        },
+        "preview-filler": {
+            "color": "#2E0066",
+            "opacity": "0.7"
+        }
+    }
+}

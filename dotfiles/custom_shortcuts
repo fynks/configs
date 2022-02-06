@@ -3,7 +3,7 @@ DataCount=1
 
 [Data_1]
 Comment=should never see
-DataCount=18
+DataCount=19
 Enabled=true
 Name=should never see
 SystemGroup=2
@@ -15,23 +15,23 @@ ConditionsCount=0
 
 [Data_1_1]
 Comment=KMenuEdit Global Shortcuts
-DataCount=4
+DataCount=6
 Enabled=true
 Name=KMenuEdit
 SystemGroup=1
 Type=ACTION_DATA_GROUP
 
 [Data_1_10]
-Comment=Launches the Pictures folder
+Comment=Launches the Alacritty terminal
 Enabled=true
-Name=Pictures
+Name=Alacritty
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_10Actions]
 ActionsCount=1
 
 [Data_1_10Actions0]
-CommandURL=dolphin /home/ali/Pictures
+CommandURL=alacritty
 Type=COMMAND_URL
 
 [Data_1_10Conditions]
@@ -43,21 +43,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_10Triggers0]
-Key=Meta+P
+Key=Meta+A
 Type=SHORTCUT
-Uuid={05cdaa36-bc46-4d7a-bf08-b9f9ba42ac3e}
+Uuid={1a972169-a954-49bf-bfb5-6d269603a6f3}
 
 [Data_1_11]
-Comment=Launches the Alacritty terminal
+Comment=Launches the Lectures folder
 Enabled=true
-Name=Alacritty
+Name=Lectures
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_11Actions]
 ActionsCount=1
 
 [Data_1_11Actions0]
-CommandURL=alacritty
+CommandURL=dolphin /home/ali/Downloads/Documents/Lectures
 Type=COMMAND_URL
 
 [Data_1_11Conditions]
@@ -69,21 +69,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_11Triggers0]
-Key=Meta+A
+Key=Meta+Ctrl+L
 Type=SHORTCUT
-Uuid={1a972169-a954-49bf-bfb5-6d269603a6f3}
+Uuid={b23b2128-5fa5-43d5-9517-0746b3746951}
 
 [Data_1_12]
-Comment=Launches the Lectures folder
+Comment=Comment
 Enabled=true
-Name=Lectures
+Name=Books
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_12Actions]
 ActionsCount=1
 
 [Data_1_12Actions0]
-CommandURL=dolphin /home/ali/Downloads/Documents/Lectures
+CommandURL=dolphin /home/ali/Downloads/Documents/Books
 Type=COMMAND_URL
 
 [Data_1_12Conditions]
@@ -95,21 +95,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_12Triggers0]
-Key=Meta+Ctrl+L
+Key=Meta+Ctrl+K
 Type=SHORTCUT
-Uuid={b23b2128-5fa5-43d5-9517-0746b3746951}
+Uuid={c1b68be3-1730-4982-93b2-c9e2c50b9b15}
 
 [Data_1_13]
-Comment=Comment
+Comment=Activates nemo file manager
 Enabled=true
-Name=Biochem
+Name=Nemo
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_13Actions]
 ActionsCount=1
 
 [Data_1_13Actions0]
-CommandURL=dolphin /home/ali/Downloads/Documents/Lectures/Biochem
+CommandURL=nemo
 Type=COMMAND_URL
 
 [Data_1_13Conditions]
@@ -121,21 +121,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_13Triggers0]
-Key=Meta+Ctrl+B
+Key=Meta+E
 Type=SHORTCUT
-Uuid={53e9289e-eb80-4931-b241-07a5e2e4d44c}
+Uuid={ca7009b4-e317-44df-820b-cf92f3fee817}
 
 [Data_1_14]
-Comment=Comment
+Comment=Activates Dolphin
 Enabled=true
-Name=Physio
+Name=Dolphin
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_14Actions]
 ActionsCount=1
 
 [Data_1_14Actions0]
-CommandURL=dolphin /home/ali/Downloads/Documents/Lectures/Physio
+CommandURL=dolphin
 Type=COMMAND_URL
 
 [Data_1_14Conditions]
@@ -147,21 +147,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_14Triggers0]
-Key=Meta+Ctrl+P
+Key=
 Type=SHORTCUT
-Uuid={6c5b1b42-0e88-4a18-93e0-a07fe24c35e3}
+Uuid={473cb0f5-e137-478c-8779-69c61b34b86d}
 
 [Data_1_15]
 Comment=Comment
 Enabled=true
-Name=Anatomy
+Name=Patho
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_15Actions]
 ActionsCount=1
 
 [Data_1_15Actions0]
-CommandURL=dolphin /home/ali/Downloads/Documents/Lectures/Anatomy
+CommandURL=/home/ali/Downloads/Documents/Lectures/patho/
 Type=COMMAND_URL
 
 [Data_1_15Conditions]
@@ -173,21 +173,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_15Triggers0]
-Key=Meta+Ctrl+A
+Key=Meta+Ctrl+P
 Type=SHORTCUT
-Uuid={0eb738ee-fcd2-41a7-9ec7-47f500a04093}
+Uuid={93579e5f-e44c-4495-a006-f0d81095cc32}
 
 [Data_1_16]
 Comment=Comment
 Enabled=true
-Name=Books
+Name=Pharma
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_16Actions]
 ActionsCount=1
 
 [Data_1_16Actions0]
-CommandURL=dolphin /home/ali/Downloads/Documents/Books
+CommandURL=dolphin /home/ali/Downloads/Documents/Lectures/pharma/
 Type=COMMAND_URL
 
 [Data_1_16Conditions]
@@ -199,21 +199,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_16Triggers0]
-Key=Meta+Ctrl+K
+Key=Meta+Ctrl+R
 Type=SHORTCUT
-Uuid={c1b68be3-1730-4982-93b2-c9e2c50b9b15}
+Uuid={05106acd-632c-4e49-913a-3f3ed1328de6}
 
 [Data_1_17]
-Comment=Activates nemo file manager
+Comment=Comment
 Enabled=true
-Name=Nemo
+Name=Forensics
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_17Actions]
 ActionsCount=1
 
 [Data_1_17Actions0]
-CommandURL=nemo
+CommandURL=dolphin /home/ali/Downloads/Documents/Lectures/forensic/
 Type=COMMAND_URL
 
 [Data_1_17Conditions]
@@ -225,21 +225,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_17Triggers0]
-Key=Meta+E
+Key=Meta+Ctrl+F
 Type=SHORTCUT
-Uuid={ca7009b4-e317-44df-820b-cf92f3fee817}
+Uuid={4b517c2c-9ef7-44cf-a587-5f6351c57353}
 
 [Data_1_18]
-Comment=Activates Dolphin
+Comment=Comment
 Enabled=true
-Name=Dolphin
+Name=CBL
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_18Actions]
 ActionsCount=1
 
 [Data_1_18Actions0]
-CommandURL=dolphin
+CommandURL=dolphin /home/ali/Downloads/Documents/CBL
 Type=COMMAND_URL
 
 [Data_1_18Conditions]
@@ -251,9 +251,35 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_18Triggers0]
-Key=Meta+Shift+E
+Key=Meta+Ctrl+C
 Type=SHORTCUT
-Uuid={473cb0f5-e137-478c-8779-69c61b34b86d}
+Uuid={697f9a77-d48f-48e7-834c-2315ac662a83}
+
+[Data_1_19]
+Comment=Comment
+Enabled=true
+Name=Assignments
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_19Actions]
+ActionsCount=1
+
+[Data_1_19Actions0]
+CommandURL=dolphin /home/ali/Downloads/Documents/Assignments
+Type=COMMAND_URL
+
+[Data_1_19Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_19Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_19Triggers0]
+Key=Meta+Ctrl+A
+Type=SHORTCUT
+Uuid={d934d282-3844-477f-b82d-206b37cd5f13}
 
 [Data_1_1Conditions]
 Comment=
@@ -309,7 +335,7 @@ TriggersCount=1
 [Data_1_1_2Triggers0]
 Key=Ctrl+Alt+T
 Type=SHORTCUT
-Uuid={af81cfa6-914b-48a6-ac8f-4fbafc1c5e2b}
+Uuid={ccaf4872-f105-4db5-bed9-0d5d409c4850}
 
 [Data_1_1_3]
 Comment=Comment
@@ -335,7 +361,7 @@ TriggersCount=1
 [Data_1_1_3Triggers0]
 Key=
 Type=SHORTCUT
-Uuid={59c3da96-c764-4c96-a054-60bef13f5cf3}
+Uuid={2ccd2a81-d05b-4317-8606-a334406d1679}
 
 [Data_1_1_4]
 Comment=Global keyboard shortcut to launch Konsole
@@ -361,422 +387,61 @@ TriggersCount=1
 [Data_1_1_4Triggers0]
 Key=
 Type=SHORTCUT
+Uuid={af81cfa6-914b-48a6-ac8f-4fbafc1c5e2b}
+
+[Data_1_1_5]
+Comment=Comment
+Enabled=true
+Name=Search
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_1_5Actions]
+ActionsCount=1
+
+[Data_1_1_5Actions0]
+CommandURL=http://google.com
+Type=COMMAND_URL
+
+[Data_1_1_5Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_1_5Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_1_5Triggers0]
+Key=
+Type=SHORTCUT
+Uuid={59c3da96-c764-4c96-a054-60bef13f5cf3}
+
+[Data_1_1_6]
+Comment=Global keyboard shortcut to launch Konsole
+Enabled=true
+Name=Launch Konsole
+Type=MENUENTRY_SHORTCUT_ACTION_DATA
+
+[Data_1_1_6Actions]
+ActionsCount=1
+
+[Data_1_1_6Actions0]
+CommandURL=org.kde.konsole.desktop
+Type=MENUENTRY
+
+[Data_1_1_6Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_1_6Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_1_6Triggers0]
+Key=
+Type=SHORTCUT
 Uuid={fad50d92-55a3-4211-82b3-41af05c19175}
 
 [Data_1_2]
-Comment=This group contains various examples demonstrating most of the features of KHotkeys. (Note that this group and all its actions are disabled by default.)
-DataCount=8
-Enabled=false
-Name=Examples
-SystemGroup=0
-Type=ACTION_DATA_GROUP
-
-[Data_1_2Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_1]
-Comment=After pressing Ctrl+Alt+I, the KSIRC window will be activated, if it exists. Simple.
-Enabled=false
-Name=Activate KSIRC Window
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_1Actions]
-ActionsCount=1
-
-[Data_1_2_1Actions0]
-Type=ACTIVATE_WINDOW
-
-[Data_1_2_1Actions0Window]
-Comment=KSIRC window
-WindowsCount=1
-
-[Data_1_2_1Actions0Window0]
-Class=ksirc
-ClassType=1
-Comment=KSIRC
-Role=
-RoleType=0
-Title=
-TitleType=0
-Type=SIMPLE
-WindowTypes=33
-
-[Data_1_2_1Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_1Triggers]
-Comment=Simple_action
-TriggersCount=1
-
-[Data_1_2_1Triggers0]
-Key=Ctrl+Alt+I
-Type=SHORTCUT
-Uuid={f2c12945-0e34-415e-8b25-fcefea4b63d5}
-
-[Data_1_2_2]
-Comment=After pressing Alt+Ctrl+H the input of 'Hello' will be simulated, as if you typed it.  This is especially useful if you have call to frequently type a word (for instance, 'unsigned').  Every keypress in the input is separated by a colon ':'. Note that the keypresses literally mean keypresses, so you have to write what you would press on the keyboard. In the table below, the left column shows the input and the right column shows what to type.\n\n"enter" (i.e. new line)                Enter or Return\na (i.e. small a)                          A\nA (i.e. capital a)                       Shift+A\n: (colon)                                  Shift+;\n' '  (space)                              Space
-Enabled=false
-Name=Type 'Hello'
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_2Actions]
-ActionsCount=1
-
-[Data_1_2_2Actions0]
-DestinationWindow=2
-Input=Shift+H:E:L:L:O\n
-Type=KEYBOARD_INPUT
-
-[Data_1_2_2Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_2Triggers]
-Comment=Simple_action
-TriggersCount=1
-
-[Data_1_2_2Triggers0]
-Key=Ctrl+Alt+H
-Type=SHORTCUT
-Uuid={2e4a1bea-1866-459f-a516-74db84ee075a}
-
-[Data_1_2_3]
-Comment=This action runs Konsole, after pressing Ctrl+Alt+T.
-Enabled=false
-Name=Run Konsole
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_3Actions]
-ActionsCount=1
-
-[Data_1_2_3Actions0]
-CommandURL=konsole
-Type=COMMAND_URL
-
-[Data_1_2_3Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_3Triggers]
-Comment=Simple_action
-TriggersCount=1
-
-[Data_1_2_3Triggers0]
-Key=Ctrl+Alt+T
-Type=SHORTCUT
-Uuid={605f5714-5bbf-46a0-a8f0-882ba7079059}
-
-[Data_1_2_4]
-Comment=Read the comment on the "Type 'Hello'" action first.\n\nQt Designer uses Ctrl+F4 for closing windows.  In KDE, however, Ctrl+F4 is the shortcut for going to virtual desktop 4, so this shortcut does not work in Qt Designer.  Further, Qt Designer does not use KDE's standard Ctrl+W for closing the window.\n\nThis problem can be solved by remapping Ctrl+W to Ctrl+F4 when the active window is Qt Designer. When Qt Designer is active, every time Ctrl+W is pressed, Ctrl+F4 will be sent to Qt Designer instead. In other applications, the effect of Ctrl+W is unchanged.\n\nWe now need to specify three things: A new shortcut trigger on 'Ctrl+W', a new keyboard input action sending Ctrl+F4, and a new condition that the active window is Qt Designer.\nQt Designer seems to always have title 'Qt Designer by Trolltech', so the condition will check for the active window having that title.
-Enabled=false
-Name=Remap Ctrl+W to Ctrl+F4 in Qt Designer
-Type=GENERIC_ACTION_DATA
-
-[Data_1_2_4Actions]
-ActionsCount=1
-
-[Data_1_2_4Actions0]
-DestinationWindow=2
-Input=Ctrl+F4
-Type=KEYBOARD_INPUT
-
-[Data_1_2_4Conditions]
-Comment=
-ConditionsCount=1
-
-[Data_1_2_4Conditions0]
-Type=ACTIVE_WINDOW
-
-[Data_1_2_4Conditions0Window]
-Comment=Qt Designer
-WindowsCount=1
-
-[Data_1_2_4Conditions0Window0]
-Class=
-ClassType=0
-Comment=
-Role=
-RoleType=0
-Title=Qt Designer by Trolltech
-TitleType=2
-Type=SIMPLE
-WindowTypes=33
-
-[Data_1_2_4Triggers]
-Comment=
-TriggersCount=1
-
-[Data_1_2_4Triggers0]
-Key=Ctrl+W
-Type=SHORTCUT
-Uuid={fbf88c8f-ae67-4a16-bb91-9a3b4b0a07df}
-
-[Data_1_2_5]
-Comment=By pressing Alt+Ctrl+W a D-Bus call will be performed that will show the minicli. You can use any kind of D-Bus call, just like using the command line 'qdbus' tool.
-Enabled=false
-Name=Perform D-Bus call 'qdbus org.kde.krunner /App display'
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_5Actions]
-ActionsCount=1
-
-[Data_1_2_5Actions0]
-Arguments=
-Call=popupExecuteCommand
-RemoteApp=org.kde.krunner
-RemoteObj=/App
-Type=DBUS
-
-[Data_1_2_5Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_5Triggers]
-Comment=Simple_action
-TriggersCount=1
-
-[Data_1_2_5Triggers0]
-Key=Ctrl+Alt+W
-Type=SHORTCUT
-Uuid={23c2b0e3-de4f-4023-9def-c51131989cb0}
-
-[Data_1_2_6]
-Comment=Read the comment on the "Type 'Hello'" action first.\n\nJust like the "Type 'Hello'" action, this one simulates keyboard input, specifically, after pressing Ctrl+Alt+B, it sends B to XMMS (B in XMMS jumps to the next song). The 'Send to specific window' checkbox is checked and a window with its class containing 'XMMS_Player' is specified; this will make the input always be sent to this window. This way, you can control XMMS even if, for instance, it is on a different virtual desktop.\n\n(Run 'xprop' and click on the XMMS window and search for WM_CLASS to see 'XMMS_Player').
-Enabled=false
-Name=Next in XMMS
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_6Actions]
-ActionsCount=1
-
-[Data_1_2_6Actions0]
-DestinationWindow=1
-Input=B
-Type=KEYBOARD_INPUT
-
-[Data_1_2_6Actions0DestinationWindow]
-Comment=XMMS window
-WindowsCount=1
-
-[Data_1_2_6Actions0DestinationWindow0]
-Class=XMMS_Player
-ClassType=1
-Comment=XMMS Player window
-Role=
-RoleType=0
-Title=
-TitleType=0
-Type=SIMPLE
-WindowTypes=33
-
-[Data_1_2_6Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_6Triggers]
-Comment=Simple_action
-TriggersCount=1
-
-[Data_1_2_6Triggers0]
-Key=Ctrl+Alt+B
-Type=SHORTCUT
-Uuid={25593a4b-3902-490d-bb8b-5c8a082e96fc}
-
-[Data_1_2_7]
-Comment=Konqueror in KDE3.1 has tabs, and now you can also have gestures.\n\nJust press the middle mouse button and start drawing one of the gestures, and after you are finished, release the mouse button. If you only need to paste the selection, it still works, just click the middle mouse button. (You can change the mouse button to use in the global settings).\n\nRight now, there are the following gestures available:\nmove right and back left - Forward (Alt+Right)\nmove left and back right - Back (Alt+Left)\nmove up and back down  - Up (Alt+Up)\ncircle counterclockwise - Reload (F5)\n\nThe gesture shapes can be entered by performing them in the configuration dialog. You can also look at your numeric pad to help you: gestures are recognized like a 3x3 grid of fields, numbered 1 to 9.\n\nNote that you must perform exactly the gesture to trigger the action. Because of this, it is possible to enter more gestures for the action. You should try to avoid complicated gestures where you change the direction of mouse movement more than once.  For instance, 45654 or 74123 are simple to perform, but 1236987 may be already quite difficult.\n\nThe conditions for all gestures are defined in this group. All these gestures are active only if the active window is Konqueror (class contains 'konqueror').
-DataCount=4
-Enabled=false
-Name=Konqi Gestures
-SystemGroup=0
-Type=ACTION_DATA_GROUP
-
-[Data_1_2_7Conditions]
-Comment=Konqueror window
-ConditionsCount=1
-
-[Data_1_2_7Conditions0]
-Type=ACTIVE_WINDOW
-
-[Data_1_2_7Conditions0Window]
-Comment=Konqueror
-WindowsCount=1
-
-[Data_1_2_7Conditions0Window0]
-Class=konqueror
-ClassType=1
-Comment=Konqueror
-Role=
-RoleType=0
-Title=
-TitleType=0
-Type=SIMPLE
-WindowTypes=33
-
-[Data_1_2_7_1]
-Comment=
-Enabled=false
-Name=Back
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_7_1Actions]
-ActionsCount=1
-
-[Data_1_2_7_1Actions0]
-DestinationWindow=2
-Input=Alt+Left
-Type=KEYBOARD_INPUT
-
-[Data_1_2_7_1Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_7_1Triggers]
-Comment=Gesture_triggers
-TriggersCount=3
-
-[Data_1_2_7_1Triggers0]
-GesturePointData=0,0.0625,1,1,0.5,0.0625,0.0625,1,0.875,0.5,0.125,0.0625,1,0.75,0.5,0.1875,0.0625,1,0.625,0.5,0.25,0.0625,1,0.5,0.5,0.3125,0.0625,1,0.375,0.5,0.375,0.0625,1,0.25,0.5,0.4375,0.0625,1,0.125,0.5,0.5,0.0625,0,0,0.5,0.5625,0.0625,0,0.125,0.5,0.625,0.0625,0,0.25,0.5,0.6875,0.0625,0,0.375,0.5,0.75,0.0625,0,0.5,0.5,0.8125,0.0625,0,0.625,0.5,0.875,0.0625,0,0.75,0.5,0.9375,0.0625,0,0.875,0.5,1,0,0,1,0.5
-Type=GESTURE
-
-[Data_1_2_7_1Triggers1]
-GesturePointData=0,0.0833333,1,0.5,0.5,0.0833333,0.0833333,1,0.375,0.5,0.166667,0.0833333,1,0.25,0.5,0.25,0.0833333,1,0.125,0.5,0.333333,0.0833333,0,0,0.5,0.416667,0.0833333,0,0.125,0.5,0.5,0.0833333,0,0.25,0.5,0.583333,0.0833333,0,0.375,0.5,0.666667,0.0833333,0,0.5,0.5,0.75,0.0833333,0,0.625,0.5,0.833333,0.0833333,0,0.75,0.5,0.916667,0.0833333,0,0.875,0.5,1,0,0,1,0.5
-Type=GESTURE
-
-[Data_1_2_7_1Triggers2]
-GesturePointData=0,0.0833333,1,1,0.5,0.0833333,0.0833333,1,0.875,0.5,0.166667,0.0833333,1,0.75,0.5,0.25,0.0833333,1,0.625,0.5,0.333333,0.0833333,1,0.5,0.5,0.416667,0.0833333,1,0.375,0.5,0.5,0.0833333,1,0.25,0.5,0.583333,0.0833333,1,0.125,0.5,0.666667,0.0833333,0,0,0.5,0.75,0.0833333,0,0.125,0.5,0.833333,0.0833333,0,0.25,0.5,0.916667,0.0833333,0,0.375,0.5,1,0,0,0.5,0.5
-Type=GESTURE
-
-[Data_1_2_7_2]
-Comment=
-Enabled=false
-Name=Forward
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_7_2Actions]
-ActionsCount=1
-
-[Data_1_2_7_2Actions0]
-DestinationWindow=2
-Input=Alt+Right
-Type=KEYBOARD_INPUT
-
-[Data_1_2_7_2Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_7_2Triggers]
-Comment=Gesture_triggers
-TriggersCount=3
-
-[Data_1_2_7_2Triggers0]
-GesturePointData=0,0.0625,0,0,0.5,0.0625,0.0625,0,0.125,0.5,0.125,0.0625,0,0.25,0.5,0.1875,0.0625,0,0.375,0.5,0.25,0.0625,0,0.5,0.5,0.3125,0.0625,0,0.625,0.5,0.375,0.0625,0,0.75,0.5,0.4375,0.0625,0,0.875,0.5,0.5,0.0625,1,1,0.5,0.5625,0.0625,1,0.875,0.5,0.625,0.0625,1,0.75,0.5,0.6875,0.0625,1,0.625,0.5,0.75,0.0625,1,0.5,0.5,0.8125,0.0625,1,0.375,0.5,0.875,0.0625,1,0.25,0.5,0.9375,0.0625,1,0.125,0.5,1,0,0,0,0.5
-Type=GESTURE
-
-[Data_1_2_7_2Triggers1]
-GesturePointData=0,0.0833333,0,0.5,0.5,0.0833333,0.0833333,0,0.625,0.5,0.166667,0.0833333,0,0.75,0.5,0.25,0.0833333,0,0.875,0.5,0.333333,0.0833333,1,1,0.5,0.416667,0.0833333,1,0.875,0.5,0.5,0.0833333,1,0.75,0.5,0.583333,0.0833333,1,0.625,0.5,0.666667,0.0833333,1,0.5,0.5,0.75,0.0833333,1,0.375,0.5,0.833333,0.0833333,1,0.25,0.5,0.916667,0.0833333,1,0.125,0.5,1,0,0,0,0.5
-Type=GESTURE
-
-[Data_1_2_7_2Triggers2]
-GesturePointData=0,0.0833333,0,0,0.5,0.0833333,0.0833333,0,0.125,0.5,0.166667,0.0833333,0,0.25,0.5,0.25,0.0833333,0,0.375,0.5,0.333333,0.0833333,0,0.5,0.5,0.416667,0.0833333,0,0.625,0.5,0.5,0.0833333,0,0.75,0.5,0.583333,0.0833333,0,0.875,0.5,0.666667,0.0833333,1,1,0.5,0.75,0.0833333,1,0.875,0.5,0.833333,0.0833333,1,0.75,0.5,0.916667,0.0833333,1,0.625,0.5,1,0,0,0.5,0.5
-Type=GESTURE
-
-[Data_1_2_7_3]
-Comment=
-Enabled=false
-Name=Up
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_7_3Actions]
-ActionsCount=1
-
-[Data_1_2_7_3Actions0]
-DestinationWindow=2
-Input=Alt+Up
-Type=KEYBOARD_INPUT
-
-[Data_1_2_7_3Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_7_3Triggers]
-Comment=Gesture_triggers
-TriggersCount=3
-
-[Data_1_2_7_3Triggers0]
-GesturePointData=0,0.0625,-0.5,0.5,1,0.0625,0.0625,-0.5,0.5,0.875,0.125,0.0625,-0.5,0.5,0.75,0.1875,0.0625,-0.5,0.5,0.625,0.25,0.0625,-0.5,0.5,0.5,0.3125,0.0625,-0.5,0.5,0.375,0.375,0.0625,-0.5,0.5,0.25,0.4375,0.0625,-0.5,0.5,0.125,0.5,0.0625,0.5,0.5,0,0.5625,0.0625,0.5,0.5,0.125,0.625,0.0625,0.5,0.5,0.25,0.6875,0.0625,0.5,0.5,0.375,0.75,0.0625,0.5,0.5,0.5,0.8125,0.0625,0.5,0.5,0.625,0.875,0.0625,0.5,0.5,0.75,0.9375,0.0625,0.5,0.5,0.875,1,0,0,0.5,1
-Type=GESTURE
-
-[Data_1_2_7_3Triggers1]
-GesturePointData=0,0.0833333,-0.5,0.5,1,0.0833333,0.0833333,-0.5,0.5,0.875,0.166667,0.0833333,-0.5,0.5,0.75,0.25,0.0833333,-0.5,0.5,0.625,0.333333,0.0833333,-0.5,0.5,0.5,0.416667,0.0833333,-0.5,0.5,0.375,0.5,0.0833333,-0.5,0.5,0.25,0.583333,0.0833333,-0.5,0.5,0.125,0.666667,0.0833333,0.5,0.5,0,0.75,0.0833333,0.5,0.5,0.125,0.833333,0.0833333,0.5,0.5,0.25,0.916667,0.0833333,0.5,0.5,0.375,1,0,0,0.5,0.5
-Type=GESTURE
-
-[Data_1_2_7_3Triggers2]
-GesturePointData=0,0.0833333,-0.5,0.5,0.5,0.0833333,0.0833333,-0.5,0.5,0.375,0.166667,0.0833333,-0.5,0.5,0.25,0.25,0.0833333,-0.5,0.5,0.125,0.333333,0.0833333,0.5,0.5,0,0.416667,0.0833333,0.5,0.5,0.125,0.5,0.0833333,0.5,0.5,0.25,0.583333,0.0833333,0.5,0.5,0.375,0.666667,0.0833333,0.5,0.5,0.5,0.75,0.0833333,0.5,0.5,0.625,0.833333,0.0833333,0.5,0.5,0.75,0.916667,0.0833333,0.5,0.5,0.875,1,0,0,0.5,1
-Type=GESTURE
-
-[Data_1_2_7_4]
-Comment=
-Enabled=false
-Name=Reload
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_7_4Actions]
-ActionsCount=1
-
-[Data_1_2_7_4Actions0]
-DestinationWindow=2
-Input=F5
-Type=KEYBOARD_INPUT
-
-[Data_1_2_7_4Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_7_4Triggers]
-Comment=Gesture_triggers
-TriggersCount=3
-
-[Data_1_2_7_4Triggers0]
-GesturePointData=0,0.03125,0,0,1,0.03125,0.03125,0,0.125,1,0.0625,0.03125,0,0.25,1,0.09375,0.03125,0,0.375,1,0.125,0.03125,0,0.5,1,0.15625,0.03125,0,0.625,1,0.1875,0.03125,0,0.75,1,0.21875,0.03125,0,0.875,1,0.25,0.03125,-0.5,1,1,0.28125,0.03125,-0.5,1,0.875,0.3125,0.03125,-0.5,1,0.75,0.34375,0.03125,-0.5,1,0.625,0.375,0.03125,-0.5,1,0.5,0.40625,0.03125,-0.5,1,0.375,0.4375,0.03125,-0.5,1,0.25,0.46875,0.03125,-0.5,1,0.125,0.5,0.03125,1,1,0,0.53125,0.03125,1,0.875,0,0.5625,0.03125,1,0.75,0,0.59375,0.03125,1,0.625,0,0.625,0.03125,1,0.5,0,0.65625,0.03125,1,0.375,0,0.6875,0.03125,1,0.25,0,0.71875,0.03125,1,0.125,0,0.75,0.03125,0.5,0,0,0.78125,0.03125,0.5,0,0.125,0.8125,0.03125,0.5,0,0.25,0.84375,0.03125,0.5,0,0.375,0.875,0.03125,0.5,0,0.5,0.90625,0.03125,0.5,0,0.625,0.9375,0.03125,0.5,0,0.75,0.96875,0.03125,0.5,0,0.875,1,0,0,0,1
-Type=GESTURE
-
-[Data_1_2_7_4Triggers1]
-GesturePointData=0,0.0277778,0,0,1,0.0277778,0.0277778,0,0.125,1,0.0555556,0.0277778,0,0.25,1,0.0833333,0.0277778,0,0.375,1,0.111111,0.0277778,0,0.5,1,0.138889,0.0277778,0,0.625,1,0.166667,0.0277778,0,0.75,1,0.194444,0.0277778,0,0.875,1,0.222222,0.0277778,-0.5,1,1,0.25,0.0277778,-0.5,1,0.875,0.277778,0.0277778,-0.5,1,0.75,0.305556,0.0277778,-0.5,1,0.625,0.333333,0.0277778,-0.5,1,0.5,0.361111,0.0277778,-0.5,1,0.375,0.388889,0.0277778,-0.5,1,0.25,0.416667,0.0277778,-0.5,1,0.125,0.444444,0.0277778,1,1,0,0.472222,0.0277778,1,0.875,0,0.5,0.0277778,1,0.75,0,0.527778,0.0277778,1,0.625,0,0.555556,0.0277778,1,0.5,0,0.583333,0.0277778,1,0.375,0,0.611111,0.0277778,1,0.25,0,0.638889,0.0277778,1,0.125,0,0.666667,0.0277778,0.5,0,0,0.694444,0.0277778,0.5,0,0.125,0.722222,0.0277778,0.5,0,0.25,0.75,0.0277778,0.5,0,0.375,0.777778,0.0277778,0.5,0,0.5,0.805556,0.0277778,0.5,0,0.625,0.833333,0.0277778,0.5,0,0.75,0.861111,0.0277778,0.5,0,0.875,0.888889,0.0277778,0,0,1,0.916667,0.0277778,0,0.125,1,0.944444,0.0277778,0,0.25,1,0.972222,0.0277778,0,0.375,1,1,0,0,0.5,1
-Type=GESTURE
-
-[Data_1_2_7_4Triggers2]
-GesturePointData=0,0.0277778,0.5,0,0.5,0.0277778,0.0277778,0.5,0,0.625,0.0555556,0.0277778,0.5,0,0.75,0.0833333,0.0277778,0.5,0,0.875,0.111111,0.0277778,0,0,1,0.138889,0.0277778,0,0.125,1,0.166667,0.0277778,0,0.25,1,0.194444,0.0277778,0,0.375,1,0.222222,0.0277778,0,0.5,1,0.25,0.0277778,0,0.625,1,0.277778,0.0277778,0,0.75,1,0.305556,0.0277778,0,0.875,1,0.333333,0.0277778,-0.5,1,1,0.361111,0.0277778,-0.5,1,0.875,0.388889,0.0277778,-0.5,1,0.75,0.416667,0.0277778,-0.5,1,0.625,0.444444,0.0277778,-0.5,1,0.5,0.472222,0.0277778,-0.5,1,0.375,0.5,0.0277778,-0.5,1,0.25,0.527778,0.0277778,-0.5,1,0.125,0.555556,0.0277778,1,1,0,0.583333,0.0277778,1,0.875,0,0.611111,0.0277778,1,0.75,0,0.638889,0.0277778,1,0.625,0,0.666667,0.0277778,1,0.5,0,0.694444,0.0277778,1,0.375,0,0.722222,0.0277778,1,0.25,0,0.75,0.0277778,1,0.125,0,0.777778,0.0277778,0.5,0,0,0.805556,0.0277778,0.5,0,0.125,0.833333,0.0277778,0.5,0,0.25,0.861111,0.0277778,0.5,0,0.375,0.888889,0.0277778,0.5,0,0.5,0.916667,0.0277778,0.5,0,0.625,0.944444,0.0277778,0.5,0,0.75,0.972222,0.0277778,0.5,0,0.875,1,0,0,0,1
-Type=GESTURE
-
-[Data_1_2_8]
-Comment=After pressing Win+E (Tux+E) a WWW browser will be launched, and it will open http://www.kde.org . You may run all kind of commands you can run in minicli (Alt+F2).
-Enabled=false
-Name=Go to KDE Website
-Type=SIMPLE_ACTION_DATA
-
-[Data_1_2_8Actions]
-ActionsCount=1
-
-[Data_1_2_8Actions0]
-CommandURL=http://www.kde.org
-Type=COMMAND_URL
-
-[Data_1_2_8Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2_8Triggers]
-Comment=Simple_action
-TriggersCount=1
-
-[Data_1_2_8Triggers0]
-Key=Meta+E
-Type=SHORTCUT
-Uuid={ce716924-cff5-4e41-9bcd-69528acab4e3}
-
-[Data_1_3]
 Comment=Basic Konqueror gestures.
 DataCount=14
 Enabled=true
@@ -784,18 +449,18 @@ Name=Konqueror Gestures
 SystemGroup=0
 Type=ACTION_DATA_GROUP
 
-[Data_1_3Conditions]
+[Data_1_2Conditions]
 Comment=Konqueror window
 ConditionsCount=1
 
-[Data_1_3Conditions0]
+[Data_1_2Conditions0]
 Type=ACTIVE_WINDOW
 
-[Data_1_3Conditions0Window]
+[Data_1_2Conditions0Window]
 Comment=Konqueror
 WindowsCount=1
 
-[Data_1_3Conditions0Window0]
+[Data_1_2Conditions0Window0]
 Class=^konqueror\s
 ClassType=3
 Comment=Konqueror
@@ -806,389 +471,415 @@ TitleType=0
 Type=SIMPLE
 WindowTypes=1
 
-[Data_1_3_1]
+[Data_1_2_1]
 Comment=Press, move left, release.
 Enabled=true
 Name=Back
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_10]
+[Data_1_2_10]
 Comment=Opera-style: Press, move up, release.\nNOTE: Conflicts with 'New Tab', and as such is disabled by default.
 Enabled=false
 Name=Stop Loading
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_10Actions]
+[Data_1_2_10Actions]
 ActionsCount=1
 
-[Data_1_3_10Actions0]
+[Data_1_2_10Actions0]
 DestinationWindow=2
 Input=Escape\n
 Type=KEYBOARD_INPUT
 
-[Data_1_3_10Conditions]
+[Data_1_2_10Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_10Triggers]
+[Data_1_2_10Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_10Triggers0]
+[Data_1_2_10Triggers0]
 GesturePointData=0,0.125,-0.5,0.5,1,0.125,0.125,-0.5,0.5,0.875,0.25,0.125,-0.5,0.5,0.75,0.375,0.125,-0.5,0.5,0.625,0.5,0.125,-0.5,0.5,0.5,0.625,0.125,-0.5,0.5,0.375,0.75,0.125,-0.5,0.5,0.25,0.875,0.125,-0.5,0.5,0.125,1,0,0,0.5,0
 Type=GESTURE
 
-[Data_1_3_11]
+[Data_1_2_11]
 Comment=Going up in URL/directory structure.\nMozilla-style: Press, move up, move left, move up, release.
 Enabled=true
 Name=Up
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_11Actions]
+[Data_1_2_11Actions]
 ActionsCount=1
 
-[Data_1_3_11Actions0]
+[Data_1_2_11Actions0]
 DestinationWindow=2
 Input=Alt+Up
 Type=KEYBOARD_INPUT
 
-[Data_1_3_11Conditions]
+[Data_1_2_11Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_11Triggers]
+[Data_1_2_11Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_11Triggers0]
+[Data_1_2_11Triggers0]
 GesturePointData=0,0.0625,-0.5,1,1,0.0625,0.0625,-0.5,1,0.875,0.125,0.0625,-0.5,1,0.75,0.1875,0.0625,-0.5,1,0.625,0.25,0.0625,1,1,0.5,0.3125,0.0625,1,0.875,0.5,0.375,0.0625,1,0.75,0.5,0.4375,0.0625,1,0.625,0.5,0.5,0.0625,1,0.5,0.5,0.5625,0.0625,1,0.375,0.5,0.625,0.0625,1,0.25,0.5,0.6875,0.0625,1,0.125,0.5,0.75,0.0625,-0.5,0,0.5,0.8125,0.0625,-0.5,0,0.375,0.875,0.0625,-0.5,0,0.25,0.9375,0.0625,-0.5,0,0.125,1,0,0,0,0
 Type=GESTURE
 
-[Data_1_3_12]
+[Data_1_2_12]
 Comment=Going up in URL/directory structure.\nOpera-style: Press, move up, move left, move up, release.\nNOTE: Conflicts with  "Activate Previous Tab", and as such is disabled by default.
 Enabled=false
 Name=Up #2
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_12Actions]
+[Data_1_2_12Actions]
 ActionsCount=1
 
-[Data_1_3_12Actions0]
+[Data_1_2_12Actions0]
 DestinationWindow=2
 Input=Alt+Up\n
 Type=KEYBOARD_INPUT
 
-[Data_1_3_12Conditions]
+[Data_1_2_12Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_12Triggers]
+[Data_1_2_12Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_12Triggers0]
+[Data_1_2_12Triggers0]
 GesturePointData=0,0.0625,-0.5,1,1,0.0625,0.0625,-0.5,1,0.875,0.125,0.0625,-0.5,1,0.75,0.1875,0.0625,-0.5,1,0.625,0.25,0.0625,-0.5,1,0.5,0.3125,0.0625,-0.5,1,0.375,0.375,0.0625,-0.5,1,0.25,0.4375,0.0625,-0.5,1,0.125,0.5,0.0625,1,1,0,0.5625,0.0625,1,0.875,0,0.625,0.0625,1,0.75,0,0.6875,0.0625,1,0.625,0,0.75,0.0625,1,0.5,0,0.8125,0.0625,1,0.375,0,0.875,0.0625,1,0.25,0,0.9375,0.0625,1,0.125,0,1,0,0,0,0
 Type=GESTURE
 
-[Data_1_3_13]
+[Data_1_2_13]
 Comment=Press, move up, move right, release.
 Enabled=true
 Name=Activate Next Tab
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_13Actions]
+[Data_1_2_13Actions]
 ActionsCount=1
 
-[Data_1_3_13Actions0]
+[Data_1_2_13Actions0]
 DestinationWindow=2
 Input=Ctrl+.\n
 Type=KEYBOARD_INPUT
 
-[Data_1_3_13Conditions]
+[Data_1_2_13Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_13Triggers]
+[Data_1_2_13Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_13Triggers0]
+[Data_1_2_13Triggers0]
 GesturePointData=0,0.0625,-0.5,0,1,0.0625,0.0625,-0.5,0,0.875,0.125,0.0625,-0.5,0,0.75,0.1875,0.0625,-0.5,0,0.625,0.25,0.0625,-0.5,0,0.5,0.3125,0.0625,-0.5,0,0.375,0.375,0.0625,-0.5,0,0.25,0.4375,0.0625,-0.5,0,0.125,0.5,0.0625,0,0,0,0.5625,0.0625,0,0.125,0,0.625,0.0625,0,0.25,0,0.6875,0.0625,0,0.375,0,0.75,0.0625,0,0.5,0,0.8125,0.0625,0,0.625,0,0.875,0.0625,0,0.75,0,0.9375,0.0625,0,0.875,0,1,0,0,1,0
 Type=GESTURE
 
-[Data_1_3_14]
+[Data_1_2_14]
 Comment=Press, move up, move left, release.
 Enabled=true
 Name=Activate Previous Tab
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_14Actions]
+[Data_1_2_14Actions]
 ActionsCount=1
 
-[Data_1_3_14Actions0]
+[Data_1_2_14Actions0]
 DestinationWindow=2
 Input=Ctrl+,
 Type=KEYBOARD_INPUT
 
-[Data_1_3_14Conditions]
+[Data_1_2_14Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_14Triggers]
+[Data_1_2_14Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_14Triggers0]
+[Data_1_2_14Triggers0]
 GesturePointData=0,0.0625,-0.5,1,1,0.0625,0.0625,-0.5,1,0.875,0.125,0.0625,-0.5,1,0.75,0.1875,0.0625,-0.5,1,0.625,0.25,0.0625,-0.5,1,0.5,0.3125,0.0625,-0.5,1,0.375,0.375,0.0625,-0.5,1,0.25,0.4375,0.0625,-0.5,1,0.125,0.5,0.0625,1,1,0,0.5625,0.0625,1,0.875,0,0.625,0.0625,1,0.75,0,0.6875,0.0625,1,0.625,0,0.75,0.0625,1,0.5,0,0.8125,0.0625,1,0.375,0,0.875,0.0625,1,0.25,0,0.9375,0.0625,1,0.125,0,1,0,0,0,0
 Type=GESTURE
 
-[Data_1_3_1Actions]
+[Data_1_2_1Actions]
 ActionsCount=1
 
-[Data_1_3_1Actions0]
+[Data_1_2_1Actions0]
 DestinationWindow=2
 Input=Alt+Left
 Type=KEYBOARD_INPUT
 
-[Data_1_3_1Conditions]
+[Data_1_2_1Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_1Triggers]
+[Data_1_2_1Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_1Triggers0]
+[Data_1_2_1Triggers0]
 GesturePointData=0,0.125,1,1,0.5,0.125,0.125,1,0.875,0.5,0.25,0.125,1,0.75,0.5,0.375,0.125,1,0.625,0.5,0.5,0.125,1,0.5,0.5,0.625,0.125,1,0.375,0.5,0.75,0.125,1,0.25,0.5,0.875,0.125,1,0.125,0.5,1,0,0,0,0.5
 Type=GESTURE
 
-[Data_1_3_2]
+[Data_1_2_2]
 Comment=Press, move down, move up, move down, release.
 Enabled=true
 Name=Duplicate Tab
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_2Actions]
+[Data_1_2_2Actions]
 ActionsCount=1
 
-[Data_1_3_2Actions0]
+[Data_1_2_2Actions0]
 DestinationWindow=2
 Input=Ctrl+Shift+D\n
 Type=KEYBOARD_INPUT
 
-[Data_1_3_2Conditions]
+[Data_1_2_2Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_2Triggers]
+[Data_1_2_2Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_2Triggers0]
+[Data_1_2_2Triggers0]
 GesturePointData=0,0.0416667,0.5,0.5,0,0.0416667,0.0416667,0.5,0.5,0.125,0.0833333,0.0416667,0.5,0.5,0.25,0.125,0.0416667,0.5,0.5,0.375,0.166667,0.0416667,0.5,0.5,0.5,0.208333,0.0416667,0.5,0.5,0.625,0.25,0.0416667,0.5,0.5,0.75,0.291667,0.0416667,0.5,0.5,0.875,0.333333,0.0416667,-0.5,0.5,1,0.375,0.0416667,-0.5,0.5,0.875,0.416667,0.0416667,-0.5,0.5,0.75,0.458333,0.0416667,-0.5,0.5,0.625,0.5,0.0416667,-0.5,0.5,0.5,0.541667,0.0416667,-0.5,0.5,0.375,0.583333,0.0416667,-0.5,0.5,0.25,0.625,0.0416667,-0.5,0.5,0.125,0.666667,0.0416667,0.5,0.5,0,0.708333,0.0416667,0.5,0.5,0.125,0.75,0.0416667,0.5,0.5,0.25,0.791667,0.0416667,0.5,0.5,0.375,0.833333,0.0416667,0.5,0.5,0.5,0.875,0.0416667,0.5,0.5,0.625,0.916667,0.0416667,0.5,0.5,0.75,0.958333,0.0416667,0.5,0.5,0.875,1,0,0,0.5,1
 Type=GESTURE
 
-[Data_1_3_3]
+[Data_1_2_3]
 Comment=Press, move down, move up, release.
 Enabled=true
 Name=Duplicate Window
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_3Actions]
+[Data_1_2_3Actions]
 ActionsCount=1
 
-[Data_1_3_3Actions0]
+[Data_1_2_3Actions0]
 DestinationWindow=2
 Input=Ctrl+D\n
 Type=KEYBOARD_INPUT
 
-[Data_1_3_3Conditions]
+[Data_1_2_3Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_3Triggers]
+[Data_1_2_3Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_3Triggers0]
+[Data_1_2_3Triggers0]
 GesturePointData=0,0.0625,0.5,0.5,0,0.0625,0.0625,0.5,0.5,0.125,0.125,0.0625,0.5,0.5,0.25,0.1875,0.0625,0.5,0.5,0.375,0.25,0.0625,0.5,0.5,0.5,0.3125,0.0625,0.5,0.5,0.625,0.375,0.0625,0.5,0.5,0.75,0.4375,0.0625,0.5,0.5,0.875,0.5,0.0625,-0.5,0.5,1,0.5625,0.0625,-0.5,0.5,0.875,0.625,0.0625,-0.5,0.5,0.75,0.6875,0.0625,-0.5,0.5,0.625,0.75,0.0625,-0.5,0.5,0.5,0.8125,0.0625,-0.5,0.5,0.375,0.875,0.0625,-0.5,0.5,0.25,0.9375,0.0625,-0.5,0.5,0.125,1,0,0,0.5,0
 Type=GESTURE
 
-[Data_1_3_4]
+[Data_1_2_4]
 Comment=Press, move right, release.
 Enabled=true
 Name=Forward
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_4Actions]
+[Data_1_2_4Actions]
 ActionsCount=1
 
-[Data_1_3_4Actions0]
+[Data_1_2_4Actions0]
 DestinationWindow=2
 Input=Alt+Right
 Type=KEYBOARD_INPUT
 
-[Data_1_3_4Conditions]
+[Data_1_2_4Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_4Triggers]
+[Data_1_2_4Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_4Triggers0]
+[Data_1_2_4Triggers0]
 GesturePointData=0,0.125,0,0,0.5,0.125,0.125,0,0.125,0.5,0.25,0.125,0,0.25,0.5,0.375,0.125,0,0.375,0.5,0.5,0.125,0,0.5,0.5,0.625,0.125,0,0.625,0.5,0.75,0.125,0,0.75,0.5,0.875,0.125,0,0.875,0.5,1,0,0,1,0.5
 Type=GESTURE
 
-[Data_1_3_5]
+[Data_1_2_5]
 Comment=Press, move down, move half up, move right, move down, release.\n(Drawing a lowercase 'h'.)
 Enabled=true
 Name=Home
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_5Actions]
+[Data_1_2_5Actions]
 ActionsCount=1
 
-[Data_1_3_5Actions0]
+[Data_1_2_5Actions0]
 DestinationWindow=2
 Input=Alt+Home\n
 Type=KEYBOARD_INPUT
 
-[Data_1_3_5Conditions]
+[Data_1_2_5Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_5Triggers]
+[Data_1_2_5Triggers]
 Comment=Gesture_triggers
 TriggersCount=2
 
-[Data_1_3_5Triggers0]
+[Data_1_2_5Triggers0]
 GesturePointData=0,0.0461748,0.5,0,0,0.0461748,0.0461748,0.5,0,0.125,0.0923495,0.0461748,0.5,0,0.25,0.138524,0.0461748,0.5,0,0.375,0.184699,0.0461748,0.5,0,0.5,0.230874,0.0461748,0.5,0,0.625,0.277049,0.0461748,0.5,0,0.75,0.323223,0.0461748,0.5,0,0.875,0.369398,0.065301,-0.25,0,1,0.434699,0.065301,-0.25,0.125,0.875,0.5,0.065301,-0.25,0.25,0.75,0.565301,0.065301,-0.25,0.375,0.625,0.630602,0.0461748,0,0.5,0.5,0.676777,0.0461748,0,0.625,0.5,0.722951,0.0461748,0,0.75,0.5,0.769126,0.0461748,0,0.875,0.5,0.815301,0.0461748,0.5,1,0.5,0.861476,0.0461748,0.5,1,0.625,0.90765,0.0461748,0.5,1,0.75,0.953825,0.0461748,0.5,1,0.875,1,0,0,1,1
 Type=GESTURE
 
-[Data_1_3_5Triggers1]
+[Data_1_2_5Triggers1]
 GesturePointData=0,0.0416667,0.5,0,0,0.0416667,0.0416667,0.5,0,0.125,0.0833333,0.0416667,0.5,0,0.25,0.125,0.0416667,0.5,0,0.375,0.166667,0.0416667,0.5,0,0.5,0.208333,0.0416667,0.5,0,0.625,0.25,0.0416667,0.5,0,0.75,0.291667,0.0416667,0.5,0,0.875,0.333333,0.0416667,-0.5,0,1,0.375,0.0416667,-0.5,0,0.875,0.416667,0.0416667,-0.5,0,0.75,0.458333,0.0416667,-0.5,0,0.625,0.5,0.0416667,0,0,0.5,0.541667,0.0416667,0,0.125,0.5,0.583333,0.0416667,0,0.25,0.5,0.625,0.0416667,0,0.375,0.5,0.666667,0.0416667,0,0.5,0.5,0.708333,0.0416667,0,0.625,0.5,0.75,0.0416667,0,0.75,0.5,0.791667,0.0416667,0,0.875,0.5,0.833333,0.0416667,0.5,1,0.5,0.875,0.0416667,0.5,1,0.625,0.916667,0.0416667,0.5,1,0.75,0.958333,0.0416667,0.5,1,0.875,1,0,0,1,1
 Type=GESTURE
 
-[Data_1_3_6]
+[Data_1_2_6]
 Comment=Press, move right, move down, move right, release.\nMozilla-style: Press, move down, move right, release.
 Enabled=true
 Name=Close Tab
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_6Actions]
+[Data_1_2_6Actions]
 ActionsCount=1
 
-[Data_1_3_6Actions0]
+[Data_1_2_6Actions0]
 DestinationWindow=2
 Input=Ctrl+W\n
 Type=KEYBOARD_INPUT
 
-[Data_1_3_6Conditions]
+[Data_1_2_6Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_6Triggers]
+[Data_1_2_6Triggers]
 Comment=Gesture_triggers
 TriggersCount=2
 
-[Data_1_3_6Triggers0]
+[Data_1_2_6Triggers0]
 GesturePointData=0,0.0625,0,0,0,0.0625,0.0625,0,0.125,0,0.125,0.0625,0,0.25,0,0.1875,0.0625,0,0.375,0,0.25,0.0625,0.5,0.5,0,0.3125,0.0625,0.5,0.5,0.125,0.375,0.0625,0.5,0.5,0.25,0.4375,0.0625,0.5,0.5,0.375,0.5,0.0625,0.5,0.5,0.5,0.5625,0.0625,0.5,0.5,0.625,0.625,0.0625,0.5,0.5,0.75,0.6875,0.0625,0.5,0.5,0.875,0.75,0.0625,0,0.5,1,0.8125,0.0625,0,0.625,1,0.875,0.0625,0,0.75,1,0.9375,0.0625,0,0.875,1,1,0,0,1,1
 Type=GESTURE
 
-[Data_1_3_6Triggers1]
+[Data_1_2_6Triggers1]
 GesturePointData=0,0.0625,0.5,0,0,0.0625,0.0625,0.5,0,0.125,0.125,0.0625,0.5,0,0.25,0.1875,0.0625,0.5,0,0.375,0.25,0.0625,0.5,0,0.5,0.3125,0.0625,0.5,0,0.625,0.375,0.0625,0.5,0,0.75,0.4375,0.0625,0.5,0,0.875,0.5,0.0625,0,0,1,0.5625,0.0625,0,0.125,1,0.625,0.0625,0,0.25,1,0.6875,0.0625,0,0.375,1,0.75,0.0625,0,0.5,1,0.8125,0.0625,0,0.625,1,0.875,0.0625,0,0.75,1,0.9375,0.0625,0,0.875,1,1,0,0,1,1
 Type=GESTURE
 
-[Data_1_3_7]
+[Data_1_2_7]
 Comment=Press, move up, release.\nConflicts with Opera-style 'Up #2', which is disabled by default.
 Enabled=true
 Name=New Tab
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_7Actions]
+[Data_1_2_7Actions]
 ActionsCount=1
 
-[Data_1_3_7Actions0]
+[Data_1_2_7Actions0]
 DestinationWindow=2
 Input=Ctrl+Shift+N
 Type=KEYBOARD_INPUT
 
-[Data_1_3_7Conditions]
+[Data_1_2_7Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_7Triggers]
+[Data_1_2_7Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_7Triggers0]
+[Data_1_2_7Triggers0]
 GesturePointData=0,0.125,-0.5,0.5,1,0.125,0.125,-0.5,0.5,0.875,0.25,0.125,-0.5,0.5,0.75,0.375,0.125,-0.5,0.5,0.625,0.5,0.125,-0.5,0.5,0.5,0.625,0.125,-0.5,0.5,0.375,0.75,0.125,-0.5,0.5,0.25,0.875,0.125,-0.5,0.5,0.125,1,0,0,0.5,0
 Type=GESTURE
 
-[Data_1_3_8]
+[Data_1_2_8]
 Comment=Press, move down, release.
 Enabled=true
 Name=New Window
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_8Actions]
+[Data_1_2_8Actions]
 ActionsCount=1
 
-[Data_1_3_8Actions0]
+[Data_1_2_8Actions0]
 DestinationWindow=2
 Input=Ctrl+N\n
 Type=KEYBOARD_INPUT
 
-[Data_1_3_8Conditions]
+[Data_1_2_8Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_8Triggers]
+[Data_1_2_8Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_8Triggers0]
+[Data_1_2_8Triggers0]
 GesturePointData=0,0.125,0.5,0.5,0,0.125,0.125,0.5,0.5,0.125,0.25,0.125,0.5,0.5,0.25,0.375,0.125,0.5,0.5,0.375,0.5,0.125,0.5,0.5,0.5,0.625,0.125,0.5,0.5,0.625,0.75,0.125,0.5,0.5,0.75,0.875,0.125,0.5,0.5,0.875,1,0,0,0.5,1
 Type=GESTURE
 
-[Data_1_3_9]
+[Data_1_2_9]
 Comment=Press, move up, move down, release.
 Enabled=true
 Name=Reload
 Type=SIMPLE_ACTION_DATA
 
-[Data_1_3_9Actions]
+[Data_1_2_9Actions]
 ActionsCount=1
 
-[Data_1_3_9Actions0]
+[Data_1_2_9Actions0]
 DestinationWindow=2
 Input=F5
 Type=KEYBOARD_INPUT
 
-[Data_1_3_9Conditions]
+[Data_1_2_9Conditions]
 Comment=
 ConditionsCount=0
 
-[Data_1_3_9Triggers]
+[Data_1_2_9Triggers]
 Comment=Gesture_triggers
 TriggersCount=1
 
-[Data_1_3_9Triggers0]
+[Data_1_2_9Triggers0]
 GesturePointData=0,0.0625,-0.5,0.5,1,0.0625,0.0625,-0.5,0.5,0.875,0.125,0.0625,-0.5,0.5,0.75,0.1875,0.0625,-0.5,0.5,0.625,0.25,0.0625,-0.5,0.5,0.5,0.3125,0.0625,-0.5,0.5,0.375,0.375,0.0625,-0.5,0.5,0.25,0.4375,0.0625,-0.5,0.5,0.125,0.5,0.0625,0.5,0.5,0,0.5625,0.0625,0.5,0.5,0.125,0.625,0.0625,0.5,0.5,0.25,0.6875,0.0625,0.5,0.5,0.375,0.75,0.0625,0.5,0.5,0.5,0.8125,0.0625,0.5,0.5,0.625,0.875,0.0625,0.5,0.5,0.75,0.9375,0.0625,0.5,0.5,0.875,1,0,0,0.5,1
 Type=GESTURE
+
+[Data_1_3]
+Comment=Comment
+Enabled=true
+Name=Librewolf
+Type=SIMPLE_ACTION_DATA
+
+[Data_1_3Actions]
+ActionsCount=1
+
+[Data_1_3Actions0]
+CommandURL=librewolf
+Type=COMMAND_URL
+
+[Data_1_3Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_1_3Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_1_3Triggers0]
+Key=Meta+L
+Type=SHORTCUT
+Uuid={a00420d9-b57d-4040-9d61-6c5adee7aa32}
 
 [Data_1_4]
 Comment=Comment
 Enabled=true
-Name=Librewolf
+Name=Firefox
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_4Actions]
 ActionsCount=1
 
 [Data_1_4Actions0]
-CommandURL=librewolf
+CommandURL=firefox
 Type=COMMAND_URL
 
 [Data_1_4Conditions]
@@ -1200,21 +891,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_4Triggers0]
-Key=Meta+L
+Key=Meta+F
 Type=SHORTCUT
-Uuid={a00420d9-b57d-4040-9d61-6c5adee7aa32}
+Uuid={eea41ab8-8f70-4657-92dc-81885cc290aa}
 
 [Data_1_5]
-Comment=Comment
+Comment=Launches the Brave browser
 Enabled=true
-Name=Firefox
+Name=Brave
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_5Actions]
 ActionsCount=1
 
 [Data_1_5Actions0]
-CommandURL=firefox
+CommandURL=brave
 Type=COMMAND_URL
 
 [Data_1_5Conditions]
@@ -1226,21 +917,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_5Triggers0]
-Key=Meta+F
+Key=Meta+B
 Type=SHORTCUT
-Uuid={eea41ab8-8f70-4657-92dc-81885cc290aa}
+Uuid={85e1e245-976d-4ab8-befd-b6958a56d1d6}
 
 [Data_1_6]
-Comment=Launches the Brave browser
+Comment=Launches the Compressed folder of downloads
 Enabled=true
-Name=Brave
+Name=Compressed
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_6Actions]
 ActionsCount=1
 
 [Data_1_6Actions0]
-CommandURL=brave
+CommandURL=dolphin /home/ali/Downloads/Compressed
 Type=COMMAND_URL
 
 [Data_1_6Conditions]
@@ -1252,21 +943,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_6Triggers0]
-Key=Meta+B
+Key=Meta+C
 Type=SHORTCUT
-Uuid={85e1e245-976d-4ab8-befd-b6958a56d1d6}
+Uuid={0cd0adab-b275-4ecd-8bb1-e7fcd843ce03}
 
 [Data_1_7]
-Comment=Launches the Compressed folder of downloads
+Comment=Launches the Videos folder
 Enabled=true
-Name=Compressed
+Name=Videos
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_7Actions]
 ActionsCount=1
 
 [Data_1_7Actions0]
-CommandURL=dolphin /home/ali/Downloads/Compressed
+CommandURL=dolphin /home/ali/Downloads/Video
 Type=COMMAND_URL
 
 [Data_1_7Conditions]
@@ -1278,21 +969,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_7Triggers0]
-Key=Meta+C
+Key=Meta+V
 Type=SHORTCUT
-Uuid={0cd0adab-b275-4ecd-8bb1-e7fcd843ce03}
+Uuid={660fdbc2-16b2-429a-8b21-bcddd5b3a6d2}
 
 [Data_1_8]
-Comment=Launches the Videos folder
+Comment=Opens a new document in libre-office wrier
 Enabled=true
-Name=Videos
+Name=Writer
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_8Actions]
 ActionsCount=1
 
 [Data_1_8Actions0]
-CommandURL=dolphin /home/ali/Downloads/Video
+CommandURL=libreoffice --writer
 Type=COMMAND_URL
 
 [Data_1_8Conditions]
@@ -1304,21 +995,21 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_8Triggers0]
-Key=Meta+V
+Key=Meta+W
 Type=SHORTCUT
-Uuid={660fdbc2-16b2-429a-8b21-bcddd5b3a6d2}
+Uuid={c23a3518-32db-431f-9613-379b95693801}
 
 [Data_1_9]
-Comment=Opens a new document in libre-office wrier
+Comment=Launches the Pictures folder
 Enabled=true
-Name=Writer
+Name=Pictures
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_9Actions]
 ActionsCount=1
 
 [Data_1_9Actions0]
-CommandURL=libreoffice --writer
+CommandURL=dolphin /home/ali/Pictures
 Type=COMMAND_URL
 
 [Data_1_9Conditions]
@@ -1330,9 +1021,9 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_1_9Triggers0]
-Key=Meta+W
+Key=Meta+P
 Type=SHORTCUT
-Uuid={c23a3518-32db-431f-9613-379b95693801}
+Uuid={05cdaa36-bc46-4d7a-bf08-b9f9ba42ac3e}
 
 [Main]
 AllowMerge=false

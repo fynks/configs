@@ -1,7 +1,7 @@
 # Linux Setup Guide
-* [Fish Shell](https://github.com/fynks/configs/blob/main/guides/linux_setup.md#fish-shell)
-* [Firefox Setup](https://github.com/fynks/configs/blob/main/guides/linux_setup.md#firefox-setup)
-* [Xampp Setup](https://github.com/fynks/configs/blob/main/guides/linux_setup.md#xampp-auto-start)
+* [Fish Shell](#fish-shell)
+* [Firefox Setup](#firefox-setup)
+* [Xampp Setup](#xampp-auto-start)
   
 ---
 ## Fish Shell

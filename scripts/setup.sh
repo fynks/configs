@@ -28,6 +28,7 @@ PACMANPKGS=(
 'yay'                     # AUR Helper
 'alacritty'               # GPU accelerated terminal
 'fish'                    # Fish shell
+'firefox'                 # Browser
 'nemo'                    # File manager
 'vlc'                     # Media Player
 'evince'                  # pdf Viewer
@@ -36,23 +37,20 @@ PACMANPKGS=(
 'appimagelauncher'        # Integrates AppImages into system
 'telegram-desktop'        # Social platform
 'simplescreenrecorder'    # Screen Recorder
-'hblock'                  # Hosts file manager
 )
 
 # Installs and names the package being installed by pacman one by one
 for PACMAN in "${PACMANPKGS[@]}"; do
  echo -e "\n############################################\n######### Program : $PACMAN #########\n############################################\n"
-   sudo yay -S $PACMAN
+   sudo pacman -S $PACMAN
 done
 
 # List of packages to be installed from Arch-AUR
 AURPKGS=(
-'firefox-bin'             # Geckgo based Browser
 'librewolf-bin'           # Modified Firefox
 'brave-bin'               # Chromium based Browser
 'sublime-text-4'          # Lightweight Code Editor
 'visual-studio-code-bin'  # Code Editor
-'zettlr'                  # Markdown Editor
 'zoom'                    # Video conferencing tool
 )
 
@@ -61,6 +59,14 @@ for AUR in "${AURPKGS[@]}"; do
  echo -e "\n############################################\n######### Program : $AUR #########\n############################################\n"
    sudo yay -S $AUR
 done
+
+# Installs hblock
+ echo -e "\n############################################\n######### Installing Hblock #########\n############################################\n"
+curl -o /tmp/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.3.1/hblock' \
+  && echo 'd93effa9a068b82f7d4d97fdcae7a320c6f7a3ae910af8234bca870f33ec55e1  /tmp/hblock' | shasum -c \
+  && sudo mv /tmp/hblock /usr/local/bin/hblock \
+  && sudo chown 0:0 /usr/local/bin/hblock \
+  && sudo chmod 755 /usr/local/bin/hblock
 
 # Copies the custom sources file from github to /etc/hblock/sources.list
  echo -e "\n############################################\n######### Copying hblock sources file  #########\n############################################\n"
