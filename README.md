@@ -45,8 +45,8 @@
 - [Cookie AutoDelete Whitelist Logged in](https://github.com/fynks/configs/blob/main/extensions/CAD_white_list_logged_in.json)
 - [Redirector](https://raw.githubusercontent.com/fynks/configs/main/extensions/Redirector.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/extensions/u_block_origin_configs.txt)
-- [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/extensions/extensions/sponsor_block.json)
-- [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/extensions/extensions/improvedtube.txt)
+- [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/extensions/sponsor_block.json)
+- [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/extensions/improvedtube.txt)
 
 ---
 
