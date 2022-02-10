@@ -1,6 +1,7 @@
 # Linux Setup Guide
 * [Fish Shell](#fish-shell)
 * [Firefox Setup](#firefox-setup)
+* [VS Code](#visual-studio-code)
 * [Xampp Setup](#xampp-auto-start)
   
 ---
@@ -109,7 +110,28 @@ Under History > Settings > Active logins+Cookies : Disable
 - [pyllyukko](https://github.com/pyllyukko/user.js/)
 
 ----
+## Visual Studio Code
+After grabbing the package from your distribution's package manager,you have to do following trouble shooting in order to setup sync and permanently store credentials on linux.
 
+
+1. Add the following lines to your ~/.xinitrc:
+```sh
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+eval $(/usr/bin/gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+mkdir -p "$HOME"/.local/share/keyrings
+```
+2. Login again.
+
+3. Have the following programs installed (installation assumes arch/pacman, should be similar to other distros):
+```sh
+sudo pacman -S gnome-keyring libsecret libgnome-keyring
+```
+4. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
+5. Restart the login procedure.
+
+>  Refrence : https://code.visualstudio.com/docs/editor/settings-sync#_linux
+----
 ## Xampp Auto Start
 ⚠️ This will increase the boot time with addition of upto 15 more seconds therefore try to use fish abbreviations using apache and xampp shortcuts.
 
