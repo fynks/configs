@@ -1,16 +1,16 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2021-10-23T06:05:02.600Z",
+    "createdAt": "2022-02-14T14:43:43.000Z",
     "redirects": [
         {
             "description": "[Reddit] redirect to libreddit",
             "exampleUrl": "https://www.reddit.com/r/technology",
-            "exampleResult": "https://libredd.it/r/technology",
+            "exampleResult": "https://libreddit.kavin.rocks/r/technology",
             "error": null,
             "includePattern": "https://www.reddit.com/*",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://libredd.it/$1",
+            "redirectUrl": "https://libreddit.kavin.rocks/$1",
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
@@ -229,24 +229,46 @@
             "disabled": false,
             "grouped": false,
             "appliesTo": [
-                "main_frame"
+                "main_frame",
+                "script",
+                "xmlhttprequest",
+                "other"
             ]
         },
         {
-            "description": "Medium to Scribe",
-            "exampleUrl": "https://medium.com/@user/post-123456abcdef",
-            "exampleResult": "https://scribe.rip/@user/post-123456abcdef",
+            "description": "Redirects to scribe.rip",
+            "exampleUrl": "https://uxdesign.cc/why-do-we-round-corners-5145a90da6ed",
+            "exampleResult": "https://scribe.rip//why-do-we-round-corners-5145a90da6ed",
             "error": null,
-            "includePattern": "^https?://(?:.*\\.)*(?<!link\\.)medium\\.com(/.*)?$",
+            "includePattern": "^https?://(?:.*\\.)*(?<!(link\\.|cdn\\-images\\-\\d+\\.))uxdesign\\.cc(/.*)?$",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://scribe.rip$1",
+            "redirectUrl": "https://scribe.rip/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
             "grouped": false,
             "appliesTo": [
-                "main_frame"
+                "main_frame",
+                "sub_frame"
+            ]
+        },
+        {
+            "description": "Redirects Medium to Scribe",
+            "exampleUrl": "https://medium.com/@user/post-123456abcdef",
+            "exampleResult": "https://scribe.rip//@user/post-123456abcdef",
+            "error": null,
+            "includePattern": "^https?://(?:.*\\.)*(?<!(link\\.|cdn\\-images\\-\\d+\\.))medium\\.com(/.*)?$",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://scribe.rip/$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
             ]
         }
     ]
