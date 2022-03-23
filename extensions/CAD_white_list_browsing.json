@@ -1,20 +1,36 @@
 {
   "default": [
     {
+      "expression": "*.dev.to",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "-LwVLTGuC"
+    },
+    {
+      "expression": "*.duckduckgo.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "YT7BiErYG"
+    },
+    {
       "expression": "*.inoreader.com",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "Wbk_zjgBz"
+      "id": "vkmC544RK"
     },
     {
-      "expression": "*.libredd.it",
+      "expression": "*.libreddit.kavin.rocks",
       "listType": "WHITE",
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "Kn9MX1aIs"
+      "id": "rBOS_NCp6"
     },
     {
       "expression": "*.seedr.cc",
@@ -22,7 +38,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "gztWEXjPh"
+      "id": "Dvrd3UuFOL"
     },
     {
       "expression": "0.0.0.0",
@@ -30,7 +46,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "UK7ZINjn-"
+      "id": "io0PcRDAB4"
     }
   ]
 }

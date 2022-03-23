@@ -6,7 +6,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "Ha5kGpt-O"
+      "id": "o9lvOEZoE"
     },
     {
       "expression": "*.codepen.io",
@@ -14,7 +14,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "yqyGNgrue"
+      "id": "iqFmdv_Vim"
     },
     {
       "expression": "*.firefox.com",
@@ -22,7 +22,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "aCTKMst8K1"
+      "id": "fwy3v2Ae58"
     },
     {
       "expression": "*.github.com",
@@ -30,7 +30,15 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "vWbXa2TFJq"
+      "id": "vq7sziOTwJ"
+    },
+    {
+      "expression": "*.github.dev",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "1OD4u05Oi"
     },
     {
       "expression": "*.google.com",
@@ -38,7 +46,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "NadaqgZMM4"
+      "id": "ftmxaIRejz"
     },
     {
       "expression": "*.heroku.com",
@@ -46,7 +54,15 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "tS0Wl9iyGj"
+      "id": "w8l8YFHGBL"
+    },
+    {
+      "expression": "*.letsblock.it",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "yBvdvsoEk"
     },
     {
       "expression": "*.mega.nz",
@@ -54,7 +70,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "_491XtZFVV"
+      "id": "kESdrslXTF"
     },
     {
       "expression": "*.netlify.com",
@@ -62,7 +78,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "pzZdaa7bnu"
+      "id": "D9B8xvAgL"
     },
     {
       "expression": "127.0.0.1",
@@ -70,7 +86,7 @@
       "storeId": "default",
       "cleanSiteData": [],
       "cookieNames": [],
-      "id": "IuASxitDb"
+      "id": "3XAe8metow"
     }
   ]
 }
