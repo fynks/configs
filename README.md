@@ -41,9 +41,6 @@
 |Tampermonkey                  |[Get](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)              |[Get](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)             |
 
 ### Extension configs :
-- [Cookie AutoDelete Settings](https://github.com/fynks/configs/blob/main/extensions/CAD_settings.json)
-- [Cookie AutoDelete Whitelist Browsing](https://github.com/fynks/configs/blob/main/extensions/CAD_white_list_browsing.json)
-- [Cookie AutoDelete Whitelist Logged in](https://github.com/fynks/configs/blob/main/extensions/CAD_white_list_logged_in.json)
 - [Redirector](https://raw.githubusercontent.com/fynks/configs/main/extensions/Redirector.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/extensions/u_block_origin_configs.txt)
 - [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/extensions/SponsorBlockConfig.json)
@@ -92,6 +89,7 @@
 ---
 
 ## App configs
+- [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/prefs/firefox/cookie_clearance_exception_list.md)
 - [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/prefs/teddit_prefs.json)
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
 
