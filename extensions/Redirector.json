@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2022-03-23T06:57:59.200Z",
+    "createdAt": "2022-05-08T05:35:40.500Z",
     "redirects": [
         {
             "description": "[Reddit] redirect to libreddit",
@@ -269,6 +269,23 @@
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
+            ]
+        },
+        {
+            "description": "Watch shorts normally",
+            "exampleUrl": "https://www.youtube.com/shorts/kEjiorXRVnw",
+            "exampleResult": "https://www.youtube.com/watch?v=kEjiorXRVnw",
+            "error": null,
+            "includePattern": "https://www.youtube.com/shorts/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.youtube.com/watch?v=$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
             ]
         }
     ]

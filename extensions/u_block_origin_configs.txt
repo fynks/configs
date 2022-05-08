@@ -1,13 +1,14 @@
 {
-  "timeStamp": 1648018760000,
-  "version": "1.41.8",
+  "timeStamp": 1651988352400,
+  "version": "1.42.4",
   "userSettings": {
     "advancedUserEnabled": true,
     "uiTheme": "dark",
-    "externalLists": "https://get.letsblock.it/list/65e2a963-bbf7-4aae-aa19-da677110001c\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/RedDragonWebDesign/block-everything/master/block-everything.txt\nhttps://raw.githubusercontent.com/stroobants-dev/ublock-origin-shitty-copies-filter/main/combined-list.txt\nhttps://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt",
+    "externalLists": "https://get.letsblock.it/list/65e2a963-bbf7-4aae-aa19-da677110001c\nhttps://o0.pages.dev/Pro/adblock.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/RedDragonWebDesign/block-everything/master/block-everything.txt\nhttps://raw.githubusercontent.com/stroobants-dev/ublock-origin-shitty-copies-filter/main/combined-list.txt\nhttps://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt",
     "firewallPaneMinimized": false,
     "importedLists": [
       "https://get.letsblock.it/list/65e2a963-bbf7-4aae-aa19-da677110001c",
+      "https://o0.pages.dev/Pro/adblock.txt",
       "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
       "https://raw.githubusercontent.com/RedDragonWebDesign/block-everything/master/block-everything.txt",
       "https://raw.githubusercontent.com/stroobants-dev/ublock-origin-shitty-copies-filter/main/combined-list.txt",
@@ -17,11 +18,11 @@
     "prefetchingDisabled": false
   },
   "selectedFilterLists": [
-    "ublock-quick-fixes",
     "user-filters",
     "ublock-filters",
     "ublock-badware",
     "ublock-privacy",
+    "ublock-quick-fixes",
     "ublock-abuse",
     "ublock-unbreak",
     "adguard-generic",
@@ -36,6 +37,7 @@
     "ublock-annoyances",
     "plowe-0",
     "https://raw.githubusercontent.com/stroobants-dev/ublock-origin-shitty-copies-filter/main/combined-list.txt",
+    "https://o0.pages.dev/Pro/adblock.txt",
     "https://raw.githubusercontent.com/RedDragonWebDesign/block-everything/master/block-everything.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
     "https://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt"
