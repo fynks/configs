@@ -69,6 +69,8 @@
 - Evince
 - XDM
 - App Image Launcher
+- Converseen
+- warpinator-git
 - Nodejs
 - Zoom
 - [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
