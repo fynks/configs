@@ -56,11 +56,10 @@ fish_config
 | Abbrevation  | Command                           |
 | ------------ | --------------------------------- |
 | cl           | clear                             |
-| nat          | sudo nautilus                     |
-| fm6000       | fm6000 -m 4 -l 20 -g 6            |
+| sudon        | sudo nemo                         |
 | update       | sudo pacman -Syyuu && yay -Syu    |
 | clean-orphan | sudo pacman -Rs (pacman -Qqdt)    |
-| apache       | sudo /opt/lampp/lampp startapache |
+| hblock-disable | hblock -S none -D none          |
 | xampp        | sudo /opt/lampp/lampp start       |
 
 ----
