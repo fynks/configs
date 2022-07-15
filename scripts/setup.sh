@@ -53,7 +53,10 @@ AURPKGS=(
 'warpinator-git'          # File sharing with android
 'converseen'              # Batch processing images
 'visual-studio-code-bin'  # Code Editor
+'ventoy-bin'              # Bootable USB flasher
+'input-remapper-git'      # Custom remap the mouse
 'zoom'                    # Video conferencing tool
+'qnapi-git'               # Subtitles downloader
 )
 
 # Installs and names the package being installed by yay one by one

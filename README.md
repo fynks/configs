@@ -33,6 +33,7 @@
 |Bitwarden                     |[Get](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/)|[Get](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb)|
 |Xdm                           |[Get](https://addons.mozilla.org/en-US/firefox/addon/xdm-browser-monitor/)       |[Get](https://chrome.google.com/webstore/detail/xtreme-download-manager/dkckaoghoiffdbomfbbodbbgmhjblecj)  |
 |Skip Redirect                 |[Get](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)             |[Get](https://chrome.google.com/webstore/detail/skip-redirect/jaoafjdoijdconemdmodhbfpianehlon)            |
+|LibRedirect                 |[Get](https://addons.mozilla.org/firefox/addon/libredirect/)             |[Get](https://github.com/libredirect/libredirect/blob/master/chromium.md)            |
 |Dark Background And Light Text|[Get](https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/)|---                                                                                                        |
 |Dark Reader                   |[Get](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)                |[Get](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)              |
 |Improve Youtube               |[Get](https://addons.mozilla.org/en-US/firefox/addon/youtube-addon/)             |[Get](https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd)|
@@ -45,6 +46,7 @@
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/extensions/u_block_origin_configs.txt)
 - [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/extensions/SponsorBlockConfig.json)
 - [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/extensions/improvedtube.txt)
+- [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/extensions/libredirect-settings.json)
 
 ---
 
@@ -61,6 +63,7 @@
     
 #### Multimedia :
 - VLC
+- Gimp
 - Simple Screen Recorder
       
 #### Utilities :
@@ -72,7 +75,10 @@
 - Converseen
 - warpinator-git
 - Nodejs
+- Ventoy
+- Input Remapper
 - Zoom
+- QNapi
 - [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
    
 ####  NPM Modules
@@ -85,7 +91,6 @@
    - purgecss
 
 ### APP Images :
-- [GIMP](https://github.com/aferrero2707/gimp-appimage)
 - [Balena Etcher](https://www.balena.io/etcher/)
   
 ---
@@ -94,12 +99,6 @@
 - [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/prefs/firefox/cookie_clearance_exception_list.md)
 - [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/prefs/teddit_prefs.json)
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
-
----
-
-## Tools :
-- [Ventoy](https://github.com/ventoy/Ventoy/releases)
-- [Input Remapper](https://github.com/sezanzeb/input-remapper/)
 
 ---
 

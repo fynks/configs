@@ -1,7 +1,95 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2022-05-08T05:35:40.500Z",
+    "createdAt": "2022-07-15T12:50:08.658Z",
     "redirects": [
+        {
+            "description": "[Github] remove search tracking",
+            "exampleUrl": "https://github.com/search?q=teddit&ref=opensearch",
+            "exampleResult": "https://github.com/search?q=",
+            "error": null,
+            "includePattern": "https://github.com/search?q=teddit&ref=opensearch*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://github.com/search?q=$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Remove Google tracking ",
+            "exampleUrl": "https://www.google.com/search?name=f&hl=en&q=Qbittorrent+plugins",
+            "exampleResult": "https://www.google.com/search?q=Qbittorrent+plugins",
+            "error": null,
+            "includePattern": "https://www.google.com/search?*q=*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.google.com/search?q=$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Watch shorts normally",
+            "exampleUrl": "https://www.youtube.com/shorts/kEjiorXRVnw",
+            "exampleResult": "https://www.youtube.com/watch?v=kEjiorXRVnw",
+            "error": null,
+            "includePattern": "https://www.youtube.com/shorts/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.youtube.com/watch?v=$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "[AMO] removes app version tracking",
+            "exampleUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=ublock&appver=90.0.2",
+            "exampleResult": "https://addons.mozilla.org/en-US/firefox/search/?q=ublock",
+            "error": null,
+            "includePattern": "https://addons.mozilla.org/en-US/firefox/search/?q=*&appver=*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "script",
+                "xmlhttprequest",
+                "other"
+            ]
+        },
+        {
+            "description": "redirect IMDb to libremdb",
+            "exampleUrl": "https://www.imdb.com/title/tt0258463/?ref_=tt_sims_tt_t_4",
+            "exampleResult": "https://libremdb.herokuapp.com/title/tt0258463/",
+            "error": null,
+            "includePattern": "https?:\\/\\/(www\\.)?imdb\\.com\\/title\\/([^\\?]*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://libremdb.herokuapp.com/title/$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
         {
             "description": "[Reddit] redirect to libreddit",
             "exampleUrl": "https://www.reddit.com/r/technology",
@@ -13,7 +101,7 @@
             "redirectUrl": "https://libreddit.kavin.rocks/$1",
             "patternType": "W",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame"
@@ -30,7 +118,7 @@
             "redirectUrl": "https://nitter.net/$1",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame"
@@ -47,10 +135,29 @@
             "redirectUrl": "https://bibliogram.art/u/$1",
             "patternType": "W",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame"
+            ]
+        },
+        {
+            "description": "[Pinterest] direct images",
+            "exampleUrl": "https://i.pinimg.com/236x/37/b8/00/37b800e24f97f7e7a2a1505a367ac6e8--linux-badges.jpg",
+            "exampleResult": "https://i.pinimg.com/originals/37/b8/00/37b800e24f97f7e7a2a1505a367ac6e8--linux-badges.jpg",
+            "error": null,
+            "includePattern": "^https?://(?:www\\.)?i\\.pinimg\\.com/.*?36x/(.+)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://i.pinimg.com/originals/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "image",
+                "imageset"
             ]
         },
         {
@@ -82,28 +189,11 @@
             "redirectUrl": "https://nitter.net/$1.$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
-            ]
-        },
-        {
-            "description": "[reddit] use teddit frontend",
-            "exampleUrl": "https://reddit.com/r/monero",
-            "exampleResult": "https://teddit.net/r/monero",
-            "error": null,
-            "includePattern": "^https?://(?:www\\.)?reddit\\.com/?(.*)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://teddit.net/$1",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
             ]
         },
         {
@@ -117,29 +207,10 @@
             "redirectUrl": "https://wikiless.org/$2",
             "patternType": "W",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame"
-            ]
-        },
-        {
-            "description": "[Pinterest] direct images",
-            "exampleUrl": "https://i.pinimg.com/236x/37/b8/00/37b800e24f97f7e7a2a1505a367ac6e8--linux-badges.jpg",
-            "exampleResult": "https://i.pinimg.com/originals/37/b8/00/37b800e24f97f7e7a2a1505a367ac6e8--linux-badges.jpg",
-            "error": null,
-            "includePattern": "^https?://(?:www\\.)?i\\.pinimg\\.com/.*?36x/(.+)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://i.pinimg.com/originals/$1",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame",
-                "image",
-                "imageset"
             ]
         },
         {
@@ -191,48 +262,11 @@
             "redirectUrl": "$1",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "xmlhttprequest"
-            ]
-        },
-        {
-            "description": "[Github] remove search tracking",
-            "exampleUrl": "https://github.com/search?q=teddit&ref=opensearch",
-            "exampleResult": "https://github.com/search?q=",
-            "error": null,
-            "includePattern": "https://github.com/search?q=teddit&ref=opensearch*",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://github.com/search?q=$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "[AMO] removes app version tracking",
-            "exampleUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=ublock&appver=90.0.2",
-            "exampleResult": "https://addons.mozilla.org/en-US/firefox/search/?q=ublock",
-            "error": null,
-            "includePattern": "https://addons.mozilla.org/en-US/firefox/search/?q=*&appver=*",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://addons.mozilla.org/en-US/firefox/search/?q=$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame",
-                "script",
-                "xmlhttprequest",
-                "other"
             ]
         },
         {
@@ -246,7 +280,7 @@
             "redirectUrl": "https://scribe.rip/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame",
@@ -264,7 +298,7 @@
             "redirectUrl": "https://scribe.rip/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame",
@@ -272,17 +306,34 @@
             ]
         },
         {
-            "description": "Watch shorts normally",
-            "exampleUrl": "https://www.youtube.com/shorts/kEjiorXRVnw",
-            "exampleResult": "https://www.youtube.com/watch?v=kEjiorXRVnw",
+            "description": "Redirect Quora",
+            "exampleUrl": "https://www.quora.com/How-can-I-turn-on-WiFi-wireless-capability?share=1",
+            "exampleResult": "https://quetre.herokuapp.com/How-can-I-turn-on-WiFi-wireless-capability?share=1",
             "error": null,
-            "includePattern": "https://www.youtube.com/shorts/*",
+            "includePattern": "https://www.quora.com/*",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://www.youtube.com/watch?v=$1",
+            "redirectUrl": "https://quetre.herokuapp.com/$1",
             "patternType": "W",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Imgur -> rimgo",
+            "exampleUrl": "https://imgur.com/a/H8M4rcp",
+            "exampleResult": "https://imgur.artemislena.eu/a/H8M4rcp",
+            "error": null,
+            "includePattern": "^https?://i?.?imgur.com(/.*)?$",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://imgur.artemislena.eu$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame"
