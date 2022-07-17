@@ -20,7 +20,7 @@
 
 ## Browsers
 - [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
-- [Bookmarklets](https://github.com/fynks/bookmarklets)
+- [Bookmarklets](https://github.com/fynks/configs/blob/main/extensions/bookmarklets.md)
 - [Userscripts](https://github.com/fynks/userscripts)
 
 |**Extensions**                |**Firefox**                                                                      |**Chrome**                                                                                                 |
@@ -103,5 +103,5 @@
 ---
 
 ### Others :
-- [Links](https://fynks.github.io/links/)
+- [Links](https://github.com/fynks/things/blob/main/links.md)
 - [Github](https://github.com/fynks/configs)
