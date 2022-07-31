@@ -60,7 +60,8 @@ fish_config
 | update       | sudo pacman -Syyuu && yay -Syu    |
 | clean-orphan | sudo pacman -Rs (pacman -Qqdt)    |
 | hblock-disable | hblock -S none -D none          |
-| xampp        | sudo /opt/lampp/lampp start       |
+| update-mirrors | sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syyu       |
+| start-inputremapper | systemctl start input-remapper.service |
 
 ----
 ## Firefox Setup
@@ -77,31 +78,7 @@ Search Engine : DuckDuckGo
 Clear History on exit : true
 Under History > Settings > Active logins+Cookies : Disable
 ```
-4.Add following to show close button only will hovering a background tab
-```css
-  /*=== Only show close buttons on background tabs when hovering with the mouse ===*/
-.tabbrowser-tab:not([visuallyselected]) .tab-close-button {
-  visibility: collapse !important;
-  opacity: 0;
-}
-.tabbrowser-tab:hover .tab-close-button {
-  visibility: visible !important;
-  opacity: 1;
-}
 
-/* Animate */
-@media (prefers-reduced-motion: no-preference) {
-  /* Fade out */
-  .tabbrowser-tab:not([visuallyselected]) .tab-close-button {
-    transition: opacity 0.1s var(--animation-easing-function) !important;
-  }
-
-  /* Fade in */
-  .tabbrowser-tab:hover .tab-close-button {
-    transition: opacity 0.25s var(--animation-easing-function) !important;
-  }
-}
-```
 
 #### Other User.js :
 
