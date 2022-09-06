@@ -37,33 +37,17 @@ PACMANPKGS=(
 'appimagelauncher'        # Integrates AppImages into system
 'telegram-desktop'        # Social platform
 'simplescreenrecorder'    # Screen Recorder
+'gimp'                    # Advanced photo editor
 )
 
 # Installs and names the package being installed by pacman one by one
 for PACMAN in "${PACMANPKGS[@]}"; do
  echo -e "\n############################################\n######### Program : $PACMAN #########\n############################################\n"
-   sudo pacman -S $PACMAN
+   sudo pacman -S --noconfirm $PACMAN
 done
 
-# List of packages to be installed from Arch-AUR
-AURPKGS=(
-'librewolf-bin'           # Modified Firefox
-'brave-bin'               # Chromium based Browser
-'sublime-text-4'          # Lightweight Code Editor
-'warpinator-git'          # File sharing with android
-'converseen'              # Batch processing images
-'visual-studio-code-bin'  # Code Editor
-'ventoy-bin'              # Bootable USB flasher
-'input-remapper-git'      # Custom remap the mouse
-'zoom'                    # Video conferencing tool
-'qnapi-git'               # Subtitles downloader
-)
-
-# Installs and names the package being installed by yay one by one
-for AUR in "${AURPKGS[@]}"; do
- echo -e "\n############################################\n######### Program : $AUR #########\n############################################\n"
-   sudo yay -S $AUR
-done
+# Instals and configures fisher and tide
+bash && sudo curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher install ilancosman/tide
 
 # Installs hblock
  echo -e "\n############################################\n######### Installing Hblock #########\n############################################\n"
@@ -80,6 +64,24 @@ sudo mkdir /etc/hblock/ && sudo  curl -o /etc/hblock/sources.list 'https://raw.g
 # Runs hblock and compiles the hosts file with custom sources
 sudo hblock
 
+# List of packages to be installed from Arch-AUR
+AURPKGS=(
+'librewolf-bin'           # Modified Firefox
+'brave-bin'               # Chromium based Browser
+'sublime-text-4'          # Lightweight Code Editor
+'warpinator-git'          # File sharing with android
+'converseen'              # Batch processing images
+'visual-studio-code-bin'  # Code Editor
+'ventoy-bin'              # Bootable USB flasher
+'zoom'                    # Video conferencing tool
+'celluloid'               # MPV frontend
+)
+
+# Installs and names the package being installed by yay one by one
+for AUR in "${AURPKGS[@]}"; do
+ echo -e "\n############################################\n######### Program : $AUR #########\n############################################\n"
+   yay -S --noconfirm $AUR
+done
 
 echo -e "\n############################################\n######### DONE #########\n############################################\n"
 exit 
