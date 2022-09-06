@@ -158,19 +158,23 @@
     "https://vid.puffyan.us",
     "https://invidious.snopyta.org",
     "https://inv.riverside.rocks",
-    "https://invidious.osi.kr",
     "https://y.com.sb",
-    "https://tube.cthd.icu",
     "https://yt.artemislena.eu",
     "https://invidious.flokinet.to",
-    "https://invidious.tiekoetter.com",
     "https://invidious.sethforprivacy.com",
+    "https://invidious.tiekoetter.com",
     "https://inv.bp.projectsegfau.lt",
     "https://invidious.projectsegfau.lt",
+    "https://inv.vern.cc",
+    "https://invidious.nerdvpn.de",
+    "https://inv.privacy.com.de",
+    "https://invidious.rhyshl.live",
+    "https://invidious.slipfox.xyz",
     "https://invidious.weblibre.org",
     "https://youtube.076.ne.jp",
-    "https://invidious.esmailelbob.xyz",
-    "https://invidious.namazso.eu"
+    "https://invidious.namazso.eu",
+    "https://invidious.osi.kr",
+    "https://invidious.esmailelbob.xyz"
   ],
   "invidiousTorCustomRedirects": [],
   "invidiousTorRedirectsChecks": [
@@ -180,7 +184,10 @@
     "http://grwp24hodrefzvjjuccrkw3mjq4tzhaaq32amf33dzpmuxe7ilepcmad.onion",
     "http://osbivz6guyeahrwp2lnwyjk2xos342h4ocsxyqrlaopqjuhwn2djiiyd.onion",
     "http://u2cvlit75owumwpy4dj2hsmvkq7nvrclkpht7xgyye2pyoxhpmclkrad.onion",
-    "http://euxxcnhsynwmfidvhjf6uzptsmh4dipkmgdmcmxxuo7tunp3ad2jrwyd.onion/"
+    "http://euxxcnhsynwmfidvhjf6uzptsmh4dipkmgdmcmxxuo7tunp3ad2jrwyd.onion",
+    "http://invidious.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion",
+    "http://inv.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion",
+    "http://am74vkcrjp2d5v36lcdqgsj2m6x36tbrkhsruoegwfcizzabnfgf5zyd.onion"
   ],
   "lbryTargetsProtocol": "normal",
   "lbryTargetsRedirects": {
@@ -1561,16 +1568,18 @@
   "pipedMaterialTorRedirectsChecks": [],
   "pipedNormalCustomRedirects": [],
   "pipedNormalRedirectsChecks": [
-    "https://il.ax",
+    "https://us-piped.shimul.me",
+    "https://pipedus.palash.dev",
+    "https://watch.whatever.social",
     "https://yt.jae.fi",
     "https://piped.mint.lgbt",
-    "https://piped.privacy.com.de",
-    "https://piped.esmailelbob.xyz"
+    "https://il.ax",
+    "https://piped.esmailelbob.xyz",
+    "https://piped.projectsegfau.lt",
+    "https://piped.privacydev.net"
   ],
   "pipedTorCustomRedirects": [],
-  "pipedTorRedirectsChecks": [
-    "http://piped2bbch4xslbl2ckr6k62q56kon56ffowxaqzy42ai22a4sash3ad.onion"
-  ],
+  "pipedTorRedirectsChecks": [],
   "popupFrontends": [
     "twitter",
     "instagram",
@@ -2389,20 +2398,23 @@
         "https://invidious.snopyta.org",
         "https://invidious.kavin.rocks",
         "https://inv.riverside.rocks",
-        "https://invidious.osi.kr",
         "https://y.com.sb",
-        "https://tube.cthd.icu",
         "https://yt.artemislena.eu",
         "https://invidious.flokinet.to",
-        "https://invidious.tiekoetter.com",
-        "https://invidious.lunar.icu",
         "https://invidious.sethforprivacy.com",
+        "https://invidious.tiekoetter.com",
         "https://inv.bp.projectsegfau.lt",
         "https://invidious.projectsegfau.lt",
+        "https://inv.vern.cc",
+        "https://invidious.nerdvpn.de",
+        "https://inv.privacy.com.de",
+        "https://invidious.rhyshl.live",
+        "https://invidious.slipfox.xyz",
         "https://invidious.weblibre.org",
         "https://youtube.076.ne.jp",
-        "https://invidious.esmailelbob.xyz",
-        "https://invidious.namazso.eu"
+        "https://invidious.namazso.eu",
+        "https://invidious.osi.kr",
+        "https://invidious.esmailelbob.xyz"
       ],
       "tor": [
         "http://c7hqkpkpemu6e7emz5b4vyz7idjgdvgaaa3dyimmeojqbgpea3xqjoid.onion",
@@ -2411,26 +2423,33 @@
         "http://grwp24hodrefzvjjuccrkw3mjq4tzhaaq32amf33dzpmuxe7ilepcmad.onion",
         "http://osbivz6guyeahrwp2lnwyjk2xos342h4ocsxyqrlaopqjuhwn2djiiyd.onion",
         "http://u2cvlit75owumwpy4dj2hsmvkq7nvrclkpht7xgyye2pyoxhpmclkrad.onion",
-        "http://euxxcnhsynwmfidvhjf6uzptsmh4dipkmgdmcmxxuo7tunp3ad2jrwyd.onion/"
-      ]
+        "http://euxxcnhsynwmfidvhjf6uzptsmh4dipkmgdmcmxxuo7tunp3ad2jrwyd.onion",
+        "http://invidious.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion",
+        "http://inv.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion",
+        "http://am74vkcrjp2d5v36lcdqgsj2m6x36tbrkhsruoegwfcizzabnfgf5zyd.onion"
+      ],
+      "i2p": [],
+      "loki": []
     },
     "piped": {
       "normal": [
         "https://piped.kavin.rocks",
         "https://piped.tokhmi.xyz",
         "https://piped.moomoo.me",
-        "https://il.ax",
-        "https://piped.syncpundit.com",
         "https://piped.mha.fi",
-        "https://piped.shimul.me",
+        "https://us-piped.shimul.me",
+        "https://pipedus.palash.dev",
+        "https://watch.whatever.social",
         "https://yt.jae.fi",
         "https://piped.mint.lgbt",
-        "https://piped.privacy.com.de",
-        "https://piped.esmailelbob.xyz"
+        "https://il.ax",
+        "https://piped.esmailelbob.xyz",
+        "https://piped.projectsegfau.lt",
+        "https://piped.privacydev.net"
       ],
-      "tor": [
-        "http://piped2bbch4xslbl2ckr6k62q56kon56ffowxaqzy42ai22a4sash3ad.onion"
-      ]
+      "tor": [],
+      "i2p": [],
+      "loki": []
     },
     "pipedMaterial": {
       "normal": [

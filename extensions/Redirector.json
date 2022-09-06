@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2022-07-15T12:50:08.658Z",
+    "createdAt": "2022-09-06T14:23:33.485Z",
     "redirects": [
         {
             "description": "[Github] remove search tracking",
@@ -334,6 +334,23 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Google",
+            "exampleUrl": "https://www.google.com/webhp?",
+            "exampleResult": "https://www.google.com/",
+            "error": null,
+            "includePattern": "https://www.google.com/webhp?*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.google.com/",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
             "grouped": false,
             "appliesTo": [
                 "main_frame"

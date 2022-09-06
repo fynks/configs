@@ -1,6 +1,6 @@
 {
-  "timeStamp": 1657890613365,
-  "version": "1.43.0",
+  "timeStamp": 1662474578876,
+  "version": "1.44.2",
   "userSettings": {
     "advancedUserEnabled": true,
     "uiTheme": "dark",
