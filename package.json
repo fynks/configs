@@ -9,7 +9,7 @@
       "url": ""
     },
     "scripts": {
-      "build": "github-readme-to-html",
+      "build": "github-readme-to-html -t configs",
       "publish":"npm publish"
     },
     "author": "Fynks",
