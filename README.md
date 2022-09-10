@@ -13,6 +13,7 @@
 
 ## OS and Setup 
 - [Apps installer Script](https://raw.githubusercontent.com/fynks/configs/main/setup/setup.sh)
+- [Chaotic AUR](https://github.com/chaotic-aur)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts)
 - [Xampp](https://github.com/fynks/configs/blob/main/setup/xampp-htdocs.zip)
 
