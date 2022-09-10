@@ -4,9 +4,9 @@
   - [Firefox](#firefox-setup)
   - [VS Code](#visual-studio-code)
 - [Browsers](#browsers)
-  - [Extension configs](#extension-configs) 
+  - [Extension configs](#extension-configs-) 
   - [other configs](#other-configs)
-- [Tools and Links](#tools-and-links)
+- [Tools and Links](#tools-and-links-)
 
 
   ---
@@ -30,6 +30,7 @@
 
 
 > ### Firefox Setup
+
 1. After installing firefox,get latest _better-fox User.js_ from :
 [Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
 
@@ -38,6 +39,7 @@
 
 
 > ### Visual Studio Code
+
 After grabbing the package from your distribution's package manager,you have to do following trouble shooting in order to setup sync and permanently store credentials on linux.
 
 
@@ -51,13 +53,16 @@ mkdir -p "$HOME"/.local/share/keyrings
 2. Login again.
 
 3. Have the following programs installed (installation assumes arch/pacman, should be similar to other distros):
+   
 ```sh
 sudo pacman -S gnome-keyring libsecret libgnome-keyring
 ```
-4. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
-5. Restart the login procedure.
+1. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
+2. Restart the login procedure.
 
->  Refrence : https://code.visualstudio.com/docs/editor/settings-sync#_linux
+> Refrence : https://code.visualstudio.com/docs/editor/settings-sync#_linux
+
+
 ---
 
 ## Browsers
@@ -86,10 +91,11 @@ sudo pacman -S gnome-keyring libsecret libgnome-keyring
 - [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/SponsorBlockConfig.json)
 - [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/improvedtube.txt)
 - [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
+  
 ### other configs
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
 - [Userscripts](https://github.com/fynks/userscripts)
-- [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/firefox/firefox_cookie_clearance_exception_list.md)
+- [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/firefox_cookie_clearance_exception_list.md)
 - [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/teddit_prefs.json)
 - [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
