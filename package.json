@@ -1,0 +1,20 @@
+{
+    "name": "@fynks/configs",
+    "version": "1.0.1",
+    "description": "",
+    "main": "index.html",
+    "homepage": "",
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "scripts": {
+      "build": "github-readme-to-html",
+      "publish":"npm publish"
+    },
+    "author": "Fynks",
+    "email": "",
+    "dependencies": {
+    "github-readme-to-html": "^1.0.7-beta.0"
+  }
+  }
