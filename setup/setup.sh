@@ -11,12 +11,13 @@
 #-------------------------------------------------------------------------
 
 # Updates the mirrors and force refreshes the repository databases
-echo -e "\n############################################\n######### Pacman mirrors and databases updates #########\n############################################\n"
-echo "Updating mirrors with fastest mirrors"
-sudo pacman-mirrors --fasttrack 20
+echo -e "\n############################################\n######### Pacman Branch,mirrors and databases updates #########\n############################################\n"
+echo "changing branch and Updating mirrors with fastest mirrors"
+sudo pacman-mirrors --api --set-branch unstable
+sudo pacman-mirrors --fasttrack 10
 
 echo "\nSyncing databases \n"
-sudo pacman -Syyuu
+sudo pacman -Syu
 
 # Start of installing packges
 echo -e "\n############################################\n######### Starting installing packages #########\n############################################\n"
@@ -34,6 +35,7 @@ PACMANPKGS=(
 'evince'                  # pdf Viewer
 'bleachbit'               # Cleaner utility
 'nodejs'                  # Javascript engine
+'npm'                     # Node package manager
 'appimagelauncher'        # Integrates AppImages into system
 'telegram-desktop'        # Social platform
 'simplescreenrecorder'    # Screen Recorder
@@ -45,9 +47,6 @@ for PACMAN in "${PACMANPKGS[@]}"; do
  echo -e "\n############################################\n######### Program : $PACMAN #########\n############################################\n"
    sudo pacman -S --noconfirm $PACMAN
 done
-
-# Instals and configures fisher and tide
-bash && sudo curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher install ilancosman/tide
 
 # Installs hblock
  echo -e "\n############################################\n######### Installing Hblock #########\n############################################\n"
@@ -67,7 +66,7 @@ sudo hblock
 # List of packages to be installed from Arch-AUR
 AURPKGS=(
 'librewolf-bin'           # Modified Firefox
-'brave-bin'               # Chromium based Browser
+'google-chrome-stable'   # Chromium based Browser
 'sublime-text-4'          # Lightweight Code Editor
 'warpinator-git'          # File sharing with android
 'converseen'              # Batch processing images
@@ -83,5 +82,10 @@ for AUR in "${AURPKGS[@]}"; do
    yay -S --noconfirm $AUR
 done
 
-echo -e "\n############################################\n######### DONE #########\n############################################\n"
+# Invokes the fish_config.sh script for fish shell setup
+ echo -e "\n############################################\n######### Initiating Fish config  #########\n############################################\n"
+echo "Initiation sucessfull"
+sudo chmod +x "fish_config.sh"
+./fish_config.sh
+
 exit 

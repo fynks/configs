@@ -1,27 +1,66 @@
 ## Menu :
 - [OS and Setup](#os-and-setup)
+  - [Fish shell](#fish-shell-abbreviations) 
+  - [Firefox](#firefox-setup)
+  - [VS Code](#visual-studio-code)
 - [Browsers](#browsers)
-- [Applications](#apps-)
-- [App Configs](#app-configs)
-- [Tools](#tools-)
+  - [Extension configs](#extension-configs) 
+  - [other configs](#other-configs)
+- [Tools and Links](#tools-and-links)
+
 
   ---
 
 ## OS and Setup 
-- [Apps installer](https://raw.githubusercontent.com/fynks/configs/main/scripts/setup.sh)
-- [Linux Setup Guide](https://github.com/fynks/configs/blob/main/guides/linux_setup.md)
-- [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/dotfiles/custom_shortcuts)
-- [hblock](https://github.com/hectorm/hblock)
-- [hblock custom sources](https://raw.githubusercontent.com/fynks/configs/main/prefs/hblock-sources/sources.list)
-> This custom sources file should be put as: *etc/hblock/sources.list*
-- [Xampp](https://github.com/fynks/configs/blob/main/prefs/xampp-htdocs.zip)
-  
+- [Apps installer Script](https://raw.githubusercontent.com/fynks/configs/main/setup/setup.sh)
+- [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts)
+- [Xampp](https://github.com/fynks/configs/blob/main/setup/xampp-htdocs.zip)
+
+> ### Fish shell Abbreviations
+
+| Abbrevation  | Command                           |
+| ------------ | --------------------------------- |
+| cl           | clear                             |
+| sudon        | sudo nemo                         |
+| update       | sudo pacman -Syyuu && yay -Syu    |
+| clean-orphan | sudo pacman -Rs (pacman -Qqdt)    |
+| hblock-disable | hblock -S none -D none          |
+| update-mirrors | sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syyu       |
+| start-inputremapper | systemctl start input-remapper.service |
+
+
+> ### Firefox Setup
+1. After installing firefox,get latest _better-fox User.js_ from :
+[Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
+
+2. Fix firefox proton design by adding: 
+[Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix)
+
+
+> ### Visual Studio Code
+After grabbing the package from your distribution's package manager,you have to do following trouble shooting in order to setup sync and permanently store credentials on linux.
+
+
+1. Add the following lines to your ~/.xinitrc:
+```sh
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+eval $(/usr/bin/gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+mkdir -p "$HOME"/.local/share/keyrings
+```
+2. Login again.
+
+3. Have the following programs installed (installation assumes arch/pacman, should be similar to other distros):
+```sh
+sudo pacman -S gnome-keyring libsecret libgnome-keyring
+```
+4. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
+5. Restart the login procedure.
+
+>  Refrence : https://code.visualstudio.com/docs/editor/settings-sync#_linux
 ---
 
 ## Browsers
-- [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
-- [Bookmarklets](https://github.com/fynks/configs/blob/main/extensions/bookmarklets.md)
-- [Userscripts](https://github.com/fynks/userscripts)
 
 |**Extensions**                |**Firefox**                                                                      |**Chrome**                                                                                                 |
 |:------------------------------|:---------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
@@ -42,66 +81,23 @@
 |Tampermonkey                  |[Get](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)              |[Get](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)             |
 
 ### Extension configs :
-- [Redirector](https://raw.githubusercontent.com/fynks/configs/main/extensions/Redirector.json)
-- [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/extensions/u_block_origin_configs.txt)
-- [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/extensions/SponsorBlockConfig.json)
-- [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/extensions/improvedtube.txt)
-- [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/extensions/libredirect-settings.json)
-
----
-
-## APPS :
-#### Browsers :
-- Firefox
-- Librewolf
-- Brave
-
-#### Coding :
-- VS Code
-- Sublime Text Editor 4
-- Xampp
-    
-#### Multimedia :
-- VLC
-- Gimp
-- Simple Screen Recorder
-      
-#### Utilities :
-- Alacritty
-- Nemo
-- Evince
-- XDM
-- App Image Launcher
-- Converseen
-- warpinator-git
-- Nodejs
-- Ventoy
-- Input Remapper
-- Zoom
-- QNapi
-- [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
-   
-####  NPM Modules
-   - PNPM
-   - Workbox-cli
-   - firebase-tools
-   - pagecrypt
-   - @josee9988/minifyall
-   - clean-css-cli
-   - purgecss
-
-### APP Images :
-- [Balena Etcher](https://www.balena.io/etcher/)
-  
----
-
-## App configs
-- [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/prefs/firefox/cookie_clearance_exception_list.md)
-- [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/prefs/teddit_prefs.json)
+- [Redirector](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/Redirector.json)
+- [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
+- [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/SponsorBlockConfig.json)
+- [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/improvedtube.txt)
+- [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
+### other configs
+- [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
+- [Userscripts](https://github.com/fynks/userscripts)
+- [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/firefox/firefox_cookie_clearance_exception_list.md)
+- [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/teddit_prefs.json)
+- [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
 - [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
 
 ---
 
-### Others :
+
+### Tools and links :
+- [XDM](https://github.com/subhra74/xdm)
 - [Links](https://github.com/fynks/things/blob/main/links.md)
 - [Github](https://github.com/fynks/configs)
