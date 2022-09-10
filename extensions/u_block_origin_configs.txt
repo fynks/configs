@@ -1,5 +1,5 @@
 {
-  "timeStamp": 1662474578876,
+  "timeStamp": 1662782517772,
   "version": "1.44.2",
   "userSettings": {
     "advancedUserEnabled": true,
@@ -27,7 +27,6 @@
     "ublock-unbreak",
     "adguard-generic",
     "easylist",
-    "LegitimateURLShortener",
     "adguard-spyware",
     "adguard-spyware-url",
     "easyprivacy",
@@ -48,21 +47,14 @@
     "about-scheme",
     "chrome-extension-scheme",
     "chrome-scheme",
-    "covid.gov.pk",
-    "css-weekly.com",
-    "designmodo.com",
     "edge-scheme",
     "moz-extension-scheme",
     "opera-scheme",
-    "pinetools.com",
-    "siqo-bin.000webhostapp.com",
-    "snapdrop.net",
-    "uxdesign.cc",
     "vivaldi-scheme",
     "wyciwyg-scheme"
   ],
   "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop\n* google-analytics.com * block\n* doubleclick.net * block",
   "urlFilteringString": "",
-  "hostnameSwitchesString": "no-large-media: behind-the-scene false\nno-csp-reports: * true\nno-remote-fonts: www.youtube.com false\nno-scripting: www.youtube.com false\nno-remote-fonts: www.inoreader.com false\nno-scripting: www.inoreader.com false\nno-remote-fonts: siqo-dash.netlify.app false\nno-scripting: siqo-dash.netlify.app false\nno-remote-fonts: search.brave.com false\nno-scripting: search.brave.com false\nno-remote-fonts: www.google.com false\nno-scripting: www.google.com false\nno-scripting: www.reddit.com false\nno-remote-fonts: github.com false\nno-scripting: github.com false\nno-remote-fonts: localhost false\nno-scripting: localhost false\nno-remote-fonts: devmarks.github.io false\nno-scripting: devmarks.github.io false\nno-remote-fonts: siqo.netlify.app false\nno-scripting: siqo.netlify.app false\nno-remote-fonts: 127.0.0.1 false\nno-scripting: 127.0.0.1 false\nno-scripting: teddit.net false\nno-remote-fonts: fynks.github.io false\nno-scripting: fynks.github.io false\nno-remote-fonts: piped.kavin.rocks false\nno-scripting: piped.kavin.rocks false\nno-remote-fonts: www.seedr.cc false\nno-scripting: www.seedr.cc false\nno-remote-fonts: nitter.net false\nno-scripting: nitter.net false\nno-remote-fonts: manjaro.org false\nno-scripting: manjaro.org false\nno-remote-fonts: libredd.it false\nno-scripting: libredd.it false\nno-scripting: translate.google.co.in false\nno-remote-fonts: htmlcompressor.com false\nno-scripting: htmlcompressor.com false\nno-remote-fonts: addons.mozilla.org false\nno-scripting: addons.mozilla.org false\nno-remote-fonts: duckduckgo.com false\nno-scripting: duckduckgo.com false\nno-remote-fonts: bibliogram.art false\nno-scripting: bibliogram.art false\nno-remote-fonts: www.openstreetmap.org false\nno-scripting: www.openstreetmap.org false\nno-remote-fonts: gitlab.com false\nno-scripting: gitlab.com false\nno-remote-fonts: fast.com false\nno-scripting: fast.com false\nno-remote-fonts: tablericons.com false\nno-scripting: tablericons.com false\nno-remote-fonts: codepen.io false\nno-scripting: codepen.io false\nno-remote-fonts: www.w3schools.com false\nno-scripting: www.w3schools.com false\nno-cosmetic-filtering: web.dev true",
+  "hostnameSwitchesString": "no-large-media: behind-the-scene false\nno-csp-reports: * true\nno-cosmetic-filtering: web.dev true",
   "userFilters": "! 2021-08-02 https://www.youtube.com\nwww.youtube.com###button > .ytd-button-renderer.style-scope\n\n! 2021-08-02 https://translate.google.co.in\ntranslate.google.co.in##.gb_Ef.gb_lg.gb_h.gb_mg.gb_Sa\n\n! 2021-08-02 https://www.inoreader.com\nwww.inoreader.com##.tree_link_folder.normal_dim.tree_link.tree_node\nwww.inoreader.com###sd_29585235120\nwww.inoreader.com##.inno_toolbar_button_upgrade.inno_toolbar_button\n\n! 2021-08-03 https://teddit.kavin.rocks\nteddit.kavin.rocks###intro\nteddit.kavin.rocks##div:nth-of-type(2) > label\n\n! 2021-08-03 https://www.youtube.com\nwww.youtube.com###guide\n\n! 2021-08-04 https://npm.runkit.com\nnpm.runkit.com###register-banner\n\n! 2021-08-06 https://siqo-bin.000webhostapp.com\n||cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png$image\n\n! 2021-08-17 https://www.youtube.com\nwww.youtube.com###voice-search-button > .size-default.style-default.ytd-masthead.style-scope > .ytd-button-renderer.style-scope.yt-simple-endpoint > .size-default.style-default.ytd-button-renderer.style-scope\nwww.youtube.com###voice-search-button\n\n! 2021-09-10 https://css-tricks.com\ncss-tricks.com###all-modules\ncss-tricks.com##.site-footer\n\n! 2021-09-19 https://www.actcorp.in\nwww.actcorp.in##.blogDetailstiky\n||www.actcorp.in/themes/actcorp/img/chat.png$image\nwww.actcorp.in##.blogRewampInnerRight\n||www.actcorp.in/themes/actcorp/img/chat.png$image\n\n! 2021-11-13 https://oceanofmovies.se\noceanofmovies.se##iframe:nth-of-type(3)\n\n! 2021-11-15 https://github.com\ngithub.com##.d-lg-inline-block.d-block.no-wrap.border-0.py-3.px-0.HeaderMenu-link.HeaderMenu-summary\n\n! 2021-11-18 https://www.inoreader.com\nwww.inoreader.com###subscriptions_nav_below\n\n! 2021-11-24 https://www.sliderrevolution.com\nwww.sliderrevolution.com##.tg-site-header-top\nwww.sliderrevolution.com###rev_slider_1180_1_forcefullwidth\n\n! 2021-11-29 https://tablericons.com\ntablericons.com##.px-6\ntablericons.com##.focus\\:outline-none.hover\\:border-gray-800.hover\\:border-2.hover\\:text-black.no-underline.text-blue-500.font-bold.py-2.px-3.block\n||tablericons.com/ckissi.jpeg$image\ntablericons.com##.ml-6.flex\n\n\n! 2021-12-27 https://tablericons.com\ntablericons.com##.my-10.mx-4.justify-center.flex\n"
 }
