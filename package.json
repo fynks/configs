@@ -9,12 +9,13 @@
       "url": ""
     },
     "scripts": {
-      "build": "github-readme-to-html -t configs",
+      "build": "github-readme-to-html -t configs && minifyall ./dist/index.html --output ./dist/index.html",
       "publish":"npm publish"
     },
     "author": "Fynks",
     "email": "",
     "dependencies": {
-    "github-readme-to-html": "^1.0.7-beta.0"
+    "github-readme-to-html": "^1.0.7-beta.0",
+    "@josee9988/minifyall": "^1.2.2"
   }
   }
