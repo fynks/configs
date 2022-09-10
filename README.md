@@ -42,23 +42,10 @@
 
 After grabbing the package from your distribution's package manager,you have to do following trouble shooting in order to setup sync and permanently store credentials on linux.
 
-
-1. Add the following lines to your ~/.xinitrc:
-```sh
-source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
-eval $(/usr/bin/gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-mkdir -p "$HOME"/.local/share/keyrings
-```
-2. Login again.
-
-3. Have the following programs installed (installation assumes arch/pacman, should be similar to other distros):
-   
-```sh
-sudo pacman -S gnome-keyring libsecret libgnome-keyring
-```
-1. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
-2. Restart the login procedure.
+1. Run the ```vs_code_config.sh``` [Script](https://raw.githubusercontent.com/fynks/configs/main/setup/vs_code_config.sh)
+2. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
+3. Logout the device and login.
+4. Now login into github again in vs code.
 
 > Refrence : https://code.visualstudio.com/docs/editor/settings-sync#_linux
 

@@ -58,7 +58,7 @@ curl -o /tmp/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.4.0/hbl
 
 # Copies the custom sources file from github to /etc/hblock/sources.list
  echo -e "\n############################################\n######### Copying hblock sources file  #########\n############################################\n"
-sudo mkdir /etc/hblock/ && sudo  curl -o /etc/hblock/sources.list 'https://raw.githubusercontent.com/fynks/configs/main/prefs/hblock-sources/sources.list'
+sudo mkdir /etc/hblock/ && sudo  curl -o /etc/hblock/sources.list 'https://raw.githubusercontent.com/fynks/configs/main/setup/hblock_sources.list'
 
 # Runs hblock and compiles the hosts file with custom sources
 sudo hblock
