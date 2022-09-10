@@ -1,6 +1,5 @@
 ## Menu :
 - [OS and Setup](#os-and-setup)
-  - [Fish shell](#fish-shell-abbreviations) 
   - [Firefox](#firefox-setup)
   - [VS Code](#visual-studio-code)
 - [Browsers](#browsers)
@@ -16,19 +15,6 @@
 - [Chaotic AUR](https://github.com/chaotic-aur)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts)
 - [Xampp](https://github.com/fynks/configs/blob/main/setup/xampp-htdocs.zip)
-
-> ### Fish shell Abbreviations
-
-| Abbrevation  | Command                           |
-| ------------ | --------------------------------- |
-| cl           | clear                             |
-| sudon        | sudo nemo                         |
-| update       | sudo pacman -Syyuu && yay -Syu    |
-| clean-orphan | sudo pacman -Rs (pacman -Qqdt)    |
-| hblock-disable | hblock -S none -D none          |
-| update-mirrors | sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syyu       |
-| start-inputremapper | systemctl start input-remapper.service |
-
 
 > ### Firefox Setup
 

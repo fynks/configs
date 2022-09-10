@@ -23,6 +23,15 @@ fish_config
 echo -e "\n############################################\n#### Removing fish welcome message ####\n############################################\n"
 touch ~/.config/fish/functions/fish_greeting.fish
 
+# Add abbreviations for fish shell
+echo -e "\n############################################\n#### Adding Abbreviations ####\n############################################\n"
+abbr -a cl "clear"
+abbr -a sudon "sudo nemo"
+abbr -a clean-orphan "sudo pacman -Rs (pacman -Qqdt)"
+abbr -a hblock-disable "hblock -S none -D none"
+abbr -a update-mirrors "sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syyu"
+abbr -a start-inputremapper "systemctl start input-remapper.service"
+
 # changing the default shell to fish
 echo -e "\n############################################\n######### chaning shell #########\n############################################\n"
 echo "please enter fish in selection"
