@@ -73,8 +73,8 @@ After grabbing the package from your distribution's package manager,you have to 
 - [Userscripts](https://github.com/fynks/userscripts)
 - [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/firefox_cookie_clearance_exception_list.md)
 - [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/teddit_prefs.json)
-- [Bookmarks](https://github.com/siqo/dash/tree/main/dist)
-- [Feeds](https://github.com/siqo/dash/blob/main/dist/rss-feeds.opml)
+- [Bookmarks](https://github.com/fynks/siqo/tree/main/dist/dash)
+- [Feeds](https://github.com/fynks/siqo/tree/main/dist/dash)
 
 ---
 
