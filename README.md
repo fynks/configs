@@ -63,7 +63,7 @@ After grabbing the package from your distribution's package manager,you have to 
 ### Extension configs :
 - [Redirector](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/Redirector.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
-- Firefox Container Helpers (https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/containers.json)
+- [Firefox Container Helpers](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/containers.json)
 - [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/SponsorBlockConfig.json)
 - [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/improvedtube.txt)
 - [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
