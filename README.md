@@ -34,7 +34,7 @@ After grabbing the package from your distribution's package manager,you have to 
 3. Logout the device and login.
 4. Now login into github again in vs code.
 
-> Refrence : https://code.visualstudio.com/docs/editor/settings-sync#_linux
+> [Refrence](https://code.visualstudio.com/docs/editor/settings-sync#_linux)
 
 
 ---
@@ -75,7 +75,7 @@ After grabbing the package from your distribution's package manager,you have to 
 - [Teddit Prefs](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/teddit_prefs.json)
 - [Bookmarks](https://github.com/fynks/siqo/tree/main/dist/dash)
 - [Feeds](https://github.com/fynks/siqo/tree/main/dist/dash)
-
+- [Custom search engines](https://mycroftproject.com/)
 ---
 
 
