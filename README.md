@@ -76,6 +76,7 @@ After grabbing the package from your distribution's package manager,you have to 
 - [Bookmarks](https://github.com/fynks/siqo/tree/main/dist/dash)
 - [Feeds](https://github.com/fynks/siqo/tree/main/dist/dash)
 - [Custom search engines](https://mycroftproject.com/)
+
 ---
 
 
