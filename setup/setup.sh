@@ -29,6 +29,7 @@ PACMANPKGS=(
 'yay'                     # AUR Helper
 'alacritty'               # GPU accelerated terminal
 'fish'                    # Fish shell
+'plasma-wayland-session'  # Plasma Wayland
 'firefox'                 # Browser
 'nemo'                    # File manager
 'vlc'                     # Media Player
@@ -63,29 +64,10 @@ sudo mkdir /etc/hblock/ && sudo  curl -o /etc/hblock/sources.list 'https://raw.g
 # Runs hblock and compiles the hosts file with custom sources
 sudo hblock
 
-# List of packages to be installed from Arch-AUR
-AURPKGS=(
-'librewolf-bin'           # Modified Firefox
-'google-chrome-stable'   # Chromium based Browser
-'sublime-text-4'          # Lightweight Code Editor
-'warpinator-git'          # File sharing with android
-'converseen'              # Batch processing images
-'visual-studio-code-bin'  # Code Editor
-'ventoy-bin'              # Bootable USB flasher
-'zoom'                    # Video conferencing tool
-'celluloid'               # MPV frontend
-)
-
-# Installs and names the package being installed by yay one by one
-for AUR in "${AURPKGS[@]}"; do
- echo -e "\n############################################\n######### Program : $AUR #########\n############################################\n"
-   yay -S --noconfirm $AUR
-done
-
-# Invokes the fish_config.sh script for fish shell setup
- echo -e "\n############################################\n######### Initiating Fish config  #########\n############################################\n"
-echo "Initiation sucessfull"
-sudo chmod +x "fish_config.sh"
-./fish_config.sh
+# Invokes the aur_packages.sh script for installing extra packages form AUR
+ echo -e "\n############################################\n######### Initiating installing packages from AUR  #########\n############################################\n"
+echo "Script launch successful"
+sudo chmod +x "aur_packages.sh"
+./aur_packages.sh
 
 exit 

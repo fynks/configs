@@ -27,6 +27,9 @@ abbr -a hblock-disable "hblock -S none -D none"
 abbr -a update-mirrors "sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syyu"
 abbr -a start-inputremapper "systemctl start input-remapper.service"
 
+# Waiting for 2 seconds
+sleep 2
+
 # changing the default shell to fish
 echo -e "\n############################################\n######### chaning shell #########\n############################################\n"
 echo "please enter fish in selection"
