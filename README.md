@@ -83,4 +83,6 @@ After grabbing the package from your distribution's package manager,you have to 
 ### Tools and links :
 - [XDM](https://github.com/subhra74/xdm)
 - [Links](https://github.com/fynks/things/blob/main/links.md)
+- [Filtrite](https://github.com/fynks/filtrite)
+- [Bromite Userscipts](https://github.com/xarantolus/bromite-userscripts/releases/latest)
 - [Github](https://github.com/fynks/configs)
