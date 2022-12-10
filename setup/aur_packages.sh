@@ -21,6 +21,7 @@ AURPKGS=(
 'ventoy-bin'              # Bootable USB flasher
 'celluloid'               # MPV frontend
 'android-tools'           # ADB tools
+'tor-browser'             # Tor Browser
 )
 
 # Installs and names the package being installed by yay one by one
