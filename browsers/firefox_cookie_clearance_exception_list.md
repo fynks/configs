@@ -5,11 +5,5 @@
 - https://mega.nz
 - https://letsblock.it
 - https://google.com
-- https://firefox.com
-
-
-## Surfing List
-- https://dev.to
-- https://seedr.cc
-- https://duckduckgo.com
 - https://inoreader.com
+- https://seedr.cc
