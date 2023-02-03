@@ -1,870 +1,157 @@
 {
-  "exceptions": {
-    "url": [],
-    "regex": []
-  },
-  "theme": "dark",
-  "popupServices": [
-    "twitter",
-    "instagram",
-    "imgur",
-    "reddit",
-    "medium",
-    "quora",
-    "translate",
-    "imdb",
-    "wikipedia"
-  ],
-  "autoRedirect": true,
-  "firstPartyIsolate": false,
-  "network": "clearnet",
-  "networkFallback": true,
-  "latencyThreshold": 1000,
   "youtube": {
     "enabled": false,
-    "redirectType": "both",
-    "frontend": "invidious",
-    "embedFrontend": "invidious"
+    "redirectType": "main_frame",
+    "frontend": "invidious"
   },
-  "invidious": {
-    "clearnet": {
-      "enabled": [
-        "https://yewtu.be",
-        "https://vid.puffyan.us",
-        "https://invidious.snopyta.org",
-        "https://inv.riverside.rocks",
-        "https://invidio.xamh.de",
-        "https://y.com.sb",
-        "https://yt.artemislena.eu",
-        "https://invidious.sethforprivacy.com",
-        "https://invidious.flokinet.to",
-        "https://inv.bp.projectsegfau.lt",
-        "https://inv.vern.cc",
-        "https://invidious.nerdvpn.de",
-        "https://invidious.projectsegfau.lt",
-        "https://invidious.rhyshl.live"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://am74vkcrjp2d5v36lcdqgsj2m6x36tbrkhsruoegwfcizzabnfgf5zyd.onion",
-        "http://inv.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion",
-        "http://invidious.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion",
-        "http://euxxcnhsynwmfidvhjf6uzptsmh4dipkmgdmcmxxuo7tunp3ad2jrwyd.onion",
-        "http://u2cvlit75owumwpy4dj2hsmvkq7nvrclkpht7xgyye2pyoxhpmclkrad.onion",
-        "http://osbivz6guyeahrwp2lnwyjk2xos342h4ocsxyqrlaopqjuhwn2djiiyd.onion",
-        "http://grwp24hodrefzvjjuccrkw3mjq4tzhaaq32amf33dzpmuxe7ilepcmad.onion",
-        "http://kbjggqkzv65ivcqj6bumvp337z6264huv5kpkwuv6gu5yjiskvan7fad.onion",
-        "http://w6ijuptxiku4xpnnaetxvnkc5vqcdu7mgns2u77qefoixi63vbvnpnqd.onion",
-        "http://c7hqkpkpemu6e7emz5b4vyz7idjgdvgaaa3dyimmeojqbgpea3xqjoid.onion",
-        "http://ng27owmagn5amdm7l5s3rsqxwscl5ynppnis5dqcasogkyxcfqn7psid.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://verni6dr4qxjgjumnvesxerh5rvhv6oy5ddeibaqy5d7tgbiiyfa.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "piped": {
-    "clearnet": {
-      "enabled": [
-        "https://de-piped.shimul.me",
-        "https://pipedus.palash.dev",
-        "https://watch.whatever.social"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "pipedMaterial": {
-    "clearnet": {
-      "enabled": [
-        "https://piped-material.xn--17b.net",
-        "https://piped-material.ftp.sh"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "cloudtube": {
-    "clearnet": {
-      "enabled": [
-        "https://tube.cadence.moe"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "invidious": [
+    "https://inv.vern.cc"
+  ],
+  "piped": [
+    "https://piped.video"
+  ],
+  "pipedMaterial": [
+    "https://piped-material.xn--17b.net"
+  ],
+  "cloudtube": [
+    "https://tube.cadence.moe"
+  ],
   "youtubeMusic": {
-    "enabled": true,
-    "frontend": "hyperpipe"
+    "enabled": false,
+    "frontend": "beatbump"
   },
-  "beatbump": {
-    "clearnet": {
-      "enabled": [],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://beatbump.lqs5fjmajyp7rvp4qvyubwofzi6d4imua7vs237rkc4m5qogitqwrgyd.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "hyperpipe": {
-    "clearnet": {
-      "enabled": [
-        "https://hyperpipe.surge.sh",
-        "https://hyperpipe.esmailelbob.xyz",
-        "https://music.adminforge.de"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://hyperpipe.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "beatbump": [
+    "https://beatbump.ml"
+  ],
+  "hyperpipe": [
+    "https://hyperpipe.surge.sh"
+  ],
   "twitter": {
     "enabled": true,
     "redirectType": "both"
   },
-  "nitter": {
-    "clearnet": {
-      "enabled": [
-        "https://nitter.net",
-        "https://nitter.42l.fr",
-        "https://nitter.pussthecat.org",
-        "https://nitter.fdn.fr",
-        "https://nitter.1d4.us",
-        "https://nitter.kavin.rocks",
-        "https://nitter.unixfox.eu",
-        "https://nitter.namazso.eu",
-        "https://nitter.hu",
-        "https://bird.trom.tf",
-        "https://nitter.it",
-        "https://twitter.censors.us",
-        "https://nitter.grimneko.de",
-        "https://n.hyperborea.cloud",
-        "https://nitter.ca",
-        "https://twitter.076.ne.jp",
-        "https://nitter.mstdn.social",
-        "https://nitter.fly.dev",
-        "https://nitter.weiler.rocks",
-        "https://nitter.sethforprivacy.com",
-        "https://nttr.stream",
-        "https://nitter.cutelab.space"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://3nzoldnxplag42gqjs23xvghtzf6t6yzssrtytnntc6ppc7xxuoneoad.onion",
-        "http://nitter.l4qlywnpwqsluw65ts7md3khrivpirse744un3x7mlskqauz5pyuzgqd.onion",
-        "http://nitter7bryz3jv7e3uekphigvmoyoem4al3fynerxkj22dmoxoq553qd.onion",
-        "http://npf37k3mtzwxreiw52ccs5ay4e6qt2fkcs2ndieurdyn2cuzzsfyfvid.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://axd6uavsstsrvstva4mzlzh4ct76rc6zdug3nxdgeitrzczhzf4q.b32.i2p",
-        "http://u6ikd6zndl3c4dsdq4mmujpntgeevdk5qzkfb57r4tnfeccrn2qa.b32.i2p",
-        "http://gseczlzmiv23p5vhsktyd7whquq2uy3c5fgkmdohh453qp3daoua.b32.i2p",
-        "http://tm4rwkeysv3zz3q5yacyr4rlmca2c4etkdobfvuqzt6vsfsu4weq.b32.i2p",
-        "http://vernzdedoxuflrrxc4vbatbkpjh4k22ecgiqgimdiif62onhagva.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [
-        "http://nitter.priv.loki"
-      ],
-      "custom": []
-    }
-  },
-  "instagram": {
-    "enabled": true
-  },
-  "bibliogram": {
-    "clearnet": {
-      "enabled": [
-        "https://bibliogram.1d4.us",
-        "https://bibliogram.froth.zone",
-        "https://ig.tokhmi.xyz",
-        "https://ig.beparanoid.de",
-        "https://bibliogram.priv.pw"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "nitter": [
+    "https://nitter.net"
+  ],
   "tiktok": {
-    "enabled": true
+    "enabled": false
   },
-  "proxiTok": {
-    "clearnet": {
-      "enabled": [
-        "https://proxitok.pussthecat.org",
-        "https://tok.habedieeh.re",
-        "https://tok.artemislena.eu",
-        "https://tok.adminforge.de",
-        "https://tik.hostux.net",
-        "https://proxitok.lunar.icu"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "proxiTok": [
+    "https://proxitok.pabloferreiro.es"
+  ],
   "reddit": {
     "enabled": true,
     "frontend": "libreddit"
   },
-  "libreddit": {
-    "clearnet": {
-      "enabled": [
-        "https://libredd.it",
-        "https://libreddit.spike.codes",
-        "https://libreddit.kavin.rocks",
-        "https://reddit.invak.id",
-        "https://lr.riverside.rocks"
-      ],
-      "custom": [
-        "https://fr.odyssey346.dev"
-      ]
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "teddit": {
-    "clearnet": {
-      "enabled": [
-        "https://teddit.net",
-        "https://teddit.ggc-project.de",
-        "https://teddit.zaggy.nl",
-        "https://teddit.namazso.eu",
-        "https://teddit.nautolan.racing",
-        "https://teddit.tinfoil-hat.net",
-        "https://snoo.ioens.is",
-        "https://teddit.httpjames.space"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://snoo.ioensistjs7wd746zluwixvojbbkxhr37lepdvwtdfeav673o64iflqd.onion",
-        "http://ibarajztopxnuhabfu7fg6gbudynxofbnmvis3ltj6lfx47b6fhrd5qd.onion",
-        "http://tedditfyn6idalzso5wam5qd3kdtxoljjhbrbbx34q2xkcisvshuytad.onion",
-        "http://dawtyi5e2cfyfmoht4izmczi42aa2zwh6wi34zwvc6rzf2acpxhrcrad.onion",
-        "http://qtpvyiaqhmwccxwzsqubd23xhmmrt75tdyw35kp43w4hvamsgl3x27ad.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://xugoqcf2pftm76vbznx4xuhrzyb5b6zwpizpnw2hysexjdn5l2tq.b32.i2p",
-        "http://teddit.i2p",
-        "http://vzeiwzi7ogwl3ijrfek4fbtwhvamxcpyqoc3s4vcgnhlp54s5clq.b32.i2p",
-        "http://verncco2oaxjikammz4pi7umzp673cme6zuemx7yeeewspwrw3va.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "libreddit": [
+    "https://libreddit.spike.codes",
+    "https://safereddit.com",
+    "https://libreddit.kavin.rocks",
+    "https://libreddit.eu.org"
+  ],
+  "teddit": [
+    "https://teddit.net"
+  ],
   "imgur": {
     "enabled": true,
-    "redirectType": "both"
+    "redirectType": "main_frame"
   },
-  "rimgo": {
-    "clearnet": {
-      "enabled": [
-        "https://imgur.artemislena.eu",
-        "https://rimgo.vern.cc",
-        "https://rimgo.esmailelbob.xyz",
-        "https://i.bcow.xyz"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "wikipedia": {
-    "enabled": true
-  },
-  "wikiless": {
-    "clearnet": {
-      "enabled": [
-        "https://wikiless.org",
-        "https://wikiless.alefvanoon.xyz"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://dj2tbh2nqfxyfmvq33cjmhuw7nb6am7thzd3zsjvizeqf374fixbrxyd.onion",
-        "http://c2pesewpalbi6lbfc5hf53q4g3ovnxe4s7tfa6k2aqkf7jd7a7dlz5ad.onion",
-        "http://ybgg2evrcdz37y2qes23ff3wjqjdn33tthgoagi76vhxytu4mpxiz5qd.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://x33lx4h6d7h6xs4eiqwhvaxn3ea5gn2ifmu3jobnvuvn4k4aej7a.b32.i2p",
-        "http://wikiless.i2p",
-        "http://hflqp2ejxygpj6cdwo3ogfieqmxw3b56w7dblt7bor2ltwk6kcfa.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "rimgo": [
+    "https://rimgo.vern.cc",
+    "https://rimgo.pussthecat.org",
+    "https://rimgo.bus-hit.me"
+  ],
   "medium": {
     "enabled": true
   },
-  "scribe": {
-    "clearnet": {
-      "enabled": [
-        "https://scribe.rip",
-        "https://scribe.nixnet.services",
-        "https://scribe.citizen4.eu",
-        "https://scribe.bus-hit.me",
-        "https://scribe.froth.zone"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "scribe": [
+    "https://scribe.rip",
+    "https://scribe.bus-hit.me",
+    "https://scribe.nixnet.services",
+    "https://scribe.privacydev.net"
+  ],
   "quora": {
     "enabled": true
   },
-  "quetre": {
-    "clearnet": {
-      "enabled": [],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://vernnflenvsqccuanaun7yydnmturi4jkyxlyzhn6ultpje66c3q.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "quetre": [
+    "https://quetre.iket.me",
+    "https://quetre.pussthecat.org",
+    "https://quetre.privacydev.net"
+  ],
   "imdb": {
     "enabled": true
   },
-  "libremdb": {
-    "clearnet": {
-      "enabled": [
-        "https://libremdb.iket.me",
-        "https://libremdb.pussthecat.org",
-        "https://libremdbeu.herokuapp.com",
-        "https://lmdb.tokhmi.xyz",
-        "https://libremdb.esmailelbob.xyz",
-        "https://ld.vern.cc"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://vernz3ubrntql4wrgyrssd6u3qzi36zrhz2agbo6vibzbs5olk2q.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "reuters": {
+  "libremdb": [
+    "https://libremdb.iket.me",
+    "https://libremdb.pussthecat.org",
+    "https://ld.vern.cc"
+  ],
+  "fandom": {
     "enabled": false
   },
-  "neuters": {
-    "clearnet": {
-      "enabled": [
-        "https://neuters.de"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "fandom": {
-    "enabled": true
-  },
-  "breezeWiki": {
-    "clearnet": {
-      "enabled": [
-        "https://breezewiki.com",
-        "https://breezewiki.pussthecat.org"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "peertube": {
-    "enabled": true
-  },
-  "simpleertube": {
-    "clearnet": {
-      "enabled": [
-        "https://tube.simple-web.org"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "breezeWiki": [
+    "https://breezewiki.com"
+  ],
   "lbry": {
-    "enabled": true,
+    "enabled": false,
     "frontend": "librarian",
-    "redirectType": "both",
-    "embedFrontend": "librarian"
+    "redirectType": "main_frame"
   },
-  "librarian": {
-    "clearnet": {
-      "enabled": [
-        "https://lbry.bcow.xyz"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "librarian": [
+    "https://lbry.vern.cc"
+  ],
   "search": {
-    "enabled": true,
+    "enabled": false,
     "frontend": "searxng"
   },
-  "searx": {
-    "clearnet": {
-      "enabled": [
-        "https://anon.sx",
-        "https://dynabyte.ca",
-        "https://jsearch.pw",
-        "https://nibblehole.com",
-        "https://search.antonkling.se"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://3afisqjw2rxm6z7mmstyt5rx75qfqrgxnkzftknbp2vhipr2nrmrjdyd.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://ransack.i2p",
-        "http://mqamk4cfykdvhw5kjez2gnvse56gmnqxn7vkvvbuor4k4j2lbbnq.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "searxng": {
-    "clearnet": {
-      "enabled": [
-        "https://asowneryt.cloudns.nz",
-        "https://darmarit.org/searx",
-        "https://etsi.me",
-        "https://northboot.xyz",
-        "https://opnxng.com",
-        "https://paulgo.io",
-        "https://procurx.pt",
-        "https://s.zhaocloud.net",
-        "https://search.bus-hit.me",
-        "https://search.chemicals-in-the-water.eu",
-        "https://search.mdosch.de",
-        "https://search.neet.works",
-        "https://search.ononoki.org",
-        "https://search.privacyguides.net",
-        "https://search.roombob.cat",
-        "https://search.sapti.me"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://w5rl6wsd7mzj4bdkbuqvzidet5osdsm5jhg2f7nvfidakfq5exda5wid.onion",
-        "http://4n53nafyi77iplnbrpmxnp3x4exbswwxigujaxy3b37fvr7bvlopxeyd.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "whoogle": {
-    "clearnet": {
-      "enabled": [
-        "https://gowogle.voring.me",
-        "https://s.tokhmi.xyz",
-        "https://search.sethforprivacy.com"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "librex": {
-    "clearnet": {
-      "enabled": [
-        "https://librex.beparanoid.de",
-        "https://librex.extravi.dev",
-        "https://search.davidovski.xyz"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://librex.2356uhnbpv5nk3bni5bv6jg2cd6lgj664kwx3lhyelstpttpyv4kk2qd.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "searxng": [
+    "https://sx.vern.cc"
+  ],
+  "searx": [],
+  "whoogle": [],
+  "librex": [],
   "translate": {
     "enabled": false,
     "frontend": "simplyTranslate"
   },
-  "simplyTranslate": {
-    "clearnet": {
-      "enabled": [
-        "https://simplytranslate.org",
-        "https://st.tokhmi.xyz",
-        "https://translate.josias.dev",
-        "https://translate.namazso.eu",
-        "https://translate.riverside.rocks",
-        "https://st.manerakai.com",
-        "https://translate.bus-hit.me",
-        "https://simplytranslate.pussthecat.org",
-        "https://translate.northboot.xyz",
-        "https://translate.tiekoetter.com",
-        "https://simplytranslate.esmailelbob.xyz"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://fyng2tsmzmvxmojzbbwmfnsn2lrcyftf4cw6rk5j2v2huliazud3fjid.onion",
-        "http://xxtbwyb5z5bdvy2f6l2yquu5qilgkjeewno4qfknvb3lkg3nmoklitid.onion",
-        "http://translate.prnoid54e44a4bduq5due64jkk7wcnkxcp5kv3juncm7veptjcqudgyd.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://kmnkkp4v4ublygtnyq46oacy3qw75nrxxniriuaersumw7bfsm2a.b32.i2p",
-        "http://verna7avzgd4qqal7k2onjzwxcceqby2gwvya2a2frdswb7z2k4q.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [
-        "http://translate.priv.loki"
-      ],
-      "custom": []
-    }
-  },
-  "lingva": {
-    "clearnet": {
-      "enabled": [
-        "https://lingva.ml"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
-  "libreTranslate": {
-    "clearnet": {
-      "enabled": [
-        "https://libretranslate.de",
-        "https://translate.argosopentech.com",
-        "https://translate.api.skitzen.com",
-        "https://translate.fortytwo-it.com",
-        "https://translate.terraprint.co",
-        "https://lt.vern.cc"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [
-        "http://lt.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion"
-      ],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [
-        "http://vernf45n7mxwqnp5riaax7p67pwcl7wcefdcnqqvim7ckdx4264a.b32.i2p"
-      ],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "simplyTranslate": [
+    "https://simplytranslate.org"
+  ],
+  "lingva": [
+    "https://lingva.ml"
+  ],
+  "libreTranslate": [],
   "maps": {
-    "enabled": true,
+    "enabled": false,
     "frontend": "osm"
   },
-  "facil": {
-    "clearnet": {
-      "enabled": [
-        "https://facilmap.org"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
-  },
+  "facil": [
+    " https://facilmap.org "
+  ],
+  "osm": [
+    "https://www.openstreetmap.org"
+  ],
   "sendFiles": {
-    "enabled": true
+    "enabled": false
   },
-  "send": {
-    "clearnet": {
-      "enabled": [
-        "https://send.vis.ee",
-        "https://send.turingpoint.de",
-        "https://send.ephemeral.land",
-        "https://send.mni.li",
-        "https://send.monks.tools",
-        "https://send.jeugdhulp.be",
-        "https://send.aurorabilisim.com",
-        "https://nhanh.cloud",
-        "https://send.datahoarder.dev",
-        "https://fileupload.ggc-project.de",
-        "https://drop.chapril.org"
-      ],
-      "custom": []
-    },
-    "tor": {
-      "enabled": [],
-      "custom": []
-    },
-    "i2p": {
-      "enabled": [],
-      "custom": []
-    },
-    "loki": {
-      "enabled": [],
-      "custom": []
-    }
+  "send": [
+    "https://send.vis.ee"
+  ],
+  "textStorage": {
+    "enabled": false
   },
-  "version": "2.3.4"
+  "privateBin": [],
+  "exceptions": {
+    "url": [],
+    "regex": []
+  },
+  "theme": "detect",
+  "popupServices": [
+    "twitter",
+    "imgur",
+    "reddit",
+    "quora",
+    "medium"
+  ],
+  "version": "2.5.0"
 }
