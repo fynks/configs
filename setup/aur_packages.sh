@@ -27,7 +27,7 @@ AURPKGS=(
 # Installs and names the package being installed by yay one by one
 for AUR in "${AURPKGS[@]}"; do
  echo -e "\n############################################\n######### Program : $AUR #########\n############################################\n"
-   yay -S --noconfirm $AUR
+   yay --needed --noconfirm -S $AUR
 done
 
 # Invokes the fish_config.sh script for fish shell setup

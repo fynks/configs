@@ -40,8 +40,4 @@ chsh
 sleep 2
 
 # logging out for completing the process
-echo -e "\n############################################\n######### Logging out #########\n############################################\n"
-qdbus org.kde.ksmserver /KSMServer logout 1 0 3
-
-echo -e "\n############################################\n######### DONE #########\n############################################\n"
-exit 
+echo -e "\n############################################\n######### Log out and login again to complete the default shell change #########\n############################################\n"
