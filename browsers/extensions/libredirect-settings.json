@@ -62,7 +62,8 @@
     "https://rimgo.bus-hit.me"
   ],
   "medium": {
-    "enabled": true
+    "enabled": true,
+    "frontend": "scribe"
   },
   "scribe": [
     "https://scribe.rip",
@@ -153,5 +154,49 @@
     "quora",
     "medium"
   ],
-  "version": "2.5.0"
+  "libMedium": [
+    "https://md.vern.cc"
+  ],
+  "reuters": {
+    "enabled": false
+  },
+  "neuters": [
+    "https://neuters.de"
+  ],
+  "genius": {
+    "enabled": true
+  },
+  "dumb": [
+    "https://dm.vern.cc",
+    "https://sing.whatever.social",
+    "https://dumb.lunar.icu"
+  ],
+  "urbanDictionary": {
+    "enabled": false
+  },
+  "ruralDictionary": [
+    "https://rd.vern.cc"
+  ],
+  "stackOverflow": {
+    "enabled": true
+  },
+  "anonymousOverflow": [
+    "https://code.whatever.social",
+    "https://overflow.777.tf",
+    "https://ao.vern.cc",
+    "https://overflow.lunar.icu"
+  ],
+  "goodreads": {
+    "enabled": false
+  },
+  "biblioReads": [
+    "https://biblioreads.ml"
+  ],
+  "wikipedia": {
+    "enabled": true
+  },
+  "wikiless": [
+    "https://wikiless.org"
+  ],
+  "version": "2.5.1"
 }
