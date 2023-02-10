@@ -2,11 +2,12 @@
 - [Linux](#linux)
   - [Firefox](#firefox-setup)
   - [VS Code](#visual-studio-code)
+- [Windows](#windows)
 - [Browsers](#browsers)
   - [Extension configs](#extension-configs-) 
   - [other configs](#other-configs)
 - [Tools and Links](#tools-and-links-)
-- [Windows](#windows)
+
 
   ---
 
@@ -71,12 +72,12 @@ After grabbing the package from your distribution's package manager,you have to 
 |Dark Reader                   |[Get](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)                |[Get](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)              |
 
 ### Extension configs :
-- [Redirector](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/Redirector.json)
+- [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
+- [Redirector](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/Redirector.json)
 - [Firefox Container Helpers](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/containers.json)
 - [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/SponsorBlockConfig.json)
 - [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/improvedtube.txt)
-- [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
   
 ### other configs
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
@@ -88,10 +89,9 @@ After grabbing the package from your distribution's package manager,you have to 
 
 ---
 
-
 ### Tools and links :
 - [XDM](https://github.com/subhra74/xdm)
-- [Links](https://github.com/fynks/things/blob/main/links.md)
 - [Filtrite](https://github.com/fynks/filtrite)
 - [Bromite Userscipts](https://github.com/xarantolus/bromite-userscripts/releases/latest)
+- [Links](https://github.com/fynks/things/blob/main/links.md)
 - [Github](https://github.com/fynks/configs)
