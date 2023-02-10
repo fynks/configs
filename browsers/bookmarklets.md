@@ -14,17 +14,7 @@ javascript:document.body.contentEditable = 'true'; document.designMode='on'; voi
 ``` js
 javascript:(function() {    document.querySelectorAll('*').forEach(function(n) {        var p = getComputedStyle(n).getPropertyValue('position');        if (p === 'fixed' || p === 'sticky') {            n.style.cssText += ' ; position: absolute !important;';        }    });})();
 ```
-### Website diguiser
-``` js
-javascript:(function() { setInterval(function() { var link = document.querySelector("link[rel*='icon']") || document.createElement('link'); link.type = 'image/x-icon'; link.rel = 'shortcut icon'; link.href = 'https://www.google.com/s2/favicons?domain=google.com'; document.getElementsByTagName('head')[0].appendChild(link); document.title = "Google"; console.log("Stealth Activated");; }, 1000); })();
-```
 ### Medium to Scribe Redirector
 ```js
 javascript:(function(){var loc=location.href;loc=loc.replace('medium.com/','scribe.rip/'); location.replace(loc)})()
 ```
-
-### Download YT Video
-``` js
-javascript:window.location='https://alltubedownload.net/info?url=%25url%25'.replace('%url%', encodeURIComponent(location.href));
-```
-
