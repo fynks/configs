@@ -198,5 +198,14 @@
   "wikiless": [
     "https://wikiless.org"
   ],
-  "version": "2.5.1"
+  "poketube": [
+    "https://poketube.fun"
+  ],
+  "snopes": {
+    "enabled": false
+  },
+  "suds": [
+    "https://sd.vern.cc"
+  ],
+  "version": "2.5.2"
 }
