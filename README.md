@@ -43,7 +43,7 @@ After grabbing the package from your distribution's package manager,you have to 
 |**Programs**                |**Link**                                                                      |
 |:------------------------------|:---------------------------------------------------------------------------------|
 |Chrome                |[Download](https://www.google.com/intl/en/chrome/?standalone=1)             |
-|Firefox                |[Download](https://download.mozilla.org/?product=firefox-latest&os=win&lang=en-US)             |
+|Firefox                |[Download](https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US)             |
 |VLC                |[Download](https://www.videolan.org/vlc/download-windows.html)             |
 |Image Glass                |[Download](https://github.com/d2phap/ImageGlass/releases)             |
 |Sublime Text Editor                |[Download](https://www.sublimetext.com/download_thanks?target=win-x64)             |
