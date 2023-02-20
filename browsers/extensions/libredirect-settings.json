@@ -31,7 +31,9 @@
     "redirectType": "both"
   },
   "nitter": [
-    "https://nitter.net"
+    "https://nitter.net",
+    "https://nitter.pussthecat.org",
+    "https://nitter.kavin.rocks"
   ],
   "tiktok": {
     "enabled": false
@@ -72,7 +74,7 @@
     "https://scribe.privacydev.net"
   ],
   "quora": {
-    "enabled": true
+    "enabled": false
   },
   "quetre": [
     "https://quetre.iket.me",
@@ -152,7 +154,9 @@
     "imgur",
     "reddit",
     "quora",
-    "medium"
+    "medium",
+    "wikipedia",
+    "stackOverflow"
   ],
   "libMedium": [
     "https://md.vern.cc"
@@ -164,7 +168,7 @@
     "https://neuters.de"
   ],
   "genius": {
-    "enabled": true
+    "enabled": false
   },
   "dumb": [
     "https://dm.vern.cc",
@@ -196,7 +200,8 @@
     "enabled": true
   },
   "wikiless": [
-    "https://wikiless.org"
+    "https://wikiless.org",
+    "https://wl.vern.cc"
   ],
   "poketube": [
     "https://poketube.fun"
