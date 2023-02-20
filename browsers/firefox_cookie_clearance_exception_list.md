@@ -7,3 +7,4 @@
 - https://google.com
 - https://inoreader.com
 - https://seedr.cc
+- https://my.nextdns.io/
