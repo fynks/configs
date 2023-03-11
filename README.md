@@ -82,6 +82,8 @@ After grabbing the package from your distribution's package manager,you have to 
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
 - [Custom search engines](https://mycroftproject.com/)
 - [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/firefox_cookie_clearance_exception_list.md)
+
+
 ---
 
 ## Android
