@@ -15,14 +15,13 @@
 - [Chaotic AUR](https://github.com/chaotic-aur)
 - [Setup Script](https://raw.githubusercontent.com/fynks/configs/main/setup/setup.sh)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts)
-- [Xampp](https://github.com/fynks/configs/blob/main/setup/xampp-htdocs.zip)
 
 > ### Firefox Setup
 
 1. After installing firefox,get latest _better-fox User.js_ from :
 [Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
 
-2. Fix firefox proton design by adding: 
+1. Fix firefox proton design by adding: 
 [Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
 
 
