@@ -63,7 +63,7 @@ After grabbing the package from your distribution's package manager,you have to 
 |Firefox Containers            |[Get](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  | --- |
 |Firefox Containers  Helper|[Get](https://addons.mozilla.org/en-US/firefox/addon/containers-helper/)  |  --- |           
 |Skip Redirect                 |[Get](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)             |[Get](https://chrome.google.com/webstore/detail/skip-redirect/jaoafjdoijdconemdmodhbfpianehlon)            |
-|Xdm                           |[Get](https://addons.mozilla.org/en-US/firefox/addon/xdm-integration-module/)       |[Get](https://chrome.google.com/webstore/detail/xtreme-download-manager/dkckaoghoiffdbomfbbodbbgmhjblecj)  |
+|Xdm                           |[Get](https://addons.mozilla.org/en-US/firefox/addon/xdm-browser-monitor-v8/)       |[Get](https://subhra74.github.io/xdm/redirect.html?target=chrome&version=8.0)  |
 |Dark Background And Light Text|[Get](https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/)|---                                                                                                        |
 |Improve Youtube               |[Get](https://addons.mozilla.org/en-US/firefox/addon/youtube-addon/)             |[Get](https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd)|
 |Sponsor Block               |[Get](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)             |[Get](https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone)|
