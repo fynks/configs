@@ -1,7 +1,5 @@
 ## Menu :
 - [Linux](#linux)
-  - [Firefox](#firefox-setup)
-  - [VS Code](#visual-studio-code)
 - [Windows](#windows)
 - [Browsers](#browsers)
   - [Extension configs](#extension-configs-) 
