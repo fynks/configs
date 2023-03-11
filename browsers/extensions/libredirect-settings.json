@@ -2,7 +2,8 @@
   "youtube": {
     "enabled": false,
     "redirectType": "main_frame",
-    "frontend": "invidious"
+    "frontend": "invidious",
+    "unsupportedUrls": "bypass"
   },
   "invidious": [
     "https://inv.vern.cc"
@@ -18,7 +19,8 @@
   ],
   "youtubeMusic": {
     "enabled": false,
-    "frontend": "beatbump"
+    "frontend": "beatbump",
+    "unsupportedUrls": "bypass"
   },
   "beatbump": [
     "https://beatbump.ml"
@@ -28,7 +30,8 @@
   ],
   "twitter": {
     "enabled": true,
-    "redirectType": "both"
+    "redirectType": "both",
+    "unsupportedUrls": "bypass"
   },
   "nitter": [
     "https://nitter.net",
@@ -36,14 +39,16 @@
     "https://nitter.kavin.rocks"
   ],
   "tiktok": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "proxiTok": [
     "https://proxitok.pabloferreiro.es"
   ],
   "reddit": {
     "enabled": true,
-    "frontend": "libreddit"
+    "frontend": "libreddit",
+    "unsupportedUrls": "bypass"
   },
   "libreddit": [
     "https://libreddit.spike.codes",
@@ -56,7 +61,8 @@
   ],
   "imgur": {
     "enabled": true,
-    "redirectType": "main_frame"
+    "redirectType": "main_frame",
+    "unsupportedUrls": "bypass"
   },
   "rimgo": [
     "https://rimgo.vern.cc",
@@ -65,7 +71,8 @@
   ],
   "medium": {
     "enabled": true,
-    "frontend": "scribe"
+    "frontend": "scribe",
+    "unsupportedUrls": "bypass"
   },
   "scribe": [
     "https://scribe.rip",
@@ -74,7 +81,8 @@
     "https://scribe.privacydev.net"
   ],
   "quora": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "quetre": [
     "https://quetre.iket.me",
@@ -82,7 +90,8 @@
     "https://quetre.privacydev.net"
   ],
   "imdb": {
-    "enabled": true
+    "enabled": true,
+    "unsupportedUrls": "bypass"
   },
   "libremdb": [
     "https://libremdb.iket.me",
@@ -90,7 +99,8 @@
     "https://ld.vern.cc"
   ],
   "fandom": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "breezeWiki": [
     "https://breezewiki.com"
@@ -98,14 +108,16 @@
   "lbry": {
     "enabled": false,
     "frontend": "librarian",
-    "redirectType": "main_frame"
+    "redirectType": "main_frame",
+    "unsupportedUrls": "bypass"
   },
   "librarian": [
     "https://lbry.vern.cc"
   ],
   "search": {
     "enabled": false,
-    "frontend": "searxng"
+    "frontend": "searxng",
+    "unsupportedUrls": "bypass"
   },
   "searxng": [
     "https://sx.vern.cc"
@@ -115,7 +127,8 @@
   "librex": [],
   "translate": {
     "enabled": false,
-    "frontend": "simplyTranslate"
+    "frontend": "simplyTranslate",
+    "unsupportedUrls": "bypass"
   },
   "simplyTranslate": [
     "https://simplytranslate.org"
@@ -126,7 +139,8 @@
   "libreTranslate": [],
   "maps": {
     "enabled": false,
-    "frontend": "osm"
+    "frontend": "osm",
+    "unsupportedUrls": "bypass"
   },
   "facil": [
     " https://facilmap.org "
@@ -135,20 +149,22 @@
     "https://www.openstreetmap.org"
   ],
   "sendFiles": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "send": [
     "https://send.vis.ee"
   ],
   "textStorage": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "privateBin": [],
   "exceptions": {
     "url": [],
     "regex": []
   },
-  "theme": "detect",
+  "theme": "dark",
   "popupServices": [
     "twitter",
     "imgur",
@@ -156,19 +172,22 @@
     "quora",
     "medium",
     "wikipedia",
-    "stackOverflow"
+    "stackOverflow",
+    "imdb"
   ],
   "libMedium": [
     "https://md.vern.cc"
   ],
   "reuters": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "neuters": [
     "https://neuters.de"
   ],
   "genius": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "dumb": [
     "https://dm.vern.cc",
@@ -176,13 +195,15 @@
     "https://dumb.lunar.icu"
   ],
   "urbanDictionary": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "ruralDictionary": [
     "https://rd.vern.cc"
   ],
   "stackOverflow": {
-    "enabled": true
+    "enabled": true,
+    "unsupportedUrls": "bypass"
   },
   "anonymousOverflow": [
     "https://code.whatever.social",
@@ -191,13 +212,15 @@
     "https://overflow.lunar.icu"
   ],
   "goodreads": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "biblioReads": [
     "https://biblioreads.ml"
   ],
   "wikipedia": {
-    "enabled": true
+    "enabled": true,
+    "unsupportedUrls": "bypass"
   },
   "wikiless": [
     "https://wikiless.org",
@@ -207,10 +230,48 @@
     "https://poketube.fun"
   ],
   "snopes": {
-    "enabled": false
+    "enabled": false,
+    "unsupportedUrls": "bypass"
   },
   "suds": [
     "https://sd.vern.cc"
   ],
-  "version": "2.5.2"
+  "fetchInstances": "github",
+  "waybackMachine": {
+    "enabled": false,
+    "unsupportedUrls": "bypass"
+  },
+  "waybackClassic": [
+    "https://wayback-classic.net"
+  ],
+  "github": {
+    "enabled": false,
+    "unsupportedUrls": "bypass"
+  },
+  "gothub": [
+    "https://gh.odyssey346.dev"
+  ],
+  "bilibili": {
+    "enabled": false,
+    "unsupportedUrls": "bypass"
+  },
+  "mikuInvidious": [
+    "https://mikuinv.resrv.org"
+  ],
+  "bandcamp": {
+    "enabled": false,
+    "unsupportedUrls": "bypass"
+  },
+  "tent": [
+    "https://tent.sny.sh"
+  ],
+  "wolframAlpha": {
+    "enabled": false,
+    "unsupportedUrls": "bypass"
+  },
+  "wolfreeAlpha": [
+    "https://gqq.gitlab.io",
+    "https://uqq.gitlab.io"
+  ],
+  "version": "2.5.4"
 }
