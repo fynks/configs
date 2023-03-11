@@ -6,6 +6,7 @@
 - [Browsers](#browsers)
   - [Extension configs](#extension-configs-) 
   - [other configs](#other-configs)
+- [Andriod](#android)
 - [Tools and Links](#tools-and-links-)
 
 
@@ -15,15 +16,7 @@
 - [Chaotic AUR](https://github.com/chaotic-aur)
 - [Setup Script](https://raw.githubusercontent.com/fynks/configs/main/setup/setup.sh)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts)
-
-> ### Firefox Setup
-
-1. After installing firefox,get latest _better-fox User.js_ from :
-[Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
-
-1. Fix firefox proton design by adding: 
-[Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
-
+- [XDM](https://github.com/subhra74/xdm-experimental-binaries/tags)
 
 > ### Visual Studio Code
 
@@ -52,6 +45,14 @@ After grabbing the package from your distribution's package manager,you have to 
 ---
 ## Browsers
 
+> ### Firefox Setup
+
+1. After installing firefox,get latest _better-fox User.js_ from :
+[Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
+
+1. Fix firefox proton design by adding: 
+[Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
+
 |**Extensions**                |**Firefox**                                                                      |**Chrome**                                                                                                 |
 |:------------------------------|:---------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 |Ublock Origin                 |[Get](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)             |[Get](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)            |
@@ -71,26 +72,29 @@ After grabbing the package from your distribution's package manager,you have to 
 |Dark Reader                   |[Get](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)                |[Get](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)              |
 
 ### Extension configs :
+- [Redirector](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/Redirector.json)
 - [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
-- [Redirector](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/Redirector.json)
-- [Firefox Container Helpers](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/containers.json)
 - [Sponsor Block](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/SponsorBlockConfig.json)
 - [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/improvedtube.txt)
+- [Firefox Container Helpers](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/containers.json)
   
 ### other configs
-- [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
 - [Userscripts](https://github.com/fynks/userscripts)
-- [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/firefox_cookie_clearance_exception_list.md)
-- [Bookmarks](https://github.com/fynks/siqo/tree/main/dist/dash)
-- [Feeds](https://github.com/fynks/siqo/tree/main/dist/dash)
+- [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
 - [Custom search engines](https://mycroftproject.com/)
-
+- [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/firefox_cookie_clearance_exception_list.md)
 ---
 
-### Tools and links :
-- [XDM](https://github.com/subhra74/xdm)
+## Android
+- [Droid-ify](https://github.com/Iamlooker/Droid-ify/releases/latest)
+-  [Bromite](https://github.com/uazo/bromite-buildtools/releases/latest)
 - [Filtrite](https://github.com/fynks/filtrite)
 - [Bromite Userscipts](https://github.com/xarantolus/bromite-userscripts/releases/latest)
+
+
+
+---
+### Links :
 - [Links](https://github.com/fynks/things/blob/main/links.md)
 - [Github](https://github.com/fynks/configs)
