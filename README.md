@@ -5,7 +5,7 @@
   - [Extension configs](#extension-configs-) 
   - [other configs](#other-configs)
 - [Andriod](#android)
-- [Tools and Links](#tools-and-links-)
+- [Links](#links)
 
 
   ---
@@ -32,9 +32,10 @@ After grabbing the package from your distribution's package manager,you have to 
 ## Windows
 |**Programs**                |**Link**                                                                      |
 |:------------------------------|:---------------------------------------------------------------------------------|
-|Chrome                |[Download](https://www.google.com/intl/en/chrome/?standalone=1)             |
-|Firefox                |[Download](https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US)             |
 |VLC                |[Download](https://www.videolan.org/vlc/download-windows.html)             |
+|Firefox                |[Download](https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US)             |
+|Chrome                |[Download](https://www.google.com/intl/en/chrome/?standalone=1)             |
+|Peazip                |[Download](https://github.com/peazip/PeaZip/releases/latest)             |
 |Image Glass                |[Download](https://github.com/d2phap/ImageGlass/releases)             |
 |Sublime Text Editor                |[Download](https://www.sublimetext.com/download_thanks?target=win-x64)             |
 |Office                |[Visit](https://massgrave.dev/genuine-installation-media.html)             |
