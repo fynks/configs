@@ -10,18 +10,33 @@
 #  Arch Linux Post Install Setup and Config Script
 #-------------------------------------------------------------------------
 
-# List of packages to be installed from Arch-AUR
+# Installing packages using yay
 AURPKGS=(
+'alacritty'               # GPU accelerated terminal
+'fish'                    # Fish shell
+'plasma-wayland-session'  # Plasma Wayland
+'firefox'                 # Browser
 'librewolf-bin'           # Modified Firefox
-'google-chrome'           # Chromium based Browser
+'nemo'                    # File manager
+'vlc'                     # Media Player
+'evince'                  # pdf Viewer
+'bleachbit'               # Cleaner utility
 'sublime-text-4'          # Lightweight Code Editor
-'warpinator-git'          # File sharing with android
-'converseen'              # Batch processing images
 'visual-studio-code-bin'  # Code Editor
-'ventoy-bin'              # Bootable USB flasher
-'celluloid'               # MPV frontend
+'libreoffice-fresh'       # Libre Office suit
+'nodejs'                  # Javascript engine
+'npm'                     # Node package manager
 'android-tools'           # ADB tools
 'tor-browser'             # Tor Browser
+'ventoy-bin'              # Bootable USB flasher
+'google-chrome'           # Chromium based Browser
+'appimagelauncher'        # Integrates AppImages into system
+'telegram-desktop'        # Social platform
+'simplescreenrecorder'    # Screen Recorder
+'warpinator-git'          # File sharing with android
+'converseen'              # Batch processing images
+'celluloid'               # MPV frontend
+'gimp'                    # Advanced photo editor
 )
 
 # Installs and names the package being installed by yay one by one

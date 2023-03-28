@@ -40,4 +40,10 @@ chsh
 sleep 2
 
 # logging out for completing the process
-echo -e "\n############################################\n######### Log out and login again to complete the default shell change #########\n############################################\n"
+echo -e "\n############################################\n######### Shell will be changed automatically on next login #########\n############################################\n"
+
+# Invokes the post_setup.sh script for various tweaks and fixes
+ echo -e "\n############################################\n######### Initiating Post config script #########\n############################################\n"
+echo "Initiation sucessfull"
+sudo chmod +x "post_setup.sh"
+./post_setup.sh

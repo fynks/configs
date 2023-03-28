@@ -7,8 +7,23 @@
 # | |        | |   | |\  || . \  ____) |
 # |_|        |_|   |_| \_||_|\_\|_____/ 
 #                                       
-#  VS Code fix for KDE Linux
+#  Arch Linux Post Install Setup and Config Script
 #-------------------------------------------------------------------------
+
+# Installs hblock
+ echo -e "\n############################################\n######### Installing Hblock #########\n############################################\n"
+curl -o /tmp/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.4.1/hblock' \
+  && echo 'bb1f6fcafdcba6f7bd9e12613fc92b02a0a0da1263b0e44d209cb40d8715d647  /tmp/hblock' | shasum -c \
+  && sudo mv /tmp/hblock /usr/local/bin/hblock \
+  && sudo chown 0:0 /usr/local/bin/hblock \
+  && sudo chmod 755 /usr/local/bin/hblock
+
+# Copies the custom sources file from github to /etc/hblock/sources.list
+ echo -e "\n############################################\n######### Copying hblock sources file  #########\n############################################\n"
+sudo mkdir /etc/hblock/ && sudo  curl -o /etc/hblock/sources.list 'https://raw.githubusercontent.com/fynks/configs/main/setup/hblock_sources.list'
+
+# Runs hblock and compiles the hosts file with custom sources
+sudo hblock
 
 # Copies the custom sources file from github to /etc/hblock/sources.list
  echo -e "\n##########################################\n######### Fixing VS Code for KDE #########\n##########################################\n"
