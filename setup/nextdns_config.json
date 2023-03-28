@@ -1,0 +1,490 @@
+{
+  "security": {
+    "threatIntelligenceFeeds": true,
+    "aiThreatDetection": false,
+    "googleSafeBrowsing": true,
+    "cryptojacking": true,
+    "dnsRebinding": true,
+    "idnHomographs": true,
+    "typosquatting": true,
+    "dga": true,
+    "nrd": false,
+    "ddns": true,
+    "parking": true,
+    "csam": true,
+    "tlds": [
+      {
+        "id": "bid"
+      },
+      {
+        "id": "cfd"
+      },
+      {
+        "id": "discount"
+      },
+      {
+        "id": "gdn"
+      },
+      {
+        "id": "loan"
+      },
+      {
+        "id": "loans"
+      },
+      {
+        "id": "ooo"
+      },
+      {
+        "id": "sbs"
+      },
+      {
+        "id": "fit"
+      },
+      {
+        "id": "surf"
+      },
+      {
+        "id": "cn"
+      },
+      {
+        "id": "monster"
+      },
+      {
+        "id": "gq"
+      },
+      {
+        "id": "ml"
+      },
+      {
+        "id": "tk"
+      }
+    ]
+  },
+  "privacy": {
+    "disguisedTrackers": true,
+    "allowAffiliate": false,
+    "blocklists": [
+      {
+        "id": "nextdns-recommended"
+      },
+      {
+        "id": "hagezi-multi-pro-plus"
+      },
+      {
+        "id": "goodbye-ads"
+      }
+    ],
+    "natives": [
+      {
+        "id": "windows"
+      },
+      {
+        "id": "xiaomi"
+      }
+    ]
+  },
+  "allowlist": [
+    {
+      "id": "update.intl.miui.com",
+      "active": false
+    },
+    {
+      "id": "logfiles.zoom.us",
+      "active": false
+    },
+    {
+      "id": "us04logfiles.zoom.us",
+      "active": false
+    },
+    {
+      "id": "us04zpns.zoom.us",
+      "active": false
+    },
+    {
+      "id": "geo.instagram.com",
+      "active": false
+    },
+    {
+      "id": "graph.facebook.com",
+      "active": false
+    },
+    {
+      "id": "i.instagram.com",
+      "active": false
+    },
+    {
+      "id": "graph.instagram.com",
+      "active": false
+    },
+    {
+      "id": "b-graph.facebook.com",
+      "active": false
+    },
+    {
+      "id": "s.youtube.com",
+      "active": false
+    },
+    {
+      "id": "github.com",
+      "active": false
+    },
+    {
+      "id": "nextdns.io",
+      "active": true
+    },
+    {
+      "id": "js.media-lab.ai",
+      "active": false
+    }
+  ],
+  "denylist": [
+    {
+      "id": "componentupdater.brave.com",
+      "active": false
+    },
+    {
+      "id": "syndication.twitter.com",
+      "active": true
+    },
+    {
+      "id": "go-updater.brave.com",
+      "active": false
+    },
+    {
+      "id": "location-traceout-sg.bytedace.com",
+      "active": true
+    },
+    {
+      "id": "grant.rewards.brave.com",
+      "active": true
+    },
+    {
+      "id": "rewards.brave.com",
+      "active": true
+    },
+    {
+      "id": "api.rewards.brave.com",
+      "active": true
+    },
+    {
+      "id": "laptop-updates.brave.com",
+      "active": true
+    },
+    {
+      "id": "adtago.s3.amazonaws.com",
+      "active": true
+    },
+    {
+      "id": "analyticsengine.s3.amazonaws.com",
+      "active": true
+    },
+    {
+      "id": "advice-ads.s3.amazonaws.com",
+      "active": true
+    },
+    {
+      "id": "advertising-api-eu.amazon.com",
+      "active": true
+    },
+    {
+      "id": "pagead2.googlesyndication.com",
+      "active": true
+    },
+    {
+      "id": "adservice.google.com",
+      "active": true
+    },
+    {
+      "id": "pagead2.googleadservices.com",
+      "active": true
+    },
+    {
+      "id": "afs.googlesyndication.com",
+      "active": true
+    },
+    {
+      "id": "stats.g.doubleclick.net",
+      "active": true
+    },
+    {
+      "id": "ad.doubleclick.net",
+      "active": true
+    },
+    {
+      "id": "static.doubleclick.net",
+      "active": true
+    },
+    {
+      "id": "m.doubleclick.net",
+      "active": true
+    },
+    {
+      "id": "mediavisor.doubleclick.net",
+      "active": true
+    },
+    {
+      "id": "ads30.adcolony.com",
+      "active": true
+    },
+    {
+      "id": "adc3-launch.adcolony.com",
+      "active": true
+    },
+    {
+      "id": "events3alt.adcolony.com",
+      "active": true
+    },
+    {
+      "id": "analytics.google.com",
+      "active": true
+    },
+    {
+      "id": "wd.adcolony.com",
+      "active": true
+    },
+    {
+      "id": "app-measurement.com",
+      "active": true
+    },
+    {
+      "id": "media.net",
+      "active": true
+    },
+    {
+      "id": "static.media.net",
+      "active": true
+    },
+    {
+      "id": "click.googleanalytics.com",
+      "active": true
+    },
+    {
+      "id": "adservetx.media.net",
+      "active": true
+    },
+    {
+      "id": "google-analytics.com",
+      "active": true
+    },
+    {
+      "id": "ssl.google-analytics.com",
+      "active": true
+    },
+    {
+      "id": "adm.hotjar.com",
+      "active": true
+    },
+    {
+      "id": "identify.hotjar.com",
+      "active": true
+    },
+    {
+      "id": "insights.hotjar.com",
+      "active": true
+    },
+    {
+      "id": "script.hotjar.com",
+      "active": true
+    },
+    {
+      "id": "surveys.hotjar.com",
+      "active": true
+    },
+    {
+      "id": "careers.hotjar.com",
+      "active": true
+    },
+    {
+      "id": "events.hotjar.io",
+      "active": true
+    },
+    {
+      "id": "mouseflow.com",
+      "active": true
+    },
+    {
+      "id": "api.mouseflow.com",
+      "active": true
+    },
+    {
+      "id": "tools.mouseflow.com",
+      "active": true
+    },
+    {
+      "id": "cdn-test.mouseflow.com",
+      "active": true
+    },
+    {
+      "id": "freshmarketer.com",
+      "active": true
+    },
+    {
+      "id": "claritybt.freshmarketer.com",
+      "active": true
+    },
+    {
+      "id": "fwtracks.freshmarketer.com",
+      "active": true
+    },
+    {
+      "id": "luckyorange.com",
+      "active": true
+    },
+    {
+      "id": "api.luckyorange.com",
+      "active": true
+    },
+    {
+      "id": "realtime.luckyorange.com",
+      "active": true
+    },
+    {
+      "id": "cdn.luckyorange.com",
+      "active": true
+    },
+    {
+      "id": "w1.luckyorange.com",
+      "active": true
+    },
+    {
+      "id": "upload.luckyorange.net",
+      "active": true
+    },
+    {
+      "id": "cs.luckyorange.net",
+      "active": true
+    },
+    {
+      "id": "settings.luckyorange.net",
+      "active": true
+    },
+    {
+      "id": "stats.wp.com",
+      "active": true
+    },
+    {
+      "id": "notify.bugsnag.com",
+      "active": true
+    },
+    {
+      "id": "sessions.bugsnag.com",
+      "active": true
+    },
+    {
+      "id": "api.bugsnag.com",
+      "active": true
+    },
+    {
+      "id": "app.bugsnag.com",
+      "active": true
+    },
+    {
+      "id": "browser.sentry-cdn.com",
+      "active": true
+    },
+    {
+      "id": "app.getsentry.com",
+      "active": true
+    },
+    {
+      "id": "ads.youtube.com",
+      "active": true
+    },
+    {
+      "id": "ads-api.tiktok.com",
+      "active": true
+    },
+    {
+      "id": "analytics.tiktok.com",
+      "active": true
+    },
+    {
+      "id": "ads-sg.tiktok.com",
+      "active": true
+    },
+    {
+      "id": "analytics-sg.tiktok.com",
+      "active": true
+    },
+    {
+      "id": "business-api.tiktok.com",
+      "active": true
+    },
+    {
+      "id": "ads.tiktok.com",
+      "active": true
+    },
+    {
+      "id": "log.byteoversea.com",
+      "active": true
+    },
+    {
+      "id": "auction.unityads.unity3d.com",
+      "active": true
+    },
+    {
+      "id": "webview.unityads.unity3d.com",
+      "active": true
+    },
+    {
+      "id": "config.unityads.unity3d.com",
+      "active": true
+    },
+    {
+      "id": "adserver.unityads.unity3d.com",
+      "active": true
+    },
+    {
+      "id": "analytics.s3.amazonaws.com",
+      "active": true
+    },
+    {
+      "id": "spappmonitoring.com",
+      "active": true
+    },
+    {
+      "id": "alltracker.org",
+      "active": true
+    },
+    {
+      "id": "aispyer.com",
+      "active": true
+    },
+    {
+      "id": "a-spy.com",
+      "active": true
+    }
+  ],
+  "parentalcontrol": {
+    "safeSearch": false,
+    "youtubeRestrictedMode": false,
+    "blockBypass": false,
+    "services": [],
+    "categories": [],
+    "recreation": {
+      "times": {},
+      "timezone": null
+    }
+  },
+  "rewrites": [],
+  "settings": {
+    "logs": {
+      "enabled": true,
+      "drop": {
+        "ip": true,
+        "domain": false
+      },
+      "retention": 7776000,
+      "location": "ch"
+    },
+    "blockPage": {
+      "enabled": false
+    },
+    "performance": {
+      "ecs": true,
+      "cacheBoost": true,
+      "cnameFlattening": true
+    },
+    "web3": false
+  }
+}
