@@ -20,7 +20,7 @@
 
 After grabbing the package from your distribution's package manager,you have to do following trouble shooting in order to setup sync and permanently store credentials on linux.
 
-1. Run the ```vs_code_config.sh``` [Script](https://raw.githubusercontent.com/fynks/configs/main/setup/vs_code_config.sh)
+1. After successfull run of ```post_setup.sh``` script:
 2. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
 3. Logout the device and login.
 4. Now login into github again in vs code.
@@ -60,8 +60,9 @@ After grabbing the package from your distribution's package manager,you have to 
 |Tampermonkey                  |[Get](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)              |[Get](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)             |
 |LibRedirect                 |[Get](https://addons.mozilla.org/firefox/addon/libredirect/)             |[Get](https://github.com/libredirect/libredirect/blob/master/chromium.md)            |
 |Firefox Containers            |[Get](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  | --- |
-|Firefox Containers  Helper|[Get](https://addons.mozilla.org/en-US/firefox/addon/containers-helper/)  |  --- |           
+|Containers  Helper|[Get](https://addons.mozilla.org/en-US/firefox/addon/containers-helper/)  |  --- |           
 |Skip Redirect                 |[Get](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)             |[Get](https://chrome.google.com/webstore/detail/skip-redirect/jaoafjdoijdconemdmodhbfpianehlon)            |
+|NX Enhanced                           |[Get](https://addons.mozilla.org/addon/nx-enhanced)       |[Get](https://chrome.google.com/webstore/detail/nx-enhanced/ljimbekophocjbnphldoaidgkkaojcfo)  |
 |Xdm                           |[Get](https://addons.mozilla.org/en-US/firefox/addon/xdm-browser-monitor-v8/)       |[Get](https://subhra74.github.io/xdm/redirect.html?target=chrome&version=8.0)  |
 |Dark Background And Light Text|[Get](https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/)|---                                                                                                        |
 |Improve Youtube               |[Get](https://addons.mozilla.org/en-US/firefox/addon/youtube-addon/)             |[Get](https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd)|
@@ -79,6 +80,7 @@ After grabbing the package from your distribution's package manager,you have to 
 - [Firefox Container Helpers](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/containers.json)
   
 ### other configs
+- [Next-DNS](https://raw.githubusercontent.com/fynks/configs/main/setup/nextdns_config.json)
 - [Userscripts](https://github.com/fynks/userscripts)
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
 - [Custom search engines](https://mycroftproject.com/)
