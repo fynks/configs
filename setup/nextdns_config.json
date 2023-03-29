@@ -89,6 +89,10 @@
       "active": false
     },
     {
+      "id": "tenor.co",
+      "active": true
+    },
+    {
       "id": "logfiles.zoom.us",
       "active": false
     },
