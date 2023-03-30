@@ -1,4 +1,35 @@
 {
+  "parentalcontrol": {
+    "safeSearch": false,
+    "youtubeRestrictedMode": false,
+    "blockBypass": false,
+    "services": [],
+    "categories": [],
+    "recreation": {
+      "times": {},
+      "timezone": null
+    }
+  },
+  "privacy": {
+    "disguisedTrackers": true,
+    "allowAffiliate": false,
+    "blocklists": [
+      {
+        "id": "nextdns-recommended"
+      },
+      {
+        "id": "goodbye-ads"
+      },
+      {
+        "id": "hagezi-multi-pro-plus"
+      }
+    ],
+    "natives": [
+      {
+        "id": "xiaomi"
+      }
+    ]
+  },
   "security": {
     "threatIntelligenceFeeds": true,
     "aiThreatDetection": false,
@@ -8,7 +39,7 @@
     "idnHomographs": true,
     "typosquatting": true,
     "dga": true,
-    "nrd": false,
+    "nrd": true,
     "ddns": true,
     "parking": true,
     "csam": true,
@@ -38,18 +69,6 @@
         "id": "sbs"
       },
       {
-        "id": "fit"
-      },
-      {
-        "id": "surf"
-      },
-      {
-        "id": "cn"
-      },
-      {
-        "id": "monster"
-      },
-      {
         "id": "gq"
       },
       {
@@ -60,36 +79,10 @@
       }
     ]
   },
-  "privacy": {
-    "disguisedTrackers": true,
-    "allowAffiliate": false,
-    "blocklists": [
-      {
-        "id": "nextdns-recommended"
-      },
-      {
-        "id": "hagezi-multi-pro-plus"
-      },
-      {
-        "id": "goodbye-ads"
-      }
-    ],
-    "natives": [
-      {
-        "id": "windows"
-      },
-      {
-        "id": "xiaomi"
-      }
-    ]
-  },
+  "rewrites": [],
   "allowlist": [
     {
-      "id": "update.intl.miui.com",
-      "active": false
-    },
-    {
-      "id": "tenor.co",
+      "id": "spotify.com",
       "active": true
     },
     {
@@ -97,99 +90,67 @@
       "active": false
     },
     {
-      "id": "us04logfiles.zoom.us",
-      "active": false
-    },
-    {
       "id": "us04zpns.zoom.us",
       "active": false
     },
     {
-      "id": "geo.instagram.com",
+      "id": "us04logfiles.zoom.us",
       "active": false
     },
     {
-      "id": "graph.facebook.com",
+      "id": "dell.com",
       "active": false
     },
     {
-      "id": "i.instagram.com",
-      "active": false
+      "id": "chat.openai.com",
+      "active": true
     },
     {
-      "id": "graph.instagram.com",
-      "active": false
-    },
-    {
-      "id": "b-graph.facebook.com",
-      "active": false
-    },
-    {
-      "id": "s.youtube.com",
-      "active": false
+      "id": "tenor.co",
+      "active": true
     },
     {
       "id": "github.com",
       "active": false
     },
     {
-      "id": "nextdns.io",
+      "id": "b-graph.facebook.com",
       "active": true
+    },
+    {
+      "id": "thedise.me",
+      "active": false
     },
     {
       "id": "js.media-lab.ai",
       "active": false
+    },
+    {
+      "id": "update.intl.miui.com",
+      "active": true
+    },
+    {
+      "id": "geo.instagram.com",
+      "active": true
+    },
+    {
+      "id": "i.instagram.com",
+      "active": true
+    },
+    {
+      "id": "graph.instagram.com",
+      "active": true
+    },
+    {
+      "id": "graph.facebook.com",
+      "active": false
+    },
+    {
+      "id": "nextdns.io",
+      "active": true
     }
   ],
   "denylist": [
-    {
-      "id": "componentupdater.brave.com",
-      "active": false
-    },
-    {
-      "id": "syndication.twitter.com",
-      "active": true
-    },
-    {
-      "id": "go-updater.brave.com",
-      "active": false
-    },
-    {
-      "id": "location-traceout-sg.bytedace.com",
-      "active": true
-    },
-    {
-      "id": "grant.rewards.brave.com",
-      "active": true
-    },
-    {
-      "id": "rewards.brave.com",
-      "active": true
-    },
-    {
-      "id": "api.rewards.brave.com",
-      "active": true
-    },
-    {
-      "id": "laptop-updates.brave.com",
-      "active": true
-    },
-    {
-      "id": "adtago.s3.amazonaws.com",
-      "active": true
-    },
-    {
-      "id": "analyticsengine.s3.amazonaws.com",
-      "active": true
-    },
-    {
-      "id": "advice-ads.s3.amazonaws.com",
-      "active": true
-    },
-    {
-      "id": "advertising-api-eu.amazon.com",
-      "active": true
-    },
     {
       "id": "pagead2.googlesyndication.com",
       "active": true
@@ -239,19 +200,7 @@
       "active": true
     },
     {
-      "id": "analytics.google.com",
-      "active": true
-    },
-    {
       "id": "wd.adcolony.com",
-      "active": true
-    },
-    {
-      "id": "app-measurement.com",
-      "active": true
-    },
-    {
-      "id": "media.net",
       "active": true
     },
     {
@@ -259,11 +208,23 @@
       "active": true
     },
     {
-      "id": "click.googleanalytics.com",
+      "id": "media.net",
       "active": true
     },
     {
       "id": "adservetx.media.net",
+      "active": true
+    },
+    {
+      "id": "app-measurement.com",
+      "active": true
+    },
+    {
+      "id": "analytics.google.com",
+      "active": true
+    },
+    {
+      "id": "click.googleanalytics.com",
       "active": true
     },
     {
@@ -272,98 +233,6 @@
     },
     {
       "id": "ssl.google-analytics.com",
-      "active": true
-    },
-    {
-      "id": "adm.hotjar.com",
-      "active": true
-    },
-    {
-      "id": "identify.hotjar.com",
-      "active": true
-    },
-    {
-      "id": "insights.hotjar.com",
-      "active": true
-    },
-    {
-      "id": "script.hotjar.com",
-      "active": true
-    },
-    {
-      "id": "surveys.hotjar.com",
-      "active": true
-    },
-    {
-      "id": "careers.hotjar.com",
-      "active": true
-    },
-    {
-      "id": "events.hotjar.io",
-      "active": true
-    },
-    {
-      "id": "mouseflow.com",
-      "active": true
-    },
-    {
-      "id": "api.mouseflow.com",
-      "active": true
-    },
-    {
-      "id": "tools.mouseflow.com",
-      "active": true
-    },
-    {
-      "id": "cdn-test.mouseflow.com",
-      "active": true
-    },
-    {
-      "id": "freshmarketer.com",
-      "active": true
-    },
-    {
-      "id": "claritybt.freshmarketer.com",
-      "active": true
-    },
-    {
-      "id": "fwtracks.freshmarketer.com",
-      "active": true
-    },
-    {
-      "id": "luckyorange.com",
-      "active": true
-    },
-    {
-      "id": "api.luckyorange.com",
-      "active": true
-    },
-    {
-      "id": "realtime.luckyorange.com",
-      "active": true
-    },
-    {
-      "id": "cdn.luckyorange.com",
-      "active": true
-    },
-    {
-      "id": "w1.luckyorange.com",
-      "active": true
-    },
-    {
-      "id": "upload.luckyorange.net",
-      "active": true
-    },
-    {
-      "id": "cs.luckyorange.net",
-      "active": true
-    },
-    {
-      "id": "settings.luckyorange.net",
-      "active": true
-    },
-    {
-      "id": "stats.wp.com",
       "active": true
     },
     {
@@ -388,10 +257,6 @@
     },
     {
       "id": "app.getsentry.com",
-      "active": true
-    },
-    {
-      "id": "ads.youtube.com",
       "active": true
     },
     {
@@ -423,27 +288,43 @@
       "active": true
     },
     {
-      "id": "auction.unityads.unity3d.com",
+      "id": "location-traceroute-sg.bytedance.com",
       "active": true
     },
     {
-      "id": "webview.unityads.unity3d.com",
+      "id": "go-updater.brave.com",
+      "active": false
+    },
+    {
+      "id": "rewards.brave.com",
       "active": true
     },
     {
-      "id": "config.unityads.unity3d.com",
+      "id": "api.rewards.brave.com",
       "active": true
     },
     {
-      "id": "adserver.unityads.unity3d.com",
+      "id": "grant.rewards.brave.com",
       "active": true
     },
     {
-      "id": "analytics.s3.amazonaws.com",
+      "id": "laptop-updates.brave.com",
       "active": true
+    },
+    {
+      "id": "variations.brave.com",
+      "active": true
+    },
+    {
+      "id": "componentupdater.brave.com",
+      "active": false
     },
     {
       "id": "spappmonitoring.com",
+      "active": true
+    },
+    {
+      "id": "a-spy.com",
       "active": true
     },
     {
@@ -455,22 +336,10 @@
       "active": true
     },
     {
-      "id": "a-spy.com",
+      "id": "syndication.twitter.com",
       "active": true
     }
   ],
-  "parentalcontrol": {
-    "safeSearch": false,
-    "youtubeRestrictedMode": false,
-    "blockBypass": false,
-    "services": [],
-    "categories": [],
-    "recreation": {
-      "times": {},
-      "timezone": null
-    }
-  },
-  "rewrites": [],
   "settings": {
     "logs": {
       "enabled": true,
