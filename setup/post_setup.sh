@@ -28,7 +28,7 @@ sudo hblock
 # Copies the custom sources file from github to /etc/hblock/sources.list
  echo -e "\n##########################################\n######### Fixing VS Code for KDE #########\n##########################################\n"
  echo -e "Installing the required packages"
-sudo pacman -S --noconfirm gnome-keyring libsecret libgnome-keyring
+sudo pacman -S --needed --noconfirm gnome-keyring libsecret libgnome-keyring
 
  echo -e "copying the files to required directory"
  sudo  curl -o ~/.xinitrc 'https://raw.githubusercontent.com/fynks/configs/main/setup/sample_xinitrc_file'
