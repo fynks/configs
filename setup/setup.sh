@@ -92,6 +92,6 @@ echo -e "\n############################################\n######### All packages 
  echo -e "\n############################################\n######### Initiating Fish config  #########\n############################################\n"
 echo "Initiation sucessfull"
 sudo chmod +x "fish_config.sh"
-./fish_config.sh
+sudo ./fish_config.sh
 
 exit 0
