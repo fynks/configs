@@ -7,9 +7,6 @@
 - [Andriod](#android)
 - [Links](#links)
 
-
-  ---
-
 ## Linux
 - [Chaotic AUR](https://github.com/chaotic-aur)
 - [Setup Script](https://raw.githubusercontent.com/fynks/configs/main/setup/setup.sh)
@@ -79,7 +76,7 @@ After grabbing the package from your distribution's package manager,you have to 
 - [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/improvedtube.txt)
 - [Firefox Container Helpers](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/containers.json)
   
-### other configs
+### Other configs
 - [Next-DNS](https://raw.githubusercontent.com/fynks/configs/main/setup/nextdns_config.json)
 - [Userscripts](https://github.com/fynks/userscripts)
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
