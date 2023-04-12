@@ -1,21 +1,18 @@
 {
-    "name": "@fynks/configs",
-    "version": "1.0.1",
-    "description": "",
-    "main": "index.html",
-    "homepage": "",
-    "repository": {
-      "type": "git",
-      "url": ""
-    },
-    "scripts": {
-      "build": "github-readme-to-html -t configs && minifyall ./dist/index.html --output ./dist/index.html",
-      "publish":"npm publish"
-    },
-    "author": "Fynks",
-    "email": "",
-    "dependencies": {
-    "github-readme-to-html": "^1.0.7-beta.0",
-    "@josee9988/minifyall": "^1.2.2"
+  "name": "@fynks/configs",
+  "version": "1.0.1",
+  "main": "index.html",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && hmd2html -s README.md -l ./assets/layout.html -d ./dist && mv ./dist/README.html ./dist/Index.html",
+    "publish": "npm publish"
+  },
+  "author": "Fynks",
+  "dependencies": {
+    "hackmd-to-html-cli": "^0.0.10"
   }
-  }
+}
