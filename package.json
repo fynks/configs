@@ -13,6 +13,6 @@
   },
   "author": "Fynks",
   "dependencies": {
-    "hackmd-to-html-cli": "^0.0.10"
+    "hackmd-to-html-cli": "^0.0.11"
   }
 }
