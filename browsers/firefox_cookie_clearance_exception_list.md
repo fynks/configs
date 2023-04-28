@@ -2,8 +2,7 @@
 - https://github.com
 - https://netlify.com
 - https://bitwarden.com
-- https://mega.nz
-- https://letsblock.it
+- https://chat.openai.com/
 - https://google.com
 - https://inoreader.com
 - https://seedr.cc
