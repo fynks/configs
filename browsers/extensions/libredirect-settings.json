@@ -1,8 +1,8 @@
 {
   "youtube": {
-    "enabled": false,
-    "redirectType": "main_frame",
-    "frontend": "invidious",
+    "enabled": true,
+    "redirectType": "both",
+    "frontend": "piped",
     "unsupportedUrls": "bypass"
   },
   "invidious": [
@@ -173,7 +173,8 @@
     "medium",
     "wikipedia",
     "stackOverflow",
-    "imdb"
+    "imdb",
+    "youtube"
   ],
   "libMedium": [
     "https://md.vern.cc"
@@ -219,7 +220,7 @@
     "https://biblioreads.ml"
   ],
   "wikipedia": {
-    "enabled": true,
+    "enabled": false,
     "unsupportedUrls": "bypass"
   },
   "wikiless": [
