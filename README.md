@@ -2,7 +2,8 @@
 - [Linux](#linux)
 - [Windows](#windows)
 - [Browsers](#browsers)
-  - [Extension configs](#extension-configs-) 
+  - [Extensions](#extensions)
+  - [Extension configs](#extension-configs) 
   - [other configs](#other-configs)
 - [Andriod](#android)
 - [Links](#links)
@@ -49,6 +50,8 @@ After grabbing the package from your distribution's package manager,you have to 
 1. Fix firefox proton design by adding: 
 [Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
 
+### Extensions
+
 |**Extensions**                |**Firefox**                                                                      |**Chrome**                                                                                                 |
 |:------------------------------|:---------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 |Ublock Origin                 |[Get](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)             |[Get](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)            |
@@ -59,14 +62,14 @@ After grabbing the package from your distribution's package manager,you have to 
 |Firefox Containers            |[Get](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  | --- |
 |Containers  Helper|[Get](https://addons.mozilla.org/en-US/firefox/addon/containers-helper/)  |  --- |           
 |Skip Redirect                 |[Get](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)             |[Get](https://chrome.google.com/webstore/detail/skip-redirect/jaoafjdoijdconemdmodhbfpianehlon)            |
+|Refined Github                |[Get](https://addons.mozilla.org/en-US/firefox/addon/refined-github-/)             |[Get](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf)            |
 |NX Enhanced                           |[Get](https://addons.mozilla.org/addon/nx-enhanced)       |[Get](https://chrome.google.com/webstore/detail/nx-enhanced/ljimbekophocjbnphldoaidgkkaojcfo)  |
 |Xdm                           |[Get](https://addons.mozilla.org/en-US/firefox/addon/xdm-browser-monitor-v8/)       |[Get](https://subhra74.github.io/xdm/redirect.html?target=chrome&version=8.0)  |
-|Dark Background And Light Text|[Get](https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/)|---                                                                                                        |
 |Improve Youtube               |[Get](https://addons.mozilla.org/en-US/firefox/addon/youtube-addon/)             |[Get](https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd)|
 |Sponsor Block               |[Get](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)             |[Get](https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone)|
 |Redirector                    |[Get](https://addons.mozilla.org/en-US/firefox/addon/redirector/)                |[Get](https://chrome.google.com/webstore/detail/redirector/ocgpenflpmgnfapjedencafcfakcekcd)               |
-|Cookie Autodelete             |[Get](https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/)         |[Get](https://chrome.google.com/webstore/detail/cookie-autodelete/fhcgjolkccmbidfldomjliifgaodjagh/)       |
-|Dark Reader                   |[Get](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)                |[Get](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)              |
+
+
 
 ### Extension configs :
 - [Redirector](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/Redirector.json)
