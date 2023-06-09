@@ -67,11 +67,10 @@ packages=(
     "android-tools"
     "tor-browser"
     "ventoy-bin"
-    "google-chrome"
+    "brave-bin"
     "appimagelauncher"
     "telegram-desktop"
     "simplescreenrecorder"
-    "warpinator-git"
     "converseen"
     "celluloid"
     "gimp"
@@ -88,10 +87,10 @@ done
 
 echo -e "\n############################################\n######### All packages installed #########\n############################################\n"
 
-# Invokes the fish_config.sh script for fish shell setup
- echo -e "\n############################################\n######### Initiating Fish config  #########\n############################################\n"
+# Invokes the post_setup.sh script for various fixes and tweaks
+ echo -e "\n############################################\n######### Initiating Post config script   #########\n############################################\n"
 echo "Initiation sucessfull"
-sudo chmod +x "fish_config.sh"
-sudo ./fish_config.sh
+sudo chmod +x "post_setup.sh"
+sudo ./post_setup.sh
 
 exit 0
