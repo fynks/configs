@@ -8,7 +8,7 @@
     "url": ""
   },
   "scripts": {
-    "build": "hmd2html -s README.md -l ./assets/layout.html -d ./dist && mv ./dist/README.html ./dist/Index.html",
+    "build": "hmd2html -s README.md -l ./dist/layout.html -d ./dist && mv ./dist/README.html ./dist/Index.html",
     "publish": "npm publish"
   },
   "author": "Fynks",
