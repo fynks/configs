@@ -11,7 +11,7 @@
 ## Linux
 - [Chaotic AUR](https://github.com/chaotic-aur)
 - [Setup Script](https://raw.githubusercontent.com/fynks/configs/main/setup/setup.sh)
-- [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts)
+- [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts.kksrc)
 - [XDM](https://github.com/subhra74/xdm-experimental-binaries/tags)
 
 > ### Visual Studio Code
