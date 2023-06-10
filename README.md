@@ -10,15 +10,30 @@
 
 ## Linux
 - [Chaotic AUR](https://github.com/chaotic-aur)
-- [Setup Script](https://raw.githubusercontent.com/fynks/configs/main/setup/setup.sh)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts.kksrc)
 - [XDM](https://github.com/subhra74/xdm-experimental-binaries/tags)
 
+> ### Fish Shell Setup
+1. change to fish temporarily by running command: `fish`
+2. Then install fisher and tide by running:
+ ``` bash
+ sudo curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher install ilancosman/tide
+ ```
+ 1. Remove the welcome msg from fish shell by:
+ ``` bash
+ mkdir -p ~/.config/fish/functions/
+echo 'function fish_greeting; end' > ~/.config/fish/functions/fish_greeting.fish
+```
+1. Chnage the default shell to `fish` by:
+``` bash
+sudo sh -c 'echo /usr/bin/fish >> /etc/shells'
+chsh -s /usr/bin/fish 
+```
+1. Logout and login again to see tha change.
+   
+
 > ### Visual Studio Code
-
-After grabbing the package from your distribution's package manager,you have to do following trouble shooting in order to setup sync and permanently store credentials on linux.
-
-1. After successfull run of ```post_setup.sh``` script:
+1. After successfull run of `post_setup.sh` script:
 2. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
 3. Logout the device and login.
 4. Now login into github again in vs code.
