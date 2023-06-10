@@ -24,7 +24,7 @@
  mkdir -p ~/.config/fish/functions/
 echo 'function fish_greeting; end' > ~/.config/fish/functions/fish_greeting.fish
 ```
-  - Chnage the default shell to `fish` by:
+  - Change the default shell to `fish` by:
 ``` bash
 sudo sh -c 'echo /usr/bin/fish >> /etc/shells'
 chsh -s /usr/bin/fish 
