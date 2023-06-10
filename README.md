@@ -44,11 +44,12 @@ After grabbing the package from your distribution's package manager,you have to 
 
 > ### Firefox Setup
 
-1. After installing firefox,get latest _better-fox User.js_ from :
+1. After installing firefox, get latest _better-fox User.js_ from :
 [Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
 
-1. Fix firefox proton design by adding: 
+2. Fix firefox proton design by adding: 
 [Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
+3. Google search engine for firefox from [Mycroft](https://mycroftproject.com/install.html?id=14909&basename=google&icontype=ico&name=Google)
 
 ### Extensions
 
@@ -79,8 +80,7 @@ After grabbing the package from your distribution's package manager,you have to 
 - [Next-DNS](https://raw.githubusercontent.com/fynks/configs/main/setup/nextdns_config.json)
 - [Userscripts](https://github.com/fynks/userscripts)
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
-- [Custom search engines](https://mycroftproject.com/)
-- [Firefox Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/firefox_cookie_clearance_exception_list.md)
+- [Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/cookie_exception_list.md)
 
 
 ---
