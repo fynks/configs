@@ -21,7 +21,7 @@ sudo chmod 755 /usr/local/bin/hblock
 # Copies the custom sources file from GitHub to /etc/hblock/sources.list
 echo -e "\n############################################\n######### Copying hblock sources file #########\n############################################\n"
 sudo mkdir -p /etc/hblock/ &&
-sudo curl -o /etc/hblock/sources.list 'https://raw.githubusercontent.com/fynks/configs/main/setup/hblock_sources.list'
+sudo curl -o /etc/hblock/sources.list 'https://raw.githubusercontent.com/fynks/configs/main/setup/configs/hblock_sources.list'
 
 # Runs hblock and compiles the hosts file with custom sources
 sudo hblock
@@ -32,7 +32,7 @@ echo -e "Installing the required packages"
 sudo pacman -S --needed --noconfirm gnome-keyring libsecret libgnome-keyring
 
 echo -e "Copying the files to the required directory"
-curl -o ~/.xinitrc 'https://raw.githubusercontent.com/fynks/configs/main/setup/sample_xinitrc_file'
+curl -o ~/.xinitrc 'https://raw.githubusercontent.com/fynks/configs/main/setup/configs/sample_xinitrc_file'
 
 echo -e "\n DONE  \n"
 echo -e "\n Open Seahorse, unlock using your password, then log out and log in again. After that, log in to GitHub in VS Code.\n"

@@ -10,7 +10,7 @@
 
 ## Linux
 - [Chaotic AUR](https://github.com/chaotic-aur)
-- [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/custom_shortcuts.kksrc)
+- [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/custom_shortcuts.kksrc)
 - [XDM](https://github.com/subhra74/xdm-experimental-binaries/tags)
 
 > ### Fish Shell Setup
@@ -92,7 +92,7 @@ chsh -s /usr/bin/fish
 - [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/improvedtube.json)
   
 ### Other configs
-- [Next-DNS](https://raw.githubusercontent.com/fynks/configs/main/setup/nextdns_config.json)
+- [Next-DNS](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/nextdns_config.json)
 - [Userscripts](https://github.com/fynks/userscripts)
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
 - [Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/cookie_exception_list.md)
