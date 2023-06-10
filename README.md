@@ -14,22 +14,22 @@
 - [XDM](https://github.com/subhra74/xdm-experimental-binaries/tags)
 
 > ### Fish Shell Setup
-1. change to fish temporarily by running command: `fish`
-2. Then install fisher and tide by running:
+   - Change to fish temporarily by running command: `fish`
+   - Then install fisher and tide by running:
  ``` bash
  sudo curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher install ilancosman/tide
  ```
- 1. Remove the welcome msg from fish shell by:
+   - Remove the welcome msg from fish shell by:
  ``` bash
  mkdir -p ~/.config/fish/functions/
 echo 'function fish_greeting; end' > ~/.config/fish/functions/fish_greeting.fish
 ```
-1. Chnage the default shell to `fish` by:
+  - Chnage the default shell to `fish` by:
 ``` bash
 sudo sh -c 'echo /usr/bin/fish >> /etc/shells'
 chsh -s /usr/bin/fish 
 ```
-1. Logout and login again to see tha change.
+  - Logout and login again to see tha change.
    
 
 > ### Visual Studio Code
