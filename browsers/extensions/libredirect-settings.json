@@ -1,18 +1,21 @@
 {
   "youtube": {
-    "enabled": true,
-    "redirectType": "both",
-    "frontend": "piped",
+    "enabled": false,
+    "redirectType": "main_frame",
+    "frontend": "invidious",
     "unsupportedUrls": "bypass"
   },
   "invidious": [
     "https://inv.vern.cc"
   ],
   "piped": [
-    "https://piped.video"
+    "https://pipedapi-libre.kavin.rocks"
   ],
   "pipedMaterial": [
     "https://piped-material.xn--17b.net"
+  ],
+  "poketube": [
+    "https://poketube.fun"
   ],
   "cloudtube": [
     "https://tube.cadence.moe"
@@ -29,18 +32,20 @@
     "https://hyperpipe.surge.sh"
   ],
   "twitter": {
-    "enabled": true,
-    "redirectType": "both",
-    "unsupportedUrls": "bypass"
+    "enabled": false,
+    "redirectType": "main_frame",
+    "unsupportedUrls": "bypass",
+    "frontend": "nitter",
+    "instance": "public"
   },
   "nitter": [
-    "https://nitter.net",
-    "https://nitter.pussthecat.org",
-    "https://nitter.kavin.rocks"
+    "https://nitter.net"
   ],
   "tiktok": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "proxiTok",
+    "instance": "public"
   },
   "proxiTok": [
     "https://proxitok.pabloferreiro.es"
@@ -48,79 +53,77 @@
   "reddit": {
     "enabled": true,
     "frontend": "libreddit",
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "instance": "public"
   },
   "libreddit": [
-    "https://libreddit.spike.codes",
-    "https://safereddit.com",
-    "https://libreddit.kavin.rocks",
-    "https://libreddit.eu.org"
+    "https://libreddit.kavin.rocks"
   ],
   "teddit": [
     "https://teddit.net"
   ],
   "imgur": {
-    "enabled": true,
+    "enabled": false,
     "redirectType": "main_frame",
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "rimgo",
+    "instance": "public"
   },
   "rimgo": [
-    "https://rimgo.vern.cc",
-    "https://rimgo.pussthecat.org",
-    "https://rimgo.bus-hit.me"
+    "https://rimgo.vern.cc"
   ],
   "medium": {
-    "enabled": true,
     "frontend": "scribe",
+    "enabled": false,
     "unsupportedUrls": "bypass"
   },
   "scribe": [
-    "https://scribe.rip",
-    "https://scribe.bus-hit.me",
-    "https://scribe.nixnet.services",
-    "https://scribe.privacydev.net"
+    "https://scribe.rip"
+  ],
+  "libMedium": [
+    "https://md.vern.cc"
   ],
   "quora": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "quetre",
+    "instance": "public"
   },
   "quetre": [
-    "https://quetre.iket.me",
-    "https://quetre.pussthecat.org",
-    "https://quetre.privacydev.net"
+    "https://quetre.iket.me"
   ],
   "imdb": {
-    "enabled": true,
-    "unsupportedUrls": "bypass"
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "libremdb",
+    "instance": "public"
   },
   "libremdb": [
-    "https://libremdb.iket.me",
-    "https://libremdb.pussthecat.org",
-    "https://ld.vern.cc"
+    "https://libremdb.iket.me"
   ],
   "fandom": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "instance": "public",
+    "frontend": "breezeWiki"
   },
   "breezeWiki": [
     "https://breezewiki.com"
   ],
   "lbry": {
     "enabled": false,
-    "frontend": "librarian",
     "redirectType": "main_frame",
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "lbryDesktop"
   },
-  "librarian": [
-    "https://lbry.vern.cc"
-  ],
   "search": {
     "enabled": false,
     "frontend": "searxng",
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "instance": "public"
   },
   "searxng": [
-    "https://sx.vern.cc"
+    "https://search.bus-hit.me"
   ],
   "searx": [],
   "whoogle": [],
@@ -128,7 +131,8 @@
   "translate": {
     "enabled": false,
     "frontend": "simplyTranslate",
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "instance": "public"
   },
   "simplyTranslate": [
     "https://simplytranslate.org"
@@ -150,129 +154,152 @@
   ],
   "sendFiles": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "send"
   },
   "send": [
     "https://send.vis.ee"
   ],
   "textStorage": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "privateBin"
   },
   "privateBin": [],
-  "exceptions": {
-    "url": [],
-    "regex": []
-  },
-  "theme": "dark",
-  "popupServices": [
-    "twitter",
-    "imgur",
-    "reddit",
-    "quora",
-    "medium",
-    "wikipedia",
-    "stackOverflow",
-    "imdb",
-    "youtube"
-  ],
-  "libMedium": [
-    "https://md.vern.cc"
-  ],
   "reuters": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "neuters"
   },
   "neuters": [
     "https://neuters.de"
   ],
   "genius": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "dumb",
+    "instance": "public"
   },
   "dumb": [
-    "https://dm.vern.cc",
-    "https://sing.whatever.social",
-    "https://dumb.lunar.icu"
+    "https://dm.vern.cc"
   ],
   "urbanDictionary": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "ruralDictionary"
   },
   "ruralDictionary": [
     "https://rd.vern.cc"
   ],
   "stackOverflow": {
-    "enabled": true,
-    "unsupportedUrls": "bypass"
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "anonymousOverflow",
+    "instance": "public"
   },
   "anonymousOverflow": [
-    "https://code.whatever.social",
-    "https://overflow.777.tf",
-    "https://ao.vern.cc",
-    "https://overflow.lunar.icu"
+    "https://code.whatever.social"
   ],
   "goodreads": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "biblioReads",
+    "instance": "public"
   },
   "biblioReads": [
     "https://biblioreads.ml"
   ],
   "wikipedia": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "wikiless"
   },
   "wikiless": [
-    "https://wikiless.org",
-    "https://wl.vern.cc"
-  ],
-  "poketube": [
-    "https://poketube.fun"
+    "https://wikiless.org"
   ],
   "snopes": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "suds"
   },
   "suds": [
     "https://sd.vern.cc"
   ],
-  "fetchInstances": "github",
   "waybackMachine": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "waybackClassic"
   },
   "waybackClassic": [
     "https://wayback-classic.net"
   ],
   "github": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "gothub"
   },
   "gothub": [
     "https://gh.odyssey346.dev"
   ],
   "bilibili": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "mikuInvidious"
   },
   "mikuInvidious": [
     "https://mikuinv.resrv.org"
   ],
   "bandcamp": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "tent"
   },
   "tent": [
     "https://tent.sny.sh"
   ],
   "wolframAlpha": {
     "enabled": false,
-    "unsupportedUrls": "bypass"
+    "unsupportedUrls": "bypass",
+    "frontend": "wolfreeAlpha"
   },
   "wolfreeAlpha": [
     "https://gqq.gitlab.io",
     "https://uqq.gitlab.io"
   ],
-  "version": "2.5.4"
+  "speedTest": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "libreSpeed"
+  },
+  "libreSpeed": [
+    "https://librespeed.org"
+  ],
+  "meet": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "jitsi"
+  },
+  "jitsi": [
+    "https://meet.jit.si",
+    "https://8x8.vc"
+  ],
+  "exceptions": {
+    "url": [],
+    "regex": []
+  },
+  "theme": "dark",
+  "popupServices": [
+    "youtube",
+    "twitter",
+    "imgur",
+    "reddit",
+    "quora",
+    "medium",
+    "stackOverflow"
+  ],
+  "fetchInstances": "github",
+  "librarian": [
+    "https://lbry.vern.cc"
+  ],
+  "version": "2.6.2"
 }
