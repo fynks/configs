@@ -110,5 +110,4 @@ chsh -s /usr/bin/fish
 
 ---
 ### Links :
-- [Links](https://github.com/fynks/things/blob/main/links.md)
 - [Github](https://github.com/fynks/configs)
