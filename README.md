@@ -30,6 +30,7 @@ sudo sh -c 'echo /usr/bin/fish >> /etc/shells'
 chsh -s /usr/bin/fish 
 ```
   - Logout and login again to see tha change.
+  - For abbreviation guidelines visit [here](https://fishshell.com/docs/current/cmds/abbr.html#examples)
    
 
 > ### Visual Studio Code
