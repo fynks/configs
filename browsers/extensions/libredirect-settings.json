@@ -32,7 +32,7 @@
     "https://hyperpipe.surge.sh"
   ],
   "twitter": {
-    "enabled": false,
+    "enabled": true,
     "redirectType": "main_frame",
     "unsupportedUrls": "bypass",
     "frontend": "nitter",
@@ -57,7 +57,8 @@
     "instance": "public"
   },
   "libreddit": [
-    "https://libreddit.kavin.rocks"
+    "https://libreddit.kavin.rocks",
+    "https://safereddit.com"
   ],
   "teddit": [
     "https://teddit.net"
@@ -74,7 +75,7 @@
   ],
   "medium": {
     "frontend": "scribe",
-    "enabled": false,
+    "enabled": true,
     "unsupportedUrls": "bypass"
   },
   "scribe": [
@@ -291,7 +292,6 @@
   "popupServices": [
     "youtube",
     "twitter",
-    "imgur",
     "reddit",
     "quora",
     "medium",
