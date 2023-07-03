@@ -1,35 +1,4 @@
 {
-  "parentalcontrol": {
-    "safeSearch": false,
-    "youtubeRestrictedMode": false,
-    "blockBypass": false,
-    "services": [],
-    "categories": [],
-    "recreation": {
-      "times": {},
-      "timezone": null
-    }
-  },
-  "privacy": {
-    "disguisedTrackers": true,
-    "allowAffiliate": false,
-    "blocklists": [
-      {
-        "id": "nextdns-recommended"
-      },
-      {
-        "id": "goodbye-ads"
-      },
-      {
-        "id": "hagezi-multi-pro-plus"
-      }
-    ],
-    "natives": [
-      {
-        "id": "xiaomi"
-      }
-    ]
-  },
   "security": {
     "threatIntelligenceFeeds": true,
     "aiThreatDetection": false,
@@ -69,6 +38,18 @@
         "id": "sbs"
       },
       {
+        "id": "fit"
+      },
+      {
+        "id": "surf"
+      },
+      {
+        "id": "cn"
+      },
+      {
+        "id": "monster"
+      },
+      {
         "id": "gq"
       },
       {
@@ -79,70 +60,40 @@
       }
     ]
   },
-  "rewrites": [],
+  "privacy": {
+    "disguisedTrackers": true,
+    "allowAffiliate": false,
+    "blocklists": [
+      {
+        "id": "nextdns-recommended"
+      },
+      {
+        "id": "hagezi-multi-pro-plus"
+      },
+      {
+        "id": "goodbye-ads"
+      },
+      {
+        "id": "adguard-tracking-protection-filter"
+      }
+    ],
+    "natives": [
+      {
+        "id": "windows"
+      }
+    ]
+  },
   "allowlist": [
     {
-      "id": "spotify.com",
+      "id": "netlify.com",
       "active": true
     },
     {
-      "id": "logfiles.zoom.us",
-      "active": false
-    },
-    {
-      "id": "us04zpns.zoom.us",
-      "active": false
-    },
-    {
-      "id": "us04logfiles.zoom.us",
-      "active": false
-    },
-    {
-      "id": "dell.com",
-      "active": false
-    },
-    {
-      "id": "chat.openai.com",
-      "active": true
-    },
-    {
-      "id": "tenor.co",
+      "id": "openai.com",
       "active": true
     },
     {
       "id": "github.com",
-      "active": false
-    },
-    {
-      "id": "b-graph.facebook.com",
-      "active": true
-    },
-    {
-      "id": "thedise.me",
-      "active": false
-    },
-    {
-      "id": "js.media-lab.ai",
-      "active": false
-    },
-    {
-      "id": "update.intl.miui.com",
-      "active": true
-    },
-    {
-      "id": "geo.instagram.com",
-      "active": true
-    },
-    {
-      "id": "i.instagram.com",
-      "active": true
-    },
-    {
-      "id": "graph.instagram.com",
-      "active": true
-    },
-    {
-      "id": "graph.facebook.com",
       "active": false
     },
     {
@@ -152,7 +103,39 @@
   ],
   "denylist": [
     {
+      "id": "ads.youtube.com",
+      "active": true
+    },
+    {
       "id": "pagead2.googlesyndication.com",
+      "active": true
+    },
+    {
+      "id": "componentupdater.brave.com",
+      "active": false
+    },
+    {
+      "id": "syndication.twitter.com",
+      "active": true
+    },
+    {
+      "id": "go-updater.brave.com",
+      "active": false
+    },
+    {
+      "id": "grant.rewards.brave.com",
+      "active": true
+    },
+    {
+      "id": "rewards.brave.com",
+      "active": true
+    },
+    {
+      "id": "api.rewards.brave.com",
+      "active": true
+    },
+    {
+      "id": "laptop-updates.brave.com",
       "active": true
     },
     {
@@ -186,160 +169,20 @@
     {
       "id": "mediavisor.doubleclick.net",
       "active": true
-    },
-    {
-      "id": "ads30.adcolony.com",
-      "active": true
-    },
-    {
-      "id": "adc3-launch.adcolony.com",
-      "active": true
-    },
-    {
-      "id": "events3alt.adcolony.com",
-      "active": true
-    },
-    {
-      "id": "wd.adcolony.com",
-      "active": true
-    },
-    {
-      "id": "static.media.net",
-      "active": true
-    },
-    {
-      "id": "media.net",
-      "active": true
-    },
-    {
-      "id": "adservetx.media.net",
-      "active": true
-    },
-    {
-      "id": "app-measurement.com",
-      "active": true
-    },
-    {
-      "id": "analytics.google.com",
-      "active": true
-    },
-    {
-      "id": "click.googleanalytics.com",
-      "active": true
-    },
-    {
-      "id": "google-analytics.com",
-      "active": true
-    },
-    {
-      "id": "ssl.google-analytics.com",
-      "active": true
-    },
-    {
-      "id": "notify.bugsnag.com",
-      "active": true
-    },
-    {
-      "id": "sessions.bugsnag.com",
-      "active": true
-    },
-    {
-      "id": "api.bugsnag.com",
-      "active": true
-    },
-    {
-      "id": "app.bugsnag.com",
-      "active": true
-    },
-    {
-      "id": "browser.sentry-cdn.com",
-      "active": true
-    },
-    {
-      "id": "app.getsentry.com",
-      "active": true
-    },
-    {
-      "id": "ads-api.tiktok.com",
-      "active": true
-    },
-    {
-      "id": "analytics.tiktok.com",
-      "active": true
-    },
-    {
-      "id": "ads-sg.tiktok.com",
-      "active": true
-    },
-    {
-      "id": "analytics-sg.tiktok.com",
-      "active": true
-    },
-    {
-      "id": "business-api.tiktok.com",
-      "active": true
-    },
-    {
-      "id": "ads.tiktok.com",
-      "active": true
-    },
-    {
-      "id": "log.byteoversea.com",
-      "active": true
-    },
-    {
-      "id": "location-traceroute-sg.bytedance.com",
-      "active": true
-    },
-    {
-      "id": "go-updater.brave.com",
-      "active": false
-    },
-    {
-      "id": "rewards.brave.com",
-      "active": true
-    },
-    {
-      "id": "api.rewards.brave.com",
-      "active": true
-    },
-    {
-      "id": "grant.rewards.brave.com",
-      "active": true
-    },
-    {
-      "id": "laptop-updates.brave.com",
-      "active": true
-    },
-    {
-      "id": "variations.brave.com",
-      "active": true
-    },
-    {
-      "id": "componentupdater.brave.com",
-      "active": false
-    },
-    {
-      "id": "spappmonitoring.com",
-      "active": true
-    },
-    {
-      "id": "a-spy.com",
-      "active": true
-    },
-    {
-      "id": "alltracker.org",
-      "active": true
-    },
-    {
-      "id": "aispyer.com",
-      "active": true
-    },
-    {
-      "id": "syndication.twitter.com",
-      "active": true
     }
   ],
+  "parentalcontrol": {
+    "safeSearch": false,
+    "youtubeRestrictedMode": false,
+    "blockBypass": false,
+    "services": [],
+    "categories": [],
+    "recreation": {
+      "times": {},
+      "timezone": null
+    }
+  },
+  "rewrites": [],
   "settings": {
     "logs": {
       "enabled": true,
@@ -347,7 +190,7 @@
         "ip": true,
         "domain": false
       },
-      "retention": 7776000,
+      "retention": 3600,
       "location": "ch"
     },
     "blockPage": {
