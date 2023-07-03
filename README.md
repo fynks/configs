@@ -90,7 +90,6 @@ chsh -s /usr/bin/fish
 ### Extension configs :
 - [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
-- [Improve Tube](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/improvedtube.json)
 - [No-Skip URL List](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/no_skip_url_list.txt)
   
 ### Other configs
