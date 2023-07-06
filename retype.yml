@@ -1,5 +1,5 @@
 input: .
-output: .
+output: ./dist/
 url: https://fynks.netlify.app
 branding:
   title: CONFIGS
