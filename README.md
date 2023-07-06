@@ -3,10 +3,10 @@
 - [Windows](#windows)
 - [Browsers](#browsers)
   - [Extensions](#extensions)
-  - [Extension configs](#extension-configs) 
+  - [Extension configs](#extension-configs-) 
   - [other configs](#other-configs)
 - [Andriod](#android)
-- [Links](#links)
+- [Links](#links-)
 
 ## Linux
 - [Chaotic AUR](https://github.com/chaotic-aur)

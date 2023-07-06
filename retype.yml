@@ -1,0 +1,11 @@
+input: .
+output: .
+url: https://fynks.netlify.app
+branding:
+  title: CONFIGS
+  label: Fynks
+meta:
+  title: "CONFIGS | Fynks"
+exclude:
+- "/browsers/cookie_exception_list.md"
+favicon: favicon.svg

@@ -8,11 +8,11 @@
     "url": ""
   },
   "scripts": {
-    "build": "hmd2html -s README.md -l ./dist/layout.html -d ./dist && mv ./dist/README.html ./dist/Index.html",
+    "build": "retype build",
     "publish": "npm publish"
   },
   "author": "Fynks",
   "dependencies": {
-    "hackmd-to-html-cli": "^1.0.0"
+    "retypeapp": "^3.0.0"
   }
 }
