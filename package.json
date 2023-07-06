@@ -8,11 +8,16 @@
     "url": ""
   },
   "scripts": {
-    "build": "retype build",
+    "build": "npm run retype && npm run minify && npm run workbox",
+    "retype": "retype build",
+    "minify": "minifyall /dist/index.html",
+    "workbox": "workbox generateSW workbox-config.js",
     "publish": "npm publish"
   },
   "author": "Fynks",
   "dependencies": {
-    "retypeapp": "^3.0.0"
+    "retypeapp": "^3.0.3",
+    "@josee9988/minifyall": "^1.2.2",
+    "workbox-cli": "^7.0.0"
   }
 }
