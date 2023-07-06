@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npm run retype && npm run minify && npm run workbox",
     "retype": "retype build",
-    "minify": "minifyall /dist/index.html",
+    "minify": "minifyall dist/index.html",
     "workbox": "workbox generateSW workbox-config.js",
     "publish": "npm publish"
   },
