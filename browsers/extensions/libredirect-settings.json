@@ -2,14 +2,15 @@
   "youtube": {
     "enabled": false,
     "redirectType": "main_frame",
-    "frontend": "invidious",
-    "unsupportedUrls": "bypass"
+    "frontend": "piped",
+    "unsupportedUrls": "bypass",
+    "embedFrontend": "invidious"
   },
   "invidious": [
     "https://inv.vern.cc"
   ],
   "piped": [
-    "https://pipedapi-libre.kavin.rocks"
+    "https://piped.video"
   ],
   "pipedMaterial": [
     "https://piped-material.xn--17b.net"
@@ -32,7 +33,7 @@
     "https://hyperpipe.surge.sh"
   ],
   "twitter": {
-    "enabled": true,
+    "enabled": false,
     "redirectType": "main_frame",
     "unsupportedUrls": "bypass",
     "frontend": "nitter",
@@ -42,7 +43,7 @@
     "https://nitter.net"
   ],
   "tiktok": {
-    "enabled": false,
+    "enabled": true,
     "unsupportedUrls": "bypass",
     "frontend": "proxiTok",
     "instance": "public"
@@ -51,14 +52,14 @@
     "https://proxitok.pabloferreiro.es"
   ],
   "reddit": {
-    "enabled": true,
+    "enabled": false,
     "frontend": "libreddit",
     "unsupportedUrls": "bypass",
     "instance": "public"
   },
   "libreddit": [
-    "https://libreddit.kavin.rocks",
-    "https://safereddit.com"
+    "https://libreddit.hu",
+    "https://libreddit.kavin.rocks"
   ],
   "teddit": [
     "https://teddit.net"
@@ -85,7 +86,7 @@
     "https://md.vern.cc"
   ],
   "quora": {
-    "enabled": false,
+    "enabled": true,
     "unsupportedUrls": "bypass",
     "frontend": "quetre",
     "instance": "public"
@@ -193,7 +194,7 @@
     "https://rd.vern.cc"
   ],
   "stackOverflow": {
-    "enabled": false,
+    "enabled": true,
     "unsupportedUrls": "bypass",
     "frontend": "anonymousOverflow",
     "instance": "public"
@@ -240,7 +241,8 @@
     "frontend": "gothub"
   },
   "gothub": [
-    "https://gh.odyssey346.dev"
+    "https://gothub.lunar.icu",
+    "https://gothub.dev.projectsegfau.lt"
   ],
   "bilibili": {
     "enabled": false,
@@ -295,11 +297,56 @@
     "reddit",
     "quora",
     "medium",
-    "stackOverflow"
+    "stackOverflow",
+    "tiktok"
   ],
   "fetchInstances": "github",
   "librarian": [
     "https://lbry.vern.cc"
   ],
-  "version": "2.6.2"
+  "pixiv": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "pixivFe"
+  },
+  "pixivFe": [
+    "https://pixivfe.exozy.me"
+  ],
+  "pinterest": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "redirectType": "main_frame",
+    "frontend": "binternet"
+  },
+  "binternet": [
+    "https://binternet.ahwx.org"
+  ],
+  "intellectual": [
+    "https://intellectual.insprill.net"
+  ],
+  "gitlab": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "laboratory"
+  },
+  "laboratory": [
+    "https://lab.vern.cc"
+  ],
+  "instructables": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "indestructables"
+  },
+  "indestructables": [
+    "https://indestructables.private.coffee"
+  ],
+  "myIp": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "wtfismyip"
+  },
+  "wtfismyip": [
+    "https://myip.wtf"
+  ],
+  "version": "2.7.0"
 }
