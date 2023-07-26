@@ -16,7 +16,7 @@
   },
   "author": "Fynks",
   "dependencies": {
-    "retypeapp": "^3.0.3",
+    "retypeapp": "^3.1.0",
     "@josee9988/minifyall": "^1.2.2",
     "workbox-cli": "^7.0.0"
   }
