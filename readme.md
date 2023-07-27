@@ -1,3 +1,8 @@
+---
+label: Configs
+icon: gear
+---
+
 ## Menu :
 - [Linux](#linux)
 - [Windows](#windows)
