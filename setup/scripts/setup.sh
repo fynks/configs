@@ -12,39 +12,40 @@
 
 # Check if user is root
 if [[ $EUID -ne 0 ]]; then
-    echo "This script must be run as root."
+    echo "Error: This script must be run as root."
     exit 1
 fi
+
+# Function to handle errors
+handle_error() {
+    echo "Error: $1"
+    exit 1
+}
 
 # Updates the mirrors
-echo -e "\n############################################\n######### Pacman Branch,mirrors and databases updates #########\n############################################\n"
+printf "\n############################################\n######### Pacman Branch, mirrors, and databases updates #########\n############################################\n"
 echo "Updating mirrors with fastest mirrors"
 if ! sudo pacman-mirrors --fasttrack 10; then
-    echo "Error updating mirrors. Aborting."
-    exit 1
+    handle_error "Error updating mirrors. Aborting."
 fi
 
-# Syncs the detabases
-echo -e "\nSyncing databases\n"
-sudo pacman -Syu
+# Syncs the databases
+printf "\nSyncing databases\n"
+sudo pacman -Syu || handle_error "Error syncing databases. Aborting."
 
 # Install yay if not installed
-echo -e "\nChecking if yay is available\n"
-if ! pacman -Qs yay > /dev/null; then
+printf "\nChecking if yay is available\n"
+if ! command -v yay &>/dev/null; then
     echo "yay is not installed. Installing yay..."
-    pacman -S --needed --noconfirm base-devel yay
-    if ! pacman -Qs yay > /dev/null; then
-        echo "Error installing yay. Aborting."
-        exit 1
-    fi
+    sudo pacman -S --needed --noconfirm base-devel yay || handle_error "Error installing yay. Aborting."
 fi
 
 # Update the system before installing packages
-echo -e "\n############################################\n######### Updating system before installing packages #########\n############################################\n"
-sudo pacman -Syu --noconfirm
+printf "\n############################################\n######### Updating system before installing packages #########\n############################################\n"
+sudo pacman -Syu --noconfirm || handle_error "Error updating system. Aborting."
 
 # Start of installing packages
-echo -e "\n############################################\n######### Starting installing packages #########\n############################################\n"
+printf "\n############################################\n######### Starting installing packages #########\n############################################\n"
 
 # Array of package names to install
 packages=(
@@ -79,21 +80,26 @@ packages=(
     "gimp"
 )
 
+
 # Install packages from AUR
 for package in "${packages[@]}"; do
-    echo -e "\n############################################\n######### Installing ${package} #########\n############################################\n"
-    if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm "$package"; then
-        echo "Error installing ${package}. Aborting."
-        exit 1
+    printf "\n############################################\n######### Installing "$package" #########\n############################################\n" 
+    if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "$package"; then
+        handle_error "Error installing $package. Aborting."
     fi
 done
 
-echo -e "\n############################################\n######### All packages installed #########\n############################################\n"
+printf "\n############################################\n######### All packages installed #########\n############################################\n"
 
 # Invokes the post_setup.sh script for various fixes and tweaks
- echo -e "\n############################################\n######### Initiating Post config script   #########\n############################################\n"
-echo "Initiation sucessfull"
-sudo chmod +x "post_setup.sh"
-sudo ./post_setup.sh
+post_setup_script="post_setup.sh"
+if [ -f "$post_setup_script" ]; then
+    printf "\n############################################\n######### Initiating Post config script   #########\n############################################\n"
+    echo "Initiation successful"
+    sudo chmod +x "$post_setup_script"
+    sudo -u "$SUDO_USER" "./$post_setup_script" || handle_error "Error executing post_setup.sh. Aborting."
+else
+    echo "Warning: post_setup.sh script not found. Skipping post-setup steps."
+fi
 
 exit 0
