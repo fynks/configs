@@ -22,27 +22,16 @@ handle_error() {
     exit 1
 }
 
-# Updates the mirrors
-printf "\n############################################\n######### Pacman Branch, mirrors, and databases updates #########\n############################################\n"
-echo "Updating mirrors with fastest mirrors"
-if ! sudo pacman-mirrors --fasttrack 10; then
-    handle_error "Error updating mirrors. Aborting."
-fi
-
-# Syncs the databases
-printf "\nSyncing databases\n"
-sudo pacman -Syu || handle_error "Error syncing databases. Aborting."
+# Updates mirrors 
+printf "\n############################################\n######### Updating mirrors and System #########\n############################################\n"
+sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syu --noconfirm || handle_error "Error updating system. Aborting."
 
 # Install yay if not installed
 printf "\nChecking if yay is available\n"
 if ! command -v yay &>/dev/null; then
     echo "yay is not installed. Installing yay..."
-    sudo pacman -S --needed --noconfirm base-devel yay || handle_error "Error installing yay. Aborting."
+    sudo -u "$SUDO_USER" pacman -S --needed --noconfirm base-devel yay || handle_error "Error installing yay. Aborting."
 fi
-
-# Update the system before installing packages
-printf "\n############################################\n######### Updating system before installing packages #########\n############################################\n"
-sudo pacman -Syu --noconfirm || handle_error "Error updating system. Aborting."
 
 # Start of installing packages
 printf "\n############################################\n######### Starting installing packages #########\n############################################\n"
@@ -80,14 +69,14 @@ packages=(
     "gimp"
 )
 
+# Join array elements with space as separator
+all_packages="${packages[*]}"
 
-# Install packages from AUR
-for package in "${packages[@]}"; do
-    printf "\n############################################\n######### Installing "$package" #########\n############################################\n" 
-    if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "$package"; then
-        handle_error "Error installing $package. Aborting."
-    fi
-done
+# Install all packages from AUR at once
+printf "\n############################################\n######### Installing packages #########\n############################################\n"
+if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload $all_packages; then
+    handle_error "Error installing packages. Aborting."
+fi
 
 printf "\n############################################\n######### All packages installed #########\n############################################\n"
 
@@ -96,7 +85,6 @@ post_setup_script="post_setup.sh"
 if [ -f "$post_setup_script" ]; then
     printf "\n############################################\n######### Initiating Post config script   #########\n############################################\n"
     echo "Initiation successful"
-    sudo chmod +x "$post_setup_script"
     sudo -u "$SUDO_USER" "./$post_setup_script" || handle_error "Error executing post_setup.sh. Aborting."
 else
     echo "Warning: post_setup.sh script not found. Skipping post-setup steps."
