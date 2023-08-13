@@ -69,14 +69,12 @@ packages=(
     "gimp"
 )
 
-# Join array elements with space as separator
-all_packages="${packages[*]}"
-
-# Install all packages from AUR at once
+# Install packages using yay
 printf "\n############################################\n######### Installing packages #########\n############################################\n"
-if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload $all_packages; then
+if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${packages[@]}"; then
     handle_error "Error installing packages. Aborting."
 fi
+
 
 printf "\n############################################\n######### All packages installed #########\n############################################\n"
 
