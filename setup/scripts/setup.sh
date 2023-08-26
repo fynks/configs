@@ -67,6 +67,7 @@ packages=(
     "converseen"
     "celluloid"
     "gimp"
+    "authenticator"
 )
 
 # Install packages using yay
