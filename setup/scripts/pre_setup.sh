@@ -18,8 +18,7 @@ fi
 
 # Get the regular user's username
 username=$(logname)
-
-echo -e "\n##################################################################################################\n#### Launching chaotic AUR in Firefox browser. Please enable the Chaotic AUR and pacman parallel downloading.####\n##################################################################################################\n"
+printf "\n##################################################################################################\n#### Launching chaotic AUR in Firefox browser. Please enable the Chaotic AUR and pacman parallel downloading.####\n##################################################################################################\n"
 sleep 3
 
 # Opens Chaotic-AUR github page
@@ -30,7 +29,7 @@ sudo nano /etc/pacman.conf
 sleep 1
 
 # Invoke the setup.sh script to initiate the setup
-echo -e "\n############################################\n######### Initiating Setup script #########\n############################################\n"
+printf "\n############################################\n######### Initiating Setup script #########\n############################################\n"
 sleep 3
 sudo chmod +x "setup.sh"
 sudo ./setup.sh
