@@ -68,6 +68,9 @@ packages=(
     "celluloid"
     "gimp"
     "authenticator"
+    "flatpak"
+    "docker"
+    "lazydocker"
 )
 
 # Install packages using yay
