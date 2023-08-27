@@ -10,20 +10,25 @@
 #  Arch Linux Post Install Setup and Config Script
 #-------------------------------------------------------------------------
 
-echo -e "\n##########################################\n######### configuring hblock #########\n##########################################\n"
+printf "\n############################################\n######### configuring hblock #########\n############################################\n"
 
 # Copies the custom sources file from GitHub to /etc/hblock/sources.list
-echo -e "\n############################################\n######### Copying hblock sources file #########\n############################################\n"
+
+printf "\n############################################\n######### Copying hblock sources file #########\n############################################\n"
 sudo mkdir -p /etc/hblock/ &&
 sudo curl -o /etc/hblock/sources.list 'https://raw.githubusercontent.com/fynks/configs/main/setup/configs/hblock_sources.list'
 
 # Runs hblock and compiles the hosts file with custom sources
 sudo hblock
 
-echo -e "\n##########################################\n######### configuring VS Code #########\n##########################################\n"
+# Enables docker service
+printf "\n############################################\n######### Enabling docker-service #########\n############################################\n"
+sudo systemctl start docker.service
+sudo systemctl enable docker.service    
+
 
 # Fixing VS Code for KDE
-echo -e "\n##########################################\n######### Fixing VS Code for KDE #########\n##########################################\n"
+printf "\n############################################\n######### Fixing VS Code for KDE #########\n############################################\n"
 echo -e "Installing the required packages"
 sudo pacman -S --needed --noconfirm gnome-keyring libsecret libgnome-keyring
 
