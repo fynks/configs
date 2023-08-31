@@ -23,14 +23,11 @@
   ],
   "youtubeMusic": {
     "enabled": false,
-    "frontend": "beatbump",
+    "frontend": "hyperpipe",
     "unsupportedUrls": "bypass"
   },
   "beatbump": [
     "https://beatbump.ml"
-  ],
-  "hyperpipe": [
-    "https://hyperpipe.surge.sh"
   ],
   "twitter": {
     "enabled": false,
@@ -43,10 +40,11 @@
     "https://nitter.net"
   ],
   "tiktok": {
-    "enabled": true,
+    "enabled": false,
     "unsupportedUrls": "bypass",
     "frontend": "proxiTok",
-    "instance": "public"
+    "instance": "public",
+    "redirectType": "main_frame"
   },
   "proxiTok": [
     "https://proxitok.pabloferreiro.es"
@@ -55,11 +53,15 @@
     "enabled": false,
     "frontend": "libreddit",
     "unsupportedUrls": "bypass",
-    "instance": "public"
+    "instance": "public",
+    "redirectType": "main_frame"
   },
   "libreddit": [
-    "https://libreddit.hu",
-    "https://libreddit.kavin.rocks"
+    "https://reddit.invak.id",
+    "https://libreddit.privacy.com.de",
+    "https://reddit.baby",
+    "https://lr.vern.cc",
+    "https://libreddit.privacydev.net"
   ],
   "teddit": [
     "https://teddit.net"
@@ -89,7 +91,8 @@
     "enabled": true,
     "unsupportedUrls": "bypass",
     "frontend": "quetre",
-    "instance": "public"
+    "instance": "public",
+    "redirectType": "main_frame"
   },
   "quetre": [
     "https://quetre.iket.me"
@@ -98,7 +101,8 @@
     "enabled": false,
     "unsupportedUrls": "bypass",
     "frontend": "libremdb",
-    "instance": "public"
+    "instance": "public",
+    "redirectType": "main_frame"
   },
   "libremdb": [
     "https://libremdb.iket.me"
@@ -107,7 +111,8 @@
     "enabled": false,
     "unsupportedUrls": "bypass",
     "instance": "public",
-    "frontend": "breezeWiki"
+    "frontend": "breezeWiki",
+    "redirectType": "main_frame"
   },
   "breezeWiki": [
     "https://breezewiki.com"
@@ -122,7 +127,8 @@
     "enabled": false,
     "frontend": "searxng",
     "unsupportedUrls": "bypass",
-    "instance": "public"
+    "instance": "public",
+    "redirectType": "main_frame"
   },
   "searxng": [
     "https://search.bus-hit.me"
@@ -197,7 +203,8 @@
     "enabled": true,
     "unsupportedUrls": "bypass",
     "frontend": "anonymousOverflow",
-    "instance": "public"
+    "instance": "public",
+    "redirectType": "main_frame"
   },
   "anonymousOverflow": [
     "https://code.whatever.social"
@@ -206,7 +213,8 @@
     "enabled": false,
     "unsupportedUrls": "bypass",
     "frontend": "biblioReads",
-    "instance": "public"
+    "instance": "public",
+    "redirectType": "main_frame"
   },
   "biblioReads": [
     "https://biblioreads.ml"
@@ -214,7 +222,8 @@
   "wikipedia": {
     "enabled": false,
     "unsupportedUrls": "bypass",
-    "frontend": "wikiless"
+    "frontend": "wikiless",
+    "redirectType": "main_frame"
   },
   "wikiless": [
     "https://wikiless.org"
@@ -230,7 +239,8 @@
   "waybackMachine": {
     "enabled": false,
     "unsupportedUrls": "bypass",
-    "frontend": "waybackClassic"
+    "frontend": "waybackClassic",
+    "redirectType": "main_frame"
   },
   "waybackClassic": [
     "https://wayback-classic.net"
@@ -238,7 +248,8 @@
   "github": {
     "enabled": false,
     "unsupportedUrls": "bypass",
-    "frontend": "gothub"
+    "frontend": "gothub",
+    "redirectType": "main_frame"
   },
   "gothub": [
     "https://gothub.lunar.icu",
@@ -247,7 +258,8 @@
   "bilibili": {
     "enabled": false,
     "unsupportedUrls": "bypass",
-    "frontend": "mikuInvidious"
+    "frontend": "mikuInvidious",
+    "redirectType": "main_frame"
   },
   "mikuInvidious": [
     "https://mikuinv.resrv.org"
@@ -294,11 +306,11 @@
   "popupServices": [
     "youtube",
     "twitter",
-    "reddit",
     "quora",
     "medium",
     "stackOverflow",
-    "tiktok"
+    "reddit",
+    "github"
   ],
   "fetchInstances": "github",
   "librarian": [
@@ -327,7 +339,8 @@
   "gitlab": {
     "enabled": false,
     "unsupportedUrls": "bypass",
-    "frontend": "laboratory"
+    "frontend": "laboratory",
+    "redirectType": "main_frame"
   },
   "laboratory": [
     "https://lab.vern.cc"
@@ -335,7 +348,8 @@
   "instructables": {
     "enabled": false,
     "unsupportedUrls": "bypass",
-    "frontend": "indestructables"
+    "frontend": "indestructables",
+    "redirectType": "main_frame"
   },
   "indestructables": [
     "https://indestructables.private.coffee"
@@ -343,10 +357,14 @@
   "myIp": {
     "enabled": false,
     "unsupportedUrls": "bypass",
-    "frontend": "wtfismyip"
+    "frontend": "wtfismyip",
+    "redirectType": "main_frame"
   },
   "wtfismyip": [
     "https://myip.wtf"
   ],
-  "version": "2.7.0"
+  "hyperpipe": [
+    "https://hyperpipe.surge.sh"
+  ],
+  "version": "2.7.1"
 }
