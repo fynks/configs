@@ -16,6 +16,13 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
+# Function to print section headers
+print_section_header() {
+    printf "\n############################################\n"
+    printf "######### %s #########\n" "$1"
+    printf "############################################\n\n"
+}
+
 # Function to handle errors
 handle_error() {
     echo "Error: $1"
@@ -23,7 +30,7 @@ handle_error() {
 }
 
 # Updates mirrors 
-printf "\n############################################\n######### Updating mirrors and System #########\n############################################\n"
+print_section_header "Updating mirrors and System"
 sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syu --noconfirm || handle_error "Error updating system. Aborting."
 
 # Install yay if not installed
@@ -34,11 +41,10 @@ if ! command -v yay &>/dev/null; then
 fi
 
 # Start of installing packages
-printf "\n############################################\n######### Starting installing packages #########\n############################################\n"
+print_section_header "Starting installing packages"
 
 # Array of package names to install
 packages=(
-    "base-devel"
     "cmake"
     "alacritty"
     "fish"
@@ -74,19 +80,20 @@ packages=(
 )
 
 # Install packages using yay
-printf "\n############################################\n######### Installing packages #########\n############################################\n"
+print_section_header "Installing packages" 
 if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${packages[@]}"; then
     handle_error "Error installing packages. Aborting."
 fi
 
 
-printf "\n############################################\n######### All packages installed #########\n############################################\n"
+print_section_header "All packages installed"
 
 # Invokes the post_setup.sh script for various fixes and tweaks
 post_setup_script="post_setup.sh"
 if [ -f "$post_setup_script" ]; then
-    printf "\n############################################\n######### Initiating Post config script   #########\n############################################\n"
+    print_section_header "Initiating Post config script"  
     echo "Initiation successful"
+    sudo -u "$SUDO_USER" chmod +x "./$post_setup_script"
     sudo -u "$SUDO_USER" "./$post_setup_script" || handle_error "Error executing post_setup.sh. Aborting."
 else
     echo "Warning: post_setup.sh script not found. Skipping post-setup steps."
