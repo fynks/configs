@@ -45,5 +45,14 @@ curl -o ~/.xinitrc 'https://raw.githubusercontent.com/fynks/configs/main/setup/c
 echo -e "\n DONE  \n"
 echo -e "\n Open Seahorse, unlock using your password, then log out and log in again. After that, log in to GitHub in VS Code.\n"
 
+# Reeboot info
 print_section_header "Setup Complete, please reboot"
+sleep 1
+
+# Prompts for disabling services script
+print_section_header "Do you want to disable extra services?"
+read -r -p "Press Enter to continue..."
+sudo chmod +x "./disable_extra_services.sh"
+sudo "./disable_extra_services.sh"
+
 exit

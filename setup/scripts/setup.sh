@@ -40,8 +40,6 @@ if ! command -v yay &>/dev/null; then
     sudo -u "$SUDO_USER" pacman -S --needed --noconfirm base-devel yay || handle_error "Error installing yay. Aborting."
 fi
 
-# Start of installing packages
-print_section_header "Starting installing packages"
 
 # Array of package names to install
 packages=(

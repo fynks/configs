@@ -15,42 +15,57 @@ if [[ $EUID -ne 0 ]]; then
     echo "This script must be run as root."
     exit 1
 fi
+
 # Function to display a highlighted prompt
-prompt() {
+function prompt() {
+    local message="$1"
     printf "\n%s\n" "**********************************************"
-    printf "%s\n" "$1"
+    printf "%s\n" "$message"
     printf "%s\n\n" "**********************************************"
-    read -p "Press Enter to continue..."
+    read -r -p "Press Enter to continue..."
 }
 
 # Get the regular user's username
 username=$(logname)
 
+# Function to display a welcome message
+function welcome() {
+    local message="
+    *Welcome "$username" to Arch Linux pre-Setup script.*
+This script will:
+    * Setup Chaotic-AUR and enable pacman parallel downloading
+    * Invoke setup script to update mirrors and install packages
+    * Setup hblock,Visual code studio for kde
+    * Prompt if you want to disable extra services"
+    local title="Welcome"
+    local height=20
+    local width=50
+    whiptail --title "$title" --msgbox "$message" "$height" "$width" --ok-button "Continue" 0 0
+}
+
+# Welcome the user
+welcome
+
 # Prompt the user before launching browser
-prompt "This will open Chaotic-AUR GitHub page in firefox.Make sure to enable Chaotic-AUR and pacman parallel downloading."
+prompt "Opening Chaotic-AUR github page make sure to enable it."
 
 # Open Chaotic-AUR GitHub page in default browser
 sudo -u "$username" firefox "https://github.com/chaotic-aur" &
 sleep 3
 
 # Prompt the user before editing pacman config
-prompt "This will open pacman config in nano text editor.Make sure to enable parallel downloading."
+prompt "Opening pacman config in nano,enable parallel downloading."
 
 # Open pacman config in default text editor
-sudo nano /etc/pacman.conf
+sudo nano "/etc/pacman.conf"
 
 # Prompt the user before initiating the setup script
 prompt "This will initiate the setup script."
-# Invoke the setup.sh script
-setup_script="./setup.sh"
-if [ ! -f "$setup_script" ]; then
-    echo "Error: $setup_script not found."
-    exit 1
-fi
 
+# Invoke the setup.sh script
 echo "Initiating Setup script..."
-sudo chmod +x "$setup_script"
-sudo "./$setup_script"
+sudo chmod +x "./setup.sh"
+sudo "./setup.sh"
 echo "Initialization successful."
 
 exit 0
