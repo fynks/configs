@@ -63,7 +63,7 @@ echo -e "\n DONE  \n"
 echo -e "\n Open Seahorse, unlock using your password, then log out and log in again. After that, log in to GitHub in VS Code.\n"
 
 # Prompt for disabling services
-prompt "Now script will update mirrors and start installing package" || exit 0
+prompt "Now script will Disable and mask extra services" || exit 0
 
 declare -A services=(
     ["bluetooth"]="Bluetooth"
