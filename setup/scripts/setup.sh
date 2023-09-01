@@ -16,6 +16,14 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
+# Whiptail prompt
+function prompt() {
+    local message="$1"
+    whiptail --title "Confirmation" --yesno "$message 
+    Have you already run *pre_setup.sh*?" 10 50
+    return $?
+}
+
 # Function to print section headers
 print_section_header() {
     printf "\n############################################\n"
@@ -28,6 +36,9 @@ handle_error() {
     echo "Error: $1"
     exit 1
 }
+
+# prompt for checking is pre-setup has been done
+prompt "pre_setup.sh should be run before this script" || exit 0
 
 # Updates mirrors 
 print_section_header "Updating mirrors and System"
