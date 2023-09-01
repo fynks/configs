@@ -17,6 +17,14 @@ print_section_header() {
     printf "############################################\n\n"
 }
 
+# Whiptail prompt
+function prompt() {
+    local message="$1"
+    whiptail --title "Confirmation" --yesno "$message 
+    Do you want to continue?" 10 50
+    return $?
+}
+
 # Function to install packages if missing
 install_packages_if_needed() {
     for pkg in "$@"; do
@@ -55,8 +63,7 @@ print_section_header "Setup Complete, please reboot"
 sleep 1
 
 # Prompts for disabling services script
-print_section_header "Do you want to disable extra services?"
-read -r -p "Press Enter to continue..."
+prompt "Do you want to disable extra services?" || exit 0
 sudo chmod +x "./disable_extra_services.sh"
 sudo "./disable_extra_services.sh"
 
