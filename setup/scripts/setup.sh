@@ -1,26 +1,20 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------
-#   ______ __     __ _   _  _  __  _____ 
-# |  ____|\ \   / /| \ | || |/ / / ____|
-# | |__    \ \_/ / |  \| || ' / | (___  
-# |  __|    \   /  | . ` ||  <   \___ \ 
-# | |        | |   | |\  || . \  ____) |
-# |_|        |_|   |_| \_||_|\_\|_____/ 
-#                                       
-#  Arch Linux Post Install Setup and Config Script
+#    ______ __     __ _   _  _  __  _____
+#  |  ____|\ \   / /| \ | || |/ / / ____|
+#  | |__    \ \_/ / |  \| || ' / | (___
+#  |  __|    \   /  | . ` ||  <   \___ \
+#  | |        | |   | |\  || . \  ____) |
+#  |_|        |_|   |_| \_||_|\_\|_____/
+#
+#  Arch Linux Setup script
 #-------------------------------------------------------------------------
 
-# Check if user is root
-if [[ $EUID -ne 0 ]]; then
-    echo "Error: This script must be run as root."
-    exit 1
-fi
-
-# Whiptail prompt
-function prompt() {
+# Function to display a highlighted prompt and ask for user confirmation
+prompt() {
     local message="$1"
     whiptail --title "Confirmation" --yesno "$message 
-    Have you already run *pre_setup.sh*?" 10 50
+    Do you want to continue?" 10 50
     return $?
 }
 
@@ -37,23 +31,55 @@ handle_error() {
     exit 1
 }
 
-# prompt for checking is pre-setup has been done
-prompt "pre_setup.sh should be run before this script" || exit 0
+# Check if the script is run as root
+if [[ $EUID -ne 0 ]]; then
+    handle_error "This script must be run as root."
+fi
 
-# Updates mirrors 
+# Get the regular user's username
+username=$(logname)
+
+# Function to display a welcome message and ask for user confirmation
+welcome() {
+    local message="
+    *Welcome $username to Arch Linux Setup script.*
+This script will:
+    * Setup Chaotic-AUR and enable pacman parallel downloading
+    * Update mirrors and install packages
+    * Setup hblock, Visual Studio Code for KDE
+    * Prompt if you want to disable extra services"
+    whiptail --title "Welcome" --msgbox "$message" 20 50 --ok-button "continue"
+    return $?
+}
+
+# Welcome the user and ask for confirmation
+welcome || exit 0
+
+# Open Chaotic-AUR GitHub page in the default browser
+prompt "Opening Chaotic-AUR GitHub page. Make sure to enable it." || exit 0
+sudo -u "$username" firefox "https://github.com/chaotic-aur" &
+sleep 3
+
+# Prompt the user before editing pacman config
+prompt "Opening pacman config in nano to enable parallel downloading." || exit 0
+sudo nano "/etc/pacman.conf"
+
+# Notifying this will now continue continue on its own
+prompt "Now script will update mirrors and start installing package" || exit 0
+
+# Updates mirrors
 print_section_header "Updating mirrors and System"
-sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syu --noconfirm || handle_error "Error updating system. Aborting."
+sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syu --noconfirm || handle_error "Error updating the system. Aborting."
 
 # Install yay if not installed
-printf "\nChecking if yay is available\n"
+printf "Checking if yay is available"
 if ! command -v yay &>/dev/null; then
     echo "yay is not installed. Installing yay..."
     sudo -u "$SUDO_USER" pacman -S --needed --noconfirm base-devel yay || handle_error "Error installing yay. Aborting."
 fi
 
-
 # Array of package names to install
-packages=(
+package_list=(
     "cmake"
     "alacritty"
     "fish"
@@ -89,23 +115,18 @@ packages=(
 )
 
 # Install packages using yay
-print_section_header "Installing packages" 
-if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${packages[@]}"; then
+print_section_header "Installing packages"
+if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${package_list[@]}"; then
     handle_error "Error installing packages. Aborting."
 fi
 
-
+# Install successful
 print_section_header "All packages installed"
 
 # Invokes the post_setup.sh script for various fixes and tweaks
-post_setup_script="post_setup.sh"
-if [ -f "$post_setup_script" ]; then
-    print_section_header "Initiating Post config script"  
-    echo "Initiation successful"
-    sudo -u "$SUDO_USER" chmod +x "./$post_setup_script"
-    sudo -u "$SUDO_USER" "./$post_setup_script" || handle_error "Error executing post_setup.sh. Aborting."
-else
-    echo "Warning: post_setup.sh script not found. Skipping post-setup steps."
-fi
+print_section_header "Initiating Post config script"
+echo "Initiation successful"
+sudo chmod +x "./post_setup_script"
+sudo "./post_setup_script" || handle_error "Error executing post_setup.sh. Aborting."
 
 exit 0
