@@ -26,6 +26,11 @@ install_packages_if_needed() {
     done
 }
 
+# Copies the librewolf.overrides.cfg from GitHub to $Home/.librewolf/
+print_section_header "Setting up Librewolf override.config"
+sudo curl -o $HOME/.librewolf/ 'https://raw.githubusercontent.com/fynks/configs/main/setup/configs/librewolf.overrides.cfg'
+
+
 # Copies the custom sources file from GitHub to /etc/hblock/sources.list
 print_section_header "configuring hblock"
 sudo mkdir -p /etc/hblock/ &&
