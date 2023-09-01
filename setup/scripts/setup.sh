@@ -69,14 +69,21 @@ prompt "Now script will update mirrors and start installing package" || exit 0
 
 # Updates mirrors
 print_section_header "Updating mirrors and System"
-sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syu --noconfirm || handle_error "Error updating the system. Aborting."
+if ! sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syu --noconfirm; then
+    handle_error "Error updating the system. Aborting."
+fi
 
 # Install yay if not installed
-printf "Checking if yay is available"
+printf "Checking if yay is available..."
 if ! command -v yay &>/dev/null; then
     echo "yay is not installed. Installing yay..."
-    sudo -u "$SUDO_USER" pacman -S --needed --noconfirm base-devel yay || handle_error "Error installing yay. Aborting."
+    if ! sudo -u "$SUDO_USER" pacman -S --needed --noconfirm base-devel yay; then
+        handle_error "Error installing yay. Aborting."
+    fi
+else
+    echo "yay is already installed."
 fi
+
 
 # Array of package names to install
 package_list=(
@@ -126,7 +133,7 @@ print_section_header "All packages installed"
 # Invokes the post_setup.sh script for various fixes and tweaks
 print_section_header "Initiating Post config script"
 echo "Initiation successful"
-sudo chmod +x "./post_setup_script"
-sudo "./post_setup_script" || handle_error "Error executing post_setup.sh. Aborting."
-
+if ! sudo chmod +x "./post_setup_script" && sudo "./post_setup_script"; then
+    handle_error "Error executing post_setup.sh. Aborting."
+fi
 exit 0
