@@ -5,20 +5,28 @@ icon: gear
 
 ## Menu :
 - [Linux](#linux)
+  - [Arch Linux Setup](#arch-linux-setup)
+  - [Fish Shell Setup](#fish-shell-setup)
+  - [Visual Studio Code](#visual-studio-code)
 - [Windows](#windows)
+  - [Microsoft-Activation-Scripts](#microsoft-activation-scripts)
+  - [Winutil by ChrisTitusTech](#winutil-by-christitustech)
+  - [Applications](#applications)
 - [Browsers](#browsers)
   - [Extensions](#extensions)
-  - [Extension configs](#extension-configs-) 
-  - [other configs](#other-configs)
-- [Andriod](#android)
-- [Links](#links-)
+  - [Browser Configs](#browser-configs)
+  - [Extension configs](#extension-configs)
+  - [Other configs](#other-configs)
 
 ## Linux
+### Arch Linux Setup
+``` sh
+git clone https://github.com/fynks/configs.git && cd configs/setup/scripts/ && sudo chmod +x ./setup.sh && sudo ./setup.sh
+```
 - [Chaotic AUR](https://github.com/chaotic-aur)
 - [Shortcuts](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/custom_shortcuts.kksrc)
-- [XDM](https://github.com/subhra74/xdm-experimental-binaries/tags)
 
-> ### Fish Shell Setup
+### Fish Shell Setup
    - Change to fish temporarily by running command: `fish`
    - Then install fisher and tide by running:
  ``` bash
@@ -38,7 +46,7 @@ chsh -s /usr/bin/fish
   - For abbreviation guidelines visit [here](https://fishshell.com/docs/current/cmds/abbr.html#examples)
    
 
-> ### Visual Studio Code
+### Visual Studio Code
 1. After successfull run of `post_setup.sh` script:
 2. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
 3. Logout the device and login.
@@ -49,6 +57,20 @@ chsh -s /usr/bin/fish
 
 ---
 ## Windows
+### Microsoft-Activation-Scripts 
+``` pwsh
+irm https://massgrave.dev/get | iex
+```
+- [Github for MAS](https://github.com/massgravel/Microsoft-Activation-Scripts) 
+
+### Winutil by ChrisTitusTech
+``` pwsh
+iwr -useb https://christitus.com/win | iex
+```
+
+- [Github for Winutil](https://github.com/ChrisTitusTech/winutil)
+
+### Applications
 |**Programs**                |**Link**                                                                      |
 |:------------------------------|:---------------------------------------------------------------------------------|
 |VLC                |[Download](https://www.videolan.org/vlc/download-windows.html)             |
@@ -58,7 +80,6 @@ chsh -s /usr/bin/fish
 |Image Glass                |[Download](https://github.com/d2phap/ImageGlass/releases)             |
 |Sublime Text Editor                |[Download](https://www.sublimetext.com/download_thanks?target=win-x64)             |
 |Office                |[Visit](https://massgrave.dev/genuine-installation-media.html)             |
-|Activation Script                |[Visit](https://github.com/massgravel/Microsoft-Activation-Scripts)             |
 
 ---
 ## Browsers
@@ -84,15 +105,17 @@ chsh -s /usr/bin/fish
 |Firefox Containers            |[Get](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  | --- |        
 |Skip Redirect                 |[Get](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)             |[Get](https://chrome.google.com/webstore/detail/skip-redirect/jaoafjdoijdconemdmodhbfpianehlon)            |
 |Refined Github                |[Get](https://addons.mozilla.org/en-US/firefox/addon/refined-github-/)             |[Get](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf)            |
-|NX Enhanced                           |[Get](https://addons.mozilla.org/addon/nx-enhanced)       |[Get](https://chrome.google.com/webstore/detail/nx-enhanced/ljimbekophocjbnphldoaidgkkaojcfo)  |
 |Xdm                           |[Get](https://addons.mozilla.org/en-US/firefox/addon/xdm-browser-monitor-v8/)       |[Get](https://subhra74.github.io/xdm/redirect.html?target=chrome&version=8.0)  |
 |Improve Youtube               |[Get](https://addons.mozilla.org/en-US/firefox/addon/youtube-addon/)             |[Get](https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd)|
 |Sponsor Block               |[Get](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)             |[Get](https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone)|
 |Redirector                    |[Get](https://addons.mozilla.org/en-US/firefox/addon/redirector/)                |[Get](https://chrome.google.com/webstore/detail/redirector/ocgpenflpmgnfapjedencafcfakcekcd)               |
 
+### Browser Configs
+- [LibreWolf Overrides](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/librewolf.overrides.cfg)
+- [Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/cookie_exception_list.md)
 
 
-### Extension configs :
+### Extension configs
 - [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
 - [No-Skip URL List](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/no_skip_url_list.txt)
@@ -101,19 +124,6 @@ chsh -s /usr/bin/fish
 - [Next-DNS](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/nextdns_config.json)
 - [Userscripts](https://github.com/fynks/userscripts)
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
-- [Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/cookie_exception_list.md)
-
-
 ---
-
-## Android
-- [Droid-ify](https://github.com/Iamlooker/Droid-ify/releases/latest)
--  [Bromite](https://github.com/uazo/bromite-buildtools/releases/latest)
-- [Filtrite](https://github.com/fynks/filtrite)
-- [Bromite Userscipts](https://github.com/xarantolus/bromite-userscripts/releases/latest)
-
-
-
----
-### Links :
+### Links:
 - [Github](https://github.com/fynks/configs)
