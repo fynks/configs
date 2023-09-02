@@ -207,7 +207,11 @@
     "redirectType": "main_frame"
   },
   "anonymousOverflow": [
-    "https://code.whatever.social"
+    "https://code.whatever.social",
+    "https://ao.vern.cc",
+    "https://overflow.smnz.de",
+    "https://overflow.adminforge.de",
+    "https://overflow.projectsegfau.lt"
   ],
   "goodreads": {
     "enabled": false,
