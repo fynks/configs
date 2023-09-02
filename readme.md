@@ -84,7 +84,7 @@ iwr -useb https://christitus.com/win | iex
 ---
 ## Browsers
 
-> ### Firefox Setup
+### Firefox Setup
 
 1. After installing firefox, get latest _better-fox User.js_ from :
 [Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
