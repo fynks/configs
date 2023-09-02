@@ -62,6 +62,10 @@ download_file 'https://raw.githubusercontent.com/fynks/configs/main/setup/config
 echo -e "\n DONE  \n"
 echo -e "\n Open Seahorse, unlock using your password, then log out and log in again. After that, log in to GitHub in VS Code.\n"
 
+# Download Custom Shortcuts file
+print_section_header "Downloading custom_shortcuts file
+download_file 'https://raw.githubusercontent.com/fynks/configs/main/configs/setup/configs/custom_shortcuts.kksrc' "$HOME/Downloads/custom_shortcuts.kksrc"
+
 # Prompt for disabling services
 prompt "Now script will Disable and mask extra services" || exit 0
 

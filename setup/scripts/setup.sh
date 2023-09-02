@@ -42,7 +42,7 @@ username=$(logname)
 # Function to display a welcome message and ask for user confirmation
 welcome() {
     local message="
-    *Welcome $username to Arch Linux Setup script.*
+    * Welcome $username to Arch Linux Setup script.*
 This script will:
     * Setup Chaotic-AUR and enable pacman parallel downloading
     * Update mirrors and install packages
