@@ -69,21 +69,10 @@ prompt "Now script will update mirrors and start installing package" || exit 0
 
 # Updates mirrors
 print_section_header "Updating mirrors and System"
-if ! sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syu --noconfirm; then
-    handle_error "Error updating the system. Aborting."
-fi
+sudo pacman-mirrors --fasttrack 10 && sudo pacman -Sy --noconfirm
 
-# Install yay if not installed
-printf "Checking if yay is available..."
-if ! command -v yay &>/dev/null; then
-    echo "yay is not installed. Installing yay..."
-    if ! sudo -u "$SUDO_USER" pacman -S --needed --noconfirm base-devel yay; then
-        handle_error "Error installing yay. Aborting."
-    fi
-else
-    echo "yay is already installed."
-fi
-
+# Installing yay
+sudo pacman -S --needed --noconfirm yay
 
 # Array of package names to install
 package_list=(
