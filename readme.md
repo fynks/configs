@@ -121,7 +121,6 @@ iwr -useb https://christitus.com/win | iex
 - [No-Skip URL List](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/no_skip_url_list.txt)
   
 ### Other configs
-- [Next-DNS](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/nextdns_config.json)
 - [Userscripts](https://github.com/fynks/userscripts)
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
 ---
