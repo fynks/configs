@@ -5,3 +5,8 @@
 - https://chat.openai.com/
 - https://google.com
 - https://inoreader.com
+- https://crowdin.com
+- https://my.adguard.com
+- https://adguard-dns.io
+- https://nextdns.io
+- https://reddit.com
