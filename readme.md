@@ -57,17 +57,22 @@ chsh -s /usr/bin/fish
 
 ---
 ## Windows
-### Microsoft-Activation-Scripts 
+### Microsoft Activation Scripts 
 ``` pwsh
 irm https://massgrave.dev/get | iex
 ```
 - [Github for MAS](https://github.com/massgravel/Microsoft-Activation-Scripts) 
 
+### IDM Activation Script
+```pwsh
+irm https://massgrave.dev/ias | iex
+```
+- [Github for IDM Script](https://github.com/WindowsAddict/IDM-Activation-Script)
+
 ### Winutil by ChrisTitusTech
 ``` pwsh
 iwr -useb https://christitus.com/win | iex
 ```
-
 - [Github for Winutil](https://github.com/ChrisTitusTech/winutil)
 
 ### Applications
@@ -87,7 +92,7 @@ iwr -useb https://christitus.com/win | iex
 ### Firefox Setup
 
 1. After installing firefox, get latest _better-fox User.js_ from :
-[Better-Fox](https://github.com/yokoffing/Better-Fox/blob/master/user.js)
+[Better-Fox](https://github.com/yokoffing/Betterfox/blob/main/user.js)
 
 2. Fix firefox proton design by adding: 
 [Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
