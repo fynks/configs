@@ -380,5 +380,29 @@
     "stackOverflow"
   ],
   "fetchInstances": "github",
-  "version": "2.8.0"
+  "tuboYoutube": [
+    "https://tubo.migalmoreno.com"
+  ],
+  "instagram": {
+    "enabled": false,
+    "frontend": "proxigram",
+    "unsupportedUrls": "bypass",
+    "instance": "public"
+  },
+  "proxigram": [
+    "https://proxigram.privacyfrontends.repl.co"
+  ],
+  "soundcloud": {
+    "enabled": false,
+    "redirectType": "main_frame",
+    "frontend": "tuboSoundcloud",
+    "unsupportedUrls": "bypass"
+  },
+  "tuboSoundcloud": [
+    "https://tubo.migalmoreno.com"
+  ],
+  "4get": [
+    "https://4get.ca"
+  ],
+  "version": "2.8.1"
 }
