@@ -122,7 +122,7 @@ print_section_header "All packages installed"
 # Invokes the post_setup.sh script for various fixes and tweaks
 print_section_header "Initiating Post config script"
 echo "Initiation successful"
-if ! sudo chmod +x "./post_setup_script" && sudo "./post_setup_script"; then
+if ! sudo chmod +x "./post_setup.sh" && sudo "./post_setup.sh"; then
     handle_error "Error executing post_setup.sh. Aborting."
 fi
 exit 0
