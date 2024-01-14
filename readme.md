@@ -7,16 +7,20 @@ icon: gear
 - [Linux](#linux)
   - [Arch Linux Setup](#arch-linux-setup)
   - [Fish Shell Setup](#fish-shell-setup)
-  - [Visual Studio Code](#visual-studio-code)
 - [Windows](#windows)
-  - [Microsoft-Activation-Scripts](#microsoft-activation-scripts)
+  - [Microsoft Activation Scripts](#microsoft-activation-scripts)
+  - [IDM Activation Script](#idm-activation-script)
   - [Winutil by ChrisTitusTech](#winutil-by-christitustech)
   - [Applications](#applications)
 - [Browsers](#browsers)
-  - [Extensions](#extensions)
+  - [Firefox Setup](#firefox-setup)
   - [Browser Configs](#browser-configs)
+  - [Cookie Exception List](#cookie-exception-list)
+  - [Extensions](#extensions)
   - [Extension configs](#extension-configs)
   - [Other configs](#other-configs)
+  - [Links](#links)
+
 
 ## Linux
 ### Arch Linux Setup
@@ -44,18 +48,7 @@ chsh -s /usr/bin/fish
 ```
   - Logout and login again to see tha change.
   - For abbreviation guidelines visit [here](https://fishshell.com/docs/current/cmds/abbr.html#examples)
-   
 
-### Visual Studio Code
-1. After successfull run of `post_setup.sh` script:
-2. Launch seahorse, unlock the default password keyring or create a new one, and keep it unlocked.
-3. Logout the device and login.
-4. Now login into github again in vs code.
-
-> [Refrence](https://code.visualstudio.com/docs/editor/settings-sync#_linux)
-
-
----
 ## Windows
 ### Microsoft Activation Scripts 
 ``` pwsh
@@ -83,6 +76,7 @@ iwr -useb https://christitus.com/win | iex
 |Chrome                |[Download](https://www.google.com/intl/en/chrome/?standalone=1)             |
 |Peazip                |[Download](https://github.com/peazip/PeaZip/releases/latest)             |
 |Image Glass                |[Download](https://github.com/d2phap/ImageGlass/releases)             |
+|IDM                   |[Download](https://www.internetdownloadmanager.com/download.html)   |
 |Sublime Text Editor                |[Download](https://www.sublimetext.com/download_thanks?target=win-x64)             |
 |Office                |[Visit](https://massgrave.dev/genuine-installation-media.html)             |
 
@@ -91,13 +85,37 @@ iwr -useb https://christitus.com/win | iex
 
 ### Firefox Setup
 
-1. After installing firefox, get latest _better-fox User.js_ from :
-[Better-Fox](https://github.com/yokoffing/Betterfox/blob/main/user.js)
+1. [Better-Fox](https://github.com/yokoffing/Betterfox/blob/main/user.js)
 
-2. Fix firefox proton design by adding: 
-[Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
-3. Google search engine for firefox from [Mycroft](https://mycroftproject.com/install.html?id=14909&basename=google&icontype=ico&name=Google)
+2. [Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
+3. Google search engine [Mycroft](https://mycroftproject.com/install.html?id=14909&basename=google&icontype=ico&name=Google)
 
+### Browser Configs
+- [LibreWolf Overrides](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/librewolf.overrides.cfg)
+> Should be placed in:
+```bash
+$HOME/.librewolf/librewolf.overrides.cfg
+```
+
+### Cookie Exception List
+```uri
+https://github.com
+```
+```uri
+https://netlify.com
+```
+```uri
+https://chat.openai.com/
+```
+```uri
+https://google.com
+```
+```uri
+https://inoreader.com
+```
+```uri
+https://reddit.com
+```
 ### Extensions
 
 |**Extensions**                |**Firefox**                                                                      |**Chrome**                                                                                                 |
@@ -108,26 +126,15 @@ iwr -useb https://christitus.com/win | iex
 |Tampermonkey                  |[Get](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)              |[Get](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)             |
 |LibRedirect                 |[Get](https://addons.mozilla.org/firefox/addon/libredirect/)             |[Get](https://github.com/libredirect/libredirect/blob/master/chromium.md)            |
 |Firefox Containers            |[Get](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)  | --- |        
-|Skip Redirect                 |[Get](https://addons.mozilla.org/en-US/firefox/addon/skip-redirect/)             |[Get](https://chrome.google.com/webstore/detail/skip-redirect/jaoafjdoijdconemdmodhbfpianehlon)            |
-|Refined Github                |[Get](https://addons.mozilla.org/en-US/firefox/addon/refined-github-/)             |[Get](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf)            |
-|Xdm                           |[Get](https://addons.mozilla.org/en-US/firefox/addon/xdm-browser-monitor-v8/)       |[Get](https://subhra74.github.io/xdm/redirect.html?target=chrome&version=8.0)  |
-|Improve Youtube               |[Get](https://addons.mozilla.org/en-US/firefox/addon/youtube-addon/)             |[Get](https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd)|
 |Sponsor Block               |[Get](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)             |[Get](https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone)|
-|Redirector                    |[Get](https://addons.mozilla.org/en-US/firefox/addon/redirector/)                |[Get](https://chrome.google.com/webstore/detail/redirector/ocgpenflpmgnfapjedencafcfakcekcd)               |
-
-### Browser Configs
-- [LibreWolf Overrides](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/librewolf.overrides.cfg)
-- [Cookie Clearance Exception List](https://raw.githubusercontent.com/fynks/configs/main/browsers/cookie_exception_list.md)
-
 
 ### Extension configs
-- [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/libredirect-settings.json)
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
-- [No-Skip URL List](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/no_skip_url_list.txt)
-  
+
+
 ### Other configs
 - [Userscripts](https://github.com/fynks/userscripts)
 - [Bookmarklets](https://github.com/fynks/configs/blob/main/browsers/bookmarklets.md)
 ---
-### Links:
+### Links
 - [Github](https://github.com/fynks/configs)
