@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 #-------------------------------------------------------------------------
 #   ______ __     __ _   _  _  __  _____
 # |  ____|\ \   / /| \ | || |/ / / ____|
@@ -25,29 +26,22 @@ prompt() {
     return $?
 }
 
-# Prompt for disabling services
-prompt "Now script will Disable and mask extra services" || exit 0
-
-declare -A services=(
-    ["bluetooth"]="Bluetooth"
-    ["lvm2-monitor"]="LVM2 Monitor"
-    ["docker"]="Docker"
-    ["ModemManager"]="ModemManager"
-)
-
 # Function to check if a service is active
 is_service_active() {
-    sudo systemctl is-active --quiet "${1}.service"
+    local service="$1"
+    sudo systemctl is-active --quiet "${service}.service"
     return $?
 }
 
 # Function to check if a service is disabled and masked
 is_service_disabled_and_masked() {
-    sudo systemctl is-enabled --quiet "${1}.service" && sudo systemctl is-masked --quiet "${1}.service"
+    local service="$1"
+    sudo systemctl is-enabled --quiet "${service}.service" && \
+    sudo systemctl status "${service}.service" | grep -q 'masked'
     return $?
 }
 
-# Function to disable and mask a service
+# Function to disable and mask a service if not already disabled and masked
 disable_and_mask_service() {
     local service="$1"
     local description="$2"
@@ -71,6 +65,9 @@ disable_and_mask_service() {
     sudo systemctl disable "${service}.service"
     sudo systemctl mask "${service}.service"
 
+    # Add installation configuration
+    sudo systemctl preset "${service}.service"
+
     if [ $? -eq 0 ]; then
         echo "Successfully disabled and masked $description service."
     else
@@ -78,10 +75,21 @@ disable_and_mask_service() {
     fi
 }
 
+# Prompt for disabling services
+prompt "Now script will Disable and mask extra services" || exit 0
+
+# Array of services to disable and mask
+services=(
+    "bluetooth"
+    "lvm2-monitor"
+    "docker"
+    "ModemManager"
+)
+
 # Loop through the services and perform actions
-for service in "${!services[@]}"; do
-    description="${services[$service]}"
-    print_section_header "Disabling and masking $description service ($service)"
+for service in "${services[@]}"; do
+    description="$service"
+    print_section_header "Disabling and masking $description service"
     disable_and_mask_service "$service" "$description"
 done
 
@@ -91,10 +99,8 @@ print_section_header "Setup Complete, please reboot"
 # Optional: Enabling docker-service
 prompt "Do you want to enable Docker services" || exit 0
 print_section_header "Enabling docker-service"
-sudo systemctl start docker.service
-sudo systemctl enable docker.service
+sudo systemctl enable --now docker.service
 
-print_section_header "Everything is Done,Please Reboot"
-sleep 1
+print_section_header "Everything is Done, Please Reboot"
 
 exit 0
