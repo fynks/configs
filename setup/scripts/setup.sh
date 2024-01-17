@@ -46,7 +46,6 @@ welcome() {
 This script will:
     * Setup Chaotic-AUR and enable pacman parallel downloading
     * Update mirrors and install packages
-    * Setup hblock, Visual Studio Code for KDE
     * Prompt if you want to disable extra services"
     whiptail --title "Welcome" --msgbox "$message" 20 50 --ok-button "continue"
     return $?
@@ -90,7 +89,7 @@ package_list=(
     "otpclient"
     "sublime-text-4"
     "visual-studio-code-bin"
-    "libreoffice-fresh"
+    "libreoffice-still"
     "nodejs"
     "npm"
     "android-tools"
@@ -104,7 +103,6 @@ package_list=(
     "converseen"
     "celluloid"
     "gimp"
-    "authenticator"
     "flatpak"
     "docker"
     "lazydocker"
