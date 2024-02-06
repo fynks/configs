@@ -1,6 +1,6 @@
 {
-  "timeStamp": 1704010637239,
-  "version": "1.54.0",
+  "timeStamp": 1707189901739,
+  "version": "1.55.0",
   "userSettings": {
     "advancedUserEnabled": true,
     "uiTheme": "dark",
@@ -39,13 +39,13 @@
     "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt",
     "https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
-    "https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt",
-    "https://filters.adtidy.org/extension/ublock/filters/118_optimized.txt",
     "https://filters.adtidy.org/extension/ublock/filters/122_optimized.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt",
     "https://raw.githubusercontent.com/iam-py-test/uBlock-combo/main/list.txt",
     "https://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt",
-    "https://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt"
+    "https://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt",
+    "bpc-paywall-filter",
+    "AntiPaywall"
   ],
   "hiddenSettings": {
     "autoUpdateAssetFetchPeriod": 10,
@@ -59,6 +59,7 @@
     "chrome-extension-scheme",
     "chrome-scheme",
     "dash.cloudflare.com",
+    "doubledouble.top",
     "edge-scheme",
     "github-com.translate.goog",
     "morss.it",
