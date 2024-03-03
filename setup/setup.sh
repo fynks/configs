@@ -54,6 +54,7 @@ This script will:
 # Welcome the user and ask for confirmation
 welcome || exit 0
 
+
 # Open Chaotic-AUR GitHub page in the default browser
 prompt "Opening Chaotic-AUR GitHub page. Make sure to enable it." || exit 0
 sudo -u "$username" firefox "https://github.com/chaotic-aur" &
@@ -70,6 +71,7 @@ prompt "Now script will update mirrors and start installing package" || exit 0
 print_section_header "Updating mirrors and System"
 sudo pacman-mirrors --fasttrack 10 && sudo pacman -Sy --noconfirm
 
+
 # Installing yay
 sudo pacman -S --needed --noconfirm yay
 
@@ -81,31 +83,18 @@ package_list=(
     "plasma-wayland-session"
     "firefox"
     "librewolf-bin"
+    "ventoy-bin"
     "konsave"
     "nemo"
     "vlc"
     "evince"
-    "video-downloader"
-    "bleachbit"
     "otpclient"
     "sublime-text-4"
     "visual-studio-code-bin"
     "libreoffice-still"
-    "nodejs"
-    "npm"
     "android-tools"
-    "ventoy-bin"
-    "brave-bin"
-    "hblock"
-    "appimagelauncher"
-    "telegram-desktop"
-    "simplescreenrecorder"
-    "converseen"
-    "celluloid"
     "gimp"
-    "flatpak"
-    "docker"
-    "lazydocker"
+
 )
 
 # Install packages using yay
@@ -114,6 +103,10 @@ if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${package_
     handle_error "Error installing packages. Aborting."
 fi
 
+
+# Install successful
+print_section_header "Necessary packages installation successful"
+
 # copy firefox policies
 print_section_header "Copying Firefox policies"
 if ! sudo mkdir /etc/firefox/policies/ && sudo cp ~/configs/browsers/firefox_policies.json /etc/firefox/policies/policies.json; then
@@ -121,13 +114,44 @@ if ! sudo mkdir /etc/firefox/policies/ && sudo cp ~/configs/browsers/firefox_pol
 fi
 
 
+# Ask user for optional package installation
+prompt "
+Do you want to install optional packages?
+ *If you cancelled then you have to manually execute post_setup.sh*
+" || exit 0
+
+# Array of optional package names
+optional_package_list=(
+    "brave-bin"
+    "nodejs"
+    "npm"
+    "video-downloader"
+    "bleachbit"
+    "appimagelauncher"
+    "telegram-desktop"
+    "simplescreenrecorder"
+    "hblock"
+    "converseen"
+    "celluloid"
+    "flatpak"
+    "docker"
+    "lazydocker"
+
+)
+
+# Install optional packages using yay
+print_section_header "Installing optional packages"
+if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${optional_package_list[@]}"; then
+    handle_error "Error installing optional packages. Continuing without them."
+fi
+
 # Install successful
-print_section_header "All packages installed"
+print_section_header "Optional package installation complete"
 
 # Invokes the post_setup.sh script for various fixes and tweaks
 print_section_header "Initiating Post config script"
 echo "Initiation successful"
-if ! sudo chmod +x "./post_setup.sh" && sudo "./post_setup.sh"; then
+sudo chmod +x ./post_setup.sh && sudo ./post_setup.sh
     handle_error "Error executing post_setup.sh. Aborting."
-fi
+
 exit 0
