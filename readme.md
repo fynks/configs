@@ -25,7 +25,7 @@ icon: gear
 ## Linux
 ### Arch Linux Setup
 ``` sh
-git clone https://github.com/fynks/configs.git && cd configs/setup/scripts/ && sudo chmod +x ./setup.sh && sudo ./setup.sh
+git clone https://github.com/fynks/configs.git && cd configs/setup/ && sudo chmod +x ./setup.sh && sudo ./setup.sh
 ```
 - [Chaotic AUR](https://github.com/chaotic-aur)
 - [HBlock](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/hblock_sources.list)
@@ -91,7 +91,7 @@ iwr -useb https://christitus.com/win | iex
 3. Google search engine [Mycroft](https://mycroftproject.com/install.html?id=14909&basename=google&icontype=ico&name=Google)
 
 ### Browser Configs
-- [LibreWolf Overrides](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/librewolf.overrides.cfg)
+- [LibreWolf Overrides](https://raw.githubusercontent.com/fynks/configs/main/setup/browsers/librewolf.overrides.cfg)
 > Should be placed in:
 ```bash
 $HOME/.librewolf/librewolf.overrides.cfg
@@ -129,7 +129,7 @@ https://reddit.com
 |Sponsor Block               |[Get](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)             |[Get](https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone)|
 
 ### Extension configs
-- [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
+- [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/u_block_origin_configs.txt)
 
 
 ### Other configs
