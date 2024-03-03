@@ -114,6 +114,13 @@ if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${package_
     handle_error "Error installing packages. Aborting."
 fi
 
+# copy firefox policies
+print_section_header "Copying Firefox policies"
+if ! sudo mkdir /etc/firefox/policies/ && sudo cp ~/configs/browsers/policies.json /etc/firefox/policies/policies.json; then
+    handle_error "Error copying firefox policies"
+fi
+
+
 # Install successful
 print_section_header "All packages installed"
 
