@@ -93,7 +93,6 @@ package_list=(
     "nodejs"
     "npm"
     "android-tools"
-    "tor-browser"
     "ventoy-bin"
     "brave-bin"
     "hblock"
