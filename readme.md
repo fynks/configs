@@ -5,8 +5,9 @@ icon: gear
 
 ## Menu :
 - [Linux](#linux)
-  - [Arch Linux Setup](#arch-linux-setup)
-  - [Fish Shell Setup](#fish-shell-setup)
+  - [Arch Linux](#arch-linux-setup)
+  - [Fish Shell](#fish-shell-setup)
+  - [KDE](#kde-setup)
 - [Windows](#windows)
   - [Microsoft Activation Scripts](#microsoft-activation-scripts)
   - [IDM Activation Script](#idm-activation-script)
@@ -48,6 +49,11 @@ chsh -s /usr/bin/fish
 ```
   - Logout and login again to see tha change.
   - For abbreviation guidelines visit [here](https://fishshell.com/docs/current/cmds/abbr.html#examples)
+
+### KDE Setup
+``` bash
+konsave -i manjaro-kde.knsv
+```
 
 ## Windows
 ### Microsoft Activation Scripts 
