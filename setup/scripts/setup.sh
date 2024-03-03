@@ -81,6 +81,7 @@ package_list=(
     "plasma-wayland-session"
     "firefox"
     "librewolf-bin"
+    "konsave"
     "nemo"
     "vlc"
     "evince"
