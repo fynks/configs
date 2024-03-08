@@ -41,7 +41,17 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Get the regular user's username
-username=$(logname)
+username="$USER"
+
+# If $USER is empty or not available, fallback to id command
+if [ -z "$username" ]; then
+    username=$(id -un)
+fi
+
+# If username is still empty, prompt the user to enter their username manually
+if [ -z "$username" ]; then
+    read -p "Enter your username: " username
+fi
 
 #--------------------------------
 # Section: Welcome
