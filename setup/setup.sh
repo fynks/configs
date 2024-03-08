@@ -214,7 +214,7 @@ done
 # Ask user for optional package installation
 prompt "
 Do you want to install optional packages?
- *If you cancelled then you have to manually execute post_setup.sh*
+ *If you cancelled then script will simply exit.*
 " || exit 0
 
 # Array of optional package names
