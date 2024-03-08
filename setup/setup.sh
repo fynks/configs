@@ -10,7 +10,11 @@
 #  Arch Linux Setup script
 #-------------------------------------------------------------------------
 
-# Function to display a highlighted prompt and ask for user confirmation
+#--------------------------------
+# Section: Basic functions
+#--------------------------------
+
+# Display a highlighted prompt and ask for user confirmation
 prompt() {
     local message="$1"
     whiptail --title "Confirmation" --yesno "$message 
@@ -18,14 +22,14 @@ prompt() {
     return $?
 }
 
-# Function to print section headers
+# Print section headers
 print_section_header() {
     printf "\n############################################\n"
     printf "######### %s #########\n" "$1"
     printf "############################################\n\n"
 }
 
-# Function to handle errors
+# Handling errors
 handle_error() {
     echo "Error: $1"
     exit 1
@@ -38,6 +42,10 @@ fi
 
 # Get the regular user's username
 username=$(logname)
+
+#--------------------------------
+# Section: Welcome
+#--------------------------------
 
 # Function to display a welcome message and ask for user confirmation
 welcome() {
@@ -54,11 +62,13 @@ This script will:
 # Welcome the user and ask for confirmation
 welcome || exit 0
 
+#--------------------------------
+# Section: Mirrors and AUR
+#--------------------------------
 
 # Open Chaotic-AUR GitHub page in the default browser
-prompt "Opening Chaotic-AUR GitHub page. Make sure to enable it." || exit 0
-sudo -u "$username" firefox "https://github.com/chaotic-aur" &
-sleep 3
+print_section_header "Set up Chaotic-AUR"
+printf "https://github.com/chaotic-aur\n"
 
 # Prompt the user before editing pacman config
 prompt "Opening pacman config in nano to enable parallel downloading." || exit 0
@@ -71,6 +81,9 @@ prompt "Now script will update mirrors and start installing package" || exit 0
 print_section_header "Updating mirrors and System"
 sudo pacman-mirrors --fasttrack 10 && sudo pacman -Sy --noconfirm
 
+#----------------------------------------
+# Section: Installing Necessary Packages
+#----------------------------------------
 
 # Installing yay
 sudo pacman -S --needed --noconfirm yay
@@ -103,9 +116,13 @@ if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${package_
     handle_error "Error installing packages. Aborting."
 fi
 
-
 # Install successful
 print_section_header "Necessary packages installation successful"
+
+#--------------------------------
+# Section: Firefox
+#--------------------------------
+
 
 # copy firefox policies
 print_section_header "Copying Firefox policies"
@@ -113,6 +130,76 @@ if ! sudo mkdir /etc/firefox/policies/ && sudo cp ~/configs/browsers/firefox_pol
     handle_error "Error copying firefox policies"
 fi
 
+#--------------------------------
+# Section: Diabling services
+#--------------------------------
+
+# Disbaling and masking extra services
+print_section_header "Disabling extra services"
+
+# Check if a service is active
+is_service_active() {
+    local service="$1"
+    sudo systemctl is-active --quiet "${service}.service"
+}
+
+# Check if a service is disabled and masked
+is_service_disabled_and_masked() {
+    local service="$1"
+    sudo systemctl is-enabled --quiet "${service}.service" && \
+    sudo systemctl status "${service}.service" | grep -q 'masked'
+}
+
+# Disable and mask a service if not already disabled and masked
+disable_and_mask_service() {
+    local service="$1"
+    local description="$2"
+
+    if is_service_disabled_and_masked "$service"; then
+        echo "$description service is already disabled and masked. Skipping..."
+        return
+    fi
+
+    if is_service_active "$service"; then
+        sudo systemctl stop "${service}.service"
+        if [ $? -eq 0 ]; then
+            echo "Stopped $description service."
+        else
+            echo "Error stopping $description service."
+        fi
+    else
+        echo "$description service is already inactive."
+    fi
+
+    sudo systemctl disable --now "${service}.service"
+    sudo systemctl mask "${service}.service"
+    sudo systemctl preset "${service}.service" > /dev/null 2>&1
+
+    if [ $? -eq 0 ]; then
+        echo "Successfully disabled and masked $description service."
+    else
+        echo "Error occurred while disabling and masking $description service."
+    fi
+}
+
+# Array of services to disable and mask
+services=(
+    "bluetooth"
+    "lvm2-monitor"
+    "docker"
+    "ModemManager"
+)
+
+# Loop through the services and perform actions
+for service in "${services[@]}"; do
+    description="$service"
+    echo "Disabling and masking $description service"
+    disable_and_mask_service "$service" "$description"
+done
+
+#-------------------------------------
+# Section: Installing Extra Packages
+#-------------------------------------
 
 # Ask user for optional package installation
 prompt "
@@ -148,10 +235,12 @@ fi
 # Install successful
 print_section_header "Optional package installation complete"
 
-# Invokes the post_setup.sh script for various fixes and tweaks
-print_section_header "Initiating Post config script"
-echo "Initiation successful"
-sudo chmod +x ./post_setup.sh && sudo ./post_setup.sh
-    handle_error "Error executing post_setup.sh. Aborting."
+
+#--------------------------------
+# Section: Exit
+#--------------------------------
+
+# Section: Setup Complete, please reboot
+print_section_header "Setup Complete, please reboot"
 
 exit 0
