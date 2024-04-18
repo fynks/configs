@@ -98,6 +98,13 @@ sudo pacman-mirrors --fasttrack 10 && sudo pacman -Sy --noconfirm
 # Installing yay
 sudo pacman -S --needed --noconfirm yay
 
+# Function to install packages using yay
+install_packages() {
+    local packages=("$@")
+    if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${packages[@]}"; then
+        handle_error "Error installing packages. Aborting."
+    fi
+}
 # Array of package names to install
 package_list=(
     "cmake"
@@ -117,14 +124,11 @@ package_list=(
     "libreoffice-still"
     "android-tools"
     "gimp"
-
 )
 
-# Install packages using yay
+# Install packages using the function
 print_section_header "Installing packages"
-if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${package_list[@]}"; then
-    handle_error "Error installing packages. Aborting."
-fi
+install_packages "${package_list[@]}"
 
 # Install successful
 print_section_header "Necessary packages installation successful"
@@ -233,14 +237,11 @@ optional_package_list=(
     "flatpak"
     "docker"
     "lazydocker"
-
 )
 
-# Install optional packages using yay
+# Install optional packages using the function
 print_section_header "Installing optional packages"
-if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${optional_package_list[@]}"; then
-    handle_error "Error installing optional packages. Continuing without them."
-fi
+install_packages "${optional_package_list[@]}"
 
 # Install successful
 print_section_header "Optional package installation complete"
