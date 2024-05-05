@@ -157,6 +157,7 @@ https://inoreader.com
 ### Extension configs
 
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/u_block_origin_configs.txt)
+- [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/libredirect.json)
 
 ### Other configs
 
