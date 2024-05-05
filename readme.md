@@ -6,28 +6,28 @@ icon: gear
 ## Menu :
 
 - [Linux](#linux)
-    - [Arch Linux](#arch-linux-setup)
-    - [Fish Shell](#fish-shell-setup)
-    - [KDE](#kde-setup)
+  - [Arch Linux](#arch-linux-setup)
+  - [Fish Shell](#fish-shell-setup)
+  - [KDE](#kde-setup)
 - [Windows](#windows)
-    - [Microsoft Activation Scripts](#microsoft-activation-scripts)
-    - [IDM Activation Script](#idm-activation-script)
-    - [Winutil by ChrisTitusTech](#winutil-by-christitustech)
-    - [Applications](#applications)
+  - [Microsoft Activation Scripts](#microsoft-activation-scripts)
+  - [IDM Activation Script](#idm-activation-script)
+  - [Winutil by ChrisTitusTech](#winutil-by-christitustech)
+  - [Applications](#applications)
 - [Browsers](#browsers)
-    - [Firefox Setup](#firefox-setup)
-    - [Browser Configs](#browser-configs)
-    - [Cookie Exception List](#cookie-exception-list)
-    - [Extensions](#extensions)
-    - [Extension configs](#extension-configs)
-    - [Other configs](#other-configs)
-    - [Links](#links)
+  - [Firefox Setup](#firefox-setup)
+  - [Browser Configs](#browser-configs)
+  - [Cookie Exception List](#cookie-exception-list)
+  - [Extensions](#extensions)
+  - [Extension configs](#extension-configs)
+  - [Other configs](#other-configs)
+  - [Links](#links)
 
 ## Linux
 
 ### Arch Linux Setup
 
-``` sh
+```sh
 git clone https://github.com/fynks/configs.git && cd configs/setup/ && sudo chmod +x ./setup.sh && sudo ./setup.sh
 ```
 
@@ -39,22 +39,22 @@ git clone https://github.com/fynks/configs.git && cd configs/setup/ && sudo chmo
 - Change to fish temporarily by running command: `fish`
 - Then install fisher and tide by running:
 
- ``` bash
- sudo curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher install ilancosman/tide
- ```
+```bash
+sudo curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher install ilancosman/tide
+```
 
 - Remove the welcome msg from fish shell by:
 
- ``` bash
- mkdir -p ~/.config/fish/functions/
+```bash
+mkdir -p ~/.config/fish/functions/
 echo 'function fish_greeting; end' > ~/.config/fish/functions/fish_greeting.fish
 ```
 
 - Change the default shell to `fish` by:
 
-``` bash
+```bash
 sudo sh -c 'echo /usr/bin/fish >> /etc/shells'
-chsh -s /usr/bin/fish 
+chsh -s /usr/bin/fish
 ```
 
 - Logout and login again to see tha change.
@@ -62,7 +62,7 @@ chsh -s /usr/bin/fish
 
 ### KDE Setup
 
-``` bash
+```bash
 konsave -i manjaro-kde.knsv
 ```
 
@@ -70,7 +70,7 @@ konsave -i manjaro-kde.knsv
 
 ### Microsoft Activation Scripts
 
-``` pwsh
+```pwsh
 irm https://massgrave.dev/get | iex
 ```
 
@@ -78,7 +78,7 @@ irm https://massgrave.dev/get | iex
 
 ### Winutil by ChrisTitusTech
 
-``` pwsh
+```pwsh
 iwr -useb https://christitus.com/win | iex
 ```
 
@@ -87,7 +87,7 @@ iwr -useb https://christitus.com/win | iex
 ### Applications
 
 | **Programs**        | **Link**                                                                                 |
-|:--------------------|:-----------------------------------------------------------------------------------------|
+| :------------------ | :--------------------------------------------------------------------------------------- |
 | VLC                 | [Download](https://www.videolan.org/vlc/download-windows.html)                           |
 | Firefox             | [Download](https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US) |
 | Chrome              | [Download](https://www.google.com/intl/en/chrome/?standalone=1)                          |
@@ -106,14 +106,15 @@ iwr -useb https://christitus.com/win | iex
 1. [Better-Fox](https://github.com/yokoffing/Betterfox/blob/main/user.js)
 
 2. [Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
-   
 3. Google search
    engine [Mycroft](https://mycroftproject.com/install.html?id=14909&basename=google&icontype=ico&name=Google)
 
 ### Browser Configs
+
 #### [Firefox Policies](https://raw.githubusercontent.com/fynks/configs/main/setup/browsers/policies.json)
 
 > Should be placed in following paths:
+
 ```bash
 /etc/firefox/policies
 ```
@@ -125,6 +126,7 @@ C:\Program Files\Mozilla Firefox\distribution
 #### [LibreWolf Overrides](https://raw.githubusercontent.com/fynks/configs/main/setup/browsers/librewolf.overrides.cfg)
 
 > Should be placed in:
+
 ```bash
 $HOME/.librewolf/librewolf.overrides.cfg
 ```
@@ -140,7 +142,7 @@ https://netlify.com
 ```
 
 ```uri
-https://chat.openai.com/
+https://chat.openai.com
 ```
 
 ```uri
@@ -154,13 +156,13 @@ https://inoreader.com
 ### Extensions
 
 | **Extensions**     | **Firefox**                                                                       | **Chrome**                                                                                                  |
-|:-------------------|:----------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|
+| :----------------- | :-------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
 | Ublock Origin      | [Get](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)              | [Get](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)             |
 | Bitwarden          | [Get](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/) | [Get](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb) |
 | Addy.io            | [Get](https://addons.mozilla.org/en-US/firefox/addon/addy_io/)                    | [Get](https://chrome.google.com/webstore/detail/addyio-anonymous-email-fo/iadbdpnoknmbdeolbapdackdcogdmjpe) |
 | Tampermonkey       | [Get](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)               | [Get](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)              |
 | LibRedirect        | [Get](https://addons.mozilla.org/firefox/addon/libredirect/)                      | [Get](https://github.com/libredirect/libredirect/blob/master/chromium.md)                                   |
-| Firefox Containers | [Get](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)   | ---                                                                                                         |        
+| Firefox Containers | [Get](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)   | ---                                                                                                         |
 | Sponsor Block      | [Get](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)               | [Get](https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone)                           |
 
 ### Extension configs
