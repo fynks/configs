@@ -76,14 +76,6 @@ irm https://massgrave.dev/get | iex
 
 - [Github for MAS](https://github.com/massgravel/Microsoft-Activation-Scripts)
 
-### IDM Activation Script
-
-```pwsh
-irm https://massgrave.dev/ias | iex
-```
-
-- [Github for IDM Script](https://github.com/WindowsAddict/IDM-Activation-Script)
-
 ### Winutil by ChrisTitusTech
 
 ``` pwsh
