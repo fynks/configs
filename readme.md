@@ -111,11 +111,20 @@ iwr -useb https://christitus.com/win | iex
    engine [Mycroft](https://mycroftproject.com/install.html?id=14909&basename=google&icontype=ico&name=Google)
 
 ### Browser Configs
+#### [Firefox Policies](https://raw.githubusercontent.com/fynks/configs/main/setup/browsers/policies.json)
 
-- [LibreWolf Overrides](https://raw.githubusercontent.com/fynks/configs/main/setup/browsers/librewolf.overrides.cfg)
+> Should be placed in following paths:
+```bash
+/etc/firefox/policies
+```
+
+```pwsh
+C:\Program Files\Mozilla Firefox\distribution
+```
+
+#### [LibreWolf Overrides](https://raw.githubusercontent.com/fynks/configs/main/setup/browsers/librewolf.overrides.cfg)
 
 > Should be placed in:
-
 ```bash
 $HOME/.librewolf/librewolf.overrides.cfg
 ```
