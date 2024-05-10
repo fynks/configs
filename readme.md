@@ -108,7 +108,7 @@ iwr -useb https://christitus.com/win | iex
 
 2. [Firefox-UI-Fix](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
 3. Google search
-   engine [Mycroft](https://mycroftproject.com/install.html?id=14909&basename=google&icontype=ico&name=Google)
+   engine [Mycroft](https://mycroftproject.com/install.html?id=118251&basename=anti-google&icontype=ico&name=G)
 
 ### Browser Configs
 
