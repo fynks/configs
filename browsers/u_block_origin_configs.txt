@@ -1,10 +1,10 @@
 {
-  "timeStamp": 1714913369972,
+  "timeStamp": 1715864788063,
   "version": "1.57.2",
   "userSettings": {
     "advancedUserEnabled": true,
     "uiTheme": "dark",
-    "externalLists": "https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt\nhttps://filters.adtidy.org/extension/ublock/filters/118_optimized.txt\nhttps://filters.adtidy.org/extension/ublock/filters/122_optimized.txt\nhttps://filters.adtidy.org/extension/ublock/filters/14_optimized.txt\nhttps://filters.adtidy.org/extension/ublock/filters/3_optimized.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt\nhttps://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt\nhttps://raw.githubusercontent.com/iam-py-test/uBlock-combo/main/list.txt\nhttps://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/enhanced_site_protection.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt\nhttps://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt",
+    "externalLists": "https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt\nhttps://filters.adtidy.org/extension/ublock/filters/118_optimized.txt\nhttps://filters.adtidy.org/extension/ublock/filters/122_optimized.txt\nhttps://filters.adtidy.org/extension/ublock/filters/14_optimized.txt\nhttps://filters.adtidy.org/extension/ublock/filters/3_optimized.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt\nhttps://raw.githubusercontent.com/Onsotumenh/YouTube-Cosmetic-Filters-for-uBlock-Origin/main/YouTubeFilterList.txt\nhttps://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt\nhttps://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt\nhttps://raw.githubusercontent.com/iam-py-test/uBlock-combo/main/list.txt\nhttps://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/enhanced_site_protection.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt\nhttps://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt",
     "firewallPaneMinimized": false,
     "importedLists": [
       "https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt",
@@ -13,6 +13,7 @@
       "https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt",
       "https://filters.adtidy.org/extension/ublock/filters/3_optimized.txt",
       "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
+      "https://raw.githubusercontent.com/Onsotumenh/YouTube-Cosmetic-Filters-for-uBlock-Origin/main/YouTubeFilterList.txt",
       "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt",
       "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt",
       "https://raw.githubusercontent.com/iam-py-test/uBlock-combo/main/list.txt",
@@ -31,6 +32,7 @@
     "ublock-badware",
     "ublock-privacy",
     "ublock-quick-fixes",
+    "LegitimateURLShortener",
     "urlhaus-1",
     "plowe-0",
     "ublock-annoyances",
@@ -40,13 +42,8 @@
     "https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt",
     "https://filters.adtidy.org/extension/ublock/filters/3_optimized.txt",
     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt",
-    "https://filters.adtidy.org/extension/ublock/filters/101_optimized.txt",
-    "https://filters.adtidy.org/extension/ublock/filters/118_optimized.txt",
-    "https://filters.adtidy.org/extension/ublock/filters/122_optimized.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt",
-    "https://raw.githubusercontent.com/iam-py-test/uBlock-combo/main/list.txt",
-    "https://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt",
-    "https://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt"
+    "https://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt"
   ],
   "hiddenSettings": {
     "autoUpdateAssetFetchPeriod": 10,
