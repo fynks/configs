@@ -171,6 +171,8 @@ https://inoreader.com
 
 - [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/u_block_origin_configs.txt)
 - [LibRedirect](https://raw.githubusercontent.com/fynks/configs/main/browsers/libredirect.json)
+- [ImproveTube](https://raw.githubusercontent.com/fynks/configs/main/browsers/improvedtube.json)
+
 
 ### Other configs
 
