@@ -78,7 +78,7 @@ welcome || exit 0
 
 # Open Chaotic-AUR GitHub page in the default browser
 print_section_header "Set up Chaotic-AUR"
-printf "https://github.com/chaotic-aur\n"
+printf "https://github.com/chaotic-aur"
 
 # Prompt the user before editing pacman config
 prompt "Opening pacman config in nano to enable parallel downloading." || exit 0
@@ -89,7 +89,7 @@ prompt "Now script will update mirrors and start installing package" || exit 0
 
 # Updates mirrors
 print_section_header "Updating mirrors and System"
-sudo pacman-mirrors --fasttrack 10 && sudo pacman -Sy --noconfirm
+sudo pacman-mirrors --fasttrack 5 && sudo pacman -Sy --noconfirm
 
 #----------------------------------------
 # Section: Installing Necessary Packages
