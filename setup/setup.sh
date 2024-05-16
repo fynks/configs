@@ -140,7 +140,7 @@ print_section_header "Necessary packages installation successful"
 
 # copy firefox policies
 print_section_header "Copying Firefox policies"
-if ! sudo mkdir /etc/firefox/policies/ && sudo cp ~/configs/browsers/firefox_policies.json /etc/firefox/policies/policies.json; then
+if ! sudo mkdir /etc/firefox/policies/ && sudo cp ~/configs/browsers/policies.json /etc/firefox/policies/policies.json; then
     handle_error "Error copying firefox policies"
 fi
 
