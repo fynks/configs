@@ -72,7 +72,7 @@ konsave -i manjaro-kde.knsv
 ### Microsoft Activation Scripts
 
 ```pwsh
-irm https://massgrave.dev/get | iex
+irm https://get.activated.win | iex
 ```
 
 - [Github for MAS](https://github.com/massgravel/Microsoft-Activation-Scripts)
