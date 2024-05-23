@@ -18,6 +18,6 @@
   "dependencies": {
     "retypeapp": "^3.5.0",
     "@josee9988/minifyall": "^1.2.2",
-    "workbox-cli": "^7.0.0"
+    "workbox-cli": "^7.1.0"
   }
 }
