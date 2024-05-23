@@ -10,3 +10,7 @@ javascript:void(open('https://translate.google.co.in/translate?hl=en&sl=auto&tl=
 ```js
 javascript:document.body.contentEditable = 'true'; document.designMode='on'; void 0
 ```
+### Sub-reddits Extractor
+```js
+javascript:(function(){const subreddits=Array.from($('.subscription-box li a.title')).map(link=>link.textContent).join('\n');const textarea=document.createElement('textarea');textarea.value=subreddits;document.body.replaceWith(textarea);})();
+```
