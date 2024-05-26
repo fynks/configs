@@ -1,11 +1,13 @@
-input: .
+input: ./docs/
 output: ./dist/
 url: https://fynks.netlify.app
 branding:
-  title: CONFIGS
-  label: Fynks
+  title: WIKI
+  label: Configs
 exclude:
-- "/browsers/cookie_exception_list.md"
 favicon: favicon.svg
 editor:
-  enabled: false
+  enabled: true
+meta:
+  title: " | Configs"
+
