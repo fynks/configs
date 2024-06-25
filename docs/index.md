@@ -7,4 +7,3 @@ layout: page
 [!ref icon="columns"](Windows.md)
 [!ref icon="browser"](Browsers.md)
 [!ref icon="device-mobile"](Android.md)
-[!ref icon="bookmark"](Bookmarklets.md)

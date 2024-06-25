@@ -9,7 +9,8 @@ icon: browser
 
 [!file text="Firefox-UI-Fix" target="blank"](https://github.com/black7375/Firefox-UI-Fix/releases/latest)
 
-#### Google search engine [Mycroft](https://mycroftproject.com/install.html?id=118251&basename=anti-google&icontype=ico&name=G)
+### Search engine 
+- [Mycroft (Google)](https://mycroftproject.com/install.html?id=118251&basename=anti-google&icontype=ico&name=G)
 
 ### Browser Configs
 
@@ -86,3 +87,21 @@ https://inoreader.com
 [!file text="UBlock Origin" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/u_block_origin_configs.txt)
 [!file text="LibRedirect" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/libredirect.json)
 [!file text="ImproveTube" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/improvedtube.json)
+
+### Bookmarklets
+- Light House
+``` js
+javascript:window.location='https://developers.google.com/speed/pagespeed/insights/?url='+encodeURI(window.location);
+```
+- G Translate
+``` js
+javascript:void(open('https://translate.google.co.in/translate?hl=en&sl=auto&tl=en&u='+location.href));
+```
+- Edit current page
+```js
+javascript:document.body.contentEditable = 'true'; document.designMode='on'; void 0
+```
+- Sub-reddits Extractor
+```js
+javascript:(function(){const subreddits=Array.from($('.subscription-box li a.title')).map(link=>link.textContent).join('\n');const textarea=document.createElement('textarea');textarea.value=subreddits;document.body.replaceWith(textarea);})();
+```
