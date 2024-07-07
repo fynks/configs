@@ -1,5 +1,5 @@
 ---
-label: Linux
+label: Setup
 icon: terminal
 ---
 
@@ -64,12 +64,3 @@ konsave -i manjaro-kde.knsv
 ### [HBlock](https://raw.githubusercontent.com/fynks/configs/main/setup/configs/hblock_sources.list)
 
 
-### Fix `grub` after windows re-install
-* Boot into Manjaro live environment
-* Open terminal
-* `sudo manjaro-chroot -a` (and select system to mount)
-* `grub-install /dev/sda` (it's sda for me; make sure you choose the right drive!)
-* `grub-install --recheck /dev/sda`
-* `update-grub`
-* `exit`
-* reboot
