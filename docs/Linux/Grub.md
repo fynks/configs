@@ -4,6 +4,7 @@ icon: terminal
 --- 
 
 ### Grub Showing no menu
+When you freshly install grub it does not show any menu during boot instead it directly boot only showing a blank black screen.
 1. From terminal:
 ```sh
 sudo nano  /etc/default/grub
@@ -13,7 +14,8 @@ sudo nano  /etc/default/grub
 GRUB_TIMEOUT_STYLE=menu
 ```
 
-### Fix `grub` after windows re-install
+### Fix grub after windows re-install
+Reinstalling windows somwtimes nukes the grub,therefore you have to reinstall it by:
 - Boot into Manjaro live environment
 - Open terminal
 ```sh
