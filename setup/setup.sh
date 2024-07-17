@@ -221,6 +221,18 @@ disable_services() {
     done
 }
 
+#--------------------------------
+# Section: Fish
+#--------------------------------
+
+setup_fish() {
+    # Copy Fish config
+    print_section_header "Copying Fish config"
+    if ! cp ~/configs/setup/config.fish ~/.config/fish/config.fish; then
+        handle_error "Error copying Fish config"
+    fi
+}
+
 #-------------------------------------
 # Section: Installing Extra Packages
 #-------------------------------------
@@ -305,6 +317,9 @@ case "$1" in
     --disable-services)
         disable_services
         ;;
+    --setup-fish)
+        setup_fish
+        ;;
     --install-optional-packages)
         install_optional_packages
         ;;
@@ -312,7 +327,7 @@ case "$1" in
         show_help
         ;;
     *)
-        echo "Usage: $0 {--setup-aur|--install-packages|--setup-firefox|--disable-services|--install-optional-packages|--help}"
+        echo "Usage: $0 {--setup-aur|--install-packages|--setup-firefox|--setup-fish|--disable-services|--install-optional-packages|--help}"
         exit 1
         ;;
 esac
