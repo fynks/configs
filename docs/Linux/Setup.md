@@ -43,8 +43,18 @@ sudo curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fish
 ```bash
 sudo chsh $USER -s /bin/fish 
 ```
-
 - Logout and login again to see tha change.
+  
+#### Fish aliasis
+| Alias          | Command                                                        |
+|----------------|----------------------------------------------------------------|
+| ..             | cd ..                                                          |
+| ...            | cd ../..                                                       |
+| cl             | clear                                                          |
+| src            | source ~/.config/fish/config.fish                              |
+| update-mirrors | sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syu          |
+| ls             | eza -a --color=always --group-directories-first                |
+
 
 ### KDE Setup
 
