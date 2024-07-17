@@ -38,22 +38,13 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 sudo curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher install ilancosman/tide
 ```
 
-- Remove the welcome msg from fish shell by:
-
-```bash
-mkdir -p ~/.config/fish/functions/
-echo 'function fish_greeting; end' > ~/.config/fish/functions/fish_greeting.fish
-```
-
 - Change the default shell to `fish` by:
 
 ```bash
-sudo sh -c 'echo /usr/bin/fish >> /etc/shells'
-chsh -s /usr/bin/fish
+sudo chsh $USER -s /bin/fish 
 ```
 
 - Logout and login again to see tha change.
-- For abbreviation guidelines visit [here](https://fishshell.com/docs/current/cmds/abbr.html#examples)
 
 ### KDE Setup
 
