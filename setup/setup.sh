@@ -121,6 +121,8 @@ install_packages() {
         "firefox"
         "librewolf"
         "ventoy"
+        "zoxide"
+        "eza"
         "konsave"
         "nemo"
         "vlc"
