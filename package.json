@@ -10,14 +10,14 @@
   "scripts": {
     "build": "npm run retype && npm run minify && npm run workbox",
     "retype": "retype build",
-    "minify": "html-minifier-terser --file-ext html --input-dir dist/ --output-dir dist/",
+    "minify": "minifyall --dir dist/",
     "workbox": "workbox generateSW workbox-config.js",
     "publish": "npm publish"
   },
   "author": "Fynks",
   "dependencies": {
     "retypeapp": "^3.5.0",
-    "html-minifier-terser": "^7.2.0",
+    "@josee9988/minifyall": "^1.2.2",
     "workbox-cli": "^7.1.0"
   }
 }
