@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -euo pipefail
+
 #-------------------------------------------------------------------------
 #    ______ __     __ _   _  _  __  _____
 #  |  ____|\ \   / /| \ | || |/ / / ____|
@@ -10,64 +13,66 @@
 #  Arch Linux Setup script
 #-------------------------------------------------------------------------
 
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
 #--------------------------------
 # Section: Basic functions
 #--------------------------------
 
-# Display a highlighted prompt and ask for user confirmation
 prompt() {
-    local message="$1"
-    whiptail --title "Confirmation" --yesno "$message\nDo you want to continue?" 10 50
-    return $?
+    whiptail --title "Confirmation" --yesno "${1}\nDo you want to continue?" 10 60 3>&1 1>&2 2>&3
 }
 
-# Print section headers
 print_section_header() {
-    printf "\n############################################\n"
-    printf "######### %s #########\n" "$1"
-    printf "############################################\n\n"
+    printf "\n${BLUE}%s\n#### %s ####\n%s${NC}\n\n" "$(printf '#%.0s' {1..50})" "${1}" "$(printf '#%.0s' {1..50})"
 }
 
-# Handling errors
 handle_error() {
-    whiptail --title "Error" --msgbox "Error: $1" 10 50
+    whiptail --title "Error" --msgbox "Error: ${1}" 10 60
     exit 1
 }
 
+print_success() {
+    printf "${GREEN}✔ %s${NC}\n" "$1"
+}
+
+print_warning() {
+    printf "${YELLOW}⚠ %s${NC}\n" "$1"
+}
+
 # Check if the script is run as root
-if [[ $EUID -ne 0 ]]; then
-    handle_error "This script must be run as root."
-fi
+[[ $EUID -ne 0 ]] && handle_error "This script must be run as root."
 
 # Get the regular user's username
 username="${SUDO_USER:-$USER}"
-
-# If $SUDO_USER or $USER is empty or not available, fallback to id command
-if [ -z "$username" ]; then
-    username=$(id -un)
-fi
+username=${username:-$(id -un)}
 
 # If username is still empty, prompt the user to enter their username manually
-if [ -z "$username" ]; then
-    username=$(whiptail --inputbox "Enter your username:" 10 50 3>&1 1>&2 2>&3)
-    if [ $? -ne 0 ]; then
-        handle_error "Username is required."
-    fi
+if [[ -z "$username" ]]; then
+    username=$(whiptail --inputbox "Enter your username:" 10 60 3>&1 1>&2 2>&3)
+    [[ $? -ne 0 ]] && handle_error "Username is required."
 fi
 
 #--------------------------------
 # Section: Welcome
 #--------------------------------
 
-# Function to display a welcome message
 welcome() {
     local message="
-    * Welcome $username to Arch Linux Setup script. *
+    * Welcome $username to Arch Linux Setup script *
+
 This script will:
-    * Setup Chaotic-AUR and enable pacman parallel downloading
-    * Update mirrors and install packages
-    * Prompt if you want to disable extra services"
-    whiptail --title "Welcome" --msgbox "$message" 20 50
+    • Setup Chaotic-AUR and enable pacman parallel downloading
+    • Update mirrors and install packages
+    • Prompt if you want to disable extra services
+    • Set up Firefox policies
+    • Configure Fish shell"
+    whiptail --title "Welcome" --msgbox "$message" 20 60
 }
 
 #--------------------------------
@@ -75,23 +80,26 @@ This script will:
 #--------------------------------
 
 setup_aur() {
-    # Open Chaotic-AUR GitHub page in the default browser
-    print_section_header "Set up Chaotic-AUR"
-    printf "https://github.com/chaotic-aur" &
+    if prompt "Do you want to set up Chaotic-AUR and update mirrors?"; then
+        print_section_header "Set up Chaotic-AUR"
+        sudo -u "$username" xdg-open "https://github.com/chaotic-aur" &
 
-    # Prompt the user before editing pacman config
-    if prompt "Opening pacman config in nano to enable parallel downloading."; then
-        sudo nano "/etc/pacman.conf"
-    else
-        exit 0
-    fi
+        if prompt "Opening pacman config in nano to enable parallel downloading."; then 
+            sudo nano "/etc/pacman.conf"
+            print_success "Pacman configuration updated"
+        else
+            print_warning "Pacman configuration update skipped"
+        fi
 
-    # Notifying this will now continue on its own
-    if prompt "Now script will update mirrors and start installing packages"; then
-        print_section_header "Updating mirrors and System"
-        sudo pacman-mirrors --fasttrack 5 && sudo pacman -Sy --noconfirm
+        if prompt "Update mirrors and sync package databases?"; then
+            print_section_header "Updating mirrors and System"
+            sudo pacman-mirrors --fasttrack 5 && sudo pacman -Sy --noconfirm
+            print_success "Mirrors updated and system synced"
+        else
+            print_warning "Mirror update and system sync skipped"
+        fi
     else
-        exit 0
+        print_warning "Chaotic-AUR setup and mirror update skipped"
     fi
 }
 
@@ -100,47 +108,30 @@ setup_aur() {
 #----------------------------------------
 
 install_packages() {
-    # Installing yay
-    sudo pacman -S --needed --noconfirm yay
+    if prompt "Do you want to install necessary packages?"; then
+        print_section_header "Installing necessary packages"
 
-    # Function to install packages using yay
-    install_packages_list() {
-        local packages=("$@")
-        if ! sudo -u "$SUDO_USER" yay -S --needed --noconfirm --noredownload "${packages[@]}"; then
-            handle_error "Error installing packages. Aborting."
+        # Ensure yay is installed
+        if ! command -v yay &> /dev/null; then
+            echo "Installing yay..."
+            sudo pacman -S --needed --noconfirm yay || handle_error "Failed to install yay"
         fi
-    }
 
-    # Array of package names to install
-    local package_list=(
-        "base-devel"
-        "cmake"
-        "alacritty"
-        "fish"
-        "plasma-wayland-session"
-        "firefox"
-        "librewolf"
-        "ventoy"
-        "zoxide"
-        "eza"
-        "konsave"
-        "nemo"
-        "vlc"
-        "evince"
-        "otpclient"
-        "sublime-text-4"
-        "visual-studio-code-bin"
-        "libreoffice-still"
-        "android-tools"
-        "gimp"
-    )
+        local package_list=(
+            base-devel cmake alacritty fish plasma-wayland-session firefox librewolf
+            ventoy zoxide eza konsave nemo vlc evince otpclient sublime-text-4
+            visual-studio-code-bin libreoffice-still android-tools gimp
+        )
 
-    # Install packages using the function
-    print_section_header "Installing packages"
-    install_packages_list "${package_list[@]}"
-
-    # Install successful
-    print_section_header "Necessary packages installation successful"
+        echo "Installing necessary packages..."
+        if sudo -u "$username" yay -S --needed --noconfirm --noredownload "${package_list[@]}"; then
+            print_success "Necessary packages installation successful"
+        else
+            handle_error "Error installing necessary packages"
+        fi
+    else
+        print_warning "Necessary package installation skipped"
+    fi
 }
 
 #--------------------------------
@@ -148,10 +139,16 @@ install_packages() {
 #--------------------------------
 
 setup_firefox() {
-    # Copy Firefox policies
-    print_section_header "Copying Firefox policies"
-    if ! sudo mkdir -p /etc/firefox/policies/ && sudo cp ~/configs/browsers/policies.json /etc/firefox/policies/policies.json; then
-        handle_error "Error copying Firefox policies"
+    if prompt "Do you want to set up Firefox policies?"; then
+        print_section_header "Setting up Firefox policies"
+        if sudo mkdir -p /etc/firefox/policies/ &&
+           sudo cp /home/"$username"/configs/browsers/policies.json /etc/firefox/policies/policies.json; then
+            print_success "Firefox policies copied successfully"
+        else
+            handle_error "Error copying Firefox policies"
+        fi
+    else
+        print_warning "Firefox policy setup skipped"
     fi
 }
 
@@ -160,67 +157,33 @@ setup_firefox() {
 #--------------------------------
 
 disable_services() {
-    # Disabling and masking extra services
-    print_section_header "Disabling extra services"
+    if prompt "Do you want to disable extra services?"; then
+        print_section_header "Disabling extra services"
 
-    # Check if a service is active
-    is_service_active() {
-        local service="$1"
-        sudo systemctl is-active --quiet "${service}.service"
-    }
+        local services=(
+            bluetooth
+            lvm2-monitor
+            docker
+            ModemManager
+        )
 
-    # Check if a service is disabled and masked
-    is_service_disabled_and_masked() {
-        local service="$1"
-        sudo systemctl is-enabled --quiet "${service}.service" && \
-        sudo systemctl status "${service}.service" | grep -q 'masked'
-    }
-
-    # Disable and mask a service if not already disabled and masked
-    disable_and_mask_service() {
-        local service="$1"
-        local description="$2"
-
-        if is_service_disabled_and_masked "$service"; then
-            echo "$description service is already disabled and masked. Skipping..."
-            return
-        fi
-
-        if is_service_active "$service"; then
-            sudo systemctl stop "${service}.service"
-            if [ $? -eq 0 ]; then
-                echo "Stopped $description service."
+        for service in "${services[@]}"; do
+            if systemctl is-enabled --quiet "$service"; then
+                echo "Disabling $service service..."
+                if systemctl stop "$service" &&
+                   systemctl disable "$service" &&
+                   systemctl mask "$service"; then
+                    print_success "$service service disabled and masked."
+                else
+                    print_warning "Failed to disable $service service."
+                fi
             else
-                echo "Error stopping $description service."
+                print_warning "$service service is already disabled."
             fi
-        else
-            echo "$description service is already inactive."
-        fi
-
-        sudo systemctl disable --now "${service}.service"
-        sudo systemctl mask "${service}.service"
-        sudo systemctl preset "${service}.service" > /dev/null 2>&1
-
-        if [ $? -eq 0 ]; then
-            echo "Successfully disabled and masked $description service."
-        else
-            echo "Error occurred while disabling and masking $description service."
-        fi
-    }
-
-    # Array of services to disable and mask
-    local services=(
-        "bluetooth"
-        "lvm2-monitor"
-        "docker"
-        "ModemManager"
-    )
-
-    # Loop through the services and perform actions
-    for service in "${services[@]}"; do
-        echo "Disabling and masking $service service"
-        disable_and_mask_service "$service" "$service"
-    done
+        done
+    else
+        print_warning "Service disabling skipped"
+    fi
 }
 
 #--------------------------------
@@ -228,46 +191,39 @@ disable_services() {
 #--------------------------------
 
 setup_fish() {
-    # Copy Fish config
-    print_section_header "Copying Fish config"
-    if ! cp ~/configs/setup/config.fish ~/.config/fish/config.fish; then
-        handle_error "Error copying Fish config"
+    if prompt "Do you want to set up Fish shell configuration?"; then
+        print_section_header "Setting up Fish shell"
+        if sudo -u "$username" cp /home/"$username"/configs/setup/config.fish /home/"$username"/.config/fish/config.fish; then
+            print_success "Fish config copied successfully"
+        else
+            handle_error "Error copying Fish config"
+        fi
+    else
+        print_warning "Fish shell setup skipped"
     fi
 }
 
 #-------------------------------------
-# Section: Installing Extra Packages
+# Section: Installing Optional Packages
 #-------------------------------------
 
 install_optional_packages() {
-    # Ask user for optional package installation
-    if prompt "Do you want to install optional packages?\n*If you cancel, the script will simply exit.*"; then
-        # Array of optional package names
+    if prompt "Do you want to install optional packages?"; then
         local optional_package_list=(
-            "brave-bin"
-            "nodejs"
-            "npm"
-            "video-downloader"
-            "bleachbit"
-            "appimagelauncher"
-            "telegram-desktop"
-            "simplescreenrecorder"
-            "hblock"
-            "converseen"
-            "celluloid"
-            "flatpak"
-            "docker"
-            "lazydocker"
+            brave-bin nodejs npm video-downloader bleachbit appimagelauncher
+            telegram-desktop simplescreenrecorder hblock converseen celluloid
+            flatpak docker lazydocker
         )
 
-        # Install optional packages using the function
         print_section_header "Installing optional packages"
-        install_packages_list "${optional_package_list[@]}"
-
-        # Install successful
-        print_section_header "Optional package installation complete"
+        echo "Installing optional packages..."
+        if sudo -u "$username" yay -S --needed --noconfirm --noredownload "${optional_package_list[@]}"; then
+            print_success "Optional package installation complete"
+        else
+            handle_error "Error installing optional packages"
+        fi
     else
-        exit 0
+        print_warning "Optional package installation skipped"
     fi
 }
 
@@ -275,13 +231,11 @@ install_optional_packages() {
 # Section: Exit
 #--------------------------------
 
-# Section: Setup Complete, please reboot
 setup_complete() {
-    print_section_header "Setup Complete, please reboot"
+    print_section_header "Setup Complete"
+    whiptail --title "Setup Complete" --msgbox "Arch Linux setup is complete. Please reboot your system." 10 60
 }
 
-
-# Function to display help message
 show_help() {
     whiptail --title "Help" --msgbox "Usage: $0 [OPTIONS]
 
@@ -290,49 +244,36 @@ Options:
 --install-packages       Install necessary packages
 --setup-firefox          Setup Firefox policies
 --disable-services       Disable and mask extra services
+--setup-fish             Setup Fish shell configuration
 --install-optional-packages Install optional packages
 --help                   Display this help message" 20 70
 }
 
-# Run all sections if no arguments are provided
-if [ $# -eq 0 ]; then
-    welcome
-    setup_aur
-    install_packages
-    setup_firefox
-    disable_services
-    install_optional_packages
-    setup_complete
-else
-
-# Parse command-line arguments
-case "$1" in
-    --setup-aur)
+main() {
+    if [[ $# -eq 0 ]]; then
+        welcome
         setup_aur
-        ;;
-    --install-packages)
         install_packages
-        ;;
-    --setup-firefox)
         setup_firefox
-        ;;
-    --disable-services)
         disable_services
-        ;;
-    --setup-fish)
         setup_fish
-        ;;
-    --install-optional-packages)
         install_optional_packages
-        ;;
-    --help)
-        show_help
-        ;;
-    *)
-        echo "Usage: $0 {--setup-aur|--install-packages|--setup-firefox|--setup-fish|--disable-services|--install-optional-packages|--help}"
-        exit 1
-        ;;
-esac
-fi
+        setup_complete
+    else
+        case "$1" in
+            --setup-aur) setup_aur ;;
+            --install-packages) install_packages ;;
+            --setup-firefox) setup_firefox ;;
+            --disable-services) disable_services ;;
+            --setup-fish) setup_fish ;;
+            --install-optional-packages) install_optional_packages ;;
+            --help) show_help ;;
+            *) 
+                echo "Usage: $0 {--setup-aur|--install-packages|--setup-firefox|--setup-fish|--disable-services|--install-optional-packages|--help}"
+                exit 1
+                ;;
+        esac
+    fi
+}
 
-exit 0
+main "$@"
