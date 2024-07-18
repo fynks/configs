@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npm run retype && npm run minify && npm run workbox",
     "retype": "retype build",
-    "minify": "html-minifier-terser --input-dir dist/ --output-dir dist/",
+    "minify": "html-minifier-terser --file-ext html --input-dir dist/ --output-dir dist/",
     "workbox": "workbox generateSW workbox-config.js",
     "publish": "npm publish"
   },
