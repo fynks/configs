@@ -88,6 +88,18 @@ https://inoreader.com
 [!file text="LibRedirect" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/libredirect.json)
 [!file text="ImproveTube" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/improvedtube.json)
 
+
+### Blocklists
+- Reddit
+```js
+! Reddit Award button
+www.reddit.com,sh.reddit.com##award-button
+```
+```js
+! Promoted Links
+www.reddit.com##.promotedlink
+```
+
 ### Bookmarklets
 - Reddown
 ```js
