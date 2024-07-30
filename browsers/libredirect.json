@@ -65,16 +65,18 @@
     "https://proxigram.privacyfrontends.repl.co"
   ],
   "reddit": {
-    "enabled": true,
-    "frontend": "libreddit",
+    "enabled": false,
+    "frontend": "redlib",
     "unsupportedUrls": "bypass",
     "instance": "public",
     "redirectType": "main_frame"
   },
   "libreddit": [
-    "https://safereddit.com",
+    "https://libreddit.kavin.rocks",
+    "https://libreddit.privacydev.net",
+    "https://lr.vern.cc",
     "https://l.opnxng.com",
-    "https://lr.vern.cc"
+    "https://libreddit.bus-hit.me"
   ],
   "teddit": [
     "https://teddit.net"
@@ -115,7 +117,14 @@
     "redirectType": "main_frame"
   },
   "scribe": [
-    "https://scribe.rip"
+    "https://scribe.rip",
+    "https://scribe.rawbit.ninja",
+    "https://scribe.privacyredirect.com",
+    "https://scribe.manasiwibi.com",
+    "https://sc.vern.cc",
+    "https://scribe.froth.zone",
+    "https://scribe.citizen4.eu",
+    "https://scribe.r4fo.com"
   ],
   "libMedium": [
     "https://md.vern.cc"
@@ -130,7 +139,27 @@
   "quetre": [
     "https://quetre.iket.me",
     "https://qr.vern.cc",
-    "https://quetre.pussthecat.org"
+    "https://quetre.pussthecat.org",
+    "https://quetre.tokhmi.xyz",
+    "https://quetre.projectsegfau.lt",
+    "https://quetre.odyssey346.dev",
+    "https://quetre.privacydev.net",
+    "https://ask.habedieeh.re",
+    "https://quetre.blackdrgn.nl",
+    "https://quetre.lunar.icu",
+    "https://que.wilbvr.me",
+    "https://quora.femboy.hu",
+    "https://questions.whateveritworks.org",
+    "https://q.opnxng.com",
+    "https://quetre.ftw.lol",
+    "https://quora.seitan-ayoub.lol",
+    "https://quetre.catsarch.com",
+    "https://ask.sudovanilla.org",
+    "https://quetre.drgns.space",
+    "https://quetre.ducks.party",
+    "https://quetre.r4fo.com",
+    "https://quetre.nadeko.net",
+    "https://quetre.private.coffee"
   ],
   "imdb": {
     "enabled": false,
@@ -160,7 +189,10 @@
   },
   "binternet": [
     "https://binternet.ahwx.org",
-    "https://bn.bloat.cat"
+    "https://bn.bloat.cat",
+    "https://bn.opnxng.com",
+    "https://binternet.darkness.services",
+    "https://binternet.4o1x5.dev"
   ],
   "search": {
     "enabled": false,
@@ -345,7 +377,8 @@
     "quora",
     "reddit",
     "stackOverflow",
-    "pinterest"
+    "pinterest",
+    "medium"
   ],
   "fetchInstances": "github",
   "viewtube": [
@@ -361,7 +394,35 @@
     "https://skyview.social"
   ],
   "redlib": [
-    "https://safereddit.com"
+    "https://redlib.freedit.eu",
+    "https://redlib.privacy.com.de",
+    "https://redlib.reallyaweso.me",
+    "https://red.arancia.click",
+    "https://rl.rootdo.com",
+    "https://redlib.frontendfriendly.xyz",
+    "https://redlib.private.coffee",
+    "https://redlib.nadeko.net",
+    "https://redlib.nirn.quest",
+    "https://redlib.baczek.me",
+    "https://lr.ggtyler.dev",
+    "https://reddit.nerdvpn.de",
+    "https://redlib.incogniweb.net",
+    "https://redlib.seasi.dev",
+    "https://redlib.privacyredirect.com",
+    "https://r.darrennathanael.com",
+    "https://red.artemislena.eu",
+    "https://redlib.ducks.party",
+    "https://red.ngn.tf",
+    "https://redlib.nohost.network",
+    "https://rl.bloat.cat",
+    "https://lr.n8pjl.ca",
+    "https://libreddit.privacydev.net",
+    "https://redlib.vimmer.dev",
+    "https://redlib.tux.pizza",
+    "https://redlib.catsarch.com",
+    "https://libreddit.bus-hit.me",
+    "https://libreddit.projectsegfau.lt",
+    "https://l.opnxng.com"
   ],
   "tumblr": {
     "enabled": false,
@@ -436,5 +497,22 @@
   "meme": [
     "https://mm.vern.cc"
   ],
-  "version": "2.8.4"
+  "version": "2.8.5",
+  "materialious": [
+    "https://app.materialio.us"
+  ],
+  "lightTube": [
+    "https://tube.kuylar.dev"
+  ],
+  "twitter": {
+    "enabled": false,
+    "redirectType": "main_frame",
+    "unsupportedUrls": "bypass",
+    "frontend": "nitter",
+    "instance": "public"
+  },
+  "nitter": [],
+  "pasted": [
+    "https://pasted.drakeerv.com"
+  ]
 }
