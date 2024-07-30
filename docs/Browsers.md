@@ -87,6 +87,7 @@ https://inoreader.com
 [!file text="UBlock Origin" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/u_block_origin_configs.txt)
 [!file text="LibRedirect" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/libredirect.json)
 [!file text="ImproveTube" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/improvedtube.json)
+[!file text="Tampermonkey Script" target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/tampermonkey_scripts.zip)
 
 
 ### Blocklists
