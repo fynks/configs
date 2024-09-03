@@ -131,93 +131,113 @@ javascript:(function(){const subreddits=Array.from($('.subscription-box li a.tit
 (() => {
   const urlCountMap = new Map();
 
-  const extractUrls = (elements, selector) => {
-    elements.forEach(element => {
-      const urls = Array.from(element.querySelectorAll(selector))
-        .map(el => el.querySelector('span span')?.textContent?.trim())
-        .filter(Boolean);
-
-      urls.forEach(url => {
-        urlCountMap.set(url, (urlCountMap.get(url) || 0) + 1);
+  const extractUrls = (containers, selectors) => {
+    containers.forEach(container => {
+      selectors.forEach(selector => {
+        container.querySelectorAll(selector).forEach(el => {
+          const url = el.querySelector('span span')?.textContent?.trim();
+          if (url) {
+            urlCountMap.set(url, (urlCountMap.get(url) || 0) + 1);
+          }
+        });
       });
     });
   };
 
-  const createTable = (data) => `
-    <html>
+  const createTableRows = (data) => data
+    .map(([url, count]) => `
+      <tr>
+        <td>${url}</td>
+        <td>${count}</td>
+      </tr>
+    `)
+    .join('');
+
+  const createStyles = () => `
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --background-color: #ecf0f1;
+      --text-color: #34495e;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      position: sticky;
+      top: 0;
+    }
+    tbody tr:hover {
+      background-color: #f5f5f5;
+    }
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: var(--secondary-color);
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      th, td {
+        padding: 8px;
+      }
+    }
+  `;
+
+  const createHtml = (tableRows) => `
+    <!DOCTYPE html>
+    <html lang="en">
       <head>
-        <style>
-          body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-          }
-          .popup {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 80%;
-            width: 600px;
-            position: relative;
-          }
-          table {
-            width: 100%;
-            border-collapse: collapse;
-          }
-          th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-          }
-          th {
-            background-color: #007bff;
-            color: white;
-          }
-          tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
-          }
-          tbody tr:hover {
-            background-color: #e9ecef;
-          }
-          button {
-            margin: 10px 0;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-          }
-          button:hover {
-            background-color: #0056b3;
-          }
-          .centered-button {
-            display: flex;
-            justify-content: center;
-          }
-          .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-          }
-          .close-btn:hover {
-            color: #007bff;
-          }
-        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>URLs Extractor</title>
+        <style>${createStyles()}</style>
       </head>
       <body>
-        <div class="popup">
-          <button class="close-btn" onclick="window.close()">×</button>
+        <div class="container">
           <table>
             <thead>
               <tr>
@@ -225,62 +245,66 @@ javascript:(function(){const subreddits=Array.from($('.subscription-box li a.tit
                 <th>Count</th>
               </tr>
             </thead>
-            <tbody>
-              ${data.map(([url, count]) => `
-                <tr>
-                  <td>${url}</td>
-                  <td>${count}</td>
-                </tr>
-              `).join('')}
-            </tbody>
+            <tbody>${tableRows}</tbody>
           </table>
-          <div class="centered-button">
+          <div class="button-container">
             <button id="copyButton">Copy All URLs</button>
+            <button id="closeButton">Close</button>
           </div>
-          <script>
-            document.getElementById('copyButton').addEventListener('click', () => {
-              const urls = ${JSON.stringify(Array.from(urlCountMap.keys()))};
-              navigator.clipboard.writeText(urls.join('\\n'))
-                .then(() => alert('URLs copied to clipboard!'))
-                .catch(err => alert('Failed to copy text: ' + err));
-            });
-          </script>
         </div>
       </body>
     </html>
   `;
 
   const openTableInNewTab = (html) => {
-    const newTab = window.open();
+    const newTab = window.open('', '_blank');
     if (newTab) {
-      newTab.document.open();
       newTab.document.write(html);
       newTab.document.close();
+      
+      const copyButton = newTab.document.getElementById('copyButton');
+      const closeButton = newTab.document.getElementById('closeButton');
+      
+      copyButton.addEventListener('click', () => {
+        const urls = Array.from(urlCountMap.keys()).join('\n');
+        newTab.navigator.clipboard.writeText(urls)
+          .then(() => newTab.alert('URLs copied to clipboard!'))
+          .catch(err => newTab.alert(`Failed to copy text: ${err}`));
+      });
+      
+      closeButton.addEventListener('click', () => newTab.close());
     } else {
-      console.error('Failed to open new tab.');
+      console.error('Failed to open new tab. Please check your pop-up blocker settings.');
     }
   };
 
-  try {
+  const processData = () => {
     const containerSelectors = [
       '.NDyTl3bSh1i7vIE_dI7d .U9oFX9k2Qdf8nih5nNd1', 
       '.PiaOIXraYgKQwMi_mmm0 tbody tr.Dw78YcZQ2Inw4yMRUxCw'
     ];
-    const containers = containerSelectors.flatMap(selector => Array.from(document.querySelectorAll(selector)));
+    const urlSelectors = [
+      '.omsurzVOmAZ54IlFMpMg > .gF9nuCXPT6GMQCU91nBw > span:nth-child(2)',
+      '.yG8a8SfpBYd8D4Tg1S5Z.O4Kp_lIyU_4AkOKhpBAE .QkbwpPoPJOqPmlrwG1zh'
+    ];
 
-    extractUrls(containers, '.omsurzVOmAZ54IlFMpMg > .gF9nuCXPT6GMQCU91nBw > span:nth-child(2)');
-    extractUrls(containers, '.yG8a8SfpBYd8D4Tg1S5Z.O4Kp_lIyU_4AkOKhpBAE .QkbwpPoPJOqPmlrwG1zh');
+    const containers = containerSelectors.flatMap(selector => [...document.querySelectorAll(selector)]);
+    extractUrls(containers, urlSelectors);
 
     if (urlCountMap.size > 0) {
-      const tableData = Array.from(urlCountMap.entries());
-      const tableHtml = createTable(tableData);
-      openTableInNewTab(tableHtml);
+      const tableRows = createTableRows(Array.from(urlCountMap.entries()));
+      const html = createHtml(tableRows);
+      openTableInNewTab(html);
     } else {
-      document.body.innerHTML = '<p>No entries found to process.</p>';
+      alert('No entries found to process.');
     }
+  };
+
+  try {
+    processData();
   } catch (error) {
     console.error('An error occurred:', error);
-    document.body.innerHTML = '<p>An error occurred while processing the data.</p>';
+    alert('An error occurred while processing the data. Please check the console for more details.');
   }
 })();
 ```
