@@ -2,77 +2,86 @@
 
 set -euo pipefail
 
-#-------------------------------------------------------------------------
-#    ______ __     __ _   _  _  __  _____
-#  |  ____|\ \   / /| \ | || |/ / / ____|
-#  | |__    \ \_/ / |  \| || ' / | (___
-#  |  __|    \   /  | . ` ||  <   \___ \
-#  | |        | |   | |\  || . \  ____) |
-#  |_|        |_|   |_| \_||_|\_\|_____/
-#
-#  Arch Linux Setup script
-#-------------------------------------------------------------------------
-
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
+CYAN='\033[0;36m'
 NC='\033[0m' # No Color
+
+# Global variables
+UNATTENDED=false
 
 #--------------------------------
 # Section: Basic functions
 #--------------------------------
 
 prompt() {
-    whiptail --title "Confirmation" --yesno "${1}\nDo you want to continue?" 10 60 3>&1 1>&2 2>&3
+    [[ "$UNATTENDED" == true ]] && return 0
+    read -p "${1} (Y/n): " response
+    case "${response,,}" in
+        n|no) return 1 ;;
+        *) return 0 ;;
+    esac
 }
 
 print_section_header() {
-    printf "\n${BLUE}%s\n#### %s ####\n%s${NC}\n\n" "$(printf '#%.0s' {1..50})" "${1}" "$(printf '#%.0s' {1..50})"
+    printf "\n${BLUE}%s\n#### %s ####\n%s${NC}\n\n" "$(printf '#%.0s' {1..50})" "$1" "$(printf '#%.0s' {1..50})"
 }
 
 handle_error() {
-    whiptail --title "Error" --msgbox "Error: ${1}" 10 60
+    echo -e "${RED}Error: $1${NC}" >&2
     exit 1
 }
 
 print_success() {
-    printf "${GREEN}✔ %s${NC}\n" "$1"
+    echo -e "${GREEN}✔ $1${NC}"
 }
 
 print_warning() {
-    printf "${YELLOW}⚠ %s${NC}\n" "$1"
+    echo -e "${YELLOW}⚠ $1${NC}"
 }
 
-# Check if the script is run as root
-[[ $EUID -ne 0 ]] && handle_error "This script must be run as root."
-
-# Get the regular user's username
-username="${SUDO_USER:-$USER}"
-username=${username:-$(id -un)}
-
-# If username is still empty, prompt the user to enter their username manually
-if [[ -z "$username" ]]; then
-    username=$(whiptail --inputbox "Enter your username:" 10 60 3>&1 1>&2 2>&3)
-    [[ $? -ne 0 ]] && handle_error "Username is required."
-fi
-
 #--------------------------------
-# Section: Welcome
+# Section: Welcome and Help
 #--------------------------------
+
+show_help() {
+    cat << EOF
+Usage: $0 [OPTIONS]
+
+Options:
+  -h, --help        Show this help message and exit
+  -u, --unattended  Run the script in unattended mode (auto-accept all prompts)
+
+Run the script without options for interactive mode.
+EOF
+}
 
 welcome() {
-    local message="
-    * Welcome $username to Arch Linux Setup script *
-
-This script will:
-    • Setup Chaotic-AUR and enable pacman parallel downloading
-    • Update mirrors and install packages
-    • Prompt if you want to disable extra services
-    • Set up Firefox policies
-    • Configure Fish shell"
-    whiptail --title "Welcome" --msgbox "$message" 20 60
+    clear
+    echo -e "${YELLOW} #-------------------------------------------${NC}"
+    echo -e "${YELLOW} #    ______ __     __ _   _  _  __  _____   ${NC}"
+    echo -e "${YELLOW} #  |  ____|\ \   / /| \ | || |/ / / ____|   ${NC}"
+    echo -e "${YELLOW} #  | |__    \ \_/ / |  \| || ' / | (___     ${NC}"
+    echo -e "${YELLOW} #  |  __|    \   /  | . \` ||  <   \___ \\   ${NC}"
+    echo -e "${YELLOW} #  | |        | |   | |\  || . \  ____) |   ${NC}"
+    echo -e "${YELLOW} #  |_|        |_|   |_| \_||_|\_\|_____/    ${NC}"
+    echo -e "${YELLOW} #                                           ${NC}"
+    echo -e "${YELLOW} #  Arch Linux Setup Script                  ${NC}"
+    echo -e "${YELLOW} #--------------------------------------------${NC}"
+    echo ""
+    echo -e "${BLUE}Welcome to the Arch Linux Setup script!${NC}"
+    echo ""
+    echo " This script helps you set up various components of your Arch Linux system:"
+    echo " - Set up Chaotic-AUR and update mirrors"
+    echo " - Install necessary packages"
+    echo " - Set up Firefox policies"
+    echo " - Disable extra services"
+    echo " - Configure Fish shell"
+    echo " - Install optional packages"
+    echo ""
 }
 
 #--------------------------------
@@ -80,24 +89,16 @@ This script will:
 #--------------------------------
 
 setup_aur() {
+    print_section_header "Setting up Chaotic-AUR and Updating Mirrors"
     if prompt "Do you want to set up Chaotic-AUR and update mirrors?"; then
-        print_section_header "Set up Chaotic-AUR"
-        sudo -u "$username" xdg-open "https://github.com/chaotic-aur" &
+        sudo -u "$username" firefox "https://github.com/chaotic-aur" &
+        sleep 3
 
-        if prompt "Opening pacman config in nano to enable parallel downloading."; then 
-            sudo nano "/etc/pacman.conf"
-            print_success "Pacman configuration updated"
-        else
-            print_warning "Pacman configuration update skipped"
-        fi
+        sudo nano "/etc/pacman.conf"
+        print_success "Pacman configuration updated"
 
-        if prompt "Update mirrors and sync package databases?"; then
-            print_section_header "Updating mirrors and System"
-            sudo pacman-mirrors --fasttrack 5 && sudo pacman -Sy --noconfirm
-            print_success "Mirrors updated and system synced"
-        else
-            print_warning "Mirror update and system sync skipped"
-        fi
+        sudo pacman-mirrors --fasttrack 5 && sudo pacman -Sy --noconfirm
+        print_success "Mirrors updated and system synced"
     else
         print_warning "Chaotic-AUR setup and mirror update skipped"
     fi
@@ -108,9 +109,8 @@ setup_aur() {
 #----------------------------------------
 
 install_packages() {
+    print_section_header "Installing Necessary Packages"
     if prompt "Do you want to install necessary packages?"; then
-        print_section_header "Installing necessary packages"
-
         # Ensure yay is installed
         if ! command -v yay &> /dev/null; then
             echo "Installing yay..."
@@ -139,8 +139,8 @@ install_packages() {
 #--------------------------------
 
 setup_firefox() {
+    print_section_header "Setting up Firefox Policies"
     if prompt "Do you want to set up Firefox policies?"; then
-        print_section_header "Setting up Firefox policies"
         if sudo mkdir -p /etc/firefox/policies/ &&
            sudo cp /home/"$username"/configs/browsers/policies.json /etc/firefox/policies/policies.json; then
             print_success "Firefox policies copied successfully"
@@ -157,9 +157,8 @@ setup_firefox() {
 #--------------------------------
 
 disable_services() {
+    print_section_header "Disabling Extra Services"
     if prompt "Do you want to disable extra services?"; then
-        print_section_header "Disabling extra services"
-
         local services=(
             bluetooth
             lvm2-monitor
@@ -191,8 +190,8 @@ disable_services() {
 #--------------------------------
 
 setup_fish() {
+    print_section_header "Setting up Fish Shell"
     if prompt "Do you want to set up Fish shell configuration?"; then
-        print_section_header "Setting up Fish shell"
         if sudo -u "$username" cp /home/"$username"/configs/setup/config.fish /home/"$username"/.config/fish/config.fish; then
             print_success "Fish config copied successfully"
         else
@@ -208,6 +207,7 @@ setup_fish() {
 #-------------------------------------
 
 install_optional_packages() {
+    print_section_header "Installing Optional Packages"
     if prompt "Do you want to install optional packages?"; then
         local optional_package_list=(
             brave-bin nodejs npm video-downloader bleachbit appimagelauncher
@@ -215,7 +215,6 @@ install_optional_packages() {
             flatpak docker lazydocker
         )
 
-        print_section_header "Installing optional packages"
         echo "Installing optional packages..."
         if sudo -u "$username" yay -S --needed --noconfirm --noredownload "${optional_package_list[@]}"; then
             print_success "Optional package installation complete"
@@ -233,47 +232,54 @@ install_optional_packages() {
 
 setup_complete() {
     print_section_header "Setup Complete"
-    whiptail --title "Setup Complete" --msgbox "Arch Linux setup is complete. Please reboot your system." 10 60
+    echo -e "${GREEN}Arch Linux setup is complete. Please reboot your system.${NC}"
 }
 
-show_help() {
-    whiptail --title "Help" --msgbox "Usage: $0 [OPTIONS]
+#--------------------------------
+# Section: Main Execution
+#--------------------------------
 
-Options:
---setup-aur              Setup Chaotic-AUR and enable pacman parallel downloading
---install-packages       Install necessary packages
---setup-firefox          Setup Firefox policies
---disable-services       Disable and mask extra services
---setup-fish             Setup Fish shell configuration
---install-optional-packages Install optional packages
---help                   Display this help message" 20 70
-}
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        -u|--unattended)
+            UNATTENDED=true
+            ;;
+        *)
+            echo "Unknown option: $1"
+            show_help
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+# Check if the script is run as root
+[[ $EUID -ne 0 ]] && handle_error "This script must be run as root."
+
+# Get the regular user's username
+username="${SUDO_USER:-$USER}"
+username=${username:-$(id -un)}
+
+# If username is still empty, prompt the user to enter their username manually
+if [[ -z "$username" ]]; then
+    read -p "Enter your username: " username
+    [[ -z "$username" ]] && handle_error "Username is required."
+fi
 
 main() {
-    if [[ $# -eq 0 ]]; then
-        welcome
-        setup_aur
-        install_packages
-        setup_firefox
-        disable_services
-        setup_fish
-        install_optional_packages
-        setup_complete
-    else
-        case "$1" in
-            --setup-aur) setup_aur ;;
-            --install-packages) install_packages ;;
-            --setup-firefox) setup_firefox ;;
-            --disable-services) disable_services ;;
-            --setup-fish) setup_fish ;;
-            --install-optional-packages) install_optional_packages ;;
-            --help) show_help ;;
-            *) 
-                echo "Usage: $0 {--setup-aur|--install-packages|--setup-firefox|--setup-fish|--disable-services|--install-optional-packages|--help}"
-                exit 1
-                ;;
-        esac
-    fi
+    welcome
+    setup_aur
+    install_packages
+    setup_firefox
+    disable_services
+    setup_fish
+    install_optional_packages
+    setup_complete
 }
 
-main "$@"
+main
