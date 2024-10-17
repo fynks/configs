@@ -118,7 +118,7 @@ install_packages() {
         fi
 
         local package_list=(
-            base-devel cmake alacritty fish plasma-wayland-session firefox librewolf
+            base-devel cmake alacritty fish plasma-wayland-session firefox librewolf-bin
             ventoy zoxide eza konsave nemo vlc evince otpclient sublime-text-4
             visual-studio-code-bin libreoffice-still android-tools gimp
         )
