@@ -16,6 +16,6 @@
   "author": "Fynks",
   "dependencies": {
     "retypeapp": "^3.6.0",
-    "workbox-cli": "^7.1.0"
+    "workbox-cli": "^7.3.0"
   }
 }
