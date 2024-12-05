@@ -11,6 +11,11 @@ fastboot flash recovery recovery.img
 ```
 > :icon-stop: Never ever reboot into recovery using fastboot command.
 
+### Finding .m4a songs from terminal
+```sh
+find . -type f -name "*.m4a" > m4a.txt
+```
+
 ### Debloating HyperOS
 > We can remove these apps without affecting system.
 - Analytics
