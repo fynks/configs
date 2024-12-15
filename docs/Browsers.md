@@ -1,6 +1,7 @@
 ---
 label: Browsers
 icon: browser
+order: 80
 ---
 
 ### Firefox Setup

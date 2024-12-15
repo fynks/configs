@@ -1,6 +1,7 @@
 ---
 label: Grub
 icon: tools
+order: 80
 --- 
 
 ### Grub Showing no menu

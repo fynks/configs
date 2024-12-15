@@ -1,6 +1,7 @@
 ---
 label: Android
 icon: device-mobile
+order: 90
 ---
 ### Flash a custom recovery
 ```sh

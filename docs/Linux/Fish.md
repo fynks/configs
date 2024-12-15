@@ -1,6 +1,7 @@
 ---
 label: Fish Shell
 icon: command-palette
+order: 90
 ---
 
 ### Fish Shell Setup

@@ -1,6 +1,7 @@
 ---
 label: Setup
 icon: terminal
+order: 100
 ---
 
 ### Arch Linux Setup

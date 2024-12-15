@@ -1,6 +1,7 @@
 ---
 label: JDownloader
 icon: desktop-download
+order: 10
 ---
 # JDownloader2 Guide
 ## Debloating JDownloder2

@@ -1,6 +1,7 @@
 ---
 label: Windows
 icon: columns
+order: 70
 ---
 
 ### Microsoft Activation Scripts
