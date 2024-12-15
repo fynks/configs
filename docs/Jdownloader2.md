@@ -41,17 +41,24 @@ Banner
 
 > [Source](https://www.reddit.com/r/Piracy/comments/133ib8s/guide_how_to_install_and_debloat_jdownloader/)
 
-## Installing Dracula theme (Easy dark mode)
+## Material Darker JDownloader | Theme
 1. If you are a git user, you can install the theme and keep up to date by cloning the repo:
 ```shell
-git clone https://github.com/dracula/jdownloader2.git
+git clone https://github.com/moktavizen/material-darker-jdownloader/
 ```
-2. In JDownloader2 go to Settings > Advanced Settings
-3. Search for `GraphicalUserInterfaceSettings: Look And Feel Theme` and change the value from Default to `FLATLAF_DRACULA`
-4. Get the `FlatDarculaLaf.json` file and place it in `JDownloader\cfg\laf\` (Create the folder structure if it doesn't exist).
-5. Restart JDownloader2
+2. In your JDownloader, go to Settings > Settings > Advanced Settings, search for look and feel theme and change the value to `FLATLAF_DARK`
+- Follow the pop-up instruction to download the theme
+3. See Your <installation-directory> in Help > About JDownloader > Click me / Mouse over, then copy:
+- `images` folder to `<installation-directory>/themes/standard/org/jdownloader`
+- `laf` folder to `<installation-directory>/cfg`
+- `flatlaf.jar` to `<installation-directory>/libs/laf`
+(Choose replace or merge for any conflicts)
+3. Restart JDownloader or press `Ctrl + Shift + R`
 
-> [Source](https://draculatheme.com/jdownloader2)
+
+
+
+> [Source](https://github.com/moktavizen/material-darker-jdownloader/?tab=readme-ov-file#installation-%EF%B8%8F)
 
 
 ## Manual Dark Mode
