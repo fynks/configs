@@ -119,8 +119,8 @@ install_packages() {
 
         local package_list=(
             base-devel cmake alacritty fish plasma-wayland-session firefox librewolf-bin
-            ventoy zoxide eza konsave nemo vlc evince otpclient sublime-text-4
-            visual-studio-code-bin libreoffice-still android-tools gimp
+            ventoy ente-auth-bin zoxide eza konsave vlc evince sublime-text-4
+            visual-studio-code-bin libreoffice-still android-tools jdownloader2 java-rhino gimp
         )
 
         echo "Installing necessary packages..."
