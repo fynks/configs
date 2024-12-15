@@ -12,6 +12,8 @@ NC='\033[0m' # No Color
 
 # Global variables
 UNATTENDED=false
+LOGFILE="/var/log/setup-script.log"
+DRY_RUN=false
 
 #--------------------------------
 # Section: Basic functions
@@ -31,7 +33,10 @@ print_section_header() {
 }
 
 handle_error() {
-    echo -e "${RED}Error: $1${NC}" >&2
+    local error_msg="$1"
+    echo -e "${RED}Error: $error_msg${NC}" >&2
+    log "$error_msg" "ERROR"
+    cleanup
     exit 1
 }
 
@@ -41,6 +46,45 @@ print_success() {
 
 print_warning() {
     echo -e "${YELLOW}⚠ $1${NC}"
+}
+
+log() {
+    local message="$1"
+    local level="${2:-INFO}"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $level: $message" >> "$LOGFILE"
+}
+
+cleanup() {
+    log "Starting cleanup"
+    rm -f /tmp/setup-*
+    jobs -p | xargs -r kill
+    log "Cleanup completed"
+}
+
+show_progress() {
+    local pid=$1
+    local message=$2
+    local spin='-\|/'
+    local i=0
+    while kill -0 "$pid" 2>/dev/null; do
+        i=$(( (i+1) %4 ))
+        printf "\r${CYAN}[%c] %s...${NC}" "${spin:$i:1}" "$message"
+        sleep .1
+    done
+    printf "\r"
+}
+
+validate_environment() {
+    local required_commands=(curl wget git sudo)
+    for cmd in "${required_commands[@]}"; do
+        if ! command -v "$cmd" &> /dev/null; then
+            handle_error "Required command '$cmd' not found"
+        fi
+    done
+
+    if ! ping -c 1 8.8.8.8 &> /dev/null; then
+        handle_error "No internet connection detected"
+    fi
 }
 
 #--------------------------------
@@ -53,9 +97,8 @@ Usage: $0 [OPTIONS]
 
 Options:
   -h, --help        Show this help message and exit
-  -u, --unattended  Run the script in unattended mode (auto-accept all prompts)
-
-Run the script without options for interactive mode.
+  -u, --unattended  Run the script in unattended mode
+  -d, --dry-run     Show what would be done without making changes
 EOF
 }
 
@@ -249,6 +292,9 @@ while [[ $# -gt 0 ]]; do
         -u|--unattended)
             UNATTENDED=true
             ;;
+        -d|--dry-run)
+            DRY_RUN=true
+            ;;
         *)
             echo "Unknown option: $1"
             show_help
@@ -257,6 +303,9 @@ while [[ $# -gt 0 ]]; do
     esac
     shift
 done
+
+# Add trap for cleanup
+trap cleanup EXIT
 
 # Check if the script is run as root
 [[ $EUID -ne 0 ]] && handle_error "This script must be run as root."
@@ -272,7 +321,12 @@ if [[ -z "$username" ]]; then
 fi
 
 main() {
+    log "Starting setup script"
+    validate_environment
     welcome
+    
+    [[ "$DRY_RUN" == true ]] && echo "Running in dry-run mode. No changes will be made."
+    
     setup_aur
     install_packages
     setup_firefox
@@ -280,6 +334,7 @@ main() {
     setup_fish
     install_optional_packages
     setup_complete
+    log "Setup completed successfully"
 }
 
 main
