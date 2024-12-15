@@ -7,15 +7,25 @@ icon: desktop-download
 1. Once JDownloader is installed, open it and go to Settings -> Advanced Settings (the icon with a warning sign).
 2. In the Filters Settings, search for the following values and disable them by clicking on the check-mark button:
 
-- premium alert
+```bash
+premium alert
+```
 
-- oboom
+```bash
+oboom
+```
 
-- Special Deals
+```bash
+Special Deals
+```
 
-- Donate
+```bash
+Donate
+```
 
-- Banner
+```bash
+Banner
+```
 
 3. These values are responsible for showing ads and pop-ups for premium accounts and other offers. Disabling them will make JDownloader ad-free and less cluttered.
 
