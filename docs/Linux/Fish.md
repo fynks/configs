@@ -1,6 +1,6 @@
 ---
 label: Fish Shell
-icon: terminal
+icon: command-palette
 ---
 
 ### Fish Shell Setup

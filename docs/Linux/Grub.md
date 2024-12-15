@@ -1,6 +1,6 @@
 ---
 label: Grub
-icon: terminal
+icon: tools
 --- 
 
 ### Grub Showing no menu
