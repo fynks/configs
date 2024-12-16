@@ -13,23 +13,30 @@ NC='\033[0m' # No Color
 # Global variables
 UNATTENDED=false
 LOGFILE="/var/log/setup-script.log"
-DRY_RUN=false
 
 #--------------------------------
 # Section: Basic functions
 #--------------------------------
 
 prompt() {
-    [[ "$UNATTENDED" == true ]] && return 0
-    read -p "${1} (Y/n): " response
-    case "${response,,}" in
-        n|no) return 1 ;;
-        *) return 0 ;;
-    esac
+    if [[ "$UNATTENDED" == true ]]; then
+        return 0  # Assume 'yes' in unattended mode
+    fi
+    local response
+    while true; do
+        read -p "$1 [Y/n]: " response
+        case "$response" in
+            [Yy]*|'') return 0 ;;
+            [Nn]*)     return 1 ;;
+            *)         echo "Please answer yes or no." ;;
+        esac
+    done
 }
-
 print_section_header() {
-    printf "\n${BLUE}%s\n#### %s ####\n%s${NC}\n\n" "$(printf '#%.0s' {1..50})" "$1" "$(printf '#%.0s' {1..50})"
+    local line_length=50
+    local line
+    line=$(printf '#%.0s' $(seq 1 $line_length))
+    printf "\n${BLUE}%s\n#### %s ####\n%s${NC}\n\n" "$line" "$1" "$line"
 }
 
 handle_error() {
@@ -57,7 +64,7 @@ log() {
 cleanup() {
     log "Starting cleanup"
     rm -f /tmp/setup-*
-    jobs -p | xargs -r kill
+    jobs -p | xargs -r kill &>/dev/null
     log "Cleanup completed"
 }
 
@@ -66,11 +73,13 @@ show_progress() {
     local message=$2
     local spin='-\|/'
     local i=0
+    tput civis
     while kill -0 "$pid" 2>/dev/null; do
         i=$(( (i+1) %4 ))
         printf "\r${CYAN}[%c] %s...${NC}" "${spin:$i:1}" "$message"
         sleep .1
     done
+    tput cnorm
     printf "\r"
 }
 
@@ -78,15 +87,27 @@ validate_environment() {
     local required_commands=(curl wget git sudo)
     for cmd in "${required_commands[@]}"; do
         if ! command -v "$cmd" &> /dev/null; then
-            handle_error "Required command '$cmd' not found"
+            handle_error "Required command '$cmd' not found. Please install it and re-run the script."
         fi
     done
 
     if ! ping -c 1 8.8.8.8 &> /dev/null; then
-        handle_error "No internet connection detected"
+        handle_error "No internet connection detected. Please check your network and try again."
     fi
 }
 
+automatic_setup() {
+    for step in setup_aur install_packages setup_firefox disable_services setup_fish install_optional_packages; do
+        print_section_header "Running $step"
+        if prompt "Do you want to proceed with $step?"; then
+            $step
+        else
+            print_warning "Skipped $step"
+        fi
+    done
+    setup_complete
+    exit 0
+}
 #--------------------------------
 # Section: Welcome and Help
 #--------------------------------
@@ -99,6 +120,8 @@ Options:
   -h, --help        Show this help message and exit
   -u, --unattended  Run the script in unattended mode
   -d, --dry-run     Show what would be done without making changes
+
+This script helps you set up various components of your Arch Linux system.
 EOF
 }
 
@@ -117,47 +140,81 @@ welcome() {
     echo ""
     echo -e "${BLUE}Welcome to the Arch Linux Setup script!${NC}"
     echo ""
-    echo " This script helps you set up various components of your Arch Linux system:"
-    echo " - Set up Chaotic-AUR and update mirrors"
-    echo " - Install necessary packages"
-    echo " - Set up Firefox policies"
-    echo " - Disable extra services"
-    echo " - Configure Fish shell"
-    echo " - Install optional packages"
-    echo ""
 }
 
 #--------------------------------
-# Section: Mirrors and AUR
+# Section: Main Menu
+#--------------------------------
+main_menu() {
+    local options=(
+        "Run automatic setup"  # Option 1
+        "Set up Chaotic-AUR and update mirrors"
+        "Install necessary packages"
+        "Set up Firefox policies"
+        "Disable unnecessary services"
+        "Configure Fish shell"
+        "Install optional packages"
+        "Exit"
+    )
+    echo "Please select an option:"
+    for i in "${!options[@]}"; do
+        printf "%d) %s\n" $((i+1)) "${options[$i]}"
+    done
+    read -p "Enter your choice [1-${#options[@]}]: " REPLY
+    REPLY=${REPLY:-1}  # Default to 1 if no input
+    case $REPLY in
+        1) automatic_setup ;;
+        2) setup_aur ;;
+        3) install_packages ;;
+        4) setup_firefox ;;
+        5) disable_services ;;
+        6) setup_fish ;;
+        7) install_optional_packages ;;
+        8) setup_complete; exit 0 ;;
+        *) echo -e "${YELLOW}Invalid option. Try again.${NC}" ;;
+    esac
+}
+#--------------------------------
+# Section: Setup Functions
 #--------------------------------
 
 setup_aur() {
     print_section_header "Setting up Chaotic-AUR and Updating Mirrors"
     if prompt "Do you want to set up Chaotic-AUR and update mirrors?"; then
-        sudo -u "$username" firefox "https://github.com/chaotic-aur" &
-        sleep 3
+        # Import Chaotic-AUR key
+        pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+        pacman-key --lsign-key 3056513887B78AEB
 
-        sudo nano "/etc/pacman.conf"
-        print_success "Pacman configuration updated"
+        # Add Chaotic-AUR repository if not already added
+        if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
+            cat <<EOF >> /etc/pacman.conf
 
-        sudo pacman-mirrors --fasttrack 5 && sudo pacman -Sy --noconfirm
-        print_success "Mirrors updated and system synced"
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
+EOF
+        fi
+
+        # Install keyring and mirrorlist
+        pacman -Sy --noconfirm chaotic-keyring chaotic-mirrorlist
+
+        # Update package databases
+        pacman -Syyu --noconfirm
+        print_success "Chaotic-AUR repository added and system updated"
     else
         print_warning "Chaotic-AUR setup and mirror update skipped"
     fi
 }
 
-#----------------------------------------
-# Section: Installing Necessary Packages
-#----------------------------------------
-
 install_packages() {
     print_section_header "Installing Necessary Packages"
     if prompt "Do you want to install necessary packages?"; then
-        # Ensure yay is installed
         if ! command -v yay &> /dev/null; then
             echo "Installing yay..."
-            sudo pacman -S --needed --noconfirm yay || handle_error "Failed to install yay"
+            if sudo pacman -S --needed --noconfirm yay; then
+                print_success "yay installed successfully"
+            else
+                handle_error "Failed to install yay"
+            fi
         fi
 
         local package_list=(
@@ -177,10 +234,6 @@ install_packages() {
     fi
 }
 
-#--------------------------------
-# Section: Firefox
-#--------------------------------
-
 setup_firefox() {
     print_section_header "Setting up Firefox Policies"
     if prompt "Do you want to set up Firefox policies?"; then
@@ -195,13 +248,9 @@ setup_firefox() {
     fi
 }
 
-#--------------------------------
-# Section: Disabling services
-#--------------------------------
-
 disable_services() {
-    print_section_header "Disabling Extra Services"
-    if prompt "Do you want to disable extra services?"; then
+    print_section_header "Disabling Unnecessary Services"
+    if prompt "Do you want to disable unnecessary services?"; then
         local services=(
             bluetooth
             lvm2-monitor
@@ -213,9 +262,8 @@ disable_services() {
             if systemctl is-enabled --quiet "$service"; then
                 echo "Disabling $service service..."
                 if systemctl stop "$service" &&
-                   systemctl disable "$service" &&
-                   systemctl mask "$service"; then
-                    print_success "$service service disabled and masked."
+                   systemctl disable "$service"; then
+                    print_success "$service service disabled."
                 else
                     print_warning "Failed to disable $service service."
                 fi
@@ -227,10 +275,6 @@ disable_services() {
         print_warning "Service disabling skipped"
     fi
 }
-
-#--------------------------------
-# Section: Fish
-#--------------------------------
 
 setup_fish() {
     print_section_header "Setting up Fish Shell"
@@ -244,10 +288,6 @@ setup_fish() {
         print_warning "Fish shell setup skipped"
     fi
 }
-
-#-------------------------------------
-# Section: Installing Optional Packages
-#-------------------------------------
 
 install_optional_packages() {
     print_section_header "Installing Optional Packages"
@@ -292,10 +332,7 @@ while [[ $# -gt 0 ]]; do
         -u|--unattended)
             UNATTENDED=true
             ;;
-        -d|--dry-run)
-            DRY_RUN=true
-            ;;
-        *)
+           *)
             echo "Unknown option: $1"
             show_help
             exit 1
@@ -305,10 +342,12 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Add trap for cleanup
-trap cleanup EXIT
+trap cleanup EXIT SIGINT SIGTERM
 
 # Check if the script is run as root
-[[ $EUID -ne 0 ]] && handle_error "This script must be run as root."
+if [[ $EUID -ne 0 ]]; then
+    handle_error "This script must be run as root. Please run with sudo or as root user."
+fi
 
 # Get the regular user's username
 username="${SUDO_USER:-$USER}"
@@ -324,15 +363,9 @@ main() {
     log "Starting setup script"
     validate_environment
     welcome
-    
-    [[ "$DRY_RUN" == true ]] && echo "Running in dry-run mode. No changes will be made."
-    
-    setup_aur
-    install_packages
-    setup_firefox
-    disable_services
-    setup_fish
-    install_optional_packages
+
+    main_menu
+
     setup_complete
     log "Setup completed successfully"
 }
