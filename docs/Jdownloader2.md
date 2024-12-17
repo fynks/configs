@@ -4,6 +4,12 @@ icon: desktop-download
 order: 10
 ---
 # JDownloader2 Guide
+## Restoring Backup
+1. Download the backup from:
+   - [JDownloader2 Backup](https://raw.githubusercontent.com/fynks/configs/refs/heads/main/setup/jdownloader2_backup.jd2backup)
+2. Open the Jdownloader2 then `File` > `Backup` > `Restore Settings` > choose the backup file.
+3. Restart the JD2.
+
 ## Debloating JDownloder2
 1. Once JDownloader is installed, open it and go to Settings -> Advanced Settings (the icon with a warning sign).
 2. In the Filters Settings, search for the following values and disable them by clicking on the check-mark button:
@@ -27,6 +33,10 @@ Donate
 ```bash
 Banner
 ```
+- Hide donate button by selecting: `Hidden (UserMode)`
+```bash
+Donate Button
+```
 
 3. These values are responsible for showing ads and pop-ups for premium accounts and other offers. Disabling them will make JDownloader ad-free and less cluttered.
 
@@ -41,7 +51,7 @@ Banner
 
 > [Source](https://www.reddit.com/r/Piracy/comments/133ib8s/guide_how_to_install_and_debloat_jdownloader/)
 
-## Material Darker JDownloader | Theme
+## Material Darker JDownloader Theme
 1. If you are a git user, you can install the theme and keep up to date by cloning the repo:
 ```shell
 git clone https://github.com/moktavizen/material-darker-jdownloader/
