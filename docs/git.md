@@ -1,6 +1,7 @@
 ---
 title: Git
 icon: git-branch
+order: 60
 ---
 # Git Guide
 
