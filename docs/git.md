@@ -10,11 +10,13 @@ icon: git-branch
 git config --global user.name "John Doe"
 ```
 2. Set your github email:
+
+(Get it from https://github.com/settings/emails)
 ```bash
 git config --global user.email "johndoe@email.com"
 ```
 
-3. If you have already committed and even after setting up the `username` and `email` you can't commit, run this from the local repo itself:
+1. If you have already committed and even after setting up the `username` and `email` you can't commit, run this from the local repo itself:
 ```bash
 git commit --amend --reset-author
 ```
