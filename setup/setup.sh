@@ -181,6 +181,10 @@ main_menu() {
 setup_aur() {
     print_section_header "Setting up Chaotic-AUR and Updating Mirrors"
     if prompt "Do you want to set up Chaotic-AUR and update mirrors?"; then
+
+        # Update package databases
+        pacman -Sy
+        
         # Import Chaotic-AUR key
         pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
         pacman-key --lsign-key 3056513887B78AEB
