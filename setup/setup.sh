@@ -219,7 +219,7 @@ install_packages() {
 
         local package_list=(
             base-devel cmake alacritty fish plasma-wayland-session firefox librewolf-bin
-            ventoy ente-auth-bin zoxide eza konsave vlc evince sublime-text-4 jq parallel localsend
+            ventoy zoxide eza konsave vlc evince sublime-text-4 jq parallel localsend
             visual-studio-code-bin libreoffice-still android-tools jdownloader2 java-rhino gimp
         )
 
