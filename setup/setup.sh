@@ -84,7 +84,7 @@ show_progress() {
 }
 
 validate_environment() {
-    local required_commands=(curl wget git sudo)
+    local required_commands=(curl wget git sudo jq)
     for cmd in "${required_commands[@]}"; do
         if ! command -v "$cmd" &> /dev/null; then
             handle_error "Required command '$cmd' not found. Please install it and re-run the script."
@@ -183,7 +183,7 @@ setup_aur() {
     if prompt "Do you want to set up Chaotic-AUR and update mirrors?"; then
 
         # Update package databases
-        pacman -Sy
+        pacman -Sy && pacman -S jq --noconfirm
         
         # Import Chaotic-AUR key
         pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -230,11 +230,57 @@ install_packages() {
         echo "Installing necessary packages..."
         if sudo -u "$username" yay -S --needed --noconfirm --noredownload "${package_list[@]}"; then
             print_success "Necessary packages installation successful"
+            download_ente_auth
         else
             handle_error "Error installing necessary packages"
         fi
     else
         print_warning "Necessary package installation skipped"
+    fi
+}
+
+download_ente_auth() {
+    print_section_header "Downloading Ente Auth"
+    if prompt "Do you want to download the latest Ente Auth AppImage?"; then
+        # GitHub API URL for the latest release
+        local API_URL="https://api.github.com/repos/ente-io/ente/releases/latest"
+
+        echo "Fetching latest release information..."
+        local RELEASE_DATA
+        RELEASE_DATA=$(curl -s "$API_URL")
+
+        if [ $? -ne 0 ]; then
+            handle_error "Failed to fetch Ente release information"
+        fi
+
+        # Extract the download URL for the x86_64 AppImage
+        local DOWNLOAD_URL
+        DOWNLOAD_URL=$(echo "$RELEASE_DATA" | \
+            jq -r '.assets[] | select(.name | contains("x86_64.AppImage")) | .browser_download_url')
+
+        if [ -z "$DOWNLOAD_URL" ]; then
+            handle_error "Could not find Ente AppImage download URL"
+        fi
+
+        # Extract version from the URL for the filename
+        local VERSION
+        VERSION=$(echo "$DOWNLOAD_URL" | grep -oP 'auth-v\d+\.\d+\.\d+')
+        local FILENAME="ente-$VERSION-x86_64.AppImage"
+        local DOWNLOAD_PATH="/home/$username/Applications"
+
+        # Create Applications directory if it doesn't exist
+        mkdir -p "$DOWNLOAD_PATH"
+
+        # Download the AppImage
+        echo "Downloading $FILENAME..."
+        if curl -L -o "$DOWNLOAD_PATH/$FILENAME" "$DOWNLOAD_URL"; then
+            chmod +x "$DOWNLOAD_PATH/$FILENAME"
+            print_success "Successfully downloaded $FILENAME to $DOWNLOAD_PATH"
+        else
+            handle_error "Ente Auth download failed"
+        fi
+    else
+        print_warning "Ente Auth download skipped"
     fi
 }
 
