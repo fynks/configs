@@ -2,7 +2,12 @@
 
 set -euo pipefail
 
-# Colors
+
+#======================================
+# Section: Configuration
+#======================================
+
+# Color Definitions
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -10,18 +15,19 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-# Global variables
-UNATTENDED=false
+# Log File
 LOGFILE="/var/log/setup-script.log"
 
-#--------------------------------
-# Section: Basic functions
-#--------------------------------
 
+
+#================================
+# Section: Core Functions
+#================================
+
+#--------------------------------
+# Section: UI Elements
+#--------------------------------
 prompt() {
-    if [[ "$UNATTENDED" == true ]]; then
-        return 0  # Assume 'yes' in unattended mode
-    fi
     local response
     while true; do
         read -p "$1 [Y/n]: " response
@@ -32,27 +38,37 @@ prompt() {
         esac
     done
 }
-print_section_header() {
-    local line_length=50
-    local line
-    line=$(printf '#%.0s' $(seq 1 $line_length))
-    printf "\n${BLUE}%s\n#### %s ####\n%s${NC}\n\n" "$line" "$1" "$line"
-}
 
+print_section_header() {
+    local title="$1"
+    local width=60
+    local padding=$(( (width - ${#title}) / 2 ))
+    
+    # Top border
+    printf "\n${YELLOW}━━━━━━━━━━━━━━━━ %s ━━━━━━━━━━━━━━━━${NC}\n" "$title"
+    
+    # Subtle separator
+    printf "${CYAN}│${NC}\n"
+}
 handle_error() {
     local error_msg="$1"
-    echo -e "${RED}Error: $error_msg${NC}" >&2
+    local timestamp=$(date '+%H:%M:%S')
+    printf "\n${RED}━━━━━━━━━━━━━━━━ ERROR ━━━━━━━━━━━━━━━━${NC}\n"
+    printf "${RED}│${NC} ⛔ %s\n" "$error_msg"
+    printf "${RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n\n"
     log "$error_msg" "ERROR"
     cleanup
     exit 1
 }
 
 print_success() {
-    echo -e "${GREEN}✔ $1${NC}"
+    local msg="$1"
+    printf "\n${GREEN}✓${NC} ${GREEN}%s${NC}\n" "$msg"
 }
 
 print_warning() {
-    echo -e "${YELLOW}⚠ $1${NC}"
+    local msg="$1"
+    printf "\n${YELLOW}⚠${NC} ${YELLOW}%s${NC}\n" "$msg"
 }
 
 log() {
@@ -61,6 +77,9 @@ log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $level: $message" >> "$LOGFILE"
 }
 
+#--------------------------------
+# Section: Cleanup
+#--------------------------------
 cleanup() {
     log "Starting cleanup"
     rm -f /tmp/setup-*
@@ -68,39 +87,79 @@ cleanup() {
     log "Cleanup completed"
 }
 
-show_progress() {
-    local pid=$1
-    local message=$2
-    local spin='-\|/'
-    local i=0
-    tput civis
-    while kill -0 "$pid" 2>/dev/null; do
-        i=$(( (i+1) %4 ))
-        printf "\r${CYAN}[%c] %s...${NC}" "${spin:$i:1}" "$message"
-        sleep .1
-    done
-    tput cnorm
-    printf "\r"
-}
 
+#--------------------------------
+# Section: Validation
+#--------------------------------
 validate_environment() {
-    local required_commands=(curl wget git sudo jq)
-    for cmd in "${required_commands[@]}"; do
+
+    # System checks
+    printf "\n${CYAN}Performing system checks...${NC}\n"
+    
+    # Map dependencies to package names
+    declare -A pkg_map=(
+        ["curl"]="curl"
+        ["wget"]="wget"
+        ["git"]="git"
+        ["sudo"]="sudo"
+        ["jq"]="jq"
+    )
+    
+    local missing_pkgs=()
+    
+    # Check for missing dependencies
+    for cmd in "${!pkg_map[@]}"; do
         if ! command -v "$cmd" &> /dev/null; then
-            handle_error "Required command '$cmd' not found. Please install it and re-run the script."
+            missing_pkgs+=("${pkg_map[$cmd]}")
         fi
     done
-
-    if ! ping -c 1 8.8.8.8 &> /dev/null; then
+    
+    # If there are missing packages, try to install them
+    if [ ${#missing_pkgs[@]} -ne 0 ]; then
+        echo -e "${YELLOW}Missing required dependencies. Attempting to install packages...${NC}"
+        
+        # Update package database first
+        if ! pacman -Sy --noconfirm; then
+            handle_error "Failed to update package database"
+        fi
+        
+        # Install missing packages
+        if ! pacman -S --noconfirm "${missing_pkgs[@]}"; then
+            handle_error "Failed to install required packages: ${missing_pkgs[*]}"
+        fi
+        
+        print_success "Successfully installed required packages"
+    fi
+    
+    # Internet connectivity check
+    local dns_servers=("8.8.8.8" "1.1.1.1" "9.9.9.9")
+    local connected=false
+    
+    for server in "${dns_servers[@]}"; do
+        if ping -c 1 -W 2 "$server" &> /dev/null; then
+            connected=true
+            break
+        fi
+    done
+    
+    if [ "$connected" = false ]; then
         handle_error "No internet connection detected. Please check your network and try again."
     fi
+    
+    print_success "Environment validation completed"
 }
+
+#--------------------------------
+# Section: Automatic Setup
+#--------------------------------
 
 automatic_setup() {
     for step in setup_aur install_packages setup_firefox disable_services setup_fish install_optional_packages; do
         print_section_header "Running $step"
         if prompt "Do you want to proceed with $step?"; then
+            log "Starting $step"
             $step
+            log "Completed $step"
         else
             print_warning "Skipped $step"
         fi
@@ -108,9 +167,10 @@ automatic_setup() {
     setup_complete
     exit 0
 }
-#--------------------------------
+
+#================================
 # Section: Welcome and Help
-#--------------------------------
+#================================
 
 show_help() {
     cat << EOF
@@ -118,8 +178,6 @@ Usage: $0 [OPTIONS]
 
 Options:
   -h, --help        Show this help message and exit
-  -u, --unattended  Run the script in unattended mode
-  -d, --dry-run     Show what would be done without making changes
 
 This script helps you set up various components of your Arch Linux system.
 EOF
@@ -142,12 +200,14 @@ welcome() {
     echo ""
 }
 
-#--------------------------------
+
+#================================
 # Section: Main Menu
-#--------------------------------
+#================================
+
 main_menu() {
     local options=(
-        "Run automatic setup"  # Option 1
+        "Run automatic setup"
         "Set up Chaotic-AUR and update mirrors"
         "Install necessary packages"
         "Set up Firefox policies"
@@ -156,11 +216,21 @@ main_menu() {
         "Install optional packages"
         "Exit"
     )
-    echo "Please select an option:"
+    
+    clear
+    printf "\n${YELLOW}━━━━━━━━━━━━━━━━ System Setup Menu ━━━━━━━━━━━━━━━━${NC}\n"
+    printf "${CYAN}│${NC}\n"
+    
     for i in "${!options[@]}"; do
-        printf "%d) %s\n" $((i+1)) "${options[$i]}"
+        if [ "$((i+1))" -eq "${#options[@]}" ]; then
+            printf "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
+        fi
+        printf "${YELLOW}  [%2d]${NC} ${GREEN}%s${NC}\n" $((i+1)) "${options[$i]}"
     done
-    read -p "Enter your choice [1-${#options[@]}]: " REPLY
+    
+    printf "\n${CYAN}Enter your choice (1-${#options[@]})${NC}\n"
+    read -p "$(echo -e ${YELLOW}">> "${NC})" REPLY
+    
     REPLY=${REPLY:-1}  # Default to 1 if no input
     case $REPLY in
         1) automatic_setup ;;
@@ -171,17 +241,22 @@ main_menu() {
         6) setup_fish ;;
         7) install_optional_packages ;;
         8) setup_complete; exit 0 ;;
-        *) echo -e "${YELLOW}Invalid option. Try again.${NC}" ;;
+        *) 
+            printf "\n${RED}Invalid option! Press any key to continue...${NC}\n"
+            read -n 1
+            main_menu
+            ;;
     esac
 }
-#--------------------------------
+
+#================================
 # Section: Setup Functions
-#--------------------------------
+#================================
 
 setup_aur() {
     print_section_header "Setting up Chaotic-AUR and Updating Mirrors"
     if prompt "Do you want to set up Chaotic-AUR and update mirrors?"; then
-
+        log "Setting up Chaotic-AUR and updating mirrors"
         # Update package databases
         pacman -Sy && pacman -S jq --noconfirm
         
@@ -209,9 +284,14 @@ EOF
     fi
 }
 
+#================================
+# Section: Necessary Packages
+#================================
+
 install_packages() {
     print_section_header "Installing Necessary Packages"
     if prompt "Do you want to install necessary packages?"; then
+        log "Installing necessary packages"
         if ! command -v yay &> /dev/null; then
             echo "Installing yay..."
             if sudo pacman -S --needed --noconfirm yay; then
@@ -242,6 +322,7 @@ install_packages() {
 download_ente_auth() {
     print_section_header "Downloading Ente Auth"
     if prompt "Do you want to download the latest Ente Auth AppImage?"; then
+        log "Downloading Ente Auth"
         # GitHub API URL for the latest release
         local API_URL="https://api.github.com/repos/ente-io/ente/releases/latest"
 
@@ -284,9 +365,14 @@ download_ente_auth() {
     fi
 }
 
+#================================
+# Section: Firefox Configuration
+#================================
+
 setup_firefox() {
     print_section_header "Setting up Firefox Policies"
     if prompt "Do you want to set up Firefox policies?"; then
+        log "Setting up Firefox policies"
         if sudo mkdir -p /etc/firefox/policies/ &&
            sudo cp /home/"$username"/configs/browsers/policies.json /etc/firefox/policies/policies.json; then
             print_success "Firefox policies copied successfully"
@@ -298,9 +384,14 @@ setup_firefox() {
     fi
 }
 
+
+#================================
+# Section: Diable Services
+#================================
 disable_services() {
     print_section_header "Disabling Unnecessary Services"
     if prompt "Do you want to disable unnecessary services?"; then
+        log "Disabling unnecessary services"
         local services=(
             bluetooth
             lvm2-monitor
@@ -326,9 +417,18 @@ disable_services() {
     fi
 }
 
+#================================
+# Section: Fish Configuration
+#================================
+
 setup_fish() {
     print_section_header "Setting up Fish Shell"
     if prompt "Do you want to set up Fish shell configuration?"; then
+        log "Setting up Fish shell"
+        # Create config directory if it doesn't exist
+        if ! sudo -u "$username" mkdir -p "/home/$username/.config/fish"; then
+            handle_error "Failed to create fish config directory"
+        fi
         if sudo -u "$username" cp /home/"$username"/configs/setup/config.fish /home/"$username"/.config/fish/config.fish; then
             print_success "Fish config copied successfully"
         else
@@ -339,9 +439,14 @@ setup_fish() {
     fi
 }
 
+#================================
+# Section: Optional Packages
+#================================
+
 install_optional_packages() {
     print_section_header "Installing Optional Packages"
     if prompt "Do you want to install optional packages?"; then
+        log "Installing optional packages"
         local optional_package_list=(
             brave-bin nodejs npm video-downloader bleachbit appimagelauncher
             telegram-desktop simplescreenrecorder hblock converseen celluloid
@@ -359,18 +464,21 @@ install_optional_packages() {
     fi
 }
 
-#--------------------------------
+#================================
 # Section: Exit
-#--------------------------------
+#================================
 
 setup_complete() {
     print_section_header "Setup Complete"
     echo -e "${GREEN}Arch Linux setup is complete. Please reboot your system.${NC}"
+    if prompt "Do you want to reboot now?"; then
+        reboot
+    fi
 }
 
-#--------------------------------
+#================================
 # Section: Main Execution
-#--------------------------------
+#================================
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -379,10 +487,7 @@ while [[ $# -gt 0 ]]; do
             show_help
             exit 0
             ;;
-        -u|--unattended)
-            UNATTENDED=true
-            ;;
-           *)
+        *)
             echo "Unknown option: $1"
             show_help
             exit 1
