@@ -6,7 +6,7 @@ set fish_greeting
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cl='clear'
-alias chx +x= 'chmod +x'
+alias chx= 'chmod +x'
 alias src='source ~/.config/fish/config.fish'
 alias update-mirrors='sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syu'
 
