@@ -52,15 +52,41 @@
             "Locked": false,
             "StartPage": "homepage"
           },
-        "SearchEngines": {
+                "SearchEngines": {
+            "Default": "G",
+            "Add": [
+                {
+                    "Name": "G",
+                    "URLTemplate": "https://www.google.com/search?q={searchTerms}",
+                    "Alias": "!g",
+                    "Method": "GET"
+                },
+                {
+                    "Name": "Brave", 
+                    "URLTemplate": "https://search.brave.com/search?q={searchTerms}",
+                    "Alias": "!b",
+                    "Method": "GET"
+                },
+                {
+                    "Name": "Startpage",
+                    "URLTemplate": "https://www.startpage.com/do/search?q={searchTerms}",
+                    "Method": "GET"
+                },
+                {
+                    "Name": "YouTube",
+                    "URLTemplate": "https://www.youtube.com/results?search_query={searchTerms}",
+                    "Alias": "!yt",
+                    "Method": "GET"
+                }
+            ],
             "PreventInstalls": false,
             "Remove": [
+                "Google",
                 "Bing",
                 "Amazon.com",
-                "eBay",
+                "eBay", 
                 "Twitter",
                 "Wikipedia"
-                
             ]
         }
     }
