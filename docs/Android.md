@@ -18,6 +18,15 @@ find . -type f -name "*.m4a" > m4a.txt
 ```
 
 ### Debloating HyperOS
+#### Automatic tool:
+```bash
+git clone https://github.com/fynks/android-debloater.git
+cd android-debloater
+chmod +x debloat.sh
+./debloat.sh
+```
+
+#### Manual Debloating
 > We can remove these apps without affecting system.
 - Analytics
 - App Vault
