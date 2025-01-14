@@ -51,6 +51,7 @@ find . -type f -name "*.m4a" > m4a.txt
 ### Find all media files
 ```sh
 find . -type f \( -name "*.mp3" -o -name "*.m4a" -o -name "*.wav" \) > media_files.txt
+```
 
 ### Debloating HyperOS
 #### Automatic tool:
