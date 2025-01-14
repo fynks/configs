@@ -3,6 +3,38 @@ label: Android
 icon: device-mobile
 order: 50
 ---
+### Apps
+#### Play Store
+- [1DM+](https://play.google.com/store/apps/details?id=idm.internet.download.manager.plus) 
+- [AdGuard Mail](https://play.google.com/store/apps/details?id=com.adguard.email) 
+- [AdGuard VPN](https://play.google.com/store/apps/details?id=com.adguard.vpn) 
+- [Bitwarden](https://play.google.com/store/apps/details?id=com.x8bit.bitwarden) 
+- [Brave](https://play.google.com/store/apps/details?id=com.brave.browser) 
+- [Brave - Beta](https://play.google.com/store/apps/details?id=com.brave.browser_beta) 
+- [Brave - Nightly](https://play.google.com/store/apps/details?id=com.brave.browser_nightly) 
+- [Daraz](https://play.google.com/store/apps/details?id=com.daraz.android) 
+- [easypaisa](https://play.google.com/store/apps/details?id=pk.com.telenor.phoenix) 
+- [Ente Auth](https://play.google.com/store/apps/details?id=io.ente.auth) 
+- [Facebook](https://play.google.com/store/apps/details?id=com.facebook.katana) 
+- [Inoreader](https://play.google.com/store/apps/details?id=com.innologica.inoreader) 
+- [JazzCash](https://play.google.com/store/apps/details?id=com.techlogix.mobilinkcustomer) 
+- [Messenger](https://play.google.com/store/apps/details?id=com.facebook.orca) 
+- [Microsoft SwiftKey Beta Keyboard](https://play.google.com/store/apps/details?id=com.touchtype.swiftkey.beta) 
+- [MJ PDF](https://play.google.com/store/apps/details?id=com.gitlab.mudlej.MjPdfReader) 
+- [NayaPay](https://play.google.com/store/apps/details?id=com.nayapay.app) 
+- [ONLYOFFICE Documents](https://play.google.com/store/apps/details?id=com.onlyoffice.documents) 
+- [Poweramp](https://play.google.com/store/apps/details?id=com.maxmpz.audioplayer) 
+- [Poweramp Full Version Unlocker](https://play.google.com/store/apps/details?id=com.maxmpz.audioplayer.unlock) 
+- [Proton Mail](https://play.google.com/store/apps/details?id=ch.protonmail.android) 
+- [ROX](https://play.google.com/store/apps/details?id=com.jazz.rox) 
+- [Snapchat](https://play.google.com/store/apps/details?id=com.snapchat.android) 
+- [Tasks](https://play.google.com/store/apps/details?id=com.google.android.apps.tasks) 
+- [Tuta](https://play.google.com/store/apps/details?id=de.tutao.tutanota) 
+- [VLC](https://play.google.com/store/apps/details?id=org.videolan.vlc) 
+
+#### Droid-ify
+- TBD
+
 ### Flash a custom recovery
 ```sh
 fastboot devices
