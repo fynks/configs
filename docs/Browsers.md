@@ -29,15 +29,6 @@ C:\Program Files\Mozilla Firefox\distribution
 ```
 ===
 
-==- LibreWolf Overrides
-[!file target="blank"](https://raw.githubusercontent.com/fynks/configs/main/browsers/librewolf.overrides.cfg)
-
-> Should be placed in:
-
-```bash
-$HOME/.librewolf/librewolf.overrides.cfg
-```
-===
 
 ==- Cookie Exception List
 
