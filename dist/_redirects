@@ -1,3 +1,0 @@
-# Redirects from what the browser requests to what we serve
-/c                https://github.com/ChrisTitusTech/winutil 301
-/mas              https://github.com/massgravel/Microsoft-Activation-Scripts 301
