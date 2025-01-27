@@ -374,7 +374,7 @@ setup_firefox() {
     if prompt "Do you want to set up Firefox policies?"; then
         log "Setting up Firefox policies"
         if sudo mkdir -p /etc/firefox/policies/ &&
-           sudo cp /home/"$username"/configs/browsers/policies.json /etc/firefox/policies/policies.json; then
+           sudo cp /home/"$username"/configs/browsers/configs/policies.json /etc/firefox/policies/policies.json; then
             print_success "Firefox policies copied successfully"
         else
             handle_error "Error copying Firefox policies"
@@ -429,7 +429,7 @@ setup_fish() {
         if ! sudo -u "$username" mkdir -p "/home/$username/.config/fish"; then
             handle_error "Failed to create fish config directory"
         fi
-        if sudo -u "$username" cp /home/"$username"/configs/setup/config.fish /home/"$username"/.config/fish/config.fish; then
+        if sudo -u "$username" cp /home/"$username"/configs/system/backups/config.sh /home/"$username"/.config/fish/config.fish; then
             print_success "Fish config copied successfully"
         else
             handle_error "Error copying Fish config"
