@@ -18,6 +18,15 @@ NC='\033[0m' # No Color
 # Log File
 LOGFILE="/var/log/setup-script.log"
 
+# Runtime flags (can be overridden by CLI)
+ASSUME_YES=false
+ASSUME_NO=false
+COLOR_ENABLED=true
+
+# Resolve repository root (allows overriding with CONFIGS_DIR)
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+REPO_ROOT="${CONFIGS_DIR:-$(cd "$SCRIPT_DIR/.." && pwd)}"
+
 
 
 #================================
@@ -29,12 +38,21 @@ LOGFILE="/var/log/setup-script.log"
 #--------------------------------
 prompt() {
     local response
+    # Honor non-interactive defaults
+    if [[ "$ASSUME_YES" == true ]]; then
+        printf "%b%s%b [Y/n]: Y (auto)\n" "$YELLOW" "$1" "$NC"
+        return 0
+    fi
+    if [[ "$ASSUME_NO" == true ]]; then
+        printf "%b%s%b [y/N]: N (auto)\n" "$YELLOW" "$1" "$NC"
+        return 1
+    fi
     while true; do
-        read -p "$1 [Y/n]: " response
-        case "$response" in
-            [Yy]*|'') return 0 ;;
-            [Nn]*)     return 1 ;;
-            *)         echo "Please answer yes or no." ;;
+        read -r -p "$(echo -e "${YELLOW}$1 [Y/n]: ${NC}")" response
+        case "${response:-Y}" in
+            [Yy]* ) return 0 ;;
+            [Nn]* ) return 1 ;;
+            * )     echo "Please answer yes or no." ;;
         esac
     done
 }
@@ -61,6 +79,13 @@ handle_error() {
     exit 1
 }
 
+# Error trap helper to surface failing command
+on_error() {
+    local exit_code=$?
+    local cmd=${BASH_COMMAND:-unknown}
+    handle_error "Command failed (exit $exit_code): $cmd"
+}
+
 print_success() {
     local msg="$1"
     printf "\n${GREEN}✓${NC} ${GREEN}%s${NC}\n" "$msg"
@@ -75,6 +100,13 @@ log() {
     local message="$1"
     local level="${2:-INFO}"
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $level: $message" >> "$LOGFILE"
+}
+
+# Initialize logging target safely
+init_logging() {
+    mkdir -p "/var/log" || true
+    touch "$LOGFILE" || true
+    chmod 0644 "$LOGFILE" || true
 }
 
 #--------------------------------
@@ -95,6 +127,11 @@ validate_environment() {
 
     # System checks
     printf "\n${CYAN}Performing system checks...${NC}\n"
+
+    # Ensure we're on an Arch-based system with pacman
+    if ! command -v pacman &>/dev/null; then
+        handle_error "This script requires pacman (Arch/Manjaro/etc.). Aborting."
+    fi
     
     # Map dependencies to package names
     declare -A pkg_map=(
@@ -131,7 +168,7 @@ validate_environment() {
         print_success "Successfully installed required packages"
     fi
     
-    # Internet connectivity check
+    # Internet connectivity check (ICMP, then HTTP fallback)
     local dns_servers=("8.8.8.8" "1.1.1.1" "9.9.9.9")
     local connected=false
     
@@ -142,6 +179,11 @@ validate_environment() {
         fi
     done
     
+    if [ "$connected" = false ]; then
+        if command -v curl &>/dev/null && curl -sI --max-time 3 https://archlinux.org | grep -qi "200"; then
+            connected=true
+        fi
+    fi
     if [ "$connected" = false ]; then
         handle_error "No internet connection detected. Please check your network and try again."
     fi
@@ -178,6 +220,9 @@ Usage: $0 [OPTIONS]
 
 Options:
   -h, --help        Show this help message and exit
+    -y, --yes         Assume "yes" to prompts (non-interactive)
+    -n, --no          Assume "no" to prompts
+            --no-color    Disable colored output
 
 This script helps you set up various components of your Arch Linux system.
 EOF
@@ -229,7 +274,7 @@ main_menu() {
     done
     
     printf "\n${CYAN}Enter your choice (1-${#options[@]})${NC}\n"
-    read -p "$(echo -e ${YELLOW}">> "${NC})" REPLY
+    read -r -p "$(echo -e "${YELLOW}>> ${NC}")" REPLY
     
     REPLY=${REPLY:-1}  # Default to 1 if no input
     case $REPLY in
@@ -249,6 +294,32 @@ main_menu() {
     esac
 }
 
+#--------------------------------
+# Section: Helper Functions
+#--------------------------------
+
+# Ensure yay is installed (try pacman, then AUR build as fallback)
+ensure_yay() {
+    if command -v yay &>/dev/null; then
+        return 0
+    fi
+    echo "Installing yay..."
+    # Try pacman first (works on some Arch-based distros or if repo provides it)
+    if pacman -S --needed --noconfirm yay &>/dev/null; then
+        print_success "yay installed via pacman"
+        return 0
+    fi
+    # Fallback: build yay-bin from AUR
+    pacman -S --needed --noconfirm base-devel git || handle_error "Failed to install build deps for yay"
+    local tmpdir
+    tmpdir=$(mktemp -d /tmp/yay.XXXXXX)
+    chown "$username":"$username" "$tmpdir"
+    sudo -u "$username" bash -c "cd '$tmpdir' && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si --noconfirm" \
+        || handle_error "Failed to build/install yay from AUR"
+    rm -rf "$tmpdir"
+    print_success "yay installed from AUR"
+}
+
 #================================
 # Section: Setup Functions
 #================================
@@ -257,8 +328,8 @@ setup_aur() {
     print_section_header "Setting up Chaotic-AUR and Updating Mirrors"
     if prompt "Do you want to set up Chaotic-AUR and update mirrors?"; then
         log "Setting up Chaotic-AUR and updating mirrors"
-        # Update package databases
-        pacman -Sy && pacman -S jq --noconfirm
+    # Update package databases
+    pacman -Sy && pacman -S jq --noconfirm
         
         # Import Chaotic-AUR key
         pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -272,6 +343,14 @@ setup_aur() {
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOF
         fi
+
+    # Ensure a basic mirrorlist exists before pacman parses the include
+    if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
+        cat > /etc/pacman.d/chaotic-mirrorlist <<'EOF'
+Server = https://cdn-mirror.chaotic.cx/chaotic-aur/$arch
+Server = https://aur.chaotic.cx/$arch
+EOF
+    fi
 
         # Install keyring and mirrorlist
         pacman -Sy --noconfirm chaotic-keyring chaotic-mirrorlist
@@ -299,23 +378,16 @@ install_packages() {
         echo "║  📱 https://setupmate.netlify.app/             ║"
         echo "╚════════════════════════════════════════════════╝"
         
-        if ! command -v yay &> /dev/null; then
-            echo "Installing yay..."
-            if sudo pacman -S --needed --noconfirm yay; then
-                print_success "yay installed successfully"
-            else
-                handle_error "Failed to install yay"
-            fi
-        fi
+    ensure_yay
 
         local package_list=(
             base-devel cmake alacritty fish plasma-wayland-session brave-bin firefox ente-auth-bin
             ventoy zoxide eza konsave vlc papers sublime-text-4 jq parallel localsend
-            visual-studio-code-bin libreoffice-still android-tools jdownloader2 java-rhino gimp
+            visual-studio-code-bin libreoffice-still android-tools jdownloader2 java-rhino
         )
 
-        echo "Installing necessary packages..."
-        if sudo -u "$username" yay -S --needed --noconfirm --noredownload "${package_list[@]}"; then
+    echo "Installing necessary packages..."
+    if sudo -u "$username" yay -S --needed --noconfirm --noredownload "${package_list[@]}"; then
             print_success "Necessary packages installation successful"
         else
             handle_error "Error installing necessary packages"
@@ -334,8 +406,12 @@ setup_firefox() {
     print_section_header "Setting up Firefox Policies"
     if prompt "Do you want to set up Firefox policies?"; then
         log "Setting up Firefox policies"
-        if sudo mkdir -p /etc/firefox/policies/ &&
-           sudo cp /home/"$username"/configs/browsers/configs/policies.json /etc/firefox/policies/policies.json; then
+        local src_json="$REPO_ROOT/browsers/configs/policies.json"
+        if [ ! -f "$src_json" ]; then
+            handle_error "Firefox policies file not found at $src_json"
+        fi
+        if mkdir -p /etc/firefox/policies/ &&
+           cp "$src_json" /etc/firefox/policies/policies.json; then
             print_success "Firefox policies copied successfully"
         else
             handle_error "Error copying Firefox policies"
@@ -347,7 +423,7 @@ setup_firefox() {
 
 
 #================================
-# Section: Diable Services
+# Section: Disable Services
 #================================
 disable_services() {
     print_section_header "Disabling Unnecessary Services"
@@ -390,10 +466,24 @@ setup_fish() {
         if ! sudo -u "$username" mkdir -p "/home/$username/.config/fish"; then
             handle_error "Failed to create fish config directory"
         fi
-        if sudo -u "$username" cp /home/"$username"/configs/system/backups/config.sh /home/"$username"/.config/fish/config.fish; then
+        local fish_src="$REPO_ROOT/system/backups/config.fish"
+        if [ ! -f "$fish_src" ]; then
+            handle_error "Fish config source not found at $fish_src"
+        fi
+        if sudo -u "$username" cp "$fish_src" "/home/$username/.config/fish/config.fish"; then
             print_success "Fish config copied successfully"
         else
             handle_error "Error copying Fish config"
+        fi
+
+        if prompt "Set fish as the default shell for $username?"; then
+                local fish_path
+                fish_path=$(command -v fish || true)
+                if [[ -n "$fish_path" ]] && chsh -s "$fish_path" "$username"; then
+                print_success "Default shell set to fish for $username"
+            else
+                    print_warning "Failed to change default shell; you can run: chsh -s $(command -v fish) $username"
+            fi
         fi
     else
         print_warning "Fish shell setup skipped"
@@ -409,13 +499,13 @@ install_optional_packages() {
     if prompt "Do you want to install optional packages?"; then
         log "Installing optional packages"
         local optional_package_list=(
-            librewolf-bin nodejs npm video-downloader bleachbit appimagelauncher
-            telegram-desktop simplescreenrecorder hblock converseen celluloid
-            flatpak docker lazydocker
+            gimp librewolf-bin nodejs npm video-downloader appimagelauncher
+            telegram-desktop simplescreenrecorder celluloid
         )
 
         echo "Installing optional packages..."
-        if sudo -u "$username" yay -S --needed --noconfirm --noredownload "${optional_package_list[@]}"; then
+    ensure_yay
+    if sudo -u "$username" yay -S --needed --noconfirm --noredownload "${optional_package_list[@]}"; then
             print_success "Optional package installation complete"
         else
             handle_error "Error installing optional packages"
@@ -448,6 +538,18 @@ while [[ $# -gt 0 ]]; do
             show_help
             exit 0
             ;;
+        -y|--yes|--non-interactive)
+            ASSUME_YES=true
+            ;;
+        -n|--no)
+            ASSUME_NO=true
+            ;;
+        --no-color)
+            COLOR_ENABLED=false
+            ;;
+        --)
+            shift; break
+            ;;
         *)
             echo "Unknown option: $1"
             show_help
@@ -457,13 +559,25 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
+# Honor NO_COLOR env var presence (https://no-color.org/)
+if printenv NO_COLOR >/dev/null 2>&1; then
+    COLOR_ENABLED=false
+fi
+if [[ "$COLOR_ENABLED" != true ]]; then
+    RED=""; GREEN=""; YELLOW=""; BLUE=""; CYAN=""; NC=""
+fi
+
 # Add trap for cleanup
 trap cleanup EXIT SIGINT SIGTERM
+trap on_error ERR
 
 # Check if the script is run as root
 if [[ $EUID -ne 0 ]]; then
     handle_error "This script must be run as root. Please run with sudo or as root user."
 fi
+
+# Initialize logging after root check
+init_logging
 
 # Get the regular user's username
 username="${SUDO_USER:-$USER}"
@@ -476,7 +590,7 @@ if [[ -z "$username" ]]; then
 fi
 
 main() {
-    log "Starting setup script"
+    log "Starting setup script (repo root: $REPO_ROOT)"
     validate_environment
     welcome
 
