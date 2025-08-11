@@ -309,7 +309,7 @@ install_packages() {
         fi
 
         local package_list=(
-            base-devel cmake alacritty fish plasma-wayland-session firefox librewolf-bin ente-auth-bin
+            base-devel cmake alacritty fish plasma-wayland-session brave-bin firefox ente-auth-bin
             ventoy zoxide eza konsave vlc papers sublime-text-4 jq parallel localsend
             visual-studio-code-bin libreoffice-still android-tools jdownloader2 java-rhino gimp
         )
@@ -409,7 +409,7 @@ install_optional_packages() {
     if prompt "Do you want to install optional packages?"; then
         log "Installing optional packages"
         local optional_package_list=(
-            brave-bin nodejs npm video-downloader bleachbit appimagelauncher
+            librewolf-bin nodejs npm video-downloader bleachbit appimagelauncher
             telegram-desktop simplescreenrecorder hblock converseen celluloid
             flatpak docker lazydocker
         )
