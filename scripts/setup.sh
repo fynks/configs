@@ -328,36 +328,113 @@ setup_aur() {
     print_section_header "Setting up Chaotic-AUR and Updating Mirrors"
     if prompt "Do you want to set up Chaotic-AUR and update mirrors?"; then
         log "Setting up Chaotic-AUR and updating mirrors"
-    # Update package databases
-    pacman -Sy && pacman -S jq --noconfirm
         
-        # Import Chaotic-AUR key
-        pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-        pacman-key --lsign-key 3056513887B78AEB
-
-        # Add Chaotic-AUR repository if not already added
-        if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
-            cat <<EOF >> /etc/pacman.conf
-
-[chaotic-aur]
-Include = /etc/pacman.d/chaotic-mirrorlist
-EOF
+        # Update package databases first
+        echo "Updating package databases..."
+        if ! pacman -Sy --noconfirm; then
+            handle_error "Failed to update package databases"
         fi
-
-    # Ensure a basic mirrorlist exists before pacman parses the include
-    if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
-        cat > /etc/pacman.d/chaotic-mirrorlist <<'EOF'
+        
+        # Install required dependencies
+        echo "Installing required dependencies..."
+        if ! pacman -S --needed --noconfirm curl wget jq; then
+            handle_error "Failed to install required dependencies"
+        fi
+        
+        # Create backup of existing pacman.conf with timestamp
+        if [ -f /etc/pacman.conf ]; then
+            local backup_name="/etc/pacman.conf.backup.$(date +%Y%m%d-%H%M%S)"
+            if cp /etc/pacman.conf "$backup_name"; then
+                print_success "Backed up existing pacman.conf to $backup_name"
+            else
+                print_warning "Failed to create backup of pacman.conf"
+            fi
+        fi
+        
+        # Download new pacman.conf from GitHub
+        echo "Downloading pacman.conf from GitHub repository..."
+        local temp_pacman="/tmp/pacman.conf.new"
+        if curl -fsSL --max-time 30 --retry 3 -o "$temp_pacman" "https://raw.githubusercontent.com/fynks/configs/refs/heads/main/backups/pacman.conf"; then
+            # Validate the downloaded file contains expected content
+            if grep -q "\[chaotic-aur\]" "$temp_pacman" && grep -q "Include.*chaotic-mirrorlist" "$temp_pacman"; then
+                if mv "$temp_pacman" /etc/pacman.conf; then
+                    print_success "Downloaded and installed new pacman.conf"
+                else
+                    handle_error "Failed to install new pacman.conf"
+                fi
+            else
+                handle_error "Downloaded pacman.conf doesn't contain expected Chaotic-AUR configuration"
+            fi
+        else
+            handle_error "Failed to download pacman.conf from GitHub repository"
+        fi
+        
+        # Import Chaotic-AUR GPG keys
+        echo "Importing Chaotic-AUR GPG keys..."
+        local chaotic_keys=("FBA220DFC880C036" "3056513887B78AEB")
+        local keyserver="keyserver.ubuntu.com"
+        
+        for key in "${chaotic_keys[@]}"; do
+            echo "Importing key: $key"
+            if ! pacman-key --recv-key "$key" --keyserver "$keyserver"; then
+                print_warning "Failed to import key $key from $keyserver, trying alternative keyserver..."
+                if ! pacman-key --recv-key "$key" --keyserver "pgp.mit.edu"; then
+                    handle_error "Failed to import Chaotic-AUR key: $key"
+                fi
+            fi
+            
+            # Locally sign the key
+            if ! pacman-key --lsign-key "$key"; then
+                handle_error "Failed to locally sign key: $key"
+            fi
+        done
+        
+        print_success "Successfully imported and signed Chaotic-AUR keys"
+        
+        # Create temporary chaotic-mirrorlist if it doesn't exist
+        if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
+            echo "Creating temporary chaotic-mirrorlist..."
+            mkdir -p /etc/pacman.d
+            cat > /etc/pacman.d/chaotic-mirrorlist <<'EOF'
+# Chaotic-AUR mirrorlist - temporary fallback
+Server = https://geo-mirror.chaotic.cx/$repo/$arch
 Server = https://cdn-mirror.chaotic.cx/chaotic-aur/$arch
 Server = https://aur.chaotic.cx/$arch
 EOF
-    fi
-
-        # Install keyring and mirrorlist
-        pacman -Sy --noconfirm chaotic-keyring chaotic-mirrorlist
-
-        # Update package databases
-        pacman -Syyu --noconfirm
-        print_success "Chaotic-AUR repository added and system updated"
+            print_success "Created temporary chaotic-mirrorlist"
+        fi
+        
+        # Update package databases to recognize the new repository
+        echo "Updating package databases with new repositories..."
+        if ! pacman -Sy --noconfirm; then
+            handle_error "Failed to update package databases after adding Chaotic-AUR"
+        fi
+        
+        # Install chaotic-keyring and chaotic-mirrorlist packages
+        echo "Installing Chaotic-AUR keyring and mirrorlist packages..."
+        if pacman -S --needed --noconfirm chaotic-keyring chaotic-mirrorlist; then
+            print_success "Successfully installed chaotic-keyring and chaotic-mirrorlist"
+        else
+            print_warning "Failed to install chaotic-keyring and chaotic-mirrorlist, continuing with temporary setup"
+        fi
+        
+        # Final system update
+        echo "Performing full system update..."
+        if pacman -Syyu --noconfirm; then
+            print_success "Chaotic-AUR repository successfully configured and system updated"
+        else
+            print_warning "System update completed with some warnings"
+        fi
+        
+        # Verify setup
+        echo "Verifying Chaotic-AUR setup..."
+        if pacman -Sl chaotic-aur &>/dev/null; then
+            local package_count=$(pacman -Sl chaotic-aur | wc -l)
+            print_success "Chaotic-AUR is working correctly with $package_count packages available"
+        else
+            print_warning "Chaotic-AUR setup may have issues - unable to list packages"
+        fi
+        
     else
         print_warning "Chaotic-AUR setup and mirror update skipped"
     fi
@@ -406,15 +483,18 @@ setup_firefox() {
     print_section_header "Setting up Firefox Policies"
     if prompt "Do you want to set up Firefox policies?"; then
         log "Setting up Firefox policies"
-        local src_json="$REPO_ROOT/browsers/configs/policies.json"
-        if [ ! -f "$src_json" ]; then
-            handle_error "Firefox policies file not found at $src_json"
+        
+        # Create Firefox policies directory
+        if ! mkdir -p /etc/firefox/policies/; then
+            handle_error "Failed to create Firefox policies directory"
         fi
-        if mkdir -p /etc/firefox/policies/ &&
-           cp "$src_json" /etc/firefox/policies/policies.json; then
-            print_success "Firefox policies copied successfully"
+        
+        # Download Firefox policies from GitHub
+        echo "Downloading Firefox policies from GitHub..."
+        if curl -fsSL -o /etc/firefox/policies/policies.json "https://raw.githubusercontent.com/fynks/configs/refs/heads/main/browsers/configs/policies.json"; then
+            print_success "Firefox policies downloaded and installed successfully"
         else
-            handle_error "Error copying Firefox policies"
+            handle_error "Failed to download Firefox policies from GitHub"
         fi
     else
         print_warning "Firefox policy setup skipped"
@@ -462,18 +542,18 @@ setup_fish() {
     print_section_header "Setting up Fish Shell"
     if prompt "Do you want to set up Fish shell configuration?"; then
         log "Setting up Fish shell"
+        
         # Create config directory if it doesn't exist
         if ! sudo -u "$username" mkdir -p "/home/$username/.config/fish"; then
             handle_error "Failed to create fish config directory"
         fi
-        local fish_src="$REPO_ROOT/system/backups/config.fish"
-        if [ ! -f "$fish_src" ]; then
-            handle_error "Fish config source not found at $fish_src"
-        fi
-        if sudo -u "$username" cp "$fish_src" "/home/$username/.config/fish/config.fish"; then
-            print_success "Fish config copied successfully"
+        
+        # Download fish config from GitHub
+        echo "Downloading fish config from GitHub..."
+        if sudo -u "$username" curl -fsSL -o "/home/$username/.config/fish/config.fish" "https://raw.githubusercontent.com/fynks/configs/refs/heads/main/backups/config.fish"; then
+            print_success "Fish config downloaded and installed successfully"
         else
-            handle_error "Error copying Fish config"
+            handle_error "Failed to download fish config from GitHub"
         fi
 
         if prompt "Set fish as the default shell for $username?"; then
