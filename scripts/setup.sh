@@ -458,7 +458,7 @@ install_packages() {
     ensure_yay
 
         local package_list=(
-            base-devel cmake alacritty fish plasma-wayland-session brave-bin firefox ente-auth-bin
+            base-devel cmake alacritty fish plasma-wayland-session librewolf-bin ente-auth-bin
             ventoy zoxide eza vlc papers sublime-text-4 jq parallel localsend
             visual-studio-code-bin libreoffice-still android-tools jdownloader2 java-rhino
         )
@@ -579,7 +579,7 @@ install_optional_packages() {
     if prompt "Do you want to install optional packages?"; then
         log "Installing optional packages"
         local optional_package_list=(
-            gimp librewolf-bin nodejs npm video-downloader appimagelauncher
+            firefox brave-bin gimp nodejs npm pnpm video-downloader appimagelauncher
             telegram-desktop simplescreenrecorder celluloid
         )
 
