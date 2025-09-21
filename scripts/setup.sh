@@ -471,33 +471,6 @@ install_packages() {
 
 
 #================================
-# Section: Firefox Configuration
-#================================
-
-setup_firefox() {
-    print_section_header "Setting up Firefox Policies"
-    if prompt "Do you want to set up Firefox policies?"; then
-        log "Setting up Firefox policies"
-        
-        # Create Firefox policies directory
-        if ! mkdir -p /etc/firefox/policies/; then
-            handle_error "Failed to create Firefox policies directory"
-        fi
-        
-        # Download Firefox policies from GitHub
-        echo "Downloading Firefox policies from GitHub..."
-        if curl -fsSL -o /etc/firefox/policies/policies.json "https://raw.githubusercontent.com/fynks/configs/refs/heads/main/browsers/configs/policies.json"; then
-            print_success "Firefox policies downloaded and installed successfully"
-        else
-            handle_error "Failed to download Firefox policies from GitHub"
-        fi
-    else
-        print_warning "Firefox policy setup skipped"
-    fi
-}
-
-
-#================================
 # Section: Disable Services
 #================================
 disable_services() {
@@ -574,8 +547,7 @@ install_optional_packages() {
     if prompt "Do you want to install optional packages?"; then
         log "Installing optional packages"
         local optional_package_list=(
-            firefox brave-bin gimp nodejs npm pnpm video-downloader appimagelauncher
-            telegram-desktop simplescreenrecorder celluloid
+            firefox cromite-bin nodejs npm pnpm yt-dlp telegram-desktop celluloid
         )
 
         echo "Installing optional packages..."
@@ -589,6 +561,33 @@ install_optional_packages() {
         print_warning "Optional package installation skipped"
     fi
 }
+
+#================================
+# Section: Firefox Configuration
+#================================
+
+setup_firefox() {
+    print_section_header "Setting up Firefox Policies"
+    if prompt "Do you want to set up Firefox policies?"; then
+        log "Setting up Firefox policies"
+        
+        # Create Firefox policies directory
+        if ! mkdir -p /etc/firefox/policies/; then
+            handle_error "Failed to create Firefox policies directory"
+        fi
+        
+        # Download Firefox policies from GitHub
+        echo "Downloading Firefox policies from GitHub..."
+        if curl -fsSL -o /etc/firefox/policies/policies.json "https://raw.githubusercontent.com/fynks/configs/refs/heads/main/browsers/configs/policies.json"; then
+            print_success "Firefox policies downloaded and installed successfully"
+        else
+            handle_error "Failed to download Firefox policies from GitHub"
+        fi
+    else
+        print_warning "Firefox policy setup skipped"
+    fi
+}
+
 
 #================================
 # Section: Exit
