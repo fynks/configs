@@ -449,11 +449,6 @@ install_packages() {
     if prompt "Do you want to install necessary packages?"; then
         log "Installing necessary packages"
         
-        print_section_header "Setup Progress Tracker"
-        echo "╔════════════════════════════════════════════════╗"
-        echo "║  🌟 Track your setup progress at:              ║"
-        echo "║  📱 https://setupmate.netlify.app/             ║"
-        echo "╚════════════════════════════════════════════════╝"
         
     ensure_yay
 
