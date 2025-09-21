@@ -1,13 +1,12 @@
 {
-    "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
     "policies": {
         "OverrideFirstRunPage": "",
         "OverridePostUpdatePage": "",
         "DontCheckDefaultBrowser": true,
         "DisableFeedbackCommands": true,
         "DisableFirefoxAccounts": true,
-        "DisableFirefoxScreenshots": false,
         "DisableFirefoxStudies": true,
+        "DisableMasterPasswordCreation": true,
         "DisableSetDesktopBackground": true,
         "DisableTelemetry": true,
         "DisplayBookmarksToolbar": "never",
@@ -15,6 +14,30 @@
         "DisableDeveloperTools": false,
         "NoDefaultBookmarks": true,
         "OfferToSaveLogins": false,
+        "HardwareAcceleration": true,
+        "HttpsOnlyMode": "enabled",
+        "Permissions": {
+            "Camera": {
+                "BlockNewRequests": true,
+                "Locked": false
+            },
+            "Microphone": {
+                "BlockNewRequests": true,
+                "Locked": false
+            },
+            "Location": {
+                "BlockNewRequests": true,
+                "Locked": false
+            },
+            "Notifications": {
+                "BlockNewRequests": true,
+                "Locked": false
+            }
+        },
+        "PictureInPicture": {
+            "Enabled": false,
+            "Locked": false
+        },
         "Extensions": {
             "Install": [
                 "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
@@ -39,19 +62,29 @@
             "SponsoredPocket": false,
             "Snippets": false,
             "Locked": false
-          },
-          "FirefoxSuggest": {
+        },
+        "ShowHomeButton": false,
+        "SkipTermsOfUse": true,
+        "FirefoxSuggest": {
             "WebSuggestions": true,
             "SponsoredSuggestions": false,
             "ImproveSuggest": true,
             "Locked": false
-          },
-          "Homepage": {
+        },
+        "UserMessaging": {
+            "ExtensionRecommendations": false,
+            "FeatureRecommendations": false,
+            "SkipOnboarding": true,
+            "MoreFromMozilla": false,
+            "FirefoxLabs": false,
+            "Locked": false
+        },
+        "Homepage": {
             "URL": "about:home",
             "Locked": false,
             "StartPage": "homepage"
-          },
-                "SearchEngines": {
+        },
+        "SearchEngines": {
             "Default": "G",
             "Add": [
                 {
@@ -61,7 +94,7 @@
                     "Method": "GET"
                 },
                 {
-                    "Name": "Brave", 
+                    "Name": "Brave",
                     "URLTemplate": "https://search.brave.com/search?q={searchTerms}",
                     "Alias": "!b",
                     "Method": "GET"
@@ -83,7 +116,7 @@
                 "Google",
                 "Bing",
                 "Amazon.com",
-                "eBay", 
+                "eBay",
                 "Twitter",
                 "Wikipedia"
             ]
