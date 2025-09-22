@@ -454,8 +454,8 @@ install_packages() {
 
         local package_list=(
             base-devel cmake alacritty fish plasma-wayland-session librewolf-bin ente-auth-bin
-            ventoy zoxide eza vlc papers sublime-text-4 jq parallel localsend
-            visual-studio-code-bin libreoffice-still android-tools jdownloader2 java-rhino
+            zoxide eza vlc papers sublime-text-4 jq parallel localsend
+            libreoffice-still android-tools jdownloader2 java-rhino
         )
 
     echo "Installing necessary packages..."
@@ -547,7 +547,7 @@ install_optional_packages() {
     if prompt "Do you want to install optional packages?"; then
         log "Installing optional packages"
         local optional_package_list=(
-            firefox cromite-bin nodejs npm pnpm yt-dlp telegram-desktop celluloid
+            ventoy visual-studio-code-bin firefox cromite-bin nodejs npm pnpm yt-dlp telegram-desktop celluloid
         )
 
         echo "Installing optional packages..."
