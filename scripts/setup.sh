@@ -547,7 +547,7 @@ install_optional_packages() {
     if prompt "Do you want to install optional packages?"; then
         log "Installing optional packages"
         local optional_package_list=(
-            ventoy visual-studio-code-bin firefox cromite-bin nodejs npm pnpm yt-dlp telegram-desktop celluloid
+            ventoy visual-studio-code-bin firefox brave-browser-beta nodejs npm pnpm bat yt-dlp proton-vpn-gtk-app telegram-desktop celluloid
         )
 
         echo "Installing optional packages..."
