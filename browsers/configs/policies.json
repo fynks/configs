@@ -85,7 +85,7 @@
             "StartPage": "homepage"
         },
         "SearchEngines": {
-            "Default": "G",
+            "Default": "Brave",
             "Add": [
                 {
                     "Name": "G",
@@ -100,8 +100,15 @@
                     "Method": "GET"
                 },
                 {
-                    "Name": "Startpage",
-                    "URLTemplate": "https://www.startpage.com/do/search?q={searchTerms}",
+                    "Name": "Github",
+                    "URLTemplate": "https://github.com/search?q=%s&type=repositories",
+                    "Alias": "!git",
+                    "Method": "GET"
+                },
+                {
+                    "Name": "AUR",
+                    "URLTemplate": "https://aur.archlinux.org/packages?O=0&SeB=nd&K={searchTerms}+&outdated=&SB=p&SO=d&PP=50&submit=Go",
+                    "Alias": "!a",
                     "Method": "GET"
                 },
                 {
