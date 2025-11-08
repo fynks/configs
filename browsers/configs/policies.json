@@ -16,6 +16,19 @@
         "OfferToSaveLogins": false,
         "HardwareAcceleration": true,
         "HttpsOnlyMode": "enabled",
+        "DNSOverHTTPS": {
+            "Enabled": true,
+            "Locked": false
+        },
+        "EnableTrackingProtection": {
+            "Value": true,
+            "Locked": false,
+            "Cryptomining": true,
+            "Fingerprinting": true,
+            "EmailTracking": true,
+            "SuspectedFingerprinting": true,
+            "Category": "strict"
+        },
         "Permissions": {
             "Camera": {
                 "BlockNewRequests": true,
