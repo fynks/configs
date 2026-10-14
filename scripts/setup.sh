@@ -42,7 +42,7 @@ declare -a NECESSARY_PACKAGES=(
 
 declare -a OPTIONAL_PACKAGES=(
     android-tools jdownloader2 java-rhino libreoffice-still ventoy 
-    visual-studio-code-bin firefox librewolf-bin bun nodejs npm bat
+    visual-studio-code-bin firefox librewolf nodejs npm bat
     yt-dlp telegram-desktop celluloid
 )
 
@@ -568,6 +568,11 @@ setup_aur() {
     
     log "Setting up Chaotic-AUR and updating mirrors"
      
+    # Back up pacman config (not mirrorlists) before any changes
+    if [ -f /etc/pacman.conf ]; then
+        cp /etc/pacman.conf "/etc/pacman.conf.backup.$(date +%Y%m%d-%H%M%S)" 2>/dev/null || true
+    fi
+
     # Rank Arch mirrors (reflector, runs as root). Eos mirrors are ranked only when
     # passwordless sudo is available, since eos-rankmirrors shells out to sudo.
     if command -v reflector &>/dev/null; then
@@ -581,132 +586,25 @@ setup_aur() {
         print_warning "Skipping EndeavourOS mirror ranking (requires passwordless sudo)"
     fi
 
-    # Update package databases first
+    # Chaotic-AUR is intentionally NOT configured automatically.
+    echo ""
+    echo "Set up Chaotic-AUR manually using the official guide:"
+    echo "  https://aur.chaotic.cx/docs"
+    echo "  (Arch Wiki: https://wiki.archlinux.org/title/Chaotic-AUR)"
+    echo ""
+    echo "Typical manual steps:"
+    echo "  1. Add the [chaotic-aur] repository + /etc/pacman.d/chaotic-mirrorlist to /etc/pacman.conf"
+    echo "  2. Import and locally sign the Chaotic-AUR keys"
+    echo "  3. Install: pacman -S --needed chaotic-keyring chaotic-mirrorlist"
+    echo "  4. Update:  pacman -Syu"
+    echo ""
+
+    # Update package databases for configured repositories (Arch + EndeavourOS)
     echo "Updating package databases..."
     if ! pacman -Sy --noconfirm; then
         handle_error "Failed to update package databases"
     fi
-    
-    # Install required dependencies
-    echo "Installing required dependencies..."
-    if ! pacman -S --needed --noconfirm curl wget jq; then
-        handle_error "Failed to install required dependencies"
-    fi
-    
-    # Create backup of existing pacman.conf with timestamp
-    if [ -f /etc/pacman.conf ]; then
-        local backup_name="/etc/pacman.conf.backup.$(date +%Y%m%d-%H%M%S)"
-        if cp /etc/pacman.conf "$backup_name"; then
-            print_success "Backed up existing pacman.conf to $backup_name"
-            MODIFIED_FILES+=("/etc/pacman.conf")
-        else
-            print_warning "Failed to create backup of pacman.conf"
-        fi
-    fi
-    
-    # Download new pacman.conf from GitHub
-    echo "Downloading pacman.conf from GitHub repository..."
-    local temp_pacman="/tmp/pacman.conf.new"
-    if curl -fsSL --max-time 30 --retry 3 -o "$temp_pacman" "https://raw.githubusercontent.com/fynks/configs/refs/heads/main/backups/pacman.conf"; then
-        # Validate the downloaded file contains expected content
-        if grep -q "\[chaotic-aur\]" "$temp_pacman" && grep -q "Include.*chaotic-mirrorlist" "$temp_pacman"; then
-            if mv "$temp_pacman" /etc/pacman.conf; then
-                print_success "Downloaded and installed new pacman.conf"
-            else
-                handle_error "Failed to install new pacman.conf"
-            fi
-        else
-            handle_error "Downloaded pacman.conf doesn't contain expected Chaotic-AUR configuration"
-        fi
-    else
-        handle_error "Failed to download pacman.conf from GitHub repository"
-    fi
-    
-    # Ensure EndeavourOS repo is not clobbered by the generic pacman.conf
-    if ! grep -q '^\[endeavouros\]' /etc/pacman.conf; then
-        cat >> /etc/pacman.conf <<'EOF'
 
-[endeavouros]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/endeavouros-mirrorlist
-EOF
-        print_success "Added EndeavourOS repository to pacman.conf"
-    fi
-
-    # Fix HoldPkg for EndeavourOS (drop manjaro-system reference)
-    sed -i 's/^HoldPkg.*manjaro-system.*/HoldPkg      = pacman glibc/' /etc/pacman.conf
-
-    # Populate Arch + EndeavourOS keyrings
-    pacman-key --init >/dev/null 2>&1 || true
-    pacman-key --populate archlinux endeavouros 2>/dev/null || pacman-key --populate archlinux 2>/dev/null || print_warning "pacman-key populate had issues"
-
-    # Import Chaotic-AUR GPG keys
-    echo "Importing Chaotic-AUR GPG keys..."
-    local chaotic_keys=("FBA220DFC880C036" "3056513887B78AEB")
-    local keyserver="keyserver.ubuntu.com"
-    
-    for key in "${chaotic_keys[@]}"; do
-        echo "Importing key: $key"
-        if ! pacman-key --recv-key "$key" --keyserver "$keyserver"; then
-            print_warning "Failed to import key $key from $keyserver, trying alternative keyserver..."
-            if ! pacman-key --recv-key "$key" --keyserver "pgp.mit.edu"; then
-                handle_error "Failed to import Chaotic-AUR key: $key"
-            fi
-        fi
-        
-        # Locally sign the key
-        if ! pacman-key --lsign-key "$key"; then
-            handle_error "Failed to locally sign key: $key"
-        fi
-    done
-    
-    print_success "Successfully imported and signed Chaotic-AUR keys"
-    
-    # Create temporary chaotic-mirrorlist if it doesn't exist
-    if [ ! -f /etc/pacman.d/chaotic-mirrorlist ]; then
-        echo "Creating temporary chaotic-mirrorlist..."
-        mkdir -p /etc/pacman.d
-        cat > /etc/pacman.d/chaotic-mirrorlist <<'EOF'
-# Chaotic-AUR mirrorlist - temporary fallback
-Server = https://geo-mirror.chaotic.cx/$repo/$arch
-Server = https://cdn-mirror.chaotic.cx/chaotic-aur/$arch
-Server = https://aur.chaotic.cx/$arch
-EOF
-        print_success "Created temporary chaotic-mirrorlist"
-        MODIFIED_FILES+=("/etc/pacman.d/chaotic-mirrorlist")
-    fi
-    
-    # Update package databases to recognize the new repository
-    echo "Updating package databases with new repositories..."
-    if ! pacman -Sy --noconfirm; then
-        handle_error "Failed to update package databases after adding Chaotic-AUR"
-    fi
-    
-    # Install chaotic-keyring and chaotic-mirrorlist packages
-    echo "Installing Chaotic-AUR keyring and mirrorlist packages..."
-    if pacman -S --needed --noconfirm chaotic-keyring chaotic-mirrorlist; then
-        print_success "Successfully installed chaotic-keyring and chaotic-mirrorlist"
-        INSTALLED_PACKAGES+=("chaotic-keyring" "chaotic-mirrorlist")
-    else
-        print_warning "Failed to install chaotic-keyring and chaotic-mirrorlist, continuing with temporary setup"
-    fi
-    
-    # Final system update
-    echo "Performing full system update..."
-    if pacman -Syyu --noconfirm; then
-        print_success "Chaotic-AUR repository successfully configured and system updated"
-    else
-        print_warning "System update completed with some warnings"
-    fi
-    
-    # Verify setup
-    echo "Verifying Chaotic-AUR setup..."
-    if pacman -Sl chaotic-aur &>/dev/null; then
-        local package_count=$(pacman -Sl chaotic-aur | wc -l)
-        print_success "Chaotic-AUR is working correctly with $package_count packages available"
-    else
-        print_warning "Chaotic-AUR setup may have issues - unable to list packages"
-    fi
 }
 
 #================================
@@ -832,10 +730,36 @@ setup_fish() {
 # Section: Optional Packages
 #================================
 
+install_bun() {
+    print_section_header "Installing Bun (via official installer)"
+
+    if [[ "$ASSUME_YES" != true ]]; then
+        if ! prompt "Install Bun using curl -fsSL https://bun.com/install | bash?"; then
+            print_warning "Bun installation skipped"
+            return 0
+        fi
+    fi
+
+    log "Installing Bun via official installer"
+
+    local user_home
+    user_home=$(eval echo "~$username")
+
+    if sudo -u "$username" bash -c 'curl -fsSL https://bun.com/install | bash'; then
+        print_success "Bun installed successfully"
+        MODIFIED_FILES+=("$user_home/.bun")
+    else
+        print_warning "Failed to install Bun"
+        ERRORS+=("Bun installation failed")
+        return 1
+    fi
+}
+
 install_optional_packages() {
     log "Installing optional packages"
     ensure_yay "$username"
     install_package_group "Optional Packages" "$username" "${OPTIONAL_PACKAGES[@]}"
+    install_bun
 }
 
 #================================
