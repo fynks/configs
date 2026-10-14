@@ -5,10 +5,12 @@
         "DontCheckDefaultBrowser": true,
         "DisableFeedbackCommands": true,
         "DisableFirefoxAccounts": true,
+        "DisableAccounts": true,
         "DisableFirefoxStudies": true,
         "DisableMasterPasswordCreation": true,
         "DisableSetDesktopBackground": true,
         "DisableTelemetry": true,
+        "DisableRemoteImprovements": true,
         "DisplayBookmarksToolbar": "never",
         "DisplayMenuBar": "never",
         "DisableDeveloperTools": false,
@@ -114,7 +116,7 @@
                 },
                 {
                     "Name": "Github",
-                    "URLTemplate": "https://github.com/search?q=%s&type=repositories",
+                    "URLTemplate": "https://github.com/search?q={searchTerms}&type=repositories",
                     "Alias": "!git",
                     "Method": "GET"
                 },
@@ -131,7 +133,7 @@
                     "Method": "GET"
                 }
             ],
-            "PreventInstalls": false,
+            "PreventInstalls": true,
             "Remove": [
                 "Google",
                 "Bing",
@@ -140,6 +142,10 @@
                 "Twitter",
                 "Wikipedia"
             ]
+        },
+        "Sync": {
+            "Enabled": false,
+            "Locked": false
         }
     }
 }
