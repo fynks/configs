@@ -35,14 +35,15 @@ declare -a ERRORS=()
 
 # Package groups
 declare -a NECESSARY_PACKAGES=(
-    base-devel cmake alacritty fish plasma-wayland-session librewolf-bin ente-auth-bin
+    base-devel cmake alacritty fish plasma-wayland-session brave-origin-bin
     zoxide eza vlc papers sublime-text-4 jq parallel localsend
-    libreoffice-still android-tools jdownloader2 java-rhino
+    
 )
 
 declare -a OPTIONAL_PACKAGES=(
-    ventoy visual-studio-code-bin firefox brave-browser-beta nodejs npm pnpm bat 
-    yt-dlp proton-vpn-gtk-app telegram-desktop celluloid
+    android-tools jdownloader2 java-rhino libreoffice-still ventoy 
+    visual-studio-code-bin firefox librewolf-bin bun nodejs npm bat
+    yt-dlp telegram-desktop celluloid
 )
 
 declare -a SERVICES_TO_DISABLE=(
@@ -165,7 +166,7 @@ validate_environment() {
 
     # Ensure we're on an Arch-based system with pacman
     if ! command -v pacman &>/dev/null; then
-        handle_error "This script requires pacman (Arch/Manjaro/etc.). Aborting."
+        handle_error "This script requires pacman (Arch/EndeavourOS/etc.). Aborting."
     fi
     
     # Map dependencies to package names
@@ -418,7 +419,7 @@ automatic_setup() {
     local current_step=0
     
     for step_info in "${steps[@]}"; do
-        ((current_step++))
+        current_step=$((current_step + 1))
         
         IFS=':' read -r step_func step_desc <<< "$step_info"
         
@@ -457,7 +458,7 @@ Options:
   -n, --no          Assume "no" to prompts
   --no-color        Disable colored output
 
-This script helps you set up various components of your Manjaro/Arch Linux system.
+This script helps you set up various components of your EndeavourOS system.
 
 Features:
   - Chaotic-AUR repository setup
@@ -480,11 +481,11 @@ welcome() {
     echo -e "${YELLOW} #  | |        | |   | |\  || . \  ____) |   ${NC}"
     echo -e "${YELLOW} #  |_|        |_|   |_| \_||_|\_\|_____/    ${NC}"
     echo -e "${YELLOW} #                                           ${NC}"
-    echo -e "${YELLOW} #  Manjaro/Arch Linux Setup Script          ${NC}"
+    echo -e "${YELLOW} #  EndeavourOS Setup Script                 ${NC}"
     echo -e "${YELLOW} #  Improved Version with Enhanced Features  ${NC}"
     echo -e "${YELLOW} #--------------------------------------------${NC}"
     echo ""
-    echo -e "${BLUE}Welcome to the Manjaro/Arch Linux Setup script!${NC}"
+    echo -e "${BLUE}Welcome to the EndeavourOS Setup script!${NC}"
     echo -e "${CYAN}Target user: ${GREEN}$username${NC}"
     echo ""
 }
@@ -566,7 +567,20 @@ setup_aur() {
     fi
     
     log "Setting up Chaotic-AUR and updating mirrors"
-    
+     
+    # Rank Arch mirrors (reflector, runs as root). Eos mirrors are ranked only when
+    # passwordless sudo is available, since eos-rankmirrors shells out to sudo.
+    if command -v reflector &>/dev/null; then
+        echo "Ranking Arch Linux mirrors..."
+        reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist || print_warning "reflector failed, continuing with existing mirrorlist"
+    fi
+    if command -v eos-rankmirrors &>/dev/null && sudo -n true 2>/dev/null; then
+        echo "Ranking EndeavourOS mirrors..."
+        eos-rankmirrors || print_warning "eos-rankmirrors failed, continuing with existing mirrorlist"
+    else
+        print_warning "Skipping EndeavourOS mirror ranking (requires passwordless sudo)"
+    fi
+
     # Update package databases first
     echo "Updating package databases..."
     if ! pacman -Sy --noconfirm; then
@@ -608,6 +622,24 @@ setup_aur() {
         handle_error "Failed to download pacman.conf from GitHub repository"
     fi
     
+    # Ensure EndeavourOS repo is not clobbered by the generic pacman.conf
+    if ! grep -q '^\[endeavouros\]' /etc/pacman.conf; then
+        cat >> /etc/pacman.conf <<'EOF'
+
+[endeavouros]
+SigLevel = PackageRequired
+Include = /etc/pacman.d/endeavouros-mirrorlist
+EOF
+        print_success "Added EndeavourOS repository to pacman.conf"
+    fi
+
+    # Fix HoldPkg for EndeavourOS (drop manjaro-system reference)
+    sed -i 's/^HoldPkg.*manjaro-system.*/HoldPkg      = pacman glibc/' /etc/pacman.conf
+
+    # Populate Arch + EndeavourOS keyrings
+    pacman-key --init >/dev/null 2>&1 || true
+    pacman-key --populate archlinux endeavouros 2>/dev/null || pacman-key --populate archlinux 2>/dev/null || print_warning "pacman-key populate had issues"
+
     # Import Chaotic-AUR GPG keys
     echo "Importing Chaotic-AUR GPG keys..."
     local chaotic_keys=("FBA220DFC880C036" "3056513887B78AEB")
@@ -905,19 +937,26 @@ show_summary() {
 
 setup_complete() {
     print_section_header "Setup Complete"
-    echo -e "${GREEN}Manjaro/Arch Linux setup is complete!${NC}"
+    echo -e "${GREEN}EndeavourOS setup is complete!${NC}"
     echo ""
     
     # Show summary one more time
     show_summary
     
     echo ""
-    if [[ "$ASSUME_YES" == true ]] || prompt "Do you want to reboot now?"; then
+    if [[ "$ASSUME_YES" == true ]]; then
         echo -e "${YELLOW}Rebooting in 5 seconds... (Press Ctrl+C to cancel)${NC}"
         sleep 5
         reboot
     else
-        echo -e "${CYAN}Please reboot your system when convenient.${NC}"
+        read -r -p "$(echo -e "${YELLOW}Do you want to reboot now? [y/N]: ${NC}")" reboot_response
+        if [[ "${reboot_response:-N}" =~ ^[Yy] ]]; then
+            echo -e "${YELLOW}Rebooting in 5 seconds... (Press Ctrl+C to cancel)${NC}"
+            sleep 5
+            reboot
+        else
+            echo -e "${CYAN}Please reboot your system when convenient.${NC}"
+        fi
     fi
 }
 
