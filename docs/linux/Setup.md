@@ -6,12 +6,12 @@ title: Setup
 # Manjaro Linux Setup Guide
 
 ## Setup Script
-```bash
-git clone https://github.com/fynks/configs.git && \
-cd configs/scripts/ && \
-sudo chmod +x ./setup.sh && \
-sudo ./setup.sh
-```
+
+The Arch/EndeavourOS setup script has been converted into a step-by-step guide
+with every section available as a copyable code block. See the
+[Arch Setup Script guide](/linux/setup-script) on this site, or read
+[`scripts/README.md`](https://github.com/fynks/configs/blob/main/scripts/README.md)
+in the repository.
 
 ## Update Package Mirrors
 ```bash

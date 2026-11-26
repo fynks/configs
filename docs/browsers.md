@@ -36,12 +36,12 @@ A comprehensive guide for setting up and configuring modern browsers with focus 
 
 ### Enterprise Policy Configuration
 
-Download the [Firefox Policies](https://raw.githubusercontent.com/fynks/configs/main/browsers/configs/policies.json) file and place it in the appropriate directory:
+Download the [Firefox Policies](https://raw.githubusercontent.com/fynks/configs/refs/heads/main/browsers/configs/policies.json) file and place it in the appropriate directory:
 
 **Linux:**
 ```bash
 sudo mkdir -p /etc/firefox/policies
-sudo wget -O /etc/firefox/policies/policies.json https://raw.githubusercontent.com/fynks/configs/main/browsers/configs/policies.json
+sudo wget -O /etc/firefox/policies/policies.json https://raw.githubusercontent.com/fynks/configs/refs/heads/main/browsers/configs/policies.json
 ```
 
 **Windows:**
@@ -61,7 +61,7 @@ C:\Program Files\Mozilla Firefox\distribution\policies.json
 
 ### Extension configs
 
-- [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/main/browsers/extensions/u_block_origin_configs.txt)
+- [UBlock Origin](https://raw.githubusercontent.com/fynks/configs/refs/heads/main/browsers/extensions/u_block_origin_configs.txt)
 
 
 ---

@@ -5,7 +5,7 @@ title: JDownloader
 # JDownloader2 Guide
 
 ## Backup & Restore
-1. Get backup file: [JDownloader2 Backup](https://raw.githubusercontent.com/fynks/configs/refs/heads/main/system/backups/jdownloader2_backup.jd2backup)
+1. Get backup file: [JDownloader2 Backup](https://raw.githubusercontent.com/fynks/configs/refs/heads/main/backups/jdownloader2_backup.jd2backup)
 2. In JD2: `File > Backup > Restore Settings` > select backup
 3. Restart application
 
