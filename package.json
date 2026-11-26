@@ -1,11 +1,11 @@
 {
-  "name": "knowledgebase",
+  "name": "configs",
   "version": "1.0.0",
-  "description": "A personal knowledge base",
+  "description": "Personal configs, guides and VitePress documentation site",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/fynks/knowledgebase"
+    "url": "https://github.com/fynks/configs"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
@@ -13,7 +13,9 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.6.4"
+    "vitepress": "2.0.0-alpha.21",
+    "vue": "^3.5.46",
+    "postcss": "^8.5.33"
   },
   "author": "Fynks"
 }
