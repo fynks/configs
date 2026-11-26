@@ -1,0 +1,19 @@
+{
+  "name": "knowledgebase",
+  "version": "1.0.0",
+  "description": "A personal knowledge base",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fynks/knowledgebase"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  },
+  "author": "Fynks"
+}
