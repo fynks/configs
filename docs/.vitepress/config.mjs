@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: "en-US",
-  title: "Knowledge Base",
-  description: "A comprehensive personal knowledge base with guides, configurations, and technical documentation",
+  title: 'Fynks Configs',
+  description: 'Personal configs and guides for Arch, Linux, browsers, Android and Windows',
   ignoreDeadLinks: true,
   cleanUrls: true,
   lastUpdated: true,
@@ -14,12 +14,12 @@ export default defineConfig({
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['meta', { name: 'theme-color', content: '#646cff' }],
-    ['meta', { name: 'apple-mobile-web-app-title', content: 'KnowledgeBase' }],
+    ['meta', { name: 'apple-mobile-web-app-title', content: 'Configs' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Knowledge Base' }],
-    ['meta', { property: 'og:description', content: 'A comprehensive personal knowledge base with guides, configurations, and technical documentation' }],
+    ['meta', { property: 'og:title', content: 'Fynks Configs' }],
+    ['meta', { property: 'og:description', content: 'Personal configs and guides for Arch, Linux, browsers, Android and Windows' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
   ],
@@ -53,7 +53,8 @@ export default defineConfig({
         items: [
           { text: 'Setup', link: '/linux/Setup' },
           { text: 'Grub', link: '/linux/grub' },
-          { text: 'Fish Shell', link: '/linux/fish' }
+          { text: 'Fish Shell', link: '/linux/fish' },
+          { text: 'Arch Setup Script', link: '/linux/setup-script' }
         ]
       },
       { text: 'Browsers', link: '/browsers' },
@@ -77,7 +78,8 @@ export default defineConfig({
         items: [
           { text: 'System Setup', link: '/linux/Setup' },
           { text: 'GRUB Bootloader', link: '/linux/grub' },
-          { text: 'Fish Shell Configuration', link: '/linux/fish' }
+          { text: 'Fish Shell Configuration', link: '/linux/fish' },
+          { text: 'Arch Setup Script', link: '/linux/setup-script' }
         ]
       },
       { text: 'Browsers', link: '/browsers' },
@@ -102,7 +104,7 @@ export default defineConfig({
     
     // Enhanced footer with more information
     footer: {
-      message: 'Personal Knowledge Base',
+      message: 'Personal configs & knowledge base',
       copyright: 'Copyright © 2024-present Ali (Fynks)'
     },
     
