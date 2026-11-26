@@ -5,80 +5,23 @@ title: Setup
 
 # Arch / EndeavourOS Setup Guide
 
-Run these commands one at a time in a root shell. Each block is a standalone command you can paste as-is.
 
 ## Configuration
 
-Set the user you are setting up and the lists used below:
-
-```bash
-TARGET_USER="${SUDO_USER:-$USER}"
-```
-
-Install the necessary packages:
-
-```bash
-yay --nobase-devel cmake alacritty fish plasma-wayland-session brave-origin-bin zoxide eza vlc papers sublime-text-4 jq parallel localsend
-```
-
-```bash
-yay -S (android-tools jdownloader2 java-rhino libreoffice-still ventoy visual-studio-code-bin firefox librewolf nodejs npm bat yt-dlp telegram-desktop celluloid)
-```
-
-```bash
-SERVICES_TO_DISABLE=(bluetooth lvm2-monitor docker ModemManager)
-```
-
-## Check the system
-
-Confirm an Arch-based system with `pacman`:
-
-```bash
-command -v pacman > /dev/null && echo "pacman found" || echo "An Arch-based system is required"
-```
-
-Refresh the package database and check connectivity:
+Refresh the package database:
 
 ```bash
 sudo pacman -Sy --noconfirm
 ```
 
 ```bash
-ping -c 1 -W 2 8.8.8.8 > /dev/null 2>&1 || curl -sI --max-time 3 https://archlinux.org | grep -qi "200" && echo "online" || echo "check your connection"
-```
-
-Install the tools the later steps need:
-
-```bash
 sudo pacman -S --needed --noconfirm curl wget git sudo jq
 ```
 
-## Determine the target user
-
-If you are not sure which user to configure, detect the first regular account:
-
-```bash
-TARGET_USER="$(awk -F: '$3 >= 1000 && $3 < 65534 {print $1; exit}' /etc/passwd)"
-```
-
-```bash
-echo "Configuring: $TARGET_USER"
-```
-
-## Install yay
+Install yay:
 
 ```bash
 sudo pacman -S --needed --noconfirm yay
-```
-
-If yay is not in your repositories, build `yay-bin` from the AUR:
-
-```bash
-sudo pacman -S --needed --noconfirm base-devel git
-```
-
-```bash
-tmpdir="$(mktemp -d /tmp/yay.XXXXXX)" && sudo chown "$TARGET_USER":"$TARGET_USER" "$tmpdir" && sudo -u "$TARGET_USER" bash -c "cd '$tmpdir' && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si --noconfirm" && rm -rf "$tmpdir"
 ```
 
 ## Update package mirrors
@@ -136,22 +79,19 @@ Refresh the databases:
 sudo pacman -Sy
 ```
 
-## Install the necessary packages
+
+## Install Packages
+
+Install the necessary packages:
 
 ```bash
-sudo -u "$TARGET_USER" yay -S --needed --noconfirm "${NECESSARY_PACKAGES[@]}"
+yay -S --needed --noconfirm base-devel cmake alacritty fish plasma-wayland-session brave-origin-bin zoxide eza vlc papers sublime-text-4 jq parallel localsend
 ```
 
-## Disable unnecessary services
+Disable services
 
 ```bash
-for service in "${SERVICES_TO_DISABLE[@]}"; do systemctl list-unit-files | grep -q "^${service}\.service" && sudo systemctl disable --now "$service"; done
-```
-
-Check what is still enabled:
-
-```bash
-systemctl is-enabled bluetooth lvm2-monitor docker ModemManager 2>/dev/null
+sudo systemctl disable --now bluetooth.service cups.service lvm2-monitor docker ModemManager
 ```
 
 ## Configure Fish
@@ -159,11 +99,11 @@ systemctl is-enabled bluetooth lvm2-monitor docker ModemManager 2>/dev/null
 Create the config directory and download the config:
 
 ```bash
-sudo -u "$TARGET_USER" mkdir -p "/home/$TARGET_USER/.config/fish"
+mkdir -p "/home/$TARGET_USER/.config/fish"
 ```
 
 ```bash
-sudo -u "$TARGET_USER" curl -fsSL -o "/home/$TARGET_USER/.config/fish/config.fish" https://raw.githubusercontent.com/fynks/configs/refs/heads/main/backups/config.fish
+sudo curl -fsSL -o "/home/$TARGET_USER/.config/fish/config.fish" https://raw.githubusercontent.com/fynks/configs/refs/heads/main/backups/config.fish
 ```
 
 Add Fish to the list of valid shells and make it the default:
@@ -173,7 +113,7 @@ command -v fish | grep -qxF - /etc/shells || echo "$(command -v fish)" | sudo te
 ```
 
 ```bash
-sudo chsh -s "$(command -v fish)" "$TARGET_USER"
+sudo chsh -s "$(command -v fish)"
 ```
 
 Log out and back in for the shell change to take effect.
@@ -181,7 +121,7 @@ Log out and back in for the shell change to take effect.
 ## Install the optional packages
 
 ```bash
-sudo -u "$TARGET_USER" yay -S --needed --noconfirm "${OPTIONAL_PACKAGES[@]}"
+yay -S --needed --noconfirm android-tools jdownloader2 java-rhino libreoffice-still ventoy visual-studio-code-bin firefox librewolf nodejs npm bat yt-dlp telegram-desktop celluloid
 ```
 
 Install Bun:
@@ -212,39 +152,6 @@ wget https://raw.githubusercontent.com/fynks/configs/refs/heads/main/backups/kde
 
 In System Settings, open **Keyboard → Shortcuts**, choose **Import Scheme...**, select the downloaded file and click **Apply**. Press `Alt + F2` and type `shortcuts` to open it quickly.
 
-## Improve boot time
-
-```bash
-systemd-analyze
-```
-
-```bash
-sudo systemctl disable bluetooth.service
-```
-
-```bash
-sudo systemctl disable cups.service
-```
-
-Only disable `cups.service` if you do not use a printer.
-
-## Check the result
-
-Verify the key tools and the services you disabled:
-
-```bash
-fish --version && bun --version && yay --version
-```
-
-```bash
-systemctl is-enabled bluetooth lvm2-monitor docker ModemManager 2>/dev/null
-```
-
-Reboot when you are ready:
-
-```bash
-sudo reboot
-```
 
 ## Troubleshooting
 
