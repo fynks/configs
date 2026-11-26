@@ -1,11 +1,24 @@
+# Arch / EndeavourOS Setup Guide
+
+This repo originally shipped a single `scripts/setup.sh` that bootstrapped a fresh Arch-based desktop.
+It has been converted into the sections below so every part is a directly copyable code block.
+Copy the blocks you need, in order, or concatenate them to reconstruct the original script.
+
+## Usage
+
+Run the copied blocks in a root shell (`sudo bash`). The script requires `pacman`, root privileges and an internet connection.
+Set `CONFIGS_DIR` to override the detected repository root. Original config files live in `backups/` and `browsers/`.
+
+## Section: Configuration
+
+Global settings: colours, log file, runtime flags, repo root, tracking arrays and the package/service lists used everywhere else.
+
+```bash
 #!/usr/bin/env bash
 
 set -euo pipefail
 
 
-#======================================
-# Section: Configuration
-#======================================
 
 # Color Definitions
 RED='\033[0;31m'
@@ -52,15 +65,20 @@ declare -a SERVICES_TO_DISABLE=(
     docker
     ModemManager
 )
+```
 
+## Section: Core Functions
 
-#================================
-# Section: Core Functions
-#================================
+A grouping section for the helpers below (UI Elements through Automatic Setup); it holds no commands of its own. Its numbered subsections contain the shared prompt, error, logging and validation helpers.
 
-#--------------------------------
-# Section: UI Elements
-#--------------------------------
+```bash
+```
+
+## Section: UI Elements
+
+Prompting and display helpers: yes/no prompts, section headers, error/success/warning output, logging and the NO_COLOR-aware colour setup.
+
+```bash
 prompt() {
     local response
     # Honor non-interactive defaults
@@ -144,21 +162,26 @@ init_logging() {
     touch "$LOGFILE" || true
     chmod 0644 "$LOGFILE" || true
 }
+```
 
-#--------------------------------
-# Section: Cleanup
-#--------------------------------
+## Section: Cleanup
+
+Final housekeeping: removes temporary files and kills leftover background jobs, run on exit and on error.
+
+```bash
 cleanup() {
     log "Starting cleanup"
     rm -f /tmp/setup-*
     jobs -p | xargs -r kill &>/dev/null 2>&1 || true
     log "Cleanup completed"
 }
+```
 
+## Section: Validation
 
-#--------------------------------
-# Section: Validation
-#--------------------------------
+Pre-flight checks for an Arch-based system, required commands and internet connectivity, installing missing dependencies when needed.
+
+```bash
 validate_environment() {
 
     # System checks
@@ -226,10 +249,13 @@ validate_environment() {
     
     print_success "Environment validation completed"
 }
+```
 
-#--------------------------------
-# Section: Username Detection
-#--------------------------------
+## Section: Username Detection
+
+Determines the real target user from SUDO_USER, logname, who or /etc/passwd, then validates the account and its home directory.
+
+```bash
 get_target_user() {
     local user="${SUDO_USER:-}"
     
@@ -271,10 +297,13 @@ get_target_user() {
     
     echo "$user"
 }
+```
 
-#--------------------------------
-# Section: Package Management
-#--------------------------------
+## Section: Package Management
+
+Installs yay (from pacman or the AUR as a fallback) and installs package groups through it while tracking what changed.
+
+```bash
 check_installed_packages() {
     local -n pkg_array=$1
     local -a missing=()
@@ -390,10 +419,13 @@ install_package_group() {
         return 1
     fi
 }
+```
 
-#--------------------------------
-# Section: Automatic Setup
-#--------------------------------
+## Section: Automatic Setup
+
+Runs every setup step in sequence with progress output, optional per-step prompts, a summary and completion handling.
+
+```bash
 automatic_setup() {
     print_section_header "Automatic Setup Mode"
     
@@ -442,12 +474,13 @@ automatic_setup() {
     show_summary
     setup_complete
 }
+```
 
+## Section: Welcome and Help
 
-#================================
-# Section: Welcome and Help
-#================================
+CLI help text and the ASCII-art welcome banner shown at startup, including the resolved target user.
 
+```bash
 show_help() {
     cat << EOF
 Usage: $0 [OPTIONS]
@@ -489,12 +522,13 @@ welcome() {
     echo -e "${CYAN}Target user: ${GREEN}$username${NC}"
     echo ""
 }
+```
 
+## Section: Main Menu
 
-#================================
-# Section: Main Menu
-#================================
+The interactive numbered menu that dispatches to each setup step, shows the summary or exits.
 
+```bash
 main_menu() {
     local options=(
         "Run automatic setup"
@@ -551,11 +585,13 @@ main_menu() {
         fi
     done
 }
+```
 
-#================================
-# Section: Setup Functions
-#================================
+## Section: Setup Functions
 
+Chaotic-AUR guidance, mirror ranking with reflector/eos-rankmirrors, pacman backups and database refresh.
+
+```bash
 setup_aur() {
     print_section_header "Setting up Chaotic-AUR and Updating Mirrors"
     
@@ -606,21 +642,25 @@ setup_aur() {
     fi
 
 }
+```
 
-#================================
-# Section: Necessary Packages
-#================================
+## Section: Necessary Packages
 
+Installs the core desktop set (base-devel, Alacritty, Fish, Brave, VLC, Plasma session and CLI tools) via yay.
+
+```bash
 install_packages() {
     log "Installing necessary packages"
     ensure_yay "$username"
     install_package_group "Necessary Packages" "$username" "${NECESSARY_PACKAGES[@]}"
 }
+```
 
+## Section: Disable Services
 
-#================================
-# Section: Disable Services
-#================================
+Stops and disables a defined list of services (Bluetooth, LVM monitoring, Docker, ModemManager) when present and enabled.
+
+```bash
 disable_services() {
     print_section_header "Disabling Unnecessary Services"
     
@@ -659,11 +699,13 @@ disable_services() {
         print_success "Disabled ${#DISABLED_SERVICES[@]} service(s)"
     fi
 }
+```
 
-#================================
-# Section: Fish Configuration
-#================================
+## Section: Fish Configuration
 
+Installs the Fish config from this repo, backs up the previous one, and optionally sets Fish as the default shell.
+
+```bash
 setup_fish() {
     print_section_header "Setting up Fish Shell"
     
@@ -725,11 +767,13 @@ setup_fish() {
         fi
     fi
 }
+```
 
-#================================
-# Section: Optional Packages
-#================================
+## Section: Optional Packages
 
+Installs the optional app set (Android tools, LibreOffice, VS Code, Firefox, Node, yt-dlp and more), then installs Bun.
+
+```bash
 install_bun() {
     print_section_header "Installing Bun (via official installer)"
 
@@ -761,11 +805,13 @@ install_optional_packages() {
     install_package_group "Optional Packages" "$username" "${OPTIONAL_PACKAGES[@]}"
     install_bun
 }
+```
 
-#================================
-# Section: Firefox Configuration
-#================================
+## Section: Firefox Configuration
 
+Deploys the enterprise policies.json from this repo to /etc/firefox/policies, backing up any existing file.
+
+```bash
 setup_firefox() {
     print_section_header "Setting up Firefox Policies"
     
@@ -803,12 +849,13 @@ setup_firefox() {
         handle_error "Failed to download Firefox policies from GitHub"
     fi
 }
+```
 
+## Section: Summary
 
-#================================
-# Section: Summary
-#================================
+Prints what was installed, modified and disabled, plus the log path and any warnings or errors.
 
+```bash
 show_summary() {
     print_section_header "Installation Summary"
     
@@ -853,12 +900,13 @@ show_summary() {
     
     echo ""
 }
+```
 
+## Section: Exit
 
-#================================
-# Section: Exit
-#================================
+Completion banner and optional reboot, with a five-second countdown in non-interactive mode.
 
+```bash
 setup_complete() {
     print_section_header "Setup Complete"
     echo -e "${GREEN}EndeavourOS setup is complete!${NC}"
@@ -883,11 +931,13 @@ setup_complete() {
         fi
     fi
 }
+```
 
-#================================
-# Section: Main Execution
-#================================
+## Section: Main Execution
 
+Argument parsing (-y, -n, --no-color), root check, logging setup, target-user detection and the final call into main.
+
+```bash
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -955,3 +1005,4 @@ main() {
 }
 
 main
+```
