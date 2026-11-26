@@ -82,7 +82,7 @@ Add these to your `~/.config/fish/config.fish`:
 | `src` | `source ~/.config/fish/config.fish` | Reload Fish config |
 | `ll` | `eza -la --color=always --group-directories-first` | Detailed file listing |
 | `ls` | `eza -a --color=always --group-directories-first` | Enhanced file listing |
-| `update-mirrors` | `sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syu` | Update Manjaro mirrors |
+| `update-mirrors` | `sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syu` | Update mirrors |
 | `grep` | `grep --color=auto` | Colorized grep |
 
 ### Adding Aliases

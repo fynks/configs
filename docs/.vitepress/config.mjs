@@ -53,8 +53,7 @@ export default defineConfig({
         items: [
           { text: 'Setup', link: '/linux/Setup' },
           { text: 'Grub', link: '/linux/grub' },
-          { text: 'Fish Shell', link: '/linux/fish' },
-          { text: 'Arch Setup Script', link: '/linux/setup-script' }
+          { text: 'Fish Shell', link: '/linux/fish' }
         ]
       },
       { text: 'Browsers', link: '/browsers' },
@@ -78,8 +77,7 @@ export default defineConfig({
         items: [
           { text: 'System Setup', link: '/linux/Setup' },
           { text: 'GRUB Bootloader', link: '/linux/grub' },
-          { text: 'Fish Shell Configuration', link: '/linux/fish' },
-          { text: 'Arch Setup Script', link: '/linux/setup-script' }
+          { text: 'Fish Shell Configuration', link: '/linux/fish' }
         ]
       },
       { text: 'Browsers', link: '/browsers' },

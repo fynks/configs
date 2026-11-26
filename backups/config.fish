@@ -14,7 +14,7 @@ alias chx='chmod u+x'
 alias src='source ~/.config/fish/config.fish'
 
 # Pacman (Arch)
-alias update-mirrors='sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syu'
+alias update-mirrors='sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syu'
 
 # Changing "ls" to "eza"
 alias ls='eza -al --color=always --icons --group-directories-first' # my preferred listing

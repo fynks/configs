@@ -37,7 +37,7 @@ features:
     link: /git
 
   - icon: ⚙️
-    title: Arch Setup Script
-    details: The former setup.sh, split into copyable sections
-    link: /linux/setup-script
+    title: Arch Setup
+    details: Paste-and-run commands for a fresh Arch or EndeavourOS desktop
+    link: /linux/Setup
 ---

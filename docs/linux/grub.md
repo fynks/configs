@@ -23,7 +23,7 @@ If the GRUB menu is not showing during boot (common on single-OS systems):
 
 3. Update GRUB configuration:
    ```bash
-   sudo update-grub
+   sudo grub-mkconfig -o /boot/grub/grub.cfg
    ```
 
 ### Method 2: Show Menu Temporarily
@@ -33,11 +33,13 @@ Hold `Shift` (BIOS) or `Esc` (UEFI) during boot to access the GRUB menu.
 
 Windows installation often overwrites the bootloader. Here's how to restore GRUB:
 
-### For Manjaro/Arch-based Systems
-1. Boot into Manjaro live environment
-2. Open terminal and access your system via chroot:
+### For Arch-based Systems
+1. Boot from an Arch or EndeavourOS live USB
+2. Open a terminal, mount your system and chroot into it (adjust the partitions to match `lsblk`):
    ```bash
-   sudo manjaro-chroot -a
+   sudo mount /dev/sda2 /mnt
+   sudo mount /dev/sda1 /mnt/boot/efi
+   sudo arch-chroot /mnt
    ```
 3. Install GRUB to the main drive:
    ```bash
@@ -52,7 +54,7 @@ Windows installation often overwrites the bootloader. Here's how to restore GRUB
 
 5. Update GRUB configuration:
    ```bash
-   update-grub
+   sudo grub-mkconfig -o /boot/grub/grub.cfg
    ```
 
 6. Exit chroot and reboot:
@@ -87,7 +89,7 @@ GRUB_DISABLE_OS_PROBER=false
 
 ### After making changes, always update GRUB:
 ```bash
-sudo update-grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Troubleshooting
@@ -117,8 +119,8 @@ normal
 # Regenerate GRUB configuration
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-# Or use update-grub (Ubuntu/Debian)
-sudo update-grub
+# Or regenerate with the standard Arch command
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 #### 3. Check Boot Drive
@@ -136,14 +138,14 @@ sudo mount /dev/sda1 /boot/efi
 #### 4. GRUB Not Detecting Windows
 ```bash
 # Install os-prober
-sudo apt install os-prober
+sudo pacman -S os-prober
 
 # Enable OS detection
 sudo nano /etc/default/grub
 # Set: GRUB_DISABLE_OS_PROBER=false
 
 # Update GRUB
-sudo update-grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ### Useful GRUB Commands
