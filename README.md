@@ -14,7 +14,7 @@ bun run docs:build    # production build into docs/.vitepress/dist
 bun run docs:preview  # preview the production build
 ```
 
-Bun 1.4.5 is the package manager; the lockfile is `bun.lock`. The site uses VitePress 2 alpha.
+Bun 1.4.5 is the package manager. The site uses VitePress 2 alpha.
 
 ## Repo layout
 
