@@ -2,11 +2,11 @@
 layout: home
 title: Home
 hero:
-  name: Knowledge Base
-  tagline: Linux, Windows, and tools documentation
+  name: Fynks Configs
+  tagline: Configs, guides, and setup scripts in one place
   image:
     src: /images/logo.svg
-    alt: Knowledge Base Logo
+    alt: Fynks Configs logo
   actions:
     - theme: brand
       text: 🚀 Get Started
@@ -35,4 +35,9 @@ features:
     title: Tools
     details: Git, JDownloader, and Android configuration guides
     link: /git
+
+  - icon: ⚙️
+    title: Arch Setup Script
+    details: The former setup.sh, split into copyable sections
+    link: /linux/setup-script
 ---
